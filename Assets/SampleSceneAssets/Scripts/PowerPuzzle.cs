@@ -76,6 +76,7 @@ public class PowerPuzzle : MonoBehaviour
                 Debug.Log("YOU WIN!!!");
                 source.PlayOneShot(correct, 1.0f);
                 gs.SetSawPower(true);
+                gs.SetSawPower(true);
             }
         }
     }

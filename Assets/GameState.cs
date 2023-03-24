@@ -46,7 +46,7 @@ public class GameState : MonoBehaviour
 
     private bool isWaterOn = false;
 
-    private bool isSawPowerOn = true; //Set back to false
+    private bool isSawPowerOn = false;
 
     private bool holdingCutCore = false;
 
