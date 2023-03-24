@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - PuzzleLocation
+  - Sieve
+  - BrokenCore
+  - Room1_Geo_Poster
+  - Room1_Computer
+  - Room1_BrokenCoreTable
+  - Cabinet
+  - Door1
+  - NewSawBlade
+  - DiamondSaw
+  - Sprayer
+  - Water
+  - Beaker
+  - Button4
+  - Button
+  - InspectCore
+  - Door2
+  - FilingCabinet
+  - PuzzleBox
+  - SedimentJar
+  - Button2
+  - FilingCabinetLock
+  - Button3
+  - PPE_Boots
+  - Room1_CrossSectionPoster
+  - SieveShaker
+  - LockNumber
+  - WaterPipe
+  - WaterHoseSwitch
+  - CoreBoxDeskSpace
+  - Safety Glasses
+  - BoxTable
+  - SedimentDesk
+  - HandLens
+  - CabinetLock
+  - GeoLockNumbers
+  - PuzzlePiece
+  - Button1
+  - DustMask
+  - RockSampleDesk
+  - BrokenSawBlade
+  - BrokenCoreOnTable
+  - PowerCord
+  - P1
+  - P2
+  - P3
+  - P4
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
