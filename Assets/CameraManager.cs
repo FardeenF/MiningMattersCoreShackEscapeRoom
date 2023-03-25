@@ -751,6 +751,7 @@ public class CameraManager : MonoBehaviour
                 Room2_PowerCord.Priority = 0;
                 Room3_Computer.Priority = 1;
                 Room3_MineralIdentification.Priority = 0;
+                topText.text = "Enter the correct password to obtain a message from Sodalite";
 
             }
 
@@ -778,6 +779,7 @@ public class CameraManager : MonoBehaviour
                 Room2_PowerCord.Priority = 0;
                 Room3_Computer.Priority = 0;
                 Room3_MineralIdentification.Priority = 1;
+                topText.text = "Streak Plate Testing Area";
 
             }
         }
