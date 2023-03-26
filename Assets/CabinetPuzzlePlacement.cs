@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class CabinetPuzzlePlacement : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class CabinetPuzzlePlacement : MonoBehaviour
     private bool puzzleComplete = false;
 
     public GameObject Cabinet;
+    public AudioSource DoorOpen;
+    public Image[] Cinventory;
+    
     
     private bool wrongbool = false;
 
@@ -50,6 +54,16 @@ public class CabinetPuzzlePlacement : MonoBehaviour
             {
                 if (correctPieces == 49)
                 {
+                    foreach (Image img in Cinventory)
+                    {
+                        
+                        if (img.GetComponent<Image>().sprite.name == "PuzzleBox")
+                        {
+                            img.GetComponent<Image>().sprite = null;
+                            img.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
+                            break;
+                        }
+                    }
                     checkedPieces = true;
                     Debug.Log("All pieces are in correct spot");
                     gs.SetJigSawDone(true);
@@ -68,8 +82,10 @@ public class CabinetPuzzlePlacement : MonoBehaviour
     IEnumerator WaitTime()
     {
         Cabinet.GetComponent<Animation>().Play(animation: "Cube.029|LDoorOpen");
+        DoorOpen.Play();
         yield return new WaitForSeconds(0.4f);
         Cabinet.GetComponent<Animation>().Play(animation: "Cube.025|R_DoorOpen");
+
         Cabinet_VC.Priority = 1;
         CabinetPuzzle_VC.Priority = 0;
         Cabinet.GetComponent<BoxCollider>().enabled = false;

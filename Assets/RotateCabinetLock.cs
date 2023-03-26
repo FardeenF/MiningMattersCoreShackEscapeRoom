@@ -28,6 +28,8 @@ public class RotateCabinetLock : MonoBehaviour
     public CinemachineVirtualCamera Cabinet_VC;
     public CinemachineVirtualCamera CabinetLock_VC;
 
+    public AudioSource DrawerOpen;
+
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +58,7 @@ public class RotateCabinetLock : MonoBehaviour
                 isLocked = false;
                 toptext.text = ("You unlocked the bottom drawers!");
                 Cabinet.GetComponent<Animation>().Play(animation: "Cube.032|BottomDrawerOpen");
+                DrawerOpen.Play();
 
                 Cabinet_VC.Priority = 1;
                 CabinetLock_VC.Priority = 0;
