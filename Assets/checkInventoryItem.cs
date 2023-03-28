@@ -63,6 +63,11 @@ public class checkInventoryItem : MonoBehaviour
     public GameObject CoreInSendBox;
     public GameObject CoreInResultsBox;
 
+    //Magnet Pen Variables
+    public GameObject MagnetPen;
+    public bool isMagnetPenActive = false;
+    private GameObject activeMagnetPen;
+
     public void OnInventoryClick()
     {
         buttonPressed = EventSystem.current.currentSelectedGameObject;
@@ -314,6 +319,30 @@ public class checkInventoryItem : MonoBehaviour
                     topText.text = "Be careful with this, it needs to be sent off and examined for gold.";
                 }
             }
+
+
+            else if (buttonPressed.GetComponent<Image>().sprite.name.ToString() == "MagnetPen")
+            {
+                if (isMagnetPenActive == false && holdingSomething == false)
+                {
+                    gs.SetHoldingMagnetPen(true);
+                    activeMagnetPen = Instantiate(MagnetPen, Input.mousePosition, Quaternion.identity);
+                    isMagnetPenActive = true;
+                    holdingSomething = true;
+                    topText.text = ("Click on mineral to see if its magnetic");
+                    topText.GetComponent<UAP_BaseElement>().SelectItem();
+                }
+                else
+                {
+                    gs.SetHoldingMagnetPen(false);
+                    Destroy(activeMagnetPen.gameObject);
+                    isMagnetPenActive = false;
+                    holdingSomething = false;
+                    topText.text = ("Magnet Pen is Back in Inventory");
+                    topText.GetComponent<UAP_BaseElement>().SelectItem();
+                }
+            }
+
         }
 
 
@@ -353,7 +382,7 @@ public class checkInventoryItem : MonoBehaviour
         
     }
 
-
+    //Put item away using the put away button
     public void PutAwayButton()
     {      
         //Hand Lens       
@@ -402,6 +431,16 @@ public class checkInventoryItem : MonoBehaviour
             topText.text = ("Saw Blade is Back in Inventory");
             topText.GetComponent<UAP_BaseElement>().SelectItem();
         }
+
+        if (isMagnetPenActive == true && holdingSomething)
+        {
+            gs.SetHoldingMagnetPen(false);
+            Destroy(activeMagnetPen.gameObject);
+            isMagnetPenActive = false;
+            holdingSomething = false;
+            topText.text = ("Magnet is Back in Inventory");
+            topText.GetComponent<UAP_BaseElement>().SelectItem();
+        }
     }
 
 
@@ -416,7 +455,7 @@ public class checkInventoryItem : MonoBehaviour
         if (BrokenSawBlade.activeInHierarchy == true)
             ItemFollowCam(isSawBladeActive, activeSawBlade, 0, true, 2.0f);
 
-
+        ItemFollowCam(isMagnetPenActive, activeMagnetPen, 0, true, 0.5f);
 
 
         if (isSieveActive == true)
@@ -466,6 +505,28 @@ public class checkInventoryItem : MonoBehaviour
         }
 
 
+        //Check if holding saw blade and click broken one
+        if (Input.GetMouseButtonDown(0) && gs.GetHoldingMagnetPen() == true)
+        {
+            Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000f))
+            {
+                //Check if you collect the PPE Boots
+                if (hit.transform.gameObject.name == "Magnemite")
+                {
+                    
+                    topText.text = "Magnemite is magnetic!";
+                }
+                else
+                {
+                    topText.text = "This is not magnetic! Try something else.";
+                }
+            }
+        }
+
+
         //Check if clicking on jigsaw puzzle
         if (Input.GetMouseButtonDown(0) && VC_MiningCycle_VC.Priority == 1 && gs.GetJigSawDone() == false)
         {
@@ -510,6 +571,8 @@ public class checkInventoryItem : MonoBehaviour
                 }
             }
         }
+
+        
 
 
     }

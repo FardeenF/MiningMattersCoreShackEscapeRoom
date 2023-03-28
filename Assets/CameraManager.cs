@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CameraManager : MonoBehaviour
 {
@@ -36,22 +37,31 @@ public class CameraManager : MonoBehaviour
 
     public GameState gs;
     public TextMeshProUGUI topText;
+    public Button BackButton;
+    private bool buttonclicked = false;
 
     // Update is called once per frame
     void Update()
     {
         SwitchCameraPriority();
+
+        BackButton.onClick.AddListener(ButtonClick);
+            
     }
 
+    void ButtonClick()
+    {
+        buttonclicked = true;
+    }
 
-
+    
     
 
 
     //This function controls which camera view is currently active
     public void SwitchCameraPriority()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || buttonclicked == true)
         {
             if(Room1_Computer.Priority == 1)
             {
@@ -186,6 +196,8 @@ public class CameraManager : MonoBehaviour
                 Room3_Cabinet.Priority = 0;
                 CabinetCollider.enabled = true;
             }
+
+            buttonclicked = false;
         }
 
         //Gets reference to gameObject that is clicken on

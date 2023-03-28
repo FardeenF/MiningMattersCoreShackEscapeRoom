@@ -54,6 +54,9 @@ public class GameState : MonoBehaviour
 
     private bool isRoom3Unlocked = false;
 
+    private bool hasMagnetPen = false;
+    private bool holdingMagnetPen = false;
+
     //Check Mouse Over State
     public bool GetMouseOver()
     {
@@ -368,6 +371,26 @@ public class GameState : MonoBehaviour
     public void SetIsRoom3Unlocked(bool r3)
     {
         isRoom3Unlocked = r3;
+    }
+
+    public bool GetHasMagnetPen()
+    {
+        return hasMagnetPen;
+    }
+
+    public void SetHasMagnetPen(bool r3)
+    {
+        hasMagnetPen = r3;
+    }
+
+    public bool GetHoldingMagnetPen()
+    {
+        return holdingMagnetPen;
+    }
+
+    public void SetHoldingMagnetPen(bool r3)
+    {
+        holdingMagnetPen = r3;
     }
 }
 

@@ -79,6 +79,8 @@ public class CabinetPuzzlePlacement : MonoBehaviour
     }
 
 
+    
+
     IEnumerator WaitTime()
     {
         Cabinet.GetComponent<Animation>().Play(animation: "Cube.029|LDoorOpen");

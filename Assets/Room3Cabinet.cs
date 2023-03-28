@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Room3Cabinet : MonoBehaviour
 {
-    public bool isOpen = false;
+    public bool isOpen = true;
     public Animation anim;
     public string animName;
     public AudioSource OpenClose;
