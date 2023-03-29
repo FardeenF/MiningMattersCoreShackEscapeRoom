@@ -57,6 +57,8 @@ public class GameState : MonoBehaviour
     private bool hasMagnetPen = false;
     private bool holdingMagnetPen = false;
 
+    private bool hasUnlockedStorageRoom = false;
+
     //Check Mouse Over State
     public bool GetMouseOver()
     {
@@ -391,6 +393,16 @@ public class GameState : MonoBehaviour
     public void SetHoldingMagnetPen(bool r3)
     {
         holdingMagnetPen = r3;
+    }
+
+    public bool GetHasUnlockedStorageRoom()
+    {
+        return hasUnlockedStorageRoom;
+    }
+
+    public void SetHasUnlockedStorageRoom(bool r3)
+    {
+        hasUnlockedStorageRoom = r3;
     }
 }
 
