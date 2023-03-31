@@ -55,6 +55,7 @@ TagManager:
   - Storage2
   - Storage3
   - Storage4
+  - BeakerMoved
   layers:
   - Default
   - TransparentFX

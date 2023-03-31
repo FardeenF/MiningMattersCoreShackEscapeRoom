@@ -21,7 +21,7 @@ public class SieveShake : MonoBehaviour
     public GameObject[] OriginalBeakerLocations;
     public GameObject[] NewBeakerLocations;
     
-    private string[] isSpotFilledBack = {"Beaker", "Beaker (1)", "Beaker (2)", "Beaker (3)"};
+    private string[] isSpotFilledBack = {"Beaker (1)", "Beaker (3)", "Beaker", "Beaker (2)"};
     private string[] isSpotFilledFront = { "Empty", "Empty", "Empty", "Empty" };
 
     public GameObject SedimentDesk;
@@ -111,19 +111,19 @@ public class SieveShake : MonoBehaviour
             ///Beakers
             if (hit.transform.gameObject.tag == "Beaker" && readyToSort == true)
             {
-                for (int i = 0; i < NewBeakerLocations.Length; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     if (isSpotFilledFront[i] == "Empty")
                     {
                         hit.transform.position = NewBeakerLocations[i].transform.position;
                         hit.transform.gameObject.tag = ("BeakerMoved");
-                        isSpotFilledFront[i] = hit.transform.gameObject.name.ToString();
+                        isSpotFilledFront[i] = hit.transform.gameObject.name;                     
                         break;
                     }
 
                 }
 
-                for (int i = 0; i < NewBeakerLocations.Length; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     if (isSpotFilledBack[i] == hit.transform.gameObject.name)
                     {
@@ -140,19 +140,21 @@ public class SieveShake : MonoBehaviour
             ///Beakers 2
             else if (hit.transform.gameObject.tag == "BeakerMoved" && readyToSort == true)
             {
-                for (int i = 0; i < OriginalBeakerLocations.Length; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     if (isSpotFilledBack[i] == "Empty")
                     {
                         hit.transform.position = OriginalBeakerLocations[i].transform.position;
                         hit.transform.gameObject.tag = ("Beaker");
-                        isSpotFilledBack[i] = hit.transform.gameObject.name.ToString();
-                        break;
-                    }
+                        isSpotFilledBack[i] = hit.transform.gameObject.name;
 
+                        break;
+
+                    }
+                    
                 }
 
-                for (int i = 0; i < OriginalBeakerLocations.Length; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     if (isSpotFilledFront[i] == hit.transform.gameObject.name)
                     {

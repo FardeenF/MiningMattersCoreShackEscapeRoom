@@ -80,6 +80,13 @@ public class checkInventoryItem : MonoBehaviour
     public GameObject corePieceSpace3;
     public GameObject corePieceSpace4;
 
+    public GameObject CoreResults;
+
+    public Material CorrectResult;
+    public Material WrongResult1;
+    public Material WrongResult2;
+    public Material WrongResult3;
+
     public void OnInventoryClick()
     {
         buttonPressed = EventSystem.current.currentSelectedGameObject;
@@ -666,6 +673,14 @@ public class checkInventoryItem : MonoBehaviour
                     
                     topText.text = "Magnemite is magnetic!";
                 }
+                else if (hit.transform.gameObject.name == "Hematite")
+                {
+                    topText.text = "Hematite is weakly magnetic";
+                }
+                else if (hit.transform.gameObject.name == "Pyrite")
+                {
+                    topText.text = "Pyrite is weakly magnetic";
+                }
                 else
                 {
                     topText.text = "This is not magnetic! Try something else.";
@@ -749,6 +764,26 @@ public class checkInventoryItem : MonoBehaviour
         topText.text = "Core Analysis Recieved!";
         CoreInSendBox.SetActive(false);
         CoreInResultsBox.SetActive(true);
+
+        CoreResults.SetActive(true);
+        if (gs.GetSelectedCore2() == 1)
+        {
+            CoreResults.GetComponent<MeshRenderer>().material = WrongResult1;
+        }
+        else if (gs.GetSelectedCore2() == 2)
+        {
+            CoreResults.GetComponent<MeshRenderer>().material = WrongResult2;
+        }
+        else if (gs.GetSelectedCore2() == 3)
+        {
+            CoreResults.GetComponent<MeshRenderer>().material = WrongResult3;
+        }
+        else if (gs.GetSelectedCore2() == 4)
+        {
+            CoreResults.GetComponent<MeshRenderer>().material = CorrectResult;
+        }
+
+
         if (gs.GetSelectedCore2() == 4)
         {
             Debug.Log("This core contained the correct amount of gold!");
