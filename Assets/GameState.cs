@@ -57,6 +57,8 @@ public class GameState : MonoBehaviour
     private bool hasMagnetPen = false;
     private bool holdingMagnetPen = false;
 
+    private bool isHoldingCorePiece = false;
+
     private bool hasUnlockedStorageRoom = false;
 
     //Check Mouse Over State
@@ -301,6 +303,16 @@ public class GameState : MonoBehaviour
     public void SetIsHoldingSawBlade(bool hs)
     {
         isHoldingSawBlade = hs;
+    }
+
+    public bool GetIsHoldingCorePiece()
+    {
+        return isHoldingCorePiece;
+    }
+
+    public void SetIsHoldingCorePiece(bool hs)
+    {
+        isHoldingCorePiece = hs;
     }
 
     public bool GetisSawBladeFixed()

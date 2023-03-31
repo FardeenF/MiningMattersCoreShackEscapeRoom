@@ -35,7 +35,7 @@ public class checkInventoryItem : MonoBehaviour
 
     public CinemachineVirtualCamera VC_brokenCoreTable;
 
-    //Minging Cycle Puzzle Variables
+    //Mining Cycle Puzzle Variables
     public List<GameObject> puzzlePieces = new List<GameObject>();
     private bool isHoldingPiece = false;
     private int PieceIndex = 0;
@@ -57,8 +57,10 @@ public class checkInventoryItem : MonoBehaviour
     public GameObject SawCoreUncut4;
 
     public GameObject CutCore;
+    public GameObject CutCorePiece;
 
     public CinemachineVirtualCamera VC_SendTable;
+    public CinemachineVirtualCamera VC_StorageRack;
 
     public GameObject CoreInSendBox;
     public GameObject CoreInResultsBox;
@@ -67,6 +69,16 @@ public class checkInventoryItem : MonoBehaviour
     public GameObject MagnetPen;
     public bool isMagnetPenActive = false;
     private GameObject activeMagnetPen;
+
+    //Core Piece Placement (Room 3)
+    public bool isCorePieceActive = false;
+    private GameObject activeCorePiece;
+
+    private bool setCorePieceDown = false;
+    public GameObject corePieceSpace1;
+    public GameObject corePieceSpace2;
+    public GameObject corePieceSpace3;
+    public GameObject corePieceSpace4;
 
     public void OnInventoryClick()
     {
@@ -313,6 +325,28 @@ public class checkInventoryItem : MonoBehaviour
                     buttonPressed.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
                     gs.SetholdingCutCore(false);
                     StartCoroutine(RecieveCoreResults());
+                    holdingSomething = false;
+                }
+                else if(VC_StorageRack.Priority == 1)
+                {
+                    if (isCorePieceActive == false && holdingSomething == false)
+                    {
+                        gs.SetIsHoldingCorePiece(true);
+                        activeCorePiece = Instantiate(CutCorePiece, Input.mousePosition, Quaternion.identity);
+                        isCorePieceActive = true;
+                        holdingSomething = true;
+                        topText.text = ("Where should I store this core?");
+                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    }
+                    else
+                    {
+                        gs.SetIsHoldingCorePiece(false);
+                        Destroy(activeCorePiece.gameObject);
+                        isCorePieceActive = false;
+                        holdingSomething = false;
+                        topText.text = ("Core Piece back in inventory");
+                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    }
                 }
                 else
                 {
@@ -342,6 +376,7 @@ public class checkInventoryItem : MonoBehaviour
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                 }
             }
+
 
         }
 
@@ -454,8 +489,10 @@ public class checkInventoryItem : MonoBehaviour
 
         if (BrokenSawBlade.activeInHierarchy == true)
             ItemFollowCam(isSawBladeActive, activeSawBlade, 0, true, 2.0f);
-
+        
         ItemFollowCam(isMagnetPenActive, activeMagnetPen, 0, true, 0.5f);
+
+        ItemFollowCam(isCorePieceActive, activeCorePiece, 0, true, 0.5f);
 
 
         if (isSieveActive == true)
@@ -490,7 +527,6 @@ public class checkInventoryItem : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 1000f))
             {
-                //Check if you collect the PPE Boots
                 if (hit.transform.gameObject.tag == "BrokenSawBlade")
                 {
                     BrokenSawBlade.SetActive(false);
@@ -505,6 +541,117 @@ public class checkInventoryItem : MonoBehaviour
         }
 
 
+        //Check if holding core piece and clicking storage slot
+        if (Input.GetMouseButtonDown(0) && isCorePieceActive)
+        {
+            Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000f))
+            {
+                if (hit.transform.gameObject.tag == "Storage1" && !setCorePieceDown)
+                {
+                    corePieceSpace1.SetActive(true);
+                    gs.SetIsHoldingCorePiece(false);
+                    activeCorePiece.SetActive(false);
+
+                    isCorePieceActive = false;
+                    holdingSomething = false;
+                    setCorePieceDown = true;
+                    Debug.Log("Storage 2 Activate.");
+
+                    topText.text = "You've stored the core correctly! YOU WIN!!!";
+                }
+                else if (hit.transform.gameObject.tag == "Storage2" && !setCorePieceDown)
+                {
+                    corePieceSpace2.SetActive(true);
+                    gs.SetIsHoldingCorePiece(false);
+                    activeCorePiece.SetActive(false);
+
+                    isCorePieceActive = false;
+                    holdingSomething = false;
+                    setCorePieceDown = true;
+                    Debug.Log("Storage 2 Activate.");
+
+                    topText.text = "I should probably try a core different slot";
+                }
+                else if (hit.transform.gameObject.tag == "Storage3" && !setCorePieceDown)
+                {
+                    corePieceSpace3.SetActive(true);
+                    gs.SetIsHoldingCorePiece(false);
+                    activeCorePiece.SetActive(false);
+
+                    isCorePieceActive = false;
+                    holdingSomething = false;
+                    setCorePieceDown = true;
+
+                    topText.text = "I should probably try a core different slot";
+                }
+                else if (hit.transform.gameObject.tag == "Storage4" && !setCorePieceDown)
+                {
+                    corePieceSpace4.SetActive(true);
+                    gs.SetIsHoldingCorePiece(false);
+                    activeCorePiece.SetActive(false);
+
+                    isCorePieceActive = false;
+                    holdingSomething = false;
+                    setCorePieceDown = true;
+
+                    topText.text = "I should probably try a core different slot";
+                }
+            }
+        }
+        else if(Input.GetMouseButtonDown(0) && !isCorePieceActive)
+        {
+            Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000f))
+            {
+                if (hit.transform.gameObject.tag == "Storage2")
+                {
+                    corePieceSpace2.SetActive(false);
+                    activeCorePiece.SetActive(true);
+                    gs.SetIsHoldingCorePiece(true);
+
+                    isCorePieceActive = true;
+                    holdingSomething = true;
+                    setCorePieceDown = false;
+                    Debug.Log("Storage 2 Deactivate.");
+                    topText.text = "Core Piece back in inventory";
+                }
+            }
+            if (Physics.Raycast(ray, out hit, 1000f))
+            {
+                if (hit.transform.gameObject.tag == "Storage3")
+                {
+                    corePieceSpace3.SetActive(false);
+                    activeCorePiece.SetActive(true);
+                    gs.SetIsHoldingCorePiece(true);
+
+                    isCorePieceActive = true;
+                    holdingSomething = true;
+                    setCorePieceDown = false;
+                    topText.text = "Core Piece back in inventory";
+                }
+            }
+            if (Physics.Raycast(ray, out hit, 1000f))
+            {
+                if (hit.transform.gameObject.tag == "Storage4")
+                {
+                    corePieceSpace4.SetActive(false);
+                    activeCorePiece.SetActive(true);
+                    gs.SetIsHoldingCorePiece(true);
+
+                    isCorePieceActive = true;
+                    holdingSomething = true;
+                    setCorePieceDown = false;
+                    topText.text = "Core Piece back in inventory";
+                }
+            }
+        }
+
+
         //Check if holding saw blade and click broken one
         if (Input.GetMouseButtonDown(0) && gs.GetHoldingMagnetPen() == true)
         {
@@ -513,7 +660,7 @@ public class checkInventoryItem : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 1000f))
             {
-                //Check if you collect the PPE Boots
+                //Check if object is magnetic
                 if (hit.transform.gameObject.name == "Magnemite")
                 {
                     
@@ -535,7 +682,6 @@ public class checkInventoryItem : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 1000f))
             {
-                //Check if you collect the PPE Boots
                 if (hit.transform.gameObject.tag == "PuzzleLocation" && isHoldingPiece == true)
                 {
                     puzzlePieces[PieceIndex].transform.position = hit.transform.position + new Vector3(0.0f, 0.0f, 0.0f);

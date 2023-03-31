@@ -51,6 +51,10 @@ TagManager:
   - P2
   - P3
   - P4
+  - Storage1
+  - Storage2
+  - Storage3
+  - Storage4
   layers:
   - Default
   - TransparentFX
