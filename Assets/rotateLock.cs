@@ -18,6 +18,7 @@ public class rotateLock : MonoBehaviour
 
     public GameObject Lock;
     public TextMeshProUGUI topText;
+    public SoundManager soundManager;
 
 
 
@@ -47,7 +48,8 @@ public class rotateLock : MonoBehaviour
             Lock.gameObject.GetComponent<Animation>().Play(animation: "Unlock");
             topText.text = "You have unlocked the sprayer. Click on it to add it to your inventory";
             gs.SetIsSprayerUnlocked(true);
-            
+            soundManager.PlayUnlockSound();
+
         }
 
 
@@ -70,6 +72,7 @@ public class rotateLock : MonoBehaviour
             {
                 Quaternion initialRot = hit.transform.localRotation;
                 hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number1++;
@@ -83,6 +86,7 @@ public class rotateLock : MonoBehaviour
             {
                 Quaternion initialRot = hit.transform.localRotation;
                 hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number2++;
@@ -96,6 +100,7 @@ public class rotateLock : MonoBehaviour
             {
                 Quaternion initialRot = hit.transform.localRotation;
                 hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number3++;
@@ -109,6 +114,7 @@ public class rotateLock : MonoBehaviour
             {
                 Quaternion initialRot = hit.transform.localRotation;
                 hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number4++;
@@ -122,6 +128,7 @@ public class rotateLock : MonoBehaviour
             {
                 Quaternion initialRot = hit.transform.localRotation;
                 hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number5++;
@@ -135,6 +142,7 @@ public class rotateLock : MonoBehaviour
             {
                 Quaternion initialRot = hit.transform.localRotation;
                 hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number6++;

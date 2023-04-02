@@ -17,6 +17,8 @@ public class CollectItem : MonoBehaviour
 
     public Sprite itemImage;
 
+    public SoundManager soundManager;
+
     //Adding the audio source and a toggle to avoid playback
     //AudioSource audioSource;
     //private bool checkSoundToggle = true;
@@ -60,6 +62,7 @@ public class CollectItem : MonoBehaviour
             if (hit.transform.gameObject.tag == "PPE_Boots")
             {
                 gs.SetPPEState(true);
+                soundManager.PlayPPESound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -87,6 +90,7 @@ public class CollectItem : MonoBehaviour
             else if (hit.transform.gameObject.tag == "Sprayer" && gs.GetIsSprayerUnlocked() == true)
             {
                 gs.SetSprayer(true);
+                soundManager.PlayPickupSound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -106,6 +110,7 @@ public class CollectItem : MonoBehaviour
             else if (hit.transform.gameObject.tag == "HandLens")
             {
                 gs.SetIsLensUnlocked(true);
+                soundManager.PlayPickupSound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -189,6 +194,7 @@ public class CollectItem : MonoBehaviour
             else if (hit.transform.gameObject.tag == "Sieve" && gs.GetHasPlacedSieve() == false)
             {
                 gs.SetHasSieve(true);
+                soundManager.PlayPickupSound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -210,6 +216,7 @@ public class CollectItem : MonoBehaviour
             else if (hit.transform.gameObject.tag == "Safety Glasses")
             {
                 gs.SetHasSafetyGlasses(true);
+                soundManager.PlayPickupSound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -255,6 +262,7 @@ public class CollectItem : MonoBehaviour
             else if (hit.transform.gameObject.tag == "PuzzleBox" && gs.GetHasPuzzleBox() == false)
             {
                 gs.SetHasPuzzleBox(true);
+                soundManager.PlayPickupSound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -276,6 +284,7 @@ public class CollectItem : MonoBehaviour
             if (hit.transform.gameObject.tag == "DustMask")
             {
                 gs.SetHasDustMask(true);
+                soundManager.PlayPickupSound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -297,6 +306,7 @@ public class CollectItem : MonoBehaviour
             if (hit.transform.gameObject.tag == "NewSawBlade")
             {
                 gs.SetHasSawBlade(true);
+                soundManager.PlayPickupSound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -318,6 +328,7 @@ public class CollectItem : MonoBehaviour
             if (hit.transform.gameObject.name == "InspectedCutCore")
             {
                 gs.SetholdingCutCore(true);
+                soundManager.PlayPickupSound();
                 for (int i = 0; i <= Inventory.Length; i++)
                 {
                     if (Inventory[i].sprite == null)
@@ -396,6 +407,7 @@ public class CollectItem : MonoBehaviour
         if (hit.transform.gameObject.name == "MagnetPen")
         {
             gs.SetHasMagnetPen(true);
+            soundManager.PlayPickupSound();
             for (int i = 0; i <= Inventory.Length; i++)
             {
                 if (Inventory[i].sprite == null)

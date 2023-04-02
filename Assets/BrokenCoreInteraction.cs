@@ -10,8 +10,9 @@ public class BrokenCoreInteraction : MonoBehaviour
     public Camera mainCam;
     public CinemachineVirtualCamera CoreTableCam;
     public GameState gs;
+    public SoundManager soundManager;
 
-    
+
     public GameObject[] CorePieceLocations;
     public GameObject[] OriginalCorePieceLocations;
     //public bool[] CurrentTableLocations = { false, false, false, false };
@@ -44,7 +45,6 @@ public class BrokenCoreInteraction : MonoBehaviour
     public Material[] solvedMaterials;
 
     private bool puzzleSolved = false;
-
 
     private void Awake()
     {
@@ -85,9 +85,9 @@ public class BrokenCoreInteraction : MonoBehaviour
                     brokenCores[i].GetComponent<Renderer>().material = solvedMaterials[i];
                 }
                 puzzleSolved = true;
+                soundManager.PlaySuccessSound();
             }
         }
-        
         
     }
 
@@ -193,11 +193,15 @@ public class BrokenCoreInteraction : MonoBehaviour
                 room1Computer.GetComponent<Renderer>().sharedMaterials = computerMats;
 
                 gs.SetRoom1PasswordPuzzle(true);
+
+                soundManager.PlaySuccessSound();
             }
             else
             {
                 Debug.Log("Incorrect Password");
                 Debug.Log(Guessedpassword);
+
+                soundManager.PlayIncorrectSound();
             }
         }
     }

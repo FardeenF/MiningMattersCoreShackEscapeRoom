@@ -9,6 +9,8 @@ public class CabinetPuzzlePlacement : MonoBehaviour
     public GameObject[] Pieces;
     public GameObject[] PieceLocations;
     public GameState gs;
+    public SoundManager soundManager;
+
     private bool checkedPieces = false;
     public int correctPieces = 0;
     private bool puzzleComplete = false;
@@ -69,6 +71,7 @@ public class CabinetPuzzlePlacement : MonoBehaviour
                     gs.SetJigSawDone(true);
                     puzzleComplete = true;
                     StartCoroutine(WaitTime());
+                    soundManager.PlaySuccessSound();
                 }
             }
             

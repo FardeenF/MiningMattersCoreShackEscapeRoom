@@ -7,6 +7,7 @@ using Cinemachine;
 public class RotateCabinetLock : MonoBehaviour
 {
     public Camera mainCam;
+    public SoundManager soundManager;
 
     public int number1 = 1;
     public int number2 = 1;
@@ -88,7 +89,8 @@ public class RotateCabinetLock : MonoBehaviour
                 number1++;
                 if (number1 > 5)
                     number1 = 1;
-                
+                soundManager.PlayLockSpinSound();
+
             }
             else if (hit.transform.gameObject.name == "Spinner2")
             {
@@ -97,6 +99,7 @@ public class RotateCabinetLock : MonoBehaviour
                 number2++;
                 if (number2 > 5)
                     number2 = 1;
+                soundManager.PlayLockSpinSound();
 
             }
             else if (hit.transform.gameObject.name == "Spinner3")
@@ -106,6 +109,7 @@ public class RotateCabinetLock : MonoBehaviour
                 number3++;
                 if (number3 > 5)
                     number3 = 1;
+                soundManager.PlayLockSpinSound();
 
             }
             else if (hit.transform.gameObject.name == "Spinner4")
@@ -115,6 +119,7 @@ public class RotateCabinetLock : MonoBehaviour
                 number4++;
                 if (number4 > 5)
                     number4 = 1;
+                soundManager.PlayLockSpinSound();
 
             }
             else if (hit.transform.gameObject.name == "Spinner5")
@@ -124,6 +129,7 @@ public class RotateCabinetLock : MonoBehaviour
                 number5++;
                 if (number5 > 5)
                     number5 = 1;
+                soundManager.PlayLockSpinSound();
 
             }
 
