@@ -26,6 +26,8 @@ public class SieveShake : MonoBehaviour
 
     public GameObject SedimentDesk;
 
+    public SoundManager soundManager;
+
     private bool DrawerOpened = false;
 
     public void Update()
@@ -100,6 +102,7 @@ public class SieveShake : MonoBehaviour
             if (isHoldingSediment == true && (hit.transform.gameObject.tag == "SieveShaker" || hit.transform.gameObject.tag == "Sieve") && gs.GetHasPlacedSieve() == true)
             {
                 this.gameObject.GetComponent<Animation>().Play();
+                soundManager.PlayMachineWorkingSound();
                 JarOfSediment.gameObject.SetActive(false);
                 Debug.Log("JarOfSediment Placed");
                 

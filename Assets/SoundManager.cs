@@ -133,6 +133,19 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlayMachineWorkingSound()
+    {
+        soundChecker = true;
+
+        if (!isPlaying && soundChecker == true)
+        {
+            source.PlayOneShot(machineWorkingSound, 0.4f);
+            isPlaying = true;
+            StartCoroutine(WaitForSoundToEnd(1.0f));
+            soundChecker = false;
+        }
+    }
+
     IEnumerator WaitForSoundToEnd(float length)
     {
         yield return new WaitForSeconds(length);
