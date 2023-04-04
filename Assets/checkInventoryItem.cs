@@ -216,24 +216,28 @@ public class checkInventoryItem : MonoBehaviour
                             if (SawCoreUncut1.activeInHierarchy == true)
                             {
                                 CutCore.SetActive(true);
+                                CutCore.GetComponent<AudioSource>().Play();
                                 Debug.Log("The core has been cut!");
                                 SawCoreUncut1.SetActive(false);
                             }
                             else if (SawCoreUncut2.activeInHierarchy == true)
                             {
                                 CutCore.SetActive(true);
+                                CutCore.GetComponent<AudioSource>().Play();
                                 Debug.Log("The core has been cut!");
                                 SawCoreUncut2.SetActive(false);
                             }
                             else if (SawCoreUncut3.activeInHierarchy == true)
                             {
                                 CutCore.SetActive(true);
+                                CutCore.GetComponent<AudioSource>().Play();
                                 Debug.Log("The core has been cut!");
                                 SawCoreUncut3.SetActive(false);
                             }
                             else if (SawCoreUncut4.activeInHierarchy == true)
                             {
                                 CutCore.SetActive(true);
+                                CutCore.GetComponent<AudioSource>().Play();
                                 Debug.Log("The core has been cut!");
                                 SawCoreUncut4.SetActive(false);
                             }

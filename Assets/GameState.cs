@@ -50,7 +50,7 @@ public class GameState : MonoBehaviour
 
     private bool holdingCutCore = false;
 
-    private bool foundGoldCore = true; //Set back to false
+    private bool foundGoldCore = false;
 
     private bool isRoom3Unlocked = false;
 

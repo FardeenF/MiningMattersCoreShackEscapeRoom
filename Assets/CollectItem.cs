@@ -233,13 +233,18 @@ public class CollectItem : MonoBehaviour
                 }
             }
             //Switch to room 1 from room 2
-            else if (hit.transform.gameObject.tag == "Door1" && gs.GetCurrentRoom() == 1)
+            if (hit.transform.gameObject.tag == "Door1" && gs.GetCurrentRoom() == 1)
             {
                 if (gs.GetHasDustMask() == true && gs.GetHasSafetyGlasses() == true && gs.GetPPEState() == true)
                 {
                     TopText.text = "You have the neccessary items to enter this room.";
+                    hit.transform.gameObject.GetComponent<Animation>()["Cube|Open"].time = 0.3f;
+                    hit.transform.gameObject.GetComponent<Animation>()["Cube|Open"].speed = 0.3f;
+                    hit.transform.gameObject.GetComponent<Animation>().Play();
+                    hit.transform.gameObject.GetComponent<AudioSource>().Play();
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     gs.SetCurrentRoom(2);
+                    Debug.Log("Current Room: " + gs.GetCurrentRoom());
                 }
                 else
                 {
@@ -254,6 +259,7 @@ public class CollectItem : MonoBehaviour
                 TopText.text = ("Heading back to room 1");
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
                 gs.SetCurrentRoom(1);
+                Debug.Log("Current Room: " + gs.GetCurrentRoom());
 
             }
 
@@ -374,15 +380,21 @@ public class CollectItem : MonoBehaviour
                 if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == false)
                 {
                     TopText.text = "You have the neccessary items to enter this room.";
+                    
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
 
                 }
                 else if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == true)
                 {
                     TopText.text = "You Can Now Enter This Room!";
+                    hit.transform.gameObject.GetComponent<Animation>()["Cube|Open"].time = 0.3f;
+                    hit.transform.gameObject.GetComponent<Animation>()["Cube|Open"].speed = 0.3f;
+                    hit.transform.gameObject.GetComponent<Animation>().Play();
+                    hit.transform.gameObject.GetComponent<AudioSource>().Play();
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
 
                     gs.SetCurrentRoom(3);
+                    Debug.Log("Current Room: " + gs.GetCurrentRoom());
                 }
                 else
                 {
@@ -397,6 +409,7 @@ public class CollectItem : MonoBehaviour
                 TopText.text = ("Heading back to room 1");
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
                 gs.SetCurrentRoom(1);
+                Debug.Log("Current Room: " + gs.GetCurrentRoom());
 
             }
 

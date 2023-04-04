@@ -124,6 +124,7 @@ public class CameraManager : MonoBehaviour
                 Room2_Main.Priority = 0;
                 Room1_Main.Priority = 1;
                 topText.text = ("Heading back to room 1");
+                gs.SetCurrentRoom(1);
             }
 
             else if (Room2_DiamondSaw.Priority == 1)
@@ -178,6 +179,7 @@ public class CameraManager : MonoBehaviour
             {
                 Room1_Main.Priority = 1;
                 Room3_Main.Priority = 0;
+                gs.SetCurrentRoom(1);
             }
 
             else if (Room3_Computer.Priority == 1)
