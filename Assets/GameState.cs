@@ -61,6 +61,11 @@ public class GameState : MonoBehaviour
 
     private bool hasUnlockedStorageRoom = false;
 
+    private bool isHighContrastMode = false;
+    private bool isScreenReader = false;
+
+    private bool startGame = false;
+
     //Check Mouse Over State
     public bool GetMouseOver()
     {
@@ -415,6 +420,32 @@ public class GameState : MonoBehaviour
     public void SetHasUnlockedStorageRoom(bool r3)
     {
         hasUnlockedStorageRoom = r3;
+    }
+
+    public bool GetScreenReader()
+    {
+        return isScreenReader;
+    }
+    public void SetScreenReader(bool setting)
+    {
+        isScreenReader = setting;
+    }
+    public bool GetHighContrast()
+    {
+        return isHighContrastMode;
+    }
+    public void SetHighContrast(bool setting)
+    {
+        isHighContrastMode = setting;
+    }
+
+    public bool GetStartGame()
+    {
+        return startGame;
+    }
+    public void SetStartGame(bool sg)
+    {
+        startGame = sg;
     }
 }
 
