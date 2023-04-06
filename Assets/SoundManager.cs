@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+using TMPro;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -8,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public Camera mainCam;
     public AudioSource source;
     public AudioClip pickUpSound;
+    public AudioClip pickUpSoundAlt;
     public AudioClip successSound;
     public AudioClip typingSound;
     public AudioClip incorrectSound;
@@ -19,6 +23,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip bootsPPESound;
     public AudioClip waterSprayerSound;
     public GameState gs;
+
+    public Text PasswordLetter1;
+    public Text PasswordLetter2;
+    public Text PasswordLetter3;
+    public Text PasswordLetter4;
+
 
     private bool isPlaying = false;
     private bool soundChecker = false;
@@ -100,7 +110,7 @@ public class SoundManager : MonoBehaviour
 
         if (!isPlaying && soundChecker == true)
         {
-            source.PlayOneShot(pickUpSound, 0.4f);
+            source.PlayOneShot(pickUpSoundAlt, 0.4f);
             isPlaying = true;
             StartCoroutine(WaitForSoundToEnd(1.0f));
             soundChecker = false;
@@ -145,6 +155,22 @@ public class SoundManager : MonoBehaviour
             soundChecker = false;
         }
     }
+
+    public void PlayPlacePieceSound()
+    {
+        soundChecker = true;
+
+        if (!isPlaying && soundChecker == true)
+        {
+            source.PlayOneShot(placePieceSound, 0.4f);
+            isPlaying = true;
+            StartCoroutine(WaitForSoundToEnd(0.1f));
+            soundChecker = false;
+        }
+    }
+
+
+
 
     IEnumerator WaitForSoundToEnd(float length)
     {

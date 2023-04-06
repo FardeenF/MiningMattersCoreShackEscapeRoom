@@ -7928,6 +7928,7 @@ MonoBehaviour:
   WrongResult1: {fileID: 2100000, guid: 760145c8843d0644eb037bff6e5c4108, type: 2}
   WrongResult2: {fileID: 2100000, guid: a5d6fe2e2e4840040b8e7e18a27173c3, type: 2}
   WrongResult3: {fileID: 2100000, guid: be065846bddd7ac45ab3358049232ebf, type: 2}
+  soundManager: {fileID: 968142283}
 --- !u!1 &342540344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f269cc512adf1b04b84db28bdd7faaa0, type: 3}
@@ -24390,6 +24391,7 @@ MonoBehaviour:
   mainCam: {fileID: 1736072091}
   source: {fileID: 1618781809}
   pickUpSound: {fileID: 8300000, guid: d4ce893ef14e0314d8706c22baa660ad, type: 3}
+  pickUpSoundAlt: {fileID: 8300000, guid: 58d7f4e79935c45498cab11862f6a202, type: 3}
   successSound: {fileID: 8300000, guid: 775d3bc7ba1378840ae1614ad99b8456, type: 3}
   typingSound: {fileID: 8300000, guid: 2ef2d0cd716466046a95491779623519, type: 3}
   incorrectSound: {fileID: 8300000, guid: 839dfe5ff74d7b147b63b7a424097347, type: 3}
@@ -24401,6 +24403,10 @@ MonoBehaviour:
   bootsPPESound: {fileID: 8300000, guid: 75a2c459f6a0e7f49ae250bde7cce8c6, type: 3}
   waterSprayerSound: {fileID: 8300000, guid: 25d2628c05905b54e954278de93b8578, type: 3}
   gs: {fileID: 1815343585}
+  PasswordLetter1: {fileID: 1396011252}
+  PasswordLetter2: {fileID: 548426393}
+  PasswordLetter3: {fileID: 1786414776}
+  PasswordLetter4: {fileID: 266533174}
 --- !u!1001 &969531135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34526,6 +34532,34 @@ PrefabInstance:
     - target: {fileID: 585237242453315247, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 585237242536540223, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 585237242536540223, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 585237242536540223, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1736072094}
+    - target: {fileID: 585237242536540223, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 585237242536540223, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: enableGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 585237242536540223, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CameraManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 585237242536540223, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5937578689088155174, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
       propertyPath: UI

@@ -87,6 +87,8 @@ public class checkInventoryItem : MonoBehaviour
     public Material WrongResult2;
     public Material WrongResult3;
 
+    public SoundManager soundManager;
+
     public void OnInventoryClick()
     {
         buttonPressed = EventSystem.current.currentSelectedGameObject;
@@ -706,7 +708,7 @@ public class checkInventoryItem : MonoBehaviour
                     puzzlePieces[PieceIndex].transform.position = hit.transform.position + new Vector3(0.0f, 0.0f, 0.0f);
                     puzzlePieces[PieceIndex].GetComponent<BoxCollider>().enabled = true;
 
-
+                    soundManager.PlayPlacePieceSound();
 
                     puzzlePieces.RemoveAt(PieceIndex);
                     isHoldingPiece = false;
@@ -728,6 +730,9 @@ public class checkInventoryItem : MonoBehaviour
                     isHoldingPiece = false;
                     holdingSomething = false;
                     piecesPlaced--;
+
+                    //pick up picec sound
+                    soundManager.PlayPickupSound();
 
                     if (piecesPlaced < 49)
                     {

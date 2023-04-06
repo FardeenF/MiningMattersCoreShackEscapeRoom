@@ -44,7 +44,8 @@ public class CabinetPuzzlePlacement : MonoBehaviour
                         {
                             Debug.Log("Pieces are not in correct order");
                             correctPieces = 0;
-                            
+                            //not in right bad
+                            soundManager.PlayIncorrectSound();
                             break;
                         }
                         
