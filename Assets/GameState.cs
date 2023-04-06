@@ -65,6 +65,7 @@ public class GameState : MonoBehaviour
     private bool isScreenReader = false;
 
     private bool startGame = false;
+    private bool endGame = false;
 
     //Check Mouse Over State
     public bool GetMouseOver()
@@ -446,6 +447,15 @@ public class GameState : MonoBehaviour
     public void SetStartGame(bool sg)
     {
         startGame = sg;
+    }
+
+    public bool GetEndGame()
+    {
+        return endGame;
+    }
+    public void SetEndGame(bool eg)
+    {
+        endGame = eg;
     }
 }
 

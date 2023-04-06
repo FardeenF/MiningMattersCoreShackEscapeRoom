@@ -89,6 +89,8 @@ public class checkInventoryItem : MonoBehaviour
 
     public SoundManager soundManager;
 
+    public GameObject endingScreen;
+
     public void OnInventoryClick()
     {
         buttonPressed = EventSystem.current.currentSelectedGameObject;
@@ -574,6 +576,9 @@ public class checkInventoryItem : MonoBehaviour
                     Debug.Log("Storage 2 Activate.");
 
                     topText.text = "You've stored the core correctly! YOU WIN!!!";
+                    gs.SetEndGame(true);
+                    endingScreen.gameObject.SetActive(true);
+
                 }
                 else if (hit.transform.gameObject.tag == "Storage2" && !setCorePieceDown)
                 {

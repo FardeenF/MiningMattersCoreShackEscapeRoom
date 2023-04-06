@@ -11,24 +11,27 @@ public class GameTimer : MonoBehaviour
     public TextMeshProUGUI timerText;
 
     public float timer;
-
+    public GameState gs;
 
     // Update is called once per frame
     public void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= 1.0)
+        if (gs.GetEndGame() == false)
         {
-            TimeSec++;
-            timer = 0.0f;
-        }
+            timer += Time.deltaTime;
+            if (timer >= 1.0)
+            {
+                TimeSec++;
+                timer = 0.0f;
+            }
 
-        if (TimeSec > 59)
-        {
-            TimeMin++;
-            TimeSec = 0;
-        }
+            if (TimeSec > 59)
+            {
+                TimeMin++;
+                TimeSec = 0;
+            }
 
-        timerText.text = (TimeMin.ToString() + "m:" + TimeSec.ToString() + "s");
+            timerText.text = (TimeMin.ToString() + "m:" + TimeSec.ToString() + "s");
+        }
     }
 }

@@ -24,6 +24,11 @@ public class PowerPuzzle : MonoBehaviour
     public GameObject p3;
     public GameObject p4;
 
+    public GameObject h1;
+    public GameObject h2;
+    public GameObject h3;
+    public GameObject h4;
+
     public GameState gs;
 
     public AudioSource source;
@@ -39,11 +44,18 @@ public class PowerPuzzle : MonoBehaviour
         solutionList.Add(p3.transform.position);
         solutionList.Add(p3.transform.position);
         solutionList.Add(p4.transform.position);
+
+        h1.gameObject.SetActive(false);
+        h2.gameObject.SetActive(false);
+        h3.gameObject.SetActive(false);
+        h4.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        ShootRaycastHover();
+
         if (Input.GetMouseButtonDown(0))
         {
             ShootRaycast();
@@ -81,6 +93,54 @@ public class PowerPuzzle : MonoBehaviour
         }
     }
 
+
+    public void ShootRaycastHover()
+    {
+        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+
+
+
+        if (Physics.Raycast(ray, out hit, 1000f))
+        {
+            if(hit.transform.gameObject.tag == "P1")
+            {
+                h1.gameObject.SetActive(true);
+            }
+            else
+            {
+                h1.gameObject.SetActive(false);
+            }
+
+            if (hit.transform.gameObject.tag == "P2")
+            {
+                h4.gameObject.SetActive(true);
+            }
+            else
+            {
+                h4.gameObject.SetActive(false);
+            }
+
+            if (hit.transform.gameObject.tag == "P3")
+            {
+                h2.gameObject.SetActive(true);
+            }
+            else
+            {
+                h2.gameObject.SetActive(false);
+            }
+
+            if (hit.transform.gameObject.tag == "P4")
+            {
+                h3.gameObject.SetActive(true);
+            }
+            else
+            {
+                h3.gameObject.SetActive(false);
+            }
+        }
+    }
     
 
 

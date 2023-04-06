@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour
     public GameState state;
     public GameObject UI;
 
+
     void Start()
     {
         UI.gameObject.SetActive(false);
