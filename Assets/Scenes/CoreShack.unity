@@ -9247,7 +9247,7 @@ MonoBehaviour:
   - {fileID: 474882718}
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 7525a061487f43c4aa0cc08060577986, type: 3}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 968142283}
 --- !u!65 &366836680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9861,7 +9861,7 @@ MonoBehaviour:
   - {fileID: 771515196}
   - {fileID: 594484579}
   itemImage: {fileID: 21300000, guid: 7a29db02e1c63f5469e2f12fabffe4d5, type: 3}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 968142283}
 --- !u!65 &377111156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21897,6 +21897,7 @@ MonoBehaviour:
   Cabinet: {fileID: 2135949811}
   FilingCabinet_VC: {fileID: 1239112367}
   FilingCabinetLock_VC: {fileID: 1592303129}
+  soundManager: {fileID: 0}
 --- !u!65 &852373742
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25128,7 +25129,8 @@ MonoBehaviour:
   cabinetOpeningSound: {fileID: 8300000, guid: 3d548250bb5c38e4b848abae942a18e5, type: 3}
   machineWorkingSound: {fileID: 8300000, guid: 68020012d7d0cfa4689245b76af6dae5, type: 3}
   bootsPPESound: {fileID: 8300000, guid: 75a2c459f6a0e7f49ae250bde7cce8c6, type: 3}
-  waterSprayerSound: {fileID: 8300000, guid: 25d2628c05905b54e954278de93b8578, type: 3}
+  waterSprayerSound: {fileID: 8300000, guid: 94327f8ff9755ed4bbcdfb6aceaac460, type: 3}
+  switchSound: {fileID: 8300000, guid: 386de3bbcb188534aa5a8845ae238899, type: 3}
   gs: {fileID: 1815343585}
   PasswordLetter1: {fileID: 1396011252}
   PasswordLetter2: {fileID: 548426393}
@@ -28734,6 +28736,7 @@ MonoBehaviour:
   mainCam: {fileID: 1736072091}
   gs: {fileID: 1815343585}
   topText: {fileID: 445432509}
+  soundManager: {fileID: 968142283}
 --- !u!65 &1134957733
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49623,7 +49626,7 @@ MonoBehaviour:
   - {fileID: 771515196}
   - {fileID: 594484579}
   itemImage: {fileID: 21300000, guid: 19bd88740702837429a8af0572950278, type: 3}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 968142283}
 --- !u!65 &2006454726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52811,6 +52814,7 @@ MonoBehaviour:
   mainCam: {fileID: 1736072091}
   gs: {fileID: 1815343585}
   topText: {fileID: 445432509}
+  soundManager: {fileID: 0}
 --- !u!65 &2124822126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54212,6 +54216,7 @@ MonoBehaviour:
   Igneous: {fileID: 6867737896390331408}
   Metamorphic: {fileID: 3176457413750488676}
   Sedimentary: {fileID: 2310314147952557969}
+  soundManager: {fileID: 968142283}
 --- !u!33 &957073705712344638
 MeshFilter:
   m_ObjectHideFlags: 0
