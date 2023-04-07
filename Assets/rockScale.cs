@@ -21,6 +21,8 @@ public class rockScale : MonoBehaviour
     public GameObject Metamorphic;
     public GameObject Sedimentary;
 
+    public SoundManager soundManager;
+
 
     // Update is called once per frame
     void Update()
@@ -44,6 +46,8 @@ public class rockScale : MonoBehaviour
 
                         weight.text = "3g";
                         placedRock = true;
+
+                        soundManager.PlayAltPickupSound();
                     }
                     else if (placedRock == true && hit.transform.position == rockLocation.transform.position)
                     {
@@ -64,6 +68,8 @@ public class rockScale : MonoBehaviour
 
                         weight.text = "4g";
                         placedRock = true;
+
+                        soundManager.PlayAltPickupSound();
                     }
                     else if (placedRock == true && hit.transform.position == rockLocation.transform.position)
                     {
@@ -84,6 +90,8 @@ public class rockScale : MonoBehaviour
 
                         weight.text = "6g";
                         placedRock = true;
+
+                        soundManager.PlayAltPickupSound();
                     }
                     else if (placedRock == true && hit.transform.position == rockLocation.transform.position)
                     {

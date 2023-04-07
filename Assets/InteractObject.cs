@@ -11,6 +11,7 @@ public class InteractObject : MonoBehaviour
     private bool isOn = false;
     public GameState gs;
     public TextMeshProUGUI topText;
+    public SoundManager soundManager;
 
 
 
@@ -33,6 +34,7 @@ public class InteractObject : MonoBehaviour
                         topText.text = "Water for Saw has been turned on!";
                         isOn = true;
                         gs.SetIsWaterOn(true);
+                        soundManager.PlaySwitchSound();
                     }
                     else if (isOn == true)
                     {

@@ -130,6 +130,7 @@ public class checkInventoryItem : MonoBehaviour
                     holdingSomething = true;
                     topText.text = ("Click to Spray Water");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    soundManager.PlayWaterSprayerSound();
                 }
                 else
                 {

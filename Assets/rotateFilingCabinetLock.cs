@@ -27,6 +27,8 @@ public class rotateFilingCabinetLock : MonoBehaviour
     public CinemachineVirtualCamera FilingCabinet_VC;
     public CinemachineVirtualCamera FilingCabinetLock_VC;
 
+    public SoundManager soundManager;
+
     // Update is called once per frame
     void Update()
     {
@@ -54,6 +56,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
                 isLocked = false;
                 toptext.text = ("You unlocked the bottom drawers!");
                 Cabinet.GetComponent<Animation>().Play(animation: "BottomDrawer");
+                soundManager.PlaySuccessSound();
 
                 FilingCabinet_VC.Priority = 1;
                 FilingCabinetLock_VC.Priority = 0;
@@ -83,6 +86,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
                 number1++;
                 if (number1 > 9)
                     number1 = 1;
+                soundManager.PlayLockSpinSound();
 
             }
             else if (hit.transform.gameObject.name == "FC_Number2")
@@ -92,6 +96,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
                 number2++;
                 if (number2 > 9)
                     number2 = 1;
+                soundManager.PlayLockSpinSound();
 
             }
             else if (hit.transform.gameObject.name == "FC_Number3")
@@ -101,6 +106,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
                 number3++;
                 if (number3 > 9)
                     number3 = 1;
+                soundManager.PlayLockSpinSound();
 
             }
             

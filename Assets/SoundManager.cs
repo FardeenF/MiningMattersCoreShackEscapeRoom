@@ -22,6 +22,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip machineWorkingSound;
     public AudioClip bootsPPESound;
     public AudioClip waterSprayerSound;
+    public AudioClip switchSound;
     public GameState gs;
 
     public Text PasswordLetter1;
@@ -78,6 +79,19 @@ public class SoundManager : MonoBehaviour
         }    
     }
 
+    public void PlayAltPickupSound()
+    {
+        soundChecker = true;
+
+        if (!isPlaying && soundChecker == true)
+        {
+            source.PlayOneShot(pickUpSound, 0.4f);
+            isPlaying = true;
+            StartCoroutine(WaitForSoundToEnd(1.0f));
+            soundChecker = false;
+        }
+    }
+
     public void PlayIncorrectSound()
     {
         soundChecker = true;
@@ -89,6 +103,34 @@ public class SoundManager : MonoBehaviour
             StartCoroutine(WaitForSoundToEnd(1.0f));
             soundChecker = false;
         }
+    }
+
+    public void PlayWaterSprayerSound()
+    {
+        soundChecker = true;
+
+        if (!isPlaying && soundChecker == true)
+        {
+            source.PlayOneShot(waterSprayerSound, 0.4f);
+            isPlaying = true;
+            StartCoroutine(WaitForSoundToEnd(1.0f));
+            soundChecker = false;
+        }
+
+    }
+
+    public void PlaySwitchSound()
+    {
+        soundChecker = true;
+
+        if (!isPlaying && soundChecker == true)
+        {
+            source.PlayOneShot(switchSound, 0.4f);
+            isPlaying = true;
+            StartCoroutine(WaitForSoundToEnd(0.1f));
+            soundChecker = false;
+        }
+
     }
 
     public void PlayUnlockSound()
