@@ -35,6 +35,11 @@ public class PowerPuzzle : MonoBehaviour
     public AudioClip wrong;
     public AudioClip correct;
 
+    private bool h1Active = false;
+    private bool h2Active = false;
+    private bool h3Active = false;
+    private bool h4Active = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +54,11 @@ public class PowerPuzzle : MonoBehaviour
         h2.gameObject.SetActive(false);
         h3.gameObject.SetActive(false);
         h4.gameObject.SetActive(false);
+
+        h1Active = false;
+        h2Active = false;
+        h3Active = false;
+        h4Active = false;
     }
 
     // Update is called once per frame
@@ -110,7 +120,8 @@ public class PowerPuzzle : MonoBehaviour
             }
             else
             {
-                h1.gameObject.SetActive(false);
+                if(!h1Active)
+                    h1.gameObject.SetActive(false);
             }
 
             if (hit.transform.gameObject.tag == "P2")
@@ -119,7 +130,8 @@ public class PowerPuzzle : MonoBehaviour
             }
             else
             {
-                h4.gameObject.SetActive(false);
+                if(!h4Active)
+                    h4.gameObject.SetActive(false);
             }
 
             if (hit.transform.gameObject.tag == "P3")
@@ -128,7 +140,8 @@ public class PowerPuzzle : MonoBehaviour
             }
             else
             {
-                h2.gameObject.SetActive(false);
+                if(!h2Active)
+                    h2.gameObject.SetActive(false);
             }
 
             if (hit.transform.gameObject.tag == "P4")
@@ -137,7 +150,8 @@ public class PowerPuzzle : MonoBehaviour
             }
             else
             {
-                h3.gameObject.SetActive(false);
+                if(!h3Active)
+                    h3.gameObject.SetActive(false);
             }
         }
     }
@@ -154,26 +168,44 @@ public class PowerPuzzle : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 1000f))
         {
-            //Can only interact with puzzle if user is on the right camera looking at the table
+            //Can only interact with puzzle if user is on the right camera looking at the circuit
             if (PowerCordVC.Priority > 0)
             {
                 if (changeNow == 0)
                 {
                     if (goodCount == 0)
                     {
-                        //Check if you clicked on a core piece
+                        //Check if you clicked on a wire
                         if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                         {
                             pos1 = hit.transform.position;
                             posList.Add(pos1);
-                            //points.Add(hit.transform);
-                            //line.SetUpLine(points);
+                            if(hit.transform.gameObject.tag == "P1")
+                            {
+                                h1Active = true;
+                                h1.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P2")
+                            {
+                                h4Active = true;
+                                h4.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P3")
+                            {
+                                h2Active = true;
+                                h2.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P4")
+                            {
+                                h3Active = true;
+                                h3.gameObject.SetActive(true);
+                            }
                             goodCount++;
                         }
                     }
                     else
                     {
-                        //Check if you clicked on a core piece
+                        //Check if you clicked on a wire
                         if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                         {
                             pos2 = hit.transform.position;
@@ -186,6 +218,16 @@ public class PowerPuzzle : MonoBehaviour
                             line.SetPosition(0, pos1);
                             line.SetPosition(1, pos2);
 
+                            h1.gameObject.SetActive(false);
+                            h2.gameObject.SetActive(false);
+                            h3.gameObject.SetActive(false);
+                            h4.gameObject.SetActive(false);
+
+                            h1Active = false;
+                            h2Active = false;
+                            h3Active = false;
+                            h4Active = false;
+
                             goodCount = 0;
                             changeNow = 1;
                         }
@@ -195,32 +237,58 @@ public class PowerPuzzle : MonoBehaviour
                 {
                     if (goodCount == 0)
                     {
-                        //Check if you clicked on a core piece
+                        //Check if you clicked on a wire
                         if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                         {
                             pos1 = hit.transform.position;
                             posList.Add(pos1);
-                            //points.Add(hit.transform);
-                            //line.SetUpLine(points);
-                            Debug.Log("Here");
+
+                            if (hit.transform.gameObject.tag == "P1")
+                            {
+                                h1Active = true;
+                                h1.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P2")
+                            {
+                                h4Active = true;
+                                h4.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P3")
+                            {
+                                h2Active = true;
+                                h2.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P4")
+                            {
+                                h3Active = true;
+                                h3.gameObject.SetActive(true);
+                            }
+
                             goodCount++;
                         }
                     }
                     else
                     {
-                        //Check if you clicked on a core piece
+                        //Check if you clicked on a wire
                         if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                         {
                             pos2 = hit.transform.position;
                             posList.Add(pos2);
 
-                            //points.Add(hit.transform);
-
-                            //line.SetUpLine(points);
                             line2.positionCount = 2;
                             line2.SetPosition(0, pos1);
                             line2.SetPosition(1, pos2);
-                            Debug.Log("There");
+
+                            h1.gameObject.SetActive(false);
+                            h2.gameObject.SetActive(false);
+                            h3.gameObject.SetActive(false);
+                            h4.gameObject.SetActive(false);
+
+                            h1Active = false;
+                            h2Active = false;
+                            h3Active = false;
+                            h4Active = false;
+
                             goodCount = 0;
                             changeNow = 2;
                         }
@@ -230,32 +298,58 @@ public class PowerPuzzle : MonoBehaviour
                 {
                     if (goodCount == 0)
                     {
-                        //Check if you clicked on a core piece
+                        //Check if you clicked on a wire
                         if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                         {
                             pos1 = hit.transform.position;
                             posList.Add(pos1);
-                            //points.Add(hit.transform);
-                            //line.SetUpLine(points);
-                            Debug.Log("Here");
+
+                            if (hit.transform.gameObject.tag == "P1")
+                            {
+                                h1Active = true;
+                                h1.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P2")
+                            {
+                                h4Active = true;
+                                h4.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P3")
+                            {
+                                h2Active = true;
+                                h2.gameObject.SetActive(true);
+                            }
+                            else if (hit.transform.gameObject.tag == "P4")
+                            {
+                                h3Active = true;
+                                h3.gameObject.SetActive(true);
+                            }
+
                             goodCount++;
                         }
                     }
                     else
                     {
-                        //Check if you clicked on a core piece
+                        //Check if you clicked on a wire
                         if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                         {
                             pos2 = hit.transform.position;
                             posList.Add(pos2);
 
-                            //points.Add(hit.transform);
-
-                            //line.SetUpLine(points);
                             line3.positionCount = 2;
                             line3.SetPosition(0, pos1);
                             line3.SetPosition(1, pos2);
                             Debug.Log("There");
+
+                            h1.gameObject.SetActive(false);
+                            h2.gameObject.SetActive(false);
+                            h3.gameObject.SetActive(false);
+                            h4.gameObject.SetActive(false);
+
+                            h1Active = false;
+                            h2Active = false;
+                            h3Active = false;
+                            h4Active = false;
 
                             StartCoroutine(checkSolution());
 

@@ -18,7 +18,7 @@ public class SetCursor : MonoBehaviour
     {
         if (gs.GetMouseOver() == false)
         {
-            Cursor.SetCursor(ClickableCursor, hotspot, CursorMode.Auto);
+            Cursor.SetCursor(ClickableCursor, Vector2.zero, CursorMode.Auto);
         }
         
 
@@ -26,7 +26,7 @@ public class SetCursor : MonoBehaviour
 
     public void OnMouseExit()
     {
-        Cursor.SetCursor(OpenCursor, hotspot, CursorMode.Auto);
+        Cursor.SetCursor(OpenCursor, Vector2.zero, CursorMode.Auto);
     }
 
     public void Update()
@@ -34,13 +34,13 @@ public class SetCursor : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             gs.SetMouseOver(true);
-            Cursor.SetCursor(GrabCursor, hotspot, CursorMode.Auto);
+            Cursor.SetCursor(GrabCursor, Vector2.zero, CursorMode.Auto);
 
         }
         if (Input.GetMouseButtonUp(0))
         {
             gs.SetMouseOver(false);
-            Cursor.SetCursor(OpenCursor, hotspot, CursorMode.Auto);
+            Cursor.SetCursor(OpenCursor, Vector2.zero, CursorMode.Auto);
 
         }
 
