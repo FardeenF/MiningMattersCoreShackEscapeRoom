@@ -91,6 +91,12 @@ public class checkInventoryItem : MonoBehaviour
 
     public GameObject endingScreen;
 
+    public CinemachineBrain cinemachineBrain;
+
+    private bool isZoomed = false;
+
+    private Vector3 targetPosition = new Vector3();
+
     public void OnInventoryClick()
     {
         buttonPressed = EventSystem.current.currentSelectedGameObject;
@@ -103,7 +109,7 @@ public class checkInventoryItem : MonoBehaviour
 
                 if (isHandLensActive == false && holdingSomething == false)
                 {
-                    activeHandLens = Instantiate(HandLens, Input.mousePosition, Quaternion.identity);
+                    //activeHandLens = Instantiate(HandLens, Input.mousePosition, Quaternion.identity);
                     isHandLensActive = true;
                     holdingSomething = true;
                     topText.text = ("Can be used to get a closer look at items");
@@ -112,7 +118,7 @@ public class checkInventoryItem : MonoBehaviour
                 else
                 {
                     if (isHandLensActive == true)
-                        Destroy(activeHandLens.gameObject);
+                        //Destroy(activeHandLens.gameObject);
                     isHandLensActive = false;
                     holdingSomething = false;
                     topText.text = ("Hand Lens is Back in Inventory");
@@ -495,9 +501,33 @@ public class checkInventoryItem : MonoBehaviour
     }
 
 
+    private CinemachineVirtualCamera GetHighestPriorityCamera()
+    {
+        // Get all virtual cameras in the scene
+        CinemachineVirtualCamera[] allCameras = FindObjectsOfType<CinemachineVirtualCamera>();
+
+        if (allCameras.Length == 0)
+            return null;
+
+        // Find the virtual camera with the highest priority
+        CinemachineVirtualCamera highestPriorityCamera = allCameras[0];
+        for (int i = 1; i < allCameras.Length; i++)
+        {
+            if (allCameras[i].Priority > highestPriorityCamera.Priority)
+            {
+                highestPriorityCamera = allCameras[i];
+            }
+        }
+
+        return highestPriorityCamera;
+    }
+
+
+    
+
     private void Update()
     {
-        ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 2.0f);
+        //ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 2.0f);
         ItemFollowCam(isSprayBottleActive, activeSprayBottle, 100, true, 2.0f);
         ItemFollowCam(isSieveActive, activeSieve, 0, true, 2.0f);
         if (puzzlePieces.Count > 0)
@@ -509,6 +539,71 @@ public class checkInventoryItem : MonoBehaviour
         ItemFollowCam(isMagnetPenActive, activeMagnetPen, 0, true, 0.5f);
 
         ItemFollowCam(isCorePieceActive, activeCorePiece, 0, true, 0.5f);
+
+
+        if (isHandLensActive)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+
+                // Get the highest priority virtual camera
+                CinemachineVirtualCamera highestPriorityCamera = GetHighestPriorityCamera();
+
+
+                // Get the mouse position in screen coordinates
+                Vector3 mousePosition = Input.mousePosition;
+
+                // Convert the mouse position to a ray in world space
+                Ray ray = mainCam.ScreenPointToRay(mousePosition);
+
+                // Declare a variable to store information about the raycast hit
+                RaycastHit hit;
+
+                // Perform the raycast and check if it hit any objects
+                if (Physics.Raycast(ray, out hit))
+                {
+                    // Calculate the distance from the camera to the hit point
+                    float distance = Vector3.Distance(highestPriorityCamera.transform.position, hit.point);
+
+                    // Calculate the new field of view based on the distance
+                    float targetFOV = Mathf.Clamp(57 - distance * 20, 20, 52);
+                    highestPriorityCamera.m_Lens.FieldOfView = Mathf.Lerp(highestPriorityCamera.m_Lens.FieldOfView, targetFOV, Time.deltaTime * 5);
+
+                    // Calculate the new position based on the distance
+                    if (isZoomed == false)
+                    {
+                        targetPosition = highestPriorityCamera.transform.position + ray.direction * 5;
+                    }
+
+                    //highestPriorityCamera.transform.position = Vector3.Lerp(highestPriorityCamera.transform.position, targetPosition, Time.deltaTime * 5);
+                }
+                else
+                {
+                    // Reset the camera's field of view and position to its default values
+                    highestPriorityCamera.m_Lens.FieldOfView = Mathf.Lerp(highestPriorityCamera.m_Lens.FieldOfView, 52, Time.deltaTime * 5);
+                    //highestPriorityCamera.transform.position = Vector3.Lerp(highestPriorityCamera.transform.position, Vector3.zero, Time.deltaTime * 5);
+                }
+
+                isZoomed = true;
+
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+
+                // Get the highest priority virtual camera
+                CinemachineVirtualCamera highestPriorityCamera = GetHighestPriorityCamera();
+
+                highestPriorityCamera.m_Lens.FieldOfView = 52.47f;
+
+                isZoomed = false;
+
+
+
+            }
+        }
+
 
 
         if (isSieveActive == true)

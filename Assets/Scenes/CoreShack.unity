@@ -5688,6 +5688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 233023201}
   - component: {fileID: 233023200}
+  - component: {fileID: 233023202}
   m_Layer: 0
   m_Name: Room2_PowerCord_VC
   m_TagString: Untagged
@@ -5749,6 +5750,26 @@ Transform:
   m_Father: {fileID: 1649976151}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0.011, y: -88.901, z: -0.029}
+--- !u!114 &233023202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233023199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: 0, y: 0}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -130
+  clampXMax: -50
+  clampYMin: -40
+  clampYMax: 30
 --- !u!1 &236803956
 GameObject:
   m_ObjectHideFlags: 0
@@ -6479,6 +6500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259678183}
   - component: {fileID: 259678184}
+  - component: {fileID: 259678185}
   m_Layer: 0
   m_Name: Room3_Computer_VC
   m_TagString: Untagged
@@ -6523,7 +6545,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 44.77617
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -6540,6 +6562,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 15947778}
+--- !u!114 &259678185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259678182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -88.45007, y: -37.89996}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -105.4001
+  clampXMax: -67.40009
+  clampYMin: -49.75
+  clampYMax: -2.5
 --- !u!1 &260688092
 GameObject:
   m_ObjectHideFlags: 0
@@ -7752,6 +7794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 313826226}
   - component: {fileID: 313826227}
+  - component: {fileID: 313826228}
   m_Layer: 0
   m_Name: Room2_BoxTable_VC
   m_TagString: Untagged
@@ -7796,7 +7839,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 46.56
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -7813,6 +7856,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2027995829}
+--- !u!114 &313826228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313826225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -143.3501, y: -27.95006}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -200.2
+  clampXMax: -143.3501
+  clampYMin: -40
+  clampYMax: 5.5
 --- !u!1001 &314458697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8183,9 +8246,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339473227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.24999999, y: 0.49999997, z: 0.49999997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 133235534}
@@ -8194,7 +8257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -54.600006, y: -31.1798}
+  m_AnchoredPosition: {x: -54, y: -33}
   m_SizeDelta: {x: 280.4335, y: 730.1378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &339473229
@@ -8345,6 +8408,7 @@ MonoBehaviour:
   WrongResult3: {fileID: 2100000, guid: be065846bddd7ac45ab3358049232ebf, type: 2}
   soundManager: {fileID: 968142283}
   endingScreen: {fileID: 274607399}
+  cinemachineBrain: {fileID: 0}
 --- !u!1 &342540344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f269cc512adf1b04b84db28bdd7faaa0, type: 3}
@@ -11922,7 +11986,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 45
+    FieldOfView: 44.83767
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -12063,7 +12127,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 52.33229
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -14289,6 +14353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 545527407}
   - component: {fileID: 545527408}
+  - component: {fileID: 545527409}
   m_Layer: 0
   m_Name: Room3_Mineral_VC
   m_TagString: Untagged
@@ -14333,7 +14398,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 45.51
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -14350,6 +14415,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2079084673}
+--- !u!114 &545527409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545527406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -88.45007, y: -37.89996}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -105.4001
+  clampXMax: -67.40009
+  clampYMin: -49.75
+  clampYMax: -2.5
 --- !u!1 &548426390
 GameObject:
   m_ObjectHideFlags: 0
@@ -18970,7 +19055,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -19182,9 +19267,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744024435}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7937319, y: -1.4039056, z: 13.745758}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7937012, y: -1.4039001, z: 13.745757}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 580509001}
@@ -20130,6 +20215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 795246378}
   - component: {fileID: 795246379}
+  - component: {fileID: 795246380}
   m_Layer: 0
   m_Name: Room2_RockSampleDesk_VC
   m_TagString: Untagged
@@ -20174,7 +20260,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 51.7
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -20191,6 +20277,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 680746328}
+--- !u!114 &795246380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795246377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -2.6500294, y: -21.299953}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -16.95002
+  clampXMax: 19.1
+  clampYMin: -40
+  clampYMax: 11.3
 --- !u!1 &796721194
 GameObject:
   m_ObjectHideFlags: 0
@@ -22738,6 +22844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877433736}
   - component: {fileID: 877433737}
+  - component: {fileID: 877433738}
   m_Layer: 0
   m_Name: Room1_ButtonTable_VC
   m_TagString: Untagged
@@ -22782,7 +22889,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 52.31262
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -22799,6 +22906,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 934646647}
+--- !u!114 &877433738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877433735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -85.96975, y: -10.35002}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -108.4701
+  clampXMax: -71.12003
+  clampYMin: -40
+  clampYMax: 5.5
 --- !u!1 &877868380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4997071101800778866, guid: c6953b58e79885b4888c908b16e92b28, type: 3}
@@ -25907,8 +26034,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.1
-  m_fontSizeBase: 0.1
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -27084,6 +27211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1033333478}
   - component: {fileID: 1033333479}
+  - component: {fileID: 1033333480}
   m_Layer: 0
   m_Name: Room3_Cabinet_VC
   m_TagString: Untagged
@@ -27128,7 +27256,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 60.36
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -27145,6 +27273,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1942043190}
+--- !u!114 &1033333480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033333477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -2.6500294, y: -21.299953}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -16.95002
+  clampXMax: 19.1
+  clampYMin: -40
+  clampYMax: 11.3
 --- !u!1001 &1033968611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27991,7 +28139,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -28195,6 +28343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1091526093}
   - component: {fileID: 1091526092}
+  - component: {fileID: 1091526094}
   m_Layer: 0
   m_Name: Room2_WaterSwitch_VC
   m_TagString: Untagged
@@ -28223,7 +28372,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 45.82327
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -28256,6 +28405,26 @@ Transform:
   m_Father: {fileID: 1649976151}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1091526094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091526091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -89.15017, y: -9.149994}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -105.4001
+  clampXMax: -67.40009
+  clampYMin: -40
+  clampYMax: 14.3
 --- !u!1 &1094359628
 GameObject:
   m_ObjectHideFlags: 0
@@ -31157,7 +31326,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -31852,6 +32021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1239112366}
   - component: {fileID: 1239112367}
+  - component: {fileID: 1239112368}
   m_Layer: 0
   m_Name: Room2_FilingCabinet_VC
   m_TagString: Untagged
@@ -31913,6 +32083,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 787454436}
+--- !u!114 &1239112368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239112365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -2.6500294, y: -21.299953}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -16.95002
+  clampXMax: 19.1
+  clampYMin: -40
+  clampYMax: 11.3
 --- !u!1001 &1244207097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32879,6 +33069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1269474380}
   - component: {fileID: 1269474381}
+  - component: {fileID: 1269474382}
   m_Layer: 0
   m_Name: Room3_GateCode
   m_TagString: Untagged
@@ -32923,7 +33114,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 46.5
+    FieldOfView: 46.67606
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -32940,6 +33131,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 721303973}
+--- !u!114 &1269474382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269474379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: 89.10006, y: -1.6500015}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: 62.35
+  clampXMax: 113.85
+  clampYMin: -40
+  clampYMax: 5.5
 --- !u!1001 &1271064071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34147,7 +34358,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 54
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -34470,6 +34681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1349337447}
   - component: {fileID: 1349337448}
+  - component: {fileID: 1349337449}
   m_Layer: 0
   m_Name: Room2_DiamondSaw_VC
   m_TagString: Untagged
@@ -34514,7 +34726,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 50.82
+    FieldOfView: 52.33294
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -34531,6 +34743,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1624483989}
+--- !u!114 &1349337449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349337446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: -54.19002, y: -10.399997}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -82.85022
+  clampXMax: -46.94
+  clampYMin: -40
+  clampYMax: 14.3
 --- !u!1 &1355259147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3455292422214010178, guid: 7344716c15919334fa8cf9043b61814e, type: 3}
@@ -37791,6 +38023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514336671}
   - component: {fileID: 1514336672}
+  - component: {fileID: 1514336673}
   m_Layer: 0
   m_Name: Room1_SedimentDesk_VC
   m_TagString: Untagged
@@ -37835,7 +38068,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.47
+    FieldOfView: 52.3288
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -37852,6 +38085,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2147298707}
+--- !u!114 &1514336673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514336670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: 0, y: 0}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: -130
+  clampXMax: -50
+  clampYMin: -40
+  clampYMax: 30
 --- !u!1 &1519202667
 GameObject:
   m_ObjectHideFlags: 0
@@ -41667,15 +41920,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.004323922
+      value: -0.00432
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.009444588
+      value: -0.04625
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.001410529
+      value: -0.00141
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalRotation.w
@@ -43752,7 +44005,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 52.47
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -52919,6 +53172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2124058520}
   - component: {fileID: 2124058519}
+  - component: {fileID: 2124058521}
   m_Layer: 0
   m_Name: Room1Computer_VC
   m_TagString: Untagged
@@ -52947,7 +53201,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -52980,6 +53234,26 @@ Transform:
   m_Father: {fileID: 1565338166}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2124058521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124058518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4394b7712e533b4982246e9a79b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: {x: 89.10006, y: -1.6500015}
+  sensitivity: 1
+  deltaMove: {x: 0, y: 0, z: 0}
+  speed: 1
+  clampXMin: 62.35
+  clampXMax: 113.85
+  clampYMin: -40
+  clampYMax: 5.5
 --- !u!1 &2124822122
 GameObject:
   m_ObjectHideFlags: 0
