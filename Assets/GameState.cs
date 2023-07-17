@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     private bool mouseOver = false;
-    private bool hasPPEBoots = false; // set back to false
+    private bool hasPPEBoots = true; // set back to false
     private bool completeRoom1PasswordPuzzle = false;
 
     public bool isSprayerUnlocked = false;
@@ -15,7 +15,7 @@ public class GameState : MonoBehaviour
     private bool HoldingWetCore = false;
     public int Core2_Piece_Selected = 0;
 
-    private bool hasSafetyGlasses = false; // set back to false
+    private bool hasSafetyGlasses = true; // set back to false
 
     private bool HasSieve = false;
     private bool isHoldingSieve = false;
@@ -28,7 +28,7 @@ public class GameState : MonoBehaviour
     private bool PlacedAllPieces = false;
     private bool isJigSawDone = false;
 
-    private bool hasDustMask = false; // set back to false
+    private bool hasDustMask = true; // set back to false
 
     private int currentRoom = 1;
 

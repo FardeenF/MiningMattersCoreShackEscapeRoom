@@ -22141,7 +22141,7 @@ MonoBehaviour:
   Cabinet: {fileID: 2135949811}
   FilingCabinet_VC: {fileID: 1239112367}
   FilingCabinetLock_VC: {fileID: 1592303129}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 968142283}
 --- !u!65 &852373742
 BoxCollider:
   m_ObjectHideFlags: 0
