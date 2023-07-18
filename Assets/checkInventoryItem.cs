@@ -109,7 +109,7 @@ public class checkInventoryItem : MonoBehaviour
 
                 if (isHandLensActive == false && holdingSomething == false)
                 {
-                    //activeHandLens = Instantiate(HandLens, Input.mousePosition, Quaternion.identity);
+                    activeHandLens = Instantiate(HandLens, Input.mousePosition, Quaternion.identity);
                     isHandLensActive = true;
                     holdingSomething = true;
                     topText.text = ("Can be used to get a closer look at items");
@@ -118,7 +118,7 @@ public class checkInventoryItem : MonoBehaviour
                 else
                 {
                     if (isHandLensActive == true)
-                        //Destroy(activeHandLens.gameObject);
+                        Destroy(activeHandLens.gameObject);
                     isHandLensActive = false;
                     holdingSomething = false;
                     topText.text = ("Hand Lens is Back in Inventory");
@@ -527,7 +527,7 @@ public class checkInventoryItem : MonoBehaviour
 
     private void Update()
     {
-        //ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 2.0f);
+        ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 2.0f);
         ItemFollowCam(isSprayBottleActive, activeSprayBottle, 100, true, 2.0f);
         ItemFollowCam(isSieveActive, activeSieve, 0, true, 2.0f);
         if (puzzlePieces.Count > 0)
