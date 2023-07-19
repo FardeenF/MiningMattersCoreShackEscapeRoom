@@ -48,11 +48,11 @@ public class GameState : MonoBehaviour
 
     private bool isSawPowerOn = false;
 
-    private bool holdingCutCore = false;
+    private bool holdingCutCore = true; //set back to false
 
-    private bool foundGoldCore = false;
+    private bool foundGoldCore = true; //set back to false
 
-    private bool isRoom3Unlocked = false;
+    private bool isRoom3Unlocked = true; //set back to false
 
     private bool hasMagnetPen = false;
     private bool holdingMagnetPen = false;

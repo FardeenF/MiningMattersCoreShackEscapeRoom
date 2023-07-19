@@ -94,6 +94,7 @@ public class checkInventoryItem : MonoBehaviour
     public CinemachineBrain cinemachineBrain;
 
     private bool isZoomed = false;
+    private bool isUVLight = false;
 
     private Vector3 targetPosition = new Vector3();
 
@@ -527,7 +528,7 @@ public class checkInventoryItem : MonoBehaviour
 
     private void Update()
     {
-        ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 2.0f);
+        ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 1.0f);
         ItemFollowCam(isSprayBottleActive, activeSprayBottle, 100, true, 2.0f);
         ItemFollowCam(isSieveActive, activeSieve, 0, true, 2.0f);
         if (puzzlePieces.Count > 0)
@@ -602,7 +603,27 @@ public class checkInventoryItem : MonoBehaviour
 
 
             }
+
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                //UV Light Toggled
+                if (isUVLight == false)
+                {
+                    activeHandLens.gameObject.GetComponentInChildren<Light>().enabled = true;
+                    isUVLight = true;
+                }
+                    
+                else if (isUVLight == true)
+                {
+                    activeHandLens.gameObject.GetComponentInChildren<Light>().enabled = false;
+                    isUVLight = false;
+                }
+                    
+            }
+
+            
         }
+        
 
 
 

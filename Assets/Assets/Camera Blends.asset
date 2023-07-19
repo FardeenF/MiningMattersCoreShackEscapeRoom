@@ -530,3 +530,25 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
+  - m_From: Room3_Bonus_VC
+    m_To: Room3_Main_VC
+    m_Blend:
+      m_Style: 1
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: Room3_Main_VC
+    m_To: Room3_Bonus_VC
+    m_Blend:
+      m_Style: 1
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0

@@ -35,6 +35,7 @@ public class CameraManager : MonoBehaviour
     public CinemachineVirtualCamera Room3_Cabinet;
     public CinemachineVirtualCamera Room3_Volcano;
     public CinemachineVirtualCamera Room3_GateCode;
+    public CinemachineVirtualCamera Room3_Bonus;
     public BoxCollider CabinetCollider;
 
     public GameState gs;
@@ -216,6 +217,13 @@ public class CameraManager : MonoBehaviour
 
             }
 
+            else if (Room3_Bonus.Priority == 1)
+            {
+                Room3_Main.Priority = 1;
+                Room3_Bonus.Priority = 0;
+
+            }
+
             buttonclicked = false;
         }
 
@@ -266,6 +274,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                 }
 
                 else if (hit.transform.gameObject.tag == "Room1_BrokenCoreTable")
@@ -294,6 +303,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                 }
 
                 else if (Room1_BrokenCoreShackTable.Priority == 1 && hit.transform.gameObject.tag == "Room1_Geo_Poster")
@@ -322,6 +332,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                 }
 
                 else if (Room1_BrokenCoreShackTable.Priority == 1 && hit.transform.gameObject.tag == "Room1_CrossSectionPoster")
@@ -350,6 +361,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                 }
 
                 else if (Room1_Main.Priority == 1 && hit.transform.gameObject.tag == "CoreBoxDeskSpace")
@@ -378,6 +390,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                 }
 
                 else if (Room1_Main.Priority == 1 && hit.transform.gameObject.tag == "SedimentDesk")
@@ -406,6 +419,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                 }
 
                 else if (Room1_Main.Priority == 1 && hit.transform.gameObject.tag == "Cabinet")
@@ -434,6 +448,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                 }
 
                 else if (hit.transform.gameObject.tag == "CabinetLock" && Room1_Cabinet.Priority == 1)
@@ -462,6 +477,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                 }
 
                 else if ((hit.transform.gameObject.tag == "PuzzleLocation" || hit.transform.gameObject.tag == "PuzzlePiece") && Room1_Cabinet.Priority == 1)
@@ -490,6 +506,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
 
                 }
 
@@ -521,6 +538,7 @@ public class CameraManager : MonoBehaviour
                         Room3_Cabinet.Priority = 0;
                         Room3_Volcano.Priority = 0;
                         Room3_GateCode.Priority = 0;
+                        Room3_Bonus.Priority = 0;
                     }
                     else if (Room2_Main.Priority == 1)
                     {
@@ -548,6 +566,7 @@ public class CameraManager : MonoBehaviour
                         Room3_Cabinet.Priority = 0;
                         Room3_Volcano.Priority = 0;
                         Room3_GateCode.Priority = 0;
+                        Room3_Bonus.Priority = 0;
                     }
 
                 }
@@ -578,6 +597,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                     if (gs.GetFixedSawBlade() == false)
                     {
                         topText.text = "The diamond saw can be used to cut & inspect cores.";
@@ -615,6 +635,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                     topText.text = "The filing cabinet probably holds something important";
                 }
 
@@ -644,6 +665,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
 
                 }
 
@@ -673,6 +695,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
 
                 }
 
@@ -702,6 +725,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
 
                 }
 
@@ -731,6 +755,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
 
                 }
 
@@ -761,6 +786,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
 
                 }
 
@@ -792,6 +818,7 @@ public class CameraManager : MonoBehaviour
                         Room3_Cabinet.Priority = 0;
                         Room3_Volcano.Priority = 0;
                         Room3_GateCode.Priority = 0;
+                        Room3_Bonus.Priority = 0;
                         topText.text = ("You Have The Necessary Items to Go to This Door!");
                     }
                     else if (gs.GetIsRoom3Unlocked() == true && gs.GetfoundGoldCore() == true)
@@ -820,6 +847,7 @@ public class CameraManager : MonoBehaviour
                         Room3_Cabinet.Priority = 0;
                         Room3_Volcano.Priority = 0;
                         Room3_GateCode.Priority = 0;
+                        Room3_Bonus.Priority = 0;
                     }
                     else
                     {
@@ -855,6 +883,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                     topText.text = "Enter the correct password to obtain a message from Sodalite";
 
                 }
@@ -886,6 +915,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                     topText.text = "Streak Plate Testing Area";
 
                 }
@@ -917,6 +947,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 1;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                     CabinetCollider.enabled = false;
                     topText.text = "Supplies Cabinet";
 
@@ -949,6 +980,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 1;
                     Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 0;
                     topText.text = "Volcano Puzzle";
 
                 }
@@ -980,7 +1012,40 @@ public class CameraManager : MonoBehaviour
                     Room3_Cabinet.Priority = 0;
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 1;
+                    Room3_Bonus.Priority = 0;
                     topText.text = "Storage Racks Gate";
+
+                }
+
+                else if (hit.transform.gameObject.name == "BonusTable" && Room3_Main.Priority == 1)
+                {
+                    Room1_Main.Priority = 0;
+                    Room1_BrokenCoreShackTable.Priority = 0;
+                    Room1_Computer.Priority = 0;
+                    Room1_Geo_Poster.Priority = 0;
+                    Room1_CrossSectionPoster.Priority = 0;
+                    Room1_ButtonTable.Priority = 0;
+                    Room1_SedimentDesk.Priority = 0;
+                    Room1_Cabinet.Priority = 0;
+                    Room1_CabinetLock.Priority = 0;
+                    Room1_MiningCycle.Priority = 0;
+                    Room2_Main.Priority = 0;
+                    Room2_DiamondSaw.Priority = 0;
+                    Room2_FilingCabinet.Priority = 0;
+                    Room2_FilingCabinetLock.Priority = 0;
+                    Room2_RockSampleDesk.Priority = 0;
+                    Room2_WaterSwitch.Priority = 0;
+                    Room2_BoxTable.Priority = 0;
+                    Room1_DoorToRoom3.Priority = 0;
+                    Room3_Main.Priority = 0;
+                    Room2_PowerCord.Priority = 0;
+                    Room3_Computer.Priority = 0;
+                    Room3_MineralIdentification.Priority = 0;
+                    Room3_Cabinet.Priority = 0;
+                    Room3_Volcano.Priority = 0;
+                    Room3_GateCode.Priority = 0;
+                    Room3_Bonus.Priority = 1;
+                    topText.text = "Bonus Puzzle";
 
                 }
 
