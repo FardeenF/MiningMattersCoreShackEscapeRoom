@@ -67,6 +67,8 @@ public class GameState : MonoBehaviour
     private bool startGame = false;
     private bool endGame = false;
 
+    private bool hasFoundSodaLiteRock = false;
+
     //Check Mouse Over State
     public bool GetMouseOver()
     {
@@ -456,6 +458,16 @@ public class GameState : MonoBehaviour
     public void SetEndGame(bool eg)
     {
         endGame = eg;
+    }
+
+
+    public bool GetHasFoundSodaLite()
+    {
+        return hasFoundSodaLiteRock;
+    }
+    public void SetHasFoundSodaLite(bool eg)
+    {
+        hasFoundSodaLiteRock = eg;
     }
 }
 

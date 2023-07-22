@@ -374,6 +374,18 @@ public class CollectItem : MonoBehaviour
             }
 
 
+            if (hit.transform.gameObject.name == "sodaLiteRock_textured" && gs.GetHasFoundSodaLite() == false)
+            {
+
+                Debug.Log("Display Dragon Code of Ethics now");
+                TopText.text = ("You Have Found the Code of Ethics Easter egg!");
+                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                gs.SetHasFoundSodaLite(true);
+                
+
+            }
+
+
             //Switch to room 1 and 3
             if (hit.transform.gameObject.tag == "Door2" && gs.GetCurrentRoom() == 1)
             {

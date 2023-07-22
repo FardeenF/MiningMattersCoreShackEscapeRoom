@@ -610,21 +610,24 @@ public class checkInventoryItem : MonoBehaviour
                 if (isUVLight == false)
                 {
                     activeHandLens.gameObject.GetComponentInChildren<Light>().enabled = true;
+                    activeHandLens.gameObject.GetComponentInChildren<BoxCollider>().enabled = true;
                     isUVLight = true;
                 }
                     
                 else if (isUVLight == true)
                 {
                     activeHandLens.gameObject.GetComponentInChildren<Light>().enabled = false;
+                    activeHandLens.gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
                     isUVLight = false;
                 }
                     
             }
 
+
             
         }
-        
 
+        
 
 
         if (isSieveActive == true)
