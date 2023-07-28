@@ -43,10 +43,7 @@ public class CollectItem : MonoBehaviour
         //audioSource = GetComponent<AudioSource>();
     }
 
-    public void AddToInventory()
-    {
-
-    }
+    
 
     
 

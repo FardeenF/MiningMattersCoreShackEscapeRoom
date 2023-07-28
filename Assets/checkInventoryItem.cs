@@ -100,7 +100,7 @@ public class checkInventoryItem : MonoBehaviour
 
     public SelectButton sb;
 
-    
+   
 
     public void OnInventoryClick()
     {
@@ -113,6 +113,7 @@ public class checkInventoryItem : MonoBehaviour
 
         if (buttonPressed.GetComponent<Image>().sprite != null)
         {
+            
             if (buttonPressed.GetComponent<Image>().sprite.name.ToString() == "HandLens")
             {
 
@@ -120,13 +121,17 @@ public class checkInventoryItem : MonoBehaviour
                 {
                     activeHandLens = Instantiate(HandLens, Input.mousePosition, Quaternion.identity);
                     isHandLensActive = true;
+
                     holdingSomething = true;
                     topText.text = ("Can be used to get a closer look at items");
                     
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                 }
+
+
                 else
                 {
+                    PutAwayButton();
                     if (isHandLensActive == true)
                         Destroy(activeHandLens.gameObject);
                     isHandLensActive = false;
@@ -150,6 +155,7 @@ public class checkInventoryItem : MonoBehaviour
                 }
                 else
                 {
+                    PutAwayButton();
                     Destroy(activeSprayBottle.gameObject);
                     isSprayBottleActive = false;
                     holdingSomething = false;
@@ -298,6 +304,7 @@ public class checkInventoryItem : MonoBehaviour
                 }
                 else
                 {
+                    PutAwayButton();
                     gs.SetIsHoldingSieve(false);
                     Destroy(activeSieve.gameObject);
                     isSieveActive = false;
@@ -316,6 +323,7 @@ public class checkInventoryItem : MonoBehaviour
                 }
                 else
                 {
+                    PutAwayButton();
                     puzzlePieces[PieceIndex].SetActive(false);
                     holdingSomething = false;
                     isHoldingPiece = false;
@@ -339,6 +347,7 @@ public class checkInventoryItem : MonoBehaviour
                 }
                 else
                 {
+                    PutAwayButton();
                     gs.SetIsHoldingSawBlade(false);
                     Destroy(activeSawBlade.gameObject);
                     isSawBladeActive = false;
@@ -372,6 +381,7 @@ public class checkInventoryItem : MonoBehaviour
                     }
                     else
                     {
+                        PutAwayButton();
                         gs.SetIsHoldingCorePiece(false);
                         Destroy(activeCorePiece.gameObject);
                         isCorePieceActive = false;
@@ -400,6 +410,7 @@ public class checkInventoryItem : MonoBehaviour
                 }
                 else
                 {
+                    PutAwayButton();
                     gs.SetHoldingMagnetPen(false);
                     Destroy(activeMagnetPen.gameObject);
                     isMagnetPenActive = false;
@@ -484,6 +495,14 @@ public class checkInventoryItem : MonoBehaviour
         if (isHoldingPiece == true && holdingSomething)
         {
             puzzlePieces[PieceIndex].SetActive(false);
+            for (int i = 0; i < puzzlePieces.Count; i++)
+            {
+                if (puzzlePieces[i].gameObject.activeInHierarchy)
+                {
+                    puzzlePieces[i].gameObject.SetActive(false);
+                }
+            }
+            
             holdingSomething = false;
             isHoldingPiece = false;
             topText.text = ("Puzzle Piece back in box");
@@ -537,6 +556,14 @@ public class checkInventoryItem : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3)
+            || Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            OnInventoryClick();
+        }
+
+
+
         ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 1.0f);
         ItemFollowCam(isSprayBottleActive, activeSprayBottle, 100, true, 2.0f);
         ItemFollowCam(isSieveActive, activeSieve, 0, true, 2.0f);

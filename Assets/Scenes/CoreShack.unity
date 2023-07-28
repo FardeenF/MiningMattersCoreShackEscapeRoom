@@ -571,11 +571,6 @@ Transform:
   m_Father: {fileID: 615275151}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &34244549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 123566, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
-  m_PrefabInstance: {fileID: 824853224}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &37528647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1566,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSelected: {fileID: 0}
   Inventory: {fileID: 339473227}
+  itemSlots:
+  - {fileID: 1754180968}
+  - {fileID: 79329501}
+  - {fileID: 1556668790}
+  - {fileID: 326446052}
+  - {fileID: 474882715}
+  - {fileID: 1222683200}
 --- !u!1 &79689284
 GameObject:
   m_ObjectHideFlags: 0
@@ -8280,6 +8282,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSelected: {fileID: 0}
   Inventory: {fileID: 339473227}
+  itemSlots:
+  - {fileID: 1754180968}
+  - {fileID: 79329501}
+  - {fileID: 1556668790}
+  - {fileID: 326446052}
+  - {fileID: 474882715}
+  - {fileID: 1222683200}
 --- !u!1 &327853567
 GameObject:
   m_ObjectHideFlags: 0
@@ -8567,8 +8576,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1030fda49f9c24e81c40955d0d7ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonSelected: {fileID: 34244549}
-  Inventory: {fileID: 0}
+  buttonSelected: {fileID: 0}
+  Inventory: {fileID: 339473227}
+  itemSlots:
+  - {fileID: 1754180968}
+  - {fileID: 79329501}
+  - {fileID: 1556668790}
+  - {fileID: 326446052}
+  - {fileID: 474882715}
+  - {fileID: 1222683200}
 --- !u!1 &342540344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f269cc512adf1b04b84db28bdd7faaa0, type: 3}
@@ -12887,6 +12903,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSelected: {fileID: 0}
   Inventory: {fileID: 339473227}
+  itemSlots:
+  - {fileID: 1754180968}
+  - {fileID: 79329501}
+  - {fileID: 1556668790}
+  - {fileID: 326446052}
+  - {fileID: 474882715}
+  - {fileID: 1222683200}
 --- !u!1 &478685980
 GameObject:
   m_ObjectHideFlags: 0
@@ -23419,7 +23442,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.47
+    FieldOfView: 52.35719
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -25439,7 +25462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939074606}
   m_LocalRotation: {x: 0.024603631, y: 0.7066786, z: -0.02461607, w: 0.70667815}
-  m_LocalPosition: {x: 26.432, y: 5.921, z: 1.34}
+  m_LocalPosition: {x: 26.352, y: 5.921, z: 1.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25468,7 +25491,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 67.6
+    FieldOfView: 47.52375
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -28761,7 +28784,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.32029
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -32622,6 +32645,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSelected: {fileID: 0}
   Inventory: {fileID: 339473227}
+  itemSlots:
+  - {fileID: 1754180968}
+  - {fileID: 79329501}
+  - {fileID: 1556668790}
+  - {fileID: 326446052}
+  - {fileID: 474882715}
+  - {fileID: 1222683200}
 --- !u!1001 &1225487073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39810,6 +39840,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSelected: {fileID: 0}
   Inventory: {fileID: 339473227}
+  itemSlots:
+  - {fileID: 1754180968}
+  - {fileID: 79329501}
+  - {fileID: 1556668790}
+  - {fileID: 326446052}
+  - {fileID: 474882715}
+  - {fileID: 1222683200}
 --- !u!1 &1560508551
 GameObject:
   m_ObjectHideFlags: 0
@@ -45131,7 +45168,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 52.32029
+  field of view: 52.47
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -45609,6 +45646,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSelected: {fileID: 0}
   Inventory: {fileID: 339473227}
+  itemSlots:
+  - {fileID: 1754180968}
+  - {fileID: 79329501}
+  - {fileID: 1556668790}
+  - {fileID: 326446052}
+  - {fileID: 474882715}
+  - {fileID: 1222683200}
 --- !u!1 &1754890258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 842ceac336f35d4489ec1d2569d5fb88, type: 3}
