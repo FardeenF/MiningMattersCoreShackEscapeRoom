@@ -19722,7 +19722,7 @@ MonoBehaviour:
   m_PopUp: 0
   m_AllowExternalJoining: 0
   m_AutoRead: 0
-  m_Priority: 0
+  m_Priority: 1
   m_ContainerName: Menu
   m_IsLocalizationKey: 0
   m_2DNavigation: 0
@@ -32846,6 +32846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233085943}
+  - component: {fileID: 1233085944}
   m_Layer: 0
   m_Name: Room1
   m_TagString: Untagged
@@ -32886,6 +32887,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1233085944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233085942}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PopUp: 0
+  m_AllowExternalJoining: 0
+  m_AutoRead: 0
+  m_Priority: 0
+  m_ContainerName: Room 1
+  m_IsLocalizationKey: 0
+  m_2DNavigation: 0
+  m_ConstrainToContainerUp: 0
+  m_ConstrainToContainerDown: 0
+  m_ConstrainToContainerLeft: 0
+  m_ConstrainToContainerRight: 0
+  m_AllowTouchExplore: 1
+  m_DoubleCheckUIElementsPositions: 1
 --- !u!1 &1238579029 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1395320445879687111, guid: 7903d298079459142a45422e3f11ab0c, type: 3}
@@ -37302,6 +37328,7 @@ GameObject:
   - component: {fileID: 1430549078}
   - component: {fileID: 1430549079}
   - component: {fileID: 1430549080}
+  - component: {fileID: 1430549081}
   m_Layer: 0
   m_Name: ComputerDesk
   m_TagString: Room1_Computer
@@ -37370,6 +37397,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.79875946, y: 1.4306867, z: 5.811451}
   m_Center: {x: -11.9637375, y: 1.4026457, z: 0.3434124}
+--- !u!114 &1430549081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430549076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: ComputerDesk
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1434552677 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4636300777304409883, guid: ec54bd8620c57a84c81768daabd692be, type: 3}
@@ -39010,6 +39091,7 @@ GameObject:
   - component: {fileID: 1519202670}
   - component: {fileID: 1519202671}
   - component: {fileID: 1519202669}
+  - component: {fileID: 1519202672}
   m_Layer: 0
   m_Name: CoreHolder
   m_TagString: Room1_BrokenCoreTable
@@ -39077,6 +39159,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5270128, y: 1.6890569, z: 5.414538}
   m_Center: {x: -0.23649359, y: -0.34452844, z: -0.04846692}
+--- !u!114 &1519202672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519202667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: CoreHolder
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1521898176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8439620028681342322, guid: 7903d298079459142a45422e3f11ab0c, type: 3}
