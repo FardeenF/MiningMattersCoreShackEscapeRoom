@@ -29,7 +29,10 @@ public class Menu : MonoBehaviour
         {
             state.SetScreenReader(!state.GetScreenReader());
             ScreenReader.SetActive(!ScreenReader.activeInHierarchy);
+            UAP_AccessibilityManager.EnableAccessibility(!UAP_AccessibilityManager.IsEnabled());
         }
+
+        
     }
 
     public void Play()

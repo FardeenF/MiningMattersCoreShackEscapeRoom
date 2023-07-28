@@ -10,46 +10,52 @@ public class CycleCamera : MonoBehaviour
     public Camera mainCam;
     
     public CinemachineVirtualCamera[] Room1_Cameras;
-
-    public CinemachineVirtualCamera Room2_Main;
-    public CinemachineVirtualCamera Room2_DiamondSaw;
-    public CinemachineVirtualCamera Room2_FilingCabinet;
-    public CinemachineVirtualCamera Room2_FilingCabinetLock;
-    public CinemachineVirtualCamera Room2_RockSampleDesk;
-    public CinemachineVirtualCamera Room2_WaterSwitch;
-    public CinemachineVirtualCamera Room2_BoxTable;
-    public CinemachineVirtualCamera Room2_PowerCord;
-
-    public CinemachineVirtualCamera Room3_Main;
-    public CinemachineVirtualCamera Room3_Computer;
-    public CinemachineVirtualCamera Room3_MineralIdentification;
-    public CinemachineVirtualCamera Room3_Cabinet;
-    public CinemachineVirtualCamera Room3_Volcano;
-    public CinemachineVirtualCamera Room3_GateCode;
-    public CinemachineVirtualCamera Room3_Bonus;
-    public BoxCollider CabinetCollider;
+    public CinemachineVirtualCamera[] Room2_Cameras;
+    public CinemachineVirtualCamera[] Room3_Cameras;
 
     public GameState gs;
     public TextMeshProUGUI topText;
-    public Button BackButton;
+    //public Button SwitchButton;
 
-    // Start is called before the first frame update
-    void Start()
+    private CinemachineVirtualCamera activeCam;
+    private int selectedCam =0;
+
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            switchCamera();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void switchCamera()
     {
-        if(gs.GetCurrentRoom() == 1)
+        Debug.Log(selectedCam);
+        if (gs.GetCurrentRoom() == 1)
         {
+           
 
+            
+
+            if (selectedCam >= 10)
+            {
+
+                Room1_Cameras[10].Priority = 0;
+                Room1_Cameras[0].Priority = 1;
+                selectedCam = 0;
+            }
+
+            else
+            {
+                Room1_Cameras[selectedCam].Priority = 0;
+                Room1_Cameras[selectedCam + 1].Priority = 1;
+                selectedCam++;
+            }
+
+            
+
+            Debug.Log(selectedCam);
         }
     }
 }
