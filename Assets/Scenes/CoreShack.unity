@@ -571,6 +571,11 @@ Transform:
   m_Father: {fileID: 615275151}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &34244549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 123566, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+  m_PrefabInstance: {fileID: 824853224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &37528647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1370,7 @@ GameObject:
   - component: {fileID: 79329504}
   - component: {fileID: 79329503}
   - component: {fileID: 79329506}
+  - component: {fileID: 79329507}
   m_Layer: 5
   m_Name: Item2
   m_TagString: Untagged
@@ -1436,6 +1442,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 79329507}
+        m_TargetAssemblyTypeName: SelectButton, Assembly-CSharp
+        m_MethodName: SetSelectButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 339473231}
         m_TargetAssemblyTypeName: checkInventoryItem, Assembly-CSharp
         m_MethodName: OnInventoryClick
@@ -1539,6 +1557,20 @@ MonoBehaviour:
   m_CallbackOnHighlight:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &79329507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79329501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1030fda49f9c24e81c40955d0d7ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSelected: {fileID: 0}
+  Inventory: {fileID: 339473227}
 --- !u!1 &79689284
 GameObject:
   m_ObjectHideFlags: 0
@@ -7923,7 +7955,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.47
+    FieldOfView: 52.31798
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -8047,6 +8079,7 @@ GameObject:
   - component: {fileID: 326446055}
   - component: {fileID: 326446054}
   - component: {fileID: 326446057}
+  - component: {fileID: 326446058}
   m_Layer: 5
   m_Name: Item4
   m_TagString: Untagged
@@ -8118,6 +8151,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 326446058}
+        m_TargetAssemblyTypeName: SelectButton, Assembly-CSharp
+        m_MethodName: SetSelectButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 339473231}
         m_TargetAssemblyTypeName: checkInventoryItem, Assembly-CSharp
         m_MethodName: OnInventoryClick
@@ -8221,6 +8266,20 @@ MonoBehaviour:
   m_CallbackOnHighlight:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &326446058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326446052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1030fda49f9c24e81c40955d0d7ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSelected: {fileID: 0}
+  Inventory: {fileID: 339473227}
 --- !u!1 &327853567
 GameObject:
   m_ObjectHideFlags: 0
@@ -8316,6 +8375,7 @@ GameObject:
   - component: {fileID: 339473230}
   - component: {fileID: 339473229}
   - component: {fileID: 339473231}
+  - component: {fileID: 339473232}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -8395,6 +8455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1736072091}
+  buttonPressed: {fileID: 0}
   holdingSomething: 0
   gs: {fileID: 1815343585}
   topText: {fileID: 445432509}
@@ -8493,6 +8554,21 @@ MonoBehaviour:
   soundManager: {fileID: 968142283}
   endingScreen: {fileID: 274607399}
   cinemachineBrain: {fileID: 0}
+  sb: {fileID: 1754180974}
+--- !u!114 &339473232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339473227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1030fda49f9c24e81c40955d0d7ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSelected: {fileID: 34244549}
+  Inventory: {fileID: 0}
 --- !u!1 &342540344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f269cc512adf1b04b84db28bdd7faaa0, type: 3}
@@ -12610,6 +12686,7 @@ GameObject:
   - component: {fileID: 474882718}
   - component: {fileID: 474882717}
   - component: {fileID: 474882720}
+  - component: {fileID: 474882721}
   m_Layer: 5
   m_Name: Item5
   m_TagString: Untagged
@@ -12681,6 +12758,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 474882721}
+        m_TargetAssemblyTypeName: SelectButton, Assembly-CSharp
+        m_MethodName: SetSelectButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 339473231}
         m_TargetAssemblyTypeName: checkInventoryItem, Assembly-CSharp
         m_MethodName: OnInventoryClick
@@ -12784,6 +12873,20 @@ MonoBehaviour:
   m_CallbackOnHighlight:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &474882721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474882715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1030fda49f9c24e81c40955d0d7ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSelected: {fileID: 0}
+  Inventory: {fileID: 339473227}
 --- !u!1 &478685980
 GameObject:
   m_ObjectHideFlags: 0
@@ -21686,7 +21789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11475380, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_EditorEnabledState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11475380, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_HandleMagicGestures
@@ -28658,7 +28761,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.47
+    FieldOfView: 52.32029
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -32318,6 +32421,7 @@ GameObject:
   - component: {fileID: 1222683201}
   - component: {fileID: 1222683203}
   - component: {fileID: 1222683202}
+  - component: {fileID: 1222683206}
   m_Layer: 5
   m_Name: Item6
   m_TagString: Untagged
@@ -32452,6 +32556,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1222683206}
+        m_TargetAssemblyTypeName: SelectButton, Assembly-CSharp
+        m_MethodName: SetSelectButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 339473231}
         m_TargetAssemblyTypeName: checkInventoryItem, Assembly-CSharp
         m_MethodName: OnInventoryClick
@@ -32492,6 +32608,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 230.43, y: 108.7963}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1222683206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222683200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1030fda49f9c24e81c40955d0d7ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSelected: {fileID: 0}
+  Inventory: {fileID: 339473227}
 --- !u!1001 &1225487073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33066,7 +33196,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.47
+    FieldOfView: 52.32911
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -39479,6 +39609,7 @@ GameObject:
   - component: {fileID: 1556668793}
   - component: {fileID: 1556668792}
   - component: {fileID: 1556668795}
+  - component: {fileID: 1556668796}
   m_Layer: 5
   m_Name: Item3
   m_TagString: Untagged
@@ -39550,6 +39681,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1556668796}
+        m_TargetAssemblyTypeName: SelectButton, Assembly-CSharp
+        m_MethodName: SetSelectButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 339473231}
         m_TargetAssemblyTypeName: checkInventoryItem, Assembly-CSharp
         m_MethodName: OnInventoryClick
@@ -39653,6 +39796,20 @@ MonoBehaviour:
   m_CallbackOnHighlight:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1556668796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556668790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1030fda49f9c24e81c40955d0d7ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSelected: {fileID: 0}
+  Inventory: {fileID: 339473227}
 --- !u!1 &1560508551
 GameObject:
   m_ObjectHideFlags: 0
@@ -44974,7 +45131,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 52.47
+  field of view: 52.32029
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -45251,6 +45408,7 @@ GameObject:
   - component: {fileID: 1754180970}
   - component: {fileID: 1754180972}
   - component: {fileID: 1754180973}
+  - component: {fileID: 1754180974}
   m_Layer: 5
   m_Name: Item1
   m_TagString: Untagged
@@ -45360,6 +45518,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1754180974}
+        m_TargetAssemblyTypeName: SelectButton, Assembly-CSharp
+        m_MethodName: SetSelectButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 339473231}
         m_TargetAssemblyTypeName: checkInventoryItem, Assembly-CSharp
         m_MethodName: OnInventoryClick
@@ -45425,6 +45595,20 @@ MonoBehaviour:
   m_CallbackOnHighlight:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1754180974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754180968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1030fda49f9c24e81c40955d0d7ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSelected: {fileID: 0}
+  Inventory: {fileID: 339473227}
 --- !u!1 &1754890258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 842ceac336f35d4489ec1d2569d5fb88, type: 3}
@@ -54397,7 +54581,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.47
+    FieldOfView: 42.72428
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000

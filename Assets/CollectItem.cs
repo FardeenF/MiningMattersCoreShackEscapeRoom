@@ -73,6 +73,9 @@ public class CollectItem : MonoBehaviour
                         Destroy(this.gameObject);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "PPE Boots";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "PPE Boots";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "PPE Boots";
                         break;
                     }
                 }
@@ -101,6 +104,9 @@ public class CollectItem : MonoBehaviour
                         Destroy(this.gameObject);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Sprayer";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Sprayer";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Sprayer";
                         break;
                     }
                 }
@@ -118,9 +124,13 @@ public class CollectItem : MonoBehaviour
                         Inventory[i].sprite = itemImage;
                         Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                         TopText.text = (Message);
-                        Destroy(this.gameObject);
+                        //Destroy(this.gameObject);
+                        this.gameObject.SetActive(false);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Hand Lens";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Hand Lens";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Hand Lens";
                         break;
                     }
                 }
@@ -157,6 +167,9 @@ public class CollectItem : MonoBehaviour
                             this.gameObject.SetActive(false);
                             TopText.GetComponent<UAP_BaseElement>().SelectItem();
                             Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Wet Core Piece";
+                            Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                            Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Wet Core Piece";
+                            Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Wet Core Piece";
                             break;
                         }
                     }
@@ -205,6 +218,9 @@ public class CollectItem : MonoBehaviour
                         Destroy(this.gameObject);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Sieve";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Sieve";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Sieve";
                         break;
                     }
                     
@@ -227,6 +243,9 @@ public class CollectItem : MonoBehaviour
                         Destroy(this.gameObject);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Safety Glasses";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Safety Glasses";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Safety Glasses";
                         break;
                     }
 
@@ -279,6 +298,9 @@ public class CollectItem : MonoBehaviour
                         Destroy(this.gameObject);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Box of Puzzle Pieces";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Box of Puzzle Pieces";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Box of Puzzle Pieces";
                         break;
                     }
 
@@ -301,6 +323,9 @@ public class CollectItem : MonoBehaviour
                         Destroy(this.gameObject);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Dust Mask";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Dust Mask";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Dust Mask";
                         break;
                     }
                 }
@@ -323,6 +348,9 @@ public class CollectItem : MonoBehaviour
                         Destroy(this.gameObject);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Saw Blade";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Saw Blade";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Saw Blade";
                         break;
                     }
                 }
@@ -345,6 +373,9 @@ public class CollectItem : MonoBehaviour
                         this.gameObject.SetActive(false);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Cut Core Piece";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Cut Core Piece";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Cut Core Piece";
                         break;
                     }
                 }
@@ -366,6 +397,9 @@ public class CollectItem : MonoBehaviour
                         this.gameObject.SetActive(false);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Cut Core Piece";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Cut Core Piece";
+                        Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Cut Core Piece";
                         break;
                     }
                 }
@@ -443,6 +477,9 @@ public class CollectItem : MonoBehaviour
                     Destroy(this.gameObject);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Magnet Pen";
+                    Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                    Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Magnet Pen";
+                    Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Magnet Pen";
                     break;
                 }
             }

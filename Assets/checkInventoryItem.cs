@@ -9,7 +9,7 @@ using TMPro;
 public class checkInventoryItem : MonoBehaviour
 {
     public Camera mainCam;
-    private GameObject buttonPressed;
+    public GameObject buttonPressed;
     public bool holdingSomething = false;
     public GameState gs;
     public TextMeshProUGUI topText;
@@ -98,10 +98,18 @@ public class checkInventoryItem : MonoBehaviour
 
     private Vector3 targetPosition = new Vector3();
 
+    public SelectButton sb;
+
+    
+
     public void OnInventoryClick()
     {
-        buttonPressed = EventSystem.current.currentSelectedGameObject;
+
+        buttonPressed = sb.GetSelectButton();
+        //buttonPressed = EventSystem.current.currentSelectedGameObject;
         Debug.Log(buttonPressed.name.ToString());
+
+        
 
         if (buttonPressed.GetComponent<Image>().sprite != null)
         {
@@ -114,6 +122,7 @@ public class checkInventoryItem : MonoBehaviour
                     isHandLensActive = true;
                     holdingSomething = true;
                     topText.text = ("Can be used to get a closer look at items");
+                    
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                 }
                 else
