@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameState : MonoBehaviour
 {
@@ -68,6 +69,10 @@ public class GameState : MonoBehaviour
     private bool endGame = false;
 
     private bool hasFoundSodaLiteRock = false;
+
+    private AccessibleButton_3D highlightedObject;
+
+    public TextMeshProUGUI topText;
 
     //Check Mouse Over State
     public bool GetMouseOver()
@@ -468,6 +473,24 @@ public class GameState : MonoBehaviour
     public void SetHasFoundSodaLite(bool eg)
     {
         hasFoundSodaLiteRock = eg;
+    }
+
+    public AccessibleButton_3D GetHighlightedObject()
+    {
+        return highlightedObject;
+    }
+    public void SetHighlightedObject(AccessibleButton_3D selectedObject)
+    {
+        highlightedObject = selectedObject;
+    }
+
+    public TextMeshProUGUI GetTopText()
+    {
+        return topText;
+    }
+    public void SetTopText(string text)
+    {
+        topText.text = text;
     }
 }
 

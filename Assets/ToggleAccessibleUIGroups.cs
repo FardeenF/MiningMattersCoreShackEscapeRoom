@@ -10,7 +10,14 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleUIGroupRoot controlsMenu;
     public AccessibleUIGroupRoot GameUI;
     public AccessibleUIGroupRoot Room1;
+    public GameObject testObject;
+    public GameState gs;
     private Button selectedButton;
+
+    public void Update()
+    {
+        ToggleUIGroup();
+    }
 
     public void GetButtonObject(Button button)
     {
@@ -45,6 +52,14 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         selectedButton.GetComponentInParent<AccessibleUIGroupRoot>().m_PopUp = false;
        
 
+    }
+
+    public void ToggleUIGroup()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            testObject.GetComponent<AccessibleUIGroupRoot>().enabled = !testObject.GetComponent<AccessibleUIGroupRoot>().enabled;
+        }
     }
 
     //public void SwitchUIGroup()

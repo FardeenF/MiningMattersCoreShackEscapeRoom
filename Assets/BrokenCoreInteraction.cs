@@ -18,7 +18,7 @@ public class BrokenCoreInteraction : MonoBehaviour
     //public bool[] CurrentTableLocations = { false, false, false, false };
     //public bool[] CurrentGroundLocations = { true, true, true, true };
     private string[] CurrentTableLocations = { "Empty", "Empty", "Empty", "Empty" };
-    private string[] CurrentGroundLocations = { "Orange", "Red", "Yellow", "Blue" };
+    private string[] CurrentGroundLocations = { "Orange Core Piece", "Red Core Piece", "Yellow Core Piece", "Blue Core Piece" };
     public int index = 0;
     public int index2 = 0;
 
@@ -45,6 +45,8 @@ public class BrokenCoreInteraction : MonoBehaviour
     public Material[] solvedMaterials;
 
     private bool puzzleSolved = false;
+
+
 
     private void Awake()
     {
@@ -77,7 +79,7 @@ public class BrokenCoreInteraction : MonoBehaviour
 
         if (puzzleSolved == false)
         {
-            if (CurrentTableLocations[0] == "Yellow" && CurrentTableLocations[1] == "Orange" && CurrentTableLocations[2] == "Blue" && CurrentTableLocations[3] == "Red")
+            if (CurrentTableLocations[0] == "Yellow Core Piece" && CurrentTableLocations[1] == "Orange Core Piece" && CurrentTableLocations[2] == "Blue Core Piece" && CurrentTableLocations[3] == "Red Core Piece")
             {
                 Debug.Log("Correct Broken Core Order is on Table!");
                 for (int i = 0; i < brokenCores.Length; i++)
@@ -102,7 +104,7 @@ public class BrokenCoreInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 1000f))
         {
             //Can only interact with core pieces if user is on the right camera looking at the table
-            if (CoreTableCam.Priority > 0)
+            if (CoreTableCam.Priority > 0 && puzzleSolved == false)
             {
                 //Check if you clicked on a core piece
                 if (hit.transform.gameObject.tag == "BrokenCore")
@@ -168,6 +170,71 @@ public class BrokenCoreInteraction : MonoBehaviour
         }
 
     }
+
+
+    public void GetButtonObject(AccessibleButton_3D button)
+    {
+        gs.SetHighlightedObject(button);
+        gs.SetTopText("You have moved the " + button.gameObject.name);
+        gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
+
+    }
+
+    public void MoveCore()
+    {
+        Debug.Log(gs.GetHighlightedObject().name);
+        if (gs.GetHighlightedObject().transform.gameObject.tag == "BrokenCore" && puzzleSolved == false && CoreTableCam.Priority > 0)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (CurrentTableLocations[i] == "Empty")
+                {
+                    gs.GetHighlightedObject().transform.position = CorePieceLocations[i].transform.position;
+                    gs.GetHighlightedObject().transform.gameObject.tag = "BrokenCoreOnTable";
+                    CurrentTableLocations[i] = gs.GetHighlightedObject().transform.gameObject.name;
+                    Debug.Log("ACTIVATED!");
+                    break;
+                }
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (CurrentGroundLocations[i] == gs.GetHighlightedObject().transform.gameObject.name)
+                {
+                    CurrentGroundLocations[i] = "Empty";
+                    break;
+                }
+            }
+        }
+         //Check if you clicked on a core piece
+        else if (gs.GetHighlightedObject().transform.gameObject.tag == "BrokenCoreOnTable" && puzzleSolved == false && CoreTableCam.Priority > 0)
+        {
+            Debug.Log("Drop Core");
+            for (int i = 0; i < 4; i++)
+            {
+                if (CurrentGroundLocations[i] == "Empty")
+                {
+                    gs.GetHighlightedObject().transform.position = OriginalCorePieceLocations[i].transform.position;
+                    gs.GetHighlightedObject().transform.gameObject.tag = "BrokenCore";
+                    CurrentGroundLocations[i] = gs.GetHighlightedObject().transform.gameObject.name;
+                    break;
+                }
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (CurrentTableLocations[i] == gs.GetHighlightedObject().transform.gameObject.name)
+                {
+                    CurrentTableLocations[i] = "Empty";
+                    break;
+                }
+            }
+
+        }
+    }
+
+
+
 
 
     public void SetPasswordGuess()
