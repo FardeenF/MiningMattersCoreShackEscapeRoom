@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Cinemachine;
 
 public class ToggleAccessibleUIGroups : MonoBehaviour
 {
-    public AccessibleUIGroupRoot mainMenu;
     public AccessibleUIGroupRoot controlsMenu;
     public AccessibleUIGroupRoot GameUI;
     public AccessibleUIGroupRoot Room1;
+    private CinemachineVirtualCamera mainCam;
     public GameObject testObject;
     public GameState gs;
     private Button selectedButton;
@@ -29,7 +29,6 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     {
         
         selectedButton.GetComponentInParent<AccessibleUIGroupRoot>().m_PopUp = false;
-        //mainMenu.m_PopUp = false;
         
         root.m_PopUp = true;
         //root1.m_PopUp = false;
@@ -58,6 +57,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.L))
         {
+            mainCam.MoveToTopOfPrioritySubqueue();
             testObject.GetComponent<AccessibleUIGroupRoot>().enabled = !testObject.GetComponent<AccessibleUIGroupRoot>().enabled;
         }
     }

@@ -74,6 +74,8 @@ public class GameState : MonoBehaviour
 
     public TextMeshProUGUI topText;
 
+    private string currentCam = "Room1_Main";
+
     //Check Mouse Over State
     public bool GetMouseOver()
     {
@@ -491,6 +493,15 @@ public class GameState : MonoBehaviour
     public void SetTopText(string text)
     {
         topText.text = text;
+    }
+
+    public string GetCurrentCam()
+    {
+        return currentCam;
+    }
+    public void SetCurrentCam(string text)
+    {
+        currentCam = text;
     }
 }
 
