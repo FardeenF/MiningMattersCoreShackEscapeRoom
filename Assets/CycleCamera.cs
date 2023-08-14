@@ -22,7 +22,7 @@ public class CycleCamera : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             switchCamera();
         }

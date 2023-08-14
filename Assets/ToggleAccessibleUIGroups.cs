@@ -9,7 +9,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleUIGroupRoot controlsMenu;
     public AccessibleUIGroupRoot GameUI;
     public AccessibleUIGroupRoot Room1;
-    private CinemachineVirtualCamera mainCam;
+    public AccessibleUIGroupRoot BrokenCoreTable;
+
+
+    public GameObject[] AllRoots;
+
     public GameObject testObject;
     public GameState gs;
     private Button selectedButton;
@@ -17,6 +21,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public void Update()
     {
         ToggleUIGroup();
+        CurrentCam(gs.GetCurrentCam());
     }
 
     public void GetButtonObject(Button button)
@@ -57,15 +62,63 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.L))
         {
-            mainCam.MoveToTopOfPrioritySubqueue();
+            
             testObject.GetComponent<AccessibleUIGroupRoot>().enabled = !testObject.GetComponent<AccessibleUIGroupRoot>().enabled;
         }
     }
 
-    //public void SwitchUIGroup()
-    //{
-    //    root1.m_PopUp = false;
-    //    root2.m_PopUp = true;
-    //}
+    public void SwitchUIGroup()
+    {
+        //root1.m_PopUp = false;
+        //root2.m_PopUp = true;
+    }
+
+
+    public void CurrentCam(string currentCamera)
+    {
+        if (currentCamera == "Room1_Main")
+        {
+            for (int i = 0; i < AllRoots.Length; i++)
+            {
+                if (AllRoots[i].name == "Room1" || AllRoots[i].name == "Doors")
+                {
+                    AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = true;
+                    Debug.Log("Room1 stuff enabled");
+                }
+
+                else
+                {
+                    AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = false;
+                    Debug.Log("Room1 stuff disabled");
+                }
+
+            }
+        }
+
+        else if (currentCamera == "Room1_BrokenCoreTable")
+        {
+            for (int i = 0; i < AllRoots.Length; i++)
+            {
+                if (AllRoots[i].name == "CoreHolder" || AllRoots[i].name == "BrokenCorePieces")
+                {
+                    AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = true;
+                    Debug.Log("BrokenCorePieces enabled");
+                }
+
+                else
+                {
+                    AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = false;
+                    Debug.Log("Everything else disabled");
+                }
+
+            }
+
+        }
+    }
+
+
+
+
+
 
 }
