@@ -48239,6 +48239,7 @@ MonoBehaviour:
   honk: {fileID: 8300000, guid: b360012792f2dbb458f62c66a0d620e2, type: 3}
   clang: {fileID: 8300000, guid: f567d4dff2edf7e438a01467f29e7268, type: 3}
   topText: {fileID: 445432509}
+  gs: {fileID: 0}
 --- !u!1 &1768478874
 GameObject:
   m_ObjectHideFlags: 0

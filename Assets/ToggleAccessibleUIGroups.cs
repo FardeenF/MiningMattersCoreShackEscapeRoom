@@ -26,10 +26,34 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] BrokenCoreTableSubButtons;
     public AccessibleButton_3D[] ButtonTableSubButtons;
 
+    private bool SubItemsEnabled = false;
+
     public void Update()
     {
         ToggleUIGroup();
-        CurrentCam(gs.GetCurrentCam());
+        //CurrentCam(gs.GetCurrentCam());
+
+        if (cameras[0].Priority == 1)
+        {
+            gs.SetCurrentCam("Room1_Main");
+        }
+
+        if (gs.GetCurrentCam() == "Room1_Main" && SubItemsEnabled == true) // Toggle off all of the subitems
+        {
+            for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
+            {
+                BrokenCoreTableSubButtons[i].enabled = false;
+                SubItemsEnabled = false;
+            }
+
+            for (int i = 0; i < ButtonTableSubButtons.Length; i++)
+            {
+                ButtonTableSubButtons[i].enabled = false;
+                SubItemsEnabled = false;
+            }
+
+            SubItemsEnabled = false;
+        }
     }
 
     public void GetButtonObject(Button button)
@@ -82,49 +106,49 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     }
 
 
-    public void CurrentCam(string currentCamera)
-    {
-        if (currentCamera == "Room1_Main")
-        {
-            for (int i = 0; i < AllRoots.Length; i++)
-            {
-                if (AllRoots[i].name == "Room1" || AllRoots[i].name == "Doors")
-                {
-                    AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = true;
-                    Debug.Log("Room1 stuff enabled");
-                }
+    //public void CurrentCam(string currentCamera)
+    //{
+    //    if (currentCamera == "Room1_Main")
+    //    {
+    //        for (int i = 0; i < AllRoots.Length; i++)
+    //        {
+    //            if (AllRoots[i].name == "Room1" || AllRoots[i].name == "Doors")
+    //            {
+    //                AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = true;
+    //                Debug.Log("Room1 stuff enabled");
+    //            }
 
-                else
-                {
-                    AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = false;
-                    Debug.Log("Room1 stuff disabled");
-                }
+    //            else
+    //            {
+    //                AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = false;
+    //                Debug.Log("Room1 stuff disabled");
+    //            }
 
-            }
-        }
+    //        }
+    //    }
 
-        else if (currentCamera == "Room1_BrokenCoreTable")
-        {
-            for (int i = 0; i < AllRoots.Length; i++)
-            {
-                if (AllRoots[i].name == "CoreHolder" || AllRoots[i].name == "BrokenCorePieces")
-                {
-                    AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = true;
-                    Debug.Log("BrokenCorePieces enabled");
-                }
+    //    else if (currentCamera == "Room1_BrokenCoreTable")
+    //    {
+    //        for (int i = 0; i < AllRoots.Length; i++)
+    //        {
+    //            if (AllRoots[i].name == "CoreHolder" || AllRoots[i].name == "BrokenCorePieces")
+    //            {
+    //                AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = true;
+    //                Debug.Log("BrokenCorePieces enabled");
+    //            }
 
-                else
-                {
-                    AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = false;
-                    Debug.Log("Everything else disabled");
-                }
+    //            else
+    //            {
+    //                AllRoots[i].GetComponent<AccessibleUIGroupRoot>().enabled = false;
+    //                Debug.Log("Everything else disabled");
+    //            }
 
-            }
+    //        }
 
-        }
+    //    }
 
 
-    }
+    //}
 
 
 
@@ -157,6 +181,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
                 BrokenCoreTableSubButtons[i].enabled = true;
+                SubItemsEnabled = true;
             }
 
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
@@ -170,6 +195,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
                 ButtonTableSubButtons[i].enabled = true;
+                SubItemsEnabled = true;
             }
 
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
