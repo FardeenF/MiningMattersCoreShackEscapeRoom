@@ -16,6 +16,8 @@ public class ButtonPuzzleInteraction : MonoBehaviour
 
     private List<AudioClip> solution = new List<AudioClip>();
 
+    public GameState gs;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,17 @@ public class ButtonPuzzleInteraction : MonoBehaviour
         }
     }
 
+    public void AccessibleClickButton(AudioClip audio)
+    {
+        source.PlayOneShot(audio, 1.0f);
+    }
 
+    public void AccessibleSequenceButton()
+    {
+        StartCoroutine(playAudioSequentially());
+    }
+
+    
 
     public void ShootRaycast()
     {

@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using TMPro;
 
 public class ToggleAccessibleUIGroups : MonoBehaviour
 {
     public AccessibleUIGroupRoot controlsMenu;
     public AccessibleUIGroupRoot GameUI;
     public AccessibleUIGroupRoot Room1;
-    public AccessibleUIGroupRoot BrokenCoreTable;
+    
 
+    public TextMeshProUGUI TopText;
 
     public GameObject[] AllRoots;
 
     public GameObject testObject;
     public GameState gs;
     private Button selectedButton;
+
+    public CinemachineVirtualCamera[] cameras;
+
+
+    public AccessibleButton_3D[] BrokenCoreTableSubButtons;
+    public AccessibleButton_3D[] ButtonTableSubButtons;
 
     public void Update()
     {
@@ -114,9 +122,64 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             }
 
         }
+
+
     }
 
 
+
+    public void AccessibleSelectLocation(CinemachineVirtualCamera moveTo)
+    {
+        
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameras[i].Priority = 0;
+        }
+        moveTo.Priority = 1;
+        //gs.SetCurrentCam("Room1_BrokenCoreShackTable");
+    }
+
+    public void SetCam(string CameraName)
+    {
+        gs.SetCurrentCam(CameraName);
+    }
+
+    public void ReadLabelOnMove(string label)
+    {
+        TopText.text = label;
+        TopText.GetComponent<UAP_BaseElement>().SelectItem();
+    }
+
+    public void Enable3DButtons()
+    {
+        if (gs.GetCurrentCam() == "Room1_BrokenCoreShackTable")
+        {
+            for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
+            {
+                BrokenCoreTableSubButtons[i].enabled = true;
+            }
+
+            for (int i = 0; i < ButtonTableSubButtons.Length; i++)
+            {
+                ButtonTableSubButtons[i].enabled = false;
+            }
+
+        }
+        else if (gs.GetCurrentCam() == "Room1_ButtonTable")
+        {
+            for (int i = 0; i < ButtonTableSubButtons.Length; i++)
+            {
+                ButtonTableSubButtons[i].enabled = true;
+            }
+
+            for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
+            {
+                BrokenCoreTableSubButtons[i].enabled = false;
+            }
+        }
+    }
+
+    
 
 
 

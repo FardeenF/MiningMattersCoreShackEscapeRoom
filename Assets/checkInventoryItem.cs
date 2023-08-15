@@ -152,6 +152,7 @@ public class checkInventoryItem : MonoBehaviour
                     topText.text = ("Click to Spray Water");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                     soundManager.PlayWaterSprayerSound();
+                    Debug.Log("PullOutSprayBottle");
                 }
                 else
                 {
@@ -161,6 +162,7 @@ public class checkInventoryItem : MonoBehaviour
                     holdingSomething = false;
                     topText.text = ("Spray Bottle is Back in Inventory");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    Debug.Log("PutAwaySprayBottle");
                 }
             }
 

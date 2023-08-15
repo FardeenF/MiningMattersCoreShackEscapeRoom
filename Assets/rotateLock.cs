@@ -20,7 +20,7 @@ public class rotateLock : MonoBehaviour
     public TextMeshProUGUI topText;
     public SoundManager soundManager;
 
-
+    public GameObject Sprayer;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +55,77 @@ public class rotateLock : MonoBehaviour
 
     }
 
-    
+    public void AccessbileRotateLock(GameObject number)
+    {
+        Quaternion initialRot = number.transform.localRotation;
+        number.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+        soundManager.PlayLockSpinSound();
+        
+    }
+
+    public void AccessibleLockNumberTracker(int locknum)
+    {
+        if (locknum == 1)
+        {
+            number1++;
+            if (number1 > 7)
+            {
+                number1 = 0;
+            }
+            locknum = number1;
+        }
+        else if (locknum == 2)
+        {
+            number2++;
+            if (number1 > 7)
+            {
+                number1 = 0;
+            }
+            locknum = number2;
+        }
+        else if (locknum == 3)
+        {
+            number3++;
+            if (number1 > 7)
+            {
+                number1 = 0;
+            }
+            locknum = number3;
+        }
+        else if (locknum == 4)
+        {
+            number4++;
+            if (number1 > 7)
+            {
+                number1 = 0;
+            }
+            locknum = number4;
+        }
+        else if (locknum == 5)
+        {
+            number5++;
+            if (number1 > 7)
+            {
+                number1 = 0;
+            }
+            locknum = number5;
+        }
+        else if (locknum == 6)
+        {
+            number6++;
+            if (number1 > 7)
+            {
+                number1 = 0;
+            }
+            locknum = number6;
+        }
+
+        Debug.Log(number1.ToString() + number2.ToString() + number3.ToString() + number4.ToString() + number5.ToString() + number6.ToString());
+        if (number1.ToString() + number2.ToString() + number3.ToString() + number4.ToString() + number5.ToString() + number6.ToString() == "421243")
+        {
+            Sprayer.GetComponent<AccessibleButton_3D>().enabled = true;
+        }
+    }
 
 
     //Checks if you click on lock number
