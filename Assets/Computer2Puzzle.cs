@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using TMPro;
 
 public class Computer2Puzzle : MonoBehaviour
 {
@@ -36,10 +37,13 @@ public class Computer2Puzzle : MonoBehaviour
     private bool puzzleSolved = false;
 
 
+
     private void Awake()
     {
         computerMats = room1Computer.GetComponent<Renderer>().sharedMaterials;
     }
+
+    
 
     // Start is called before the first frame update
     void Start()

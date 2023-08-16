@@ -234,7 +234,13 @@ public class BrokenCoreInteraction : MonoBehaviour
     }
 
 
+    public void AccessibleSelectPasswordInput()
+    {
 
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
+        
+        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().text = Input.anyKey.ToString();
+    }
 
 
     public void SetPasswordGuess()
