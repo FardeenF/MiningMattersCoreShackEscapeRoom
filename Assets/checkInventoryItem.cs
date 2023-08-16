@@ -100,7 +100,8 @@ public class checkInventoryItem : MonoBehaviour
 
     public SelectButton sb;
 
-   
+    public CabinetPuzzlePlacement cabinetPuzzleScript;
+    
 
     public void OnInventoryClick()
     {
@@ -318,20 +319,31 @@ public class checkInventoryItem : MonoBehaviour
 
             else if (buttonPressed.GetComponent<Image>().sprite.name.ToString() == "PuzzleBox")
             {
-                if (isHoldingPiece == false && holdingSomething == false)
+                if (gs.GetScreenReader() == false)
                 {
-                    if (puzzlePieces.Count > 0 && puzzlePieces != null)
-                        PuzzlePiece();
+                    if (isHoldingPiece == false && holdingSomething == false)
+                    {
+                        if (puzzlePieces.Count > 0 && puzzlePieces != null)
+                            PuzzlePiece();
+                    }
+                    else
+                    {
+                        PutAwayButton();
+                        puzzlePieces[PieceIndex].SetActive(false);
+                        holdingSomething = false;
+                        isHoldingPiece = false;
+                        topText.text = ("Puzzle Piece back in box");
+                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    }
                 }
+
+                //If screen reader is enabled do this instead
                 else
                 {
-                    PutAwayButton();
-                    puzzlePieces[PieceIndex].SetActive(false);
-                    holdingSomething = false;
-                    isHoldingPiece = false;
-                    topText.text = ("Puzzle Piece back in box");
-                    topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    cabinetPuzzleScript.AccessiblePuzzlePlacement();
+                    
                 }
+                
                 
             }
 

@@ -63,7 +63,7 @@ public class GameState : MonoBehaviour
     private bool hasUnlockedStorageRoom = false;
 
     private bool isHighContrastMode = false;
-    private bool isScreenReader = false;
+    private bool isScreenReader = true; // set back to false
 
     private bool startGame = false;
     private bool endGame = false;
@@ -75,6 +75,8 @@ public class GameState : MonoBehaviour
     public TextMeshProUGUI topText;
 
     private string currentCam = "Room1_Main";
+
+    
 
     //Check Mouse Over State
     public bool GetMouseOver()
@@ -503,5 +505,8 @@ public class GameState : MonoBehaviour
     {
         currentCam = text;
     }
+
+    
+
 }
 

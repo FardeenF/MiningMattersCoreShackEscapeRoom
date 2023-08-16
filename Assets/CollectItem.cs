@@ -67,6 +67,96 @@ public class CollectItem : MonoBehaviour
         }
     }
 
+    public void AccessibleCollectPuzzlePieces()
+    {
+        gs.SetHasPuzzleBox(true);
+        soundManager.PlayPickupSound();
+        for (int i = 0; i <= Inventory.Length; i++)
+        {
+            if (Inventory[i].sprite == null)
+            {
+                Inventory[i].sprite = itemImage;
+                Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                TopText.text = (Message);
+                Destroy(this.gameObject);
+                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Box of Puzzle Pieces";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Box of Puzzle Pieces";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Box of Puzzle Pieces";
+                break;
+            }
+
+        }
+    }
+
+    public void AccessibleCollectSieves()
+    {
+        gs.SetHasSieve(true);
+        soundManager.PlayPickupSound();
+        for (int i = 0; i <= Inventory.Length; i++)
+        {
+            if (Inventory[i].sprite == null)
+            {
+                Inventory[i].sprite = itemImage;
+                Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                TopText.text = (Message);
+                Destroy(this.gameObject);
+                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieve";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Sieve";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Sieve";
+                break;
+            }
+
+        }
+    }
+
+    public void AccessibleCollectDustMask()
+    {
+        gs.SetHasDustMask(true);
+        soundManager.PlayPickupSound();
+        for (int i = 0; i <= Inventory.Length; i++)
+        {
+            if (Inventory[i].sprite == null)
+            {
+                Inventory[i].sprite = itemImage;
+                Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                TopText.text = (Message);
+                Destroy(this.gameObject);
+                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Dust Mask";
+                Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "Dust Mask";
+                Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "Dust Mask";
+                break;
+            }
+        }
+    }
+
+
+    public void AccessibleCollectPPEBoots()
+    {
+        gs.SetPPEState(true);
+        soundManager.PlayPPESound();
+        for (int i = 0; i <= Inventory.Length; i++)
+        {
+            if (Inventory[i].sprite == null)
+            {
+                Inventory[i].sprite = itemImage;
+                Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                TopText.text = (Message);
+                Destroy(this.gameObject);
+                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "PPE Boots";
+                Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
+                Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel.name = "PPE Boots";
+                Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_Text = "PPE Boots";
+                break;
+            }
+        }
+    }
 
     public void ShootRaycast()
     {

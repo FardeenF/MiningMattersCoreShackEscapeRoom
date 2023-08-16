@@ -25,6 +25,9 @@ public class CabinetPuzzlePlacement : MonoBehaviour
     public CinemachineVirtualCamera Cabinet_VC;
     public CinemachineVirtualCamera CabinetPuzzle_VC;
 
+    public ToggleAccessibleUIGroups ToggleUIGroups;
+    
+
     // Update is called once per frame
     void Update()
     {
@@ -82,7 +85,27 @@ public class CabinetPuzzlePlacement : MonoBehaviour
         
     }
 
+    public void AccessiblePuzzlePlacement()
+    {
+        foreach (Image img in Cinventory)
+        {
 
+            if (img.GetComponent<Image>().sprite.name == "PuzzleBox")
+            {
+                img.GetComponent<Image>().sprite = null;
+                img.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
+                break;
+            }
+        }
+        checkedPieces = true;
+        Debug.Log("All pieces are in correct spot");
+        gs.SetJigSawDone(true);
+        puzzleComplete = true;
+        ToggleUIGroups.Enable3DButtons();
+        StartCoroutine(WaitTime());
+        soundManager.PlaySuccessSound();
+        
+    }
     
 
     IEnumerator WaitTime()

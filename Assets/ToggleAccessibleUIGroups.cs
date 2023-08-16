@@ -26,6 +26,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] BrokenCoreTableSubButtons;
     public AccessibleButton_3D[] ButtonTableSubButtons;
     public AccessibleButton_3D[] SedimentTableSubButtons;
+    public AccessibleButton_3D[] CabinetSubButtons;
+    public AccessibleButton_3D[] InsideTopCabinetSubButtons;
 
     private bool SubItemsEnabled = false;
 
@@ -56,6 +58,17 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < SedimentTableSubButtons.Length; i++)
             {
                 SedimentTableSubButtons[i].enabled = false;
+                SubItemsEnabled = false;
+            }
+
+            for (int i = 0; i < CabinetSubButtons.Length; i++)
+            {
+                CabinetSubButtons[i].enabled = false;
+                SubItemsEnabled = false;
+            }
+            for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
+            {
+                InsideTopCabinetSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
 
@@ -201,6 +214,10 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 SedimentTableSubButtons[i].enabled = false;
             }
+            for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
+            {
+                InsideTopCabinetSubButtons[i].enabled = false;
+            }
 
         }
         //Sound Table
@@ -211,7 +228,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 ButtonTableSubButtons[i].enabled = true;
                 SubItemsEnabled = true;
             }
-
+            // Set others to false
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
                 BrokenCoreTableSubButtons[i].enabled = false;
@@ -221,6 +238,16 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 SedimentTableSubButtons[i].enabled = false;
             }
+
+            for (int i = 0; i < CabinetSubButtons.Length; i++)
+            {
+                CabinetSubButtons[i].enabled = false;
+            }
+            for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
+            {
+                InsideTopCabinetSubButtons[i].enabled = false;
+            }
+            //
         }
         //Sediment Table
         else if (gs.GetCurrentCam() == "Room1_SedimentDesk")
@@ -237,7 +264,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 }
                 SubItemsEnabled = true;
             }
-
+            // Set others to false
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
                 BrokenCoreTableSubButtons[i].enabled = false;
@@ -247,7 +274,57 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 ButtonTableSubButtons[i].enabled = false;
             }
+
+            for (int i = 0; i < CabinetSubButtons.Length; i++)
+            {
+                CabinetSubButtons[i].enabled = false;
+            }
+            for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
+            {
+                InsideTopCabinetSubButtons[i].enabled = false;
+            }
+            //
         }
+
+        //Puzzle Cabinet
+        else if (gs.GetCurrentCam() == "Room1_Cabinet")
+        {
+            for (int i = 0; i < CabinetSubButtons.Length; i++)
+            {
+                if (CabinetSubButtons[i] != null)
+                {
+                    CabinetSubButtons[i].enabled = true;
+                    SubItemsEnabled = true;
+                }
+                
+            }
+            //Setting inside top of cabinet sub items to true
+            if (gs.GetJigSawDone() == true)
+            {
+                for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
+                {
+                    InsideTopCabinetSubButtons[i].enabled = true;
+                }
+            }
+
+            // Set others to false
+            for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
+            {
+                BrokenCoreTableSubButtons[i].enabled = false;
+            }
+
+            for (int i = 0; i < ButtonTableSubButtons.Length; i++)
+            {
+                ButtonTableSubButtons[i].enabled = false;
+            }
+
+            for (int i = 0; i < SedimentTableSubButtons.Length; i++)
+            {
+                SedimentTableSubButtons[i].enabled = false;
+            }
+            //
+        }
+        
     }
 
     
