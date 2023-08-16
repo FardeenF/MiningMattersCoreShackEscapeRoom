@@ -7878,6 +7878,8 @@ MonoBehaviour:
   InsideTopCabinetSubButtons:
   - {fileID: 1985045268}
   - {fileID: 2006454728}
+  InsideBottomCabinetSubButtons:
+  - {fileID: 1449193743}
 --- !u!1001 &276132411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10557,7 +10559,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleRotateCabinetLock
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 371812340}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleTrackNumbers
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -21578,7 +21604,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleRotateCabinetLock
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 786889100}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleTrackNumbers
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -22632,6 +22682,7 @@ MonoBehaviour:
   Cabinet_VC: {fileID: 1245664593}
   CabinetLock_VC: {fileID: 538064786}
   DrawerOpen: {fileID: 808282969}
+  ToggleUIGroups: {fileID: 275968312}
 --- !u!82 &808282969
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22742,7 +22793,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleRotateCabinetLock
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 808282960}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleTrackNumbers
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -24477,7 +24552,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleRotateCabinetLock
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 866072105}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleTrackNumbers
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -34721,7 +34820,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleRotateCabinetLock
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1231549233}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleTrackNumbers
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -39990,6 +40113,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.97894144, y: 0.26871976, z: 1.0904506}
   m_Center: {x: -0.23641898, y: 0.124108665, z: -0.2733769}
+--- !u!114 &1449193743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449193738}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1449193740}
+        m_TargetAssemblyTypeName: CollectItem, Assembly-CSharp
+        m_MethodName: AccessibleCollectHandLens
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Hand Lens
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1449433921
 GameObject:
   m_ObjectHideFlags: 0

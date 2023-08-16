@@ -31,6 +31,8 @@ public class RotateCabinetLock : MonoBehaviour
 
     public AudioSource DrawerOpen;
 
+    public ToggleAccessibleUIGroups ToggleUIGroups;
+
     // Update is called once per frame
     void Update()
     {
@@ -66,10 +68,59 @@ public class RotateCabinetLock : MonoBehaviour
 
                 //Destroy(Lock);
                 Debug.Log("CabinetUnLocked");
+
+                ToggleUIGroups.Enable3DButtons();
                 
             }
         }
         
+    }
+
+    public void AccessibleRotateCabinetLock(GameObject spinner)
+    {
+        Quaternion initialRot = spinner.transform.localRotation;
+        spinner.transform.Rotate(new Vector3(0, 0, 72), Space.Self);
+        
+    }
+
+    public void AccessibleTrackNumbers(int lockNumber)
+    {
+        if (lockNumber == 1)
+        {
+            number1++;
+            if (number1 > 5)
+                number1 = 1;
+            soundManager.PlayLockSpinSound();
+        }
+        else if (lockNumber == 2)
+        {
+            number2++;
+            if (number2 > 5)
+                number2 = 1;
+            soundManager.PlayLockSpinSound();
+        }
+        else if (lockNumber == 3)
+        {
+            number3++;
+            if (number3 > 5)
+                number3 = 1;
+            soundManager.PlayLockSpinSound();
+        }
+        else if (lockNumber == 4)
+        {
+            number4++;
+            if (number4 > 5)
+                number4 = 1;
+            soundManager.PlayLockSpinSound();
+        }
+        else if (lockNumber == 5)
+        {
+            number5++;
+            if (number5 > 5)
+                number5 = 1;
+            soundManager.PlayLockSpinSound();
+        }
+
     }
 
 

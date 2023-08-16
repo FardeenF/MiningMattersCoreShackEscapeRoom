@@ -158,6 +158,29 @@ public class CollectItem : MonoBehaviour
         }
     }
 
+    public void AccessibleCollectHandLens()
+    {
+        gs.SetIsLensUnlocked(true);
+        soundManager.PlayPickupSound();
+        for (int i = 0; i <= Inventory.Length; i++)
+        {
+            if (Inventory[i].sprite == null)
+            {
+                Inventory[i].sprite = itemImage;
+                Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                TopText.text = (Message);
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
+                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Hand Lens";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Hand Lens";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Hand Lens";
+                break;
+            }
+        }
+    }
+
     public void ShootRaycast()
     {
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);

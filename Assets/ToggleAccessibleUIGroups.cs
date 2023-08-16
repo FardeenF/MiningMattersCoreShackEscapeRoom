@@ -28,6 +28,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] SedimentTableSubButtons;
     public AccessibleButton_3D[] CabinetSubButtons;
     public AccessibleButton_3D[] InsideTopCabinetSubButtons;
+    public AccessibleButton_3D[] InsideBottomCabinetSubButtons;
 
     private bool SubItemsEnabled = false;
 
@@ -69,6 +70,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
             {
                 InsideTopCabinetSubButtons[i].enabled = false;
+                SubItemsEnabled = false;
+            }
+            for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
+            {
+                InsideBottomCabinetSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
 
@@ -204,7 +210,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 BrokenCoreTableSubButtons[i].enabled = true;
                 SubItemsEnabled = true;
             }
-
+            // Set others to false
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
                 ButtonTableSubButtons[i].enabled = false;
@@ -218,6 +224,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 InsideTopCabinetSubButtons[i].enabled = false;
             }
+            for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
+            {
+                InsideBottomCabinetSubButtons[i].enabled = false;
+            }
+            //
 
         }
         //Sound Table
@@ -246,6 +257,10 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
             {
                 InsideTopCabinetSubButtons[i].enabled = false;
+            }
+            for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
+            {
+                InsideBottomCabinetSubButtons[i].enabled = false;
             }
             //
         }
@@ -283,6 +298,10 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 InsideTopCabinetSubButtons[i].enabled = false;
             }
+            for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
+            {
+                InsideBottomCabinetSubButtons[i].enabled = false;
+            }
             //
         }
 
@@ -304,6 +323,14 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
                 {
                     InsideTopCabinetSubButtons[i].enabled = true;
+                }
+            }
+
+            if (gs.GetHasUnlockedCabinetLock() == true)
+            {
+                for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
+                {
+                    InsideBottomCabinetSubButtons[i].enabled = true;
                 }
             }
 
