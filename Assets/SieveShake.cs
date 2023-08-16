@@ -30,6 +30,12 @@ public class SieveShake : MonoBehaviour
 
     private bool DrawerOpened = false;
 
+    public AccessibleButton_3D AccessibleSafetyGlassesButton;
+    public GameObject beaker1;
+    public GameObject beaker2;
+    public GameObject beaker3;
+    public GameObject beaker4;
+
     public void Update()
     {
         if ((gs.GetIsHoldingSieve() == true || gs.GetHasPlacedSieve() == true) && Input.GetMouseButtonDown(0))
@@ -44,15 +50,19 @@ public class SieveShake : MonoBehaviour
         //
         if (DrawerOpened == false && readyToSort == true)
         {
-            if (isSpotFilledFront[0] == ("Beaker") &&
-                isSpotFilledFront[1] == ("Beaker (1)") &&
-                isSpotFilledFront[2] == ("Beaker (2)") &&
-                isSpotFilledFront[3] == ("Beaker (3)"))
+            if (isSpotFilledFront[0] == ("Gravel Beaker") &&
+                isSpotFilledFront[1] == ("Sand Beaker") &&
+                isSpotFilledFront[2] == ("Silt Beaker") &&
+                isSpotFilledFront[3] == ("Mud/Clay Beaker"))
             {
                 Debug.Log("Drawer Opened!");
                 SedimentDesk.GetComponent<Animation>().Play();
                 readyToSort = false;
                 DrawerOpened = true;
+
+                AccessibleSafetyGlassesButton.enabled = true;
+                gs.SetTopText("The drawer has triggered to open!");
+                gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
             }
         }
         
@@ -62,7 +72,28 @@ public class SieveShake : MonoBehaviour
             ItemFollowCam(isHoldingSediment, JarOfSediment, -50);
         }
 
-        
+        if (readyToSort)
+        {
+            beaker1.gameObject.GetComponent<AccessibleButton_3D>().name = "Sand Beaker";
+            beaker1.GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+            beaker1.gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = "Sand Beaker";
+            beaker1.GetComponent<AccessibleButton_3D>().m_Text = "Sand Beaker";
+
+            beaker2.gameObject.GetComponent<AccessibleButton_3D>().name = "Mud/Clay Beaker";
+            beaker2.GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+            beaker2.gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = "Mud/Clay Beaker";
+            beaker2.GetComponent<AccessibleButton_3D>().m_Text = "Mud/Clay Beaker";
+
+            beaker3.gameObject.GetComponent<AccessibleButton_3D>().name = "Gravel Beaker";
+            beaker3.GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+            beaker3.gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = "Gravel Beaker";
+            beaker3.GetComponent<AccessibleButton_3D>().m_Text = "Gravel Beaker";
+
+            beaker4.gameObject.GetComponent<AccessibleButton_3D>().name = "Silt Beaker";
+            beaker4.GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+            beaker4.gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = "Silt Beaker";
+            beaker4.GetComponent<AccessibleButton_3D>().m_Text = "Silt Beaker";
+        }
 
     }
 
@@ -73,7 +104,7 @@ public class SieveShake : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 1000f))
         {
-            //Check if you collect the PPE Boots
+            //Check if you collected the Sieve Shaker
             if (hit.transform.gameObject.tag == "SieveShaker" && gs.GetIsHoldingSieve() == true)
             {
                 SieveInMachine.gameObject.SetActive(true);
@@ -237,5 +268,129 @@ public class SieveShake : MonoBehaviour
         }
     }
 
-    
+
+
+
+    public void PlaceSieveInMachine()
+    {
+        if (gs.GetHasSieve())
+        {
+            SieveInMachine.gameObject.SetActive(true);
+
+            gs.SetIsHoldingSieve(false);
+            gs.SetHasSieve(false);
+
+            foreach (Image item in Inventory)
+            {
+                if (item.sprite.name == "SievesImage")
+                {
+                    item.sprite = null;
+                    break;
+                }
+            }
+        }
+    }
+
+    public void SedimentJarPlacement()
+    {
+        isHoldingSediment = true;
+        Debug.Log("ClickingOnSediment");
+    }
+
+
+    public void PlaceSedimentInMachine()
+    {
+        if (isHoldingSediment == true)
+        {
+            this.gameObject.GetComponent<Animation>().Play();
+            soundManager.PlayMachineWorkingSound();
+            JarOfSediment.gameObject.SetActive(false);
+            Debug.Log("JarOfSediment Placed");
+
+            //Sediment to Jar Logic Here
+            doneShaking = true;
+            StartCoroutine(moveSediment());
+        }
+    }
+
+    public void RenameSedimentBeaker(string sediment)
+    {
+        //if (readyToSort)
+        //{
+        //    gs.GetHighlightedObject().gameObject.GetComponent<AccessibleButton_3D>().name = sediment;
+        //    gs.GetHighlightedObject().GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+        //    gs.GetHighlightedObject().gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = sediment;
+        //    gs.GetHighlightedObject().GetComponent<AccessibleButton_3D>().m_Text = sediment;
+        //}
+    }
+
+    public void GetButtonObject(AccessibleButton_3D button)
+    {
+        gs.SetHighlightedObject(button);
+        gs.SetTopText("You have moved " + button.gameObject.name);
+        gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
+
+    }
+
+
+
+    public void MoveBeaker()
+    {
+        ///Beakers
+        if (gs.GetHighlightedObject().transform.gameObject.tag == "Beaker" && readyToSort == true)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (isSpotFilledFront[i] == "Empty")
+                {
+                    gs.GetHighlightedObject().transform.position = NewBeakerLocations[i].transform.position;
+                    gs.GetHighlightedObject().transform.gameObject.tag = ("BeakerMoved");
+                    isSpotFilledFront[i] = gs.GetHighlightedObject().transform.gameObject.name;
+                    break;
+                }
+
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (isSpotFilledBack[i] == gs.GetHighlightedObject().transform.gameObject.name)
+                {
+                    isSpotFilledBack[i] = "Empty";
+                    break;
+                }
+            }
+
+            Debug.Log(isSpotFilledFront[0] + " " +
+            isSpotFilledFront[1] + " " +
+            isSpotFilledFront[2] + " " +
+            isSpotFilledFront[3]);
+        }
+        ///Beakers 2
+        else if (gs.GetHighlightedObject().transform.gameObject.tag == "BeakerMoved" && readyToSort == true)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (isSpotFilledBack[i] == "Empty")
+                {
+                    gs.GetHighlightedObject().transform.position = OriginalBeakerLocations[i].transform.position;
+                    gs.GetHighlightedObject().transform.gameObject.tag = ("Beaker");
+                    isSpotFilledBack[i] = gs.GetHighlightedObject().transform.gameObject.name;
+
+                    break;
+
+                }
+
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (isSpotFilledFront[i] == gs.GetHighlightedObject().transform.gameObject.name)
+                {
+                    isSpotFilledFront[i] = "Empty";
+                    break;
+                }
+            }
+        }
+    }
+
 }

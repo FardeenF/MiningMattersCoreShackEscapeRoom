@@ -25,6 +25,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     public AccessibleButton_3D[] BrokenCoreTableSubButtons;
     public AccessibleButton_3D[] ButtonTableSubButtons;
+    public AccessibleButton_3D[] SedimentTableSubButtons;
 
     private bool SubItemsEnabled = false;
 
@@ -49,6 +50,12 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
                 ButtonTableSubButtons[i].enabled = false;
+                SubItemsEnabled = false;
+            }
+
+            for (int i = 0; i < SedimentTableSubButtons.Length; i++)
+            {
+                SedimentTableSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
 
@@ -176,6 +183,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     public void Enable3DButtons()
     {
+        //Broken Core Table
         if (gs.GetCurrentCam() == "Room1_BrokenCoreShackTable")
         {
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
@@ -189,7 +197,13 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 ButtonTableSubButtons[i].enabled = false;
             }
 
+            for (int i = 0; i < SedimentTableSubButtons.Length; i++)
+            {
+                SedimentTableSubButtons[i].enabled = false;
+            }
+
         }
+        //Sound Table
         else if (gs.GetCurrentCam() == "Room1_ButtonTable")
         {
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
@@ -201,6 +215,37 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
                 BrokenCoreTableSubButtons[i].enabled = false;
+            }
+
+            for (int i = 0; i < SedimentTableSubButtons.Length; i++)
+            {
+                SedimentTableSubButtons[i].enabled = false;
+            }
+        }
+        //Sediment Table
+        else if (gs.GetCurrentCam() == "Room1_SedimentDesk")
+        {
+            for (int i = 0; i < SedimentTableSubButtons.Length; i++)
+            {
+                if (SedimentTableSubButtons[i].gameObject.name == "Safety Goggles_Textured")
+                {
+                    SedimentTableSubButtons[i].enabled = false;
+                }
+                else
+                {
+                    SedimentTableSubButtons[i].enabled = true;
+                }
+                SubItemsEnabled = true;
+            }
+
+            for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
+            {
+                BrokenCoreTableSubButtons[i].enabled = false;
+            }
+
+            for (int i = 0; i < ButtonTableSubButtons.Length; i++)
+            {
+                ButtonTableSubButtons[i].enabled = false;
             }
         }
     }
