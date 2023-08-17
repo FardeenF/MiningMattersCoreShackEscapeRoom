@@ -7113,7 +7113,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252999101}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
   m_Name: 
@@ -7121,7 +7121,7 @@ MonoBehaviour:
   m_PopUp: 0
   m_AllowExternalJoining: 0
   m_AutoRead: 0
-  m_Priority: 3
+  m_Priority: 0
   m_ContainerName: 
   m_IsLocalizationKey: 0
   m_2DNavigation: 0
@@ -17254,7 +17254,19 @@ MonoBehaviour:
   m_CharacterLimit: 1
   m_OnSubmit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleReEnable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDidEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -17262,8 +17274,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1763352512}
-        m_TargetAssemblyTypeName: puzzleInteraction, Assembly-CSharp
-        m_MethodName: ChangeToUpperCase
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleReEnable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23884,7 +23896,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: SetPasswordGuess
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: CheckPasswordRoom1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -31357,7 +31393,19 @@ MonoBehaviour:
   m_CharacterLimit: 1
   m_OnSubmit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleReEnable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDidEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -31365,8 +31413,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1763352512}
-        m_TargetAssemblyTypeName: puzzleInteraction, Assembly-CSharp
-        m_MethodName: ChangeToUpperCase
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleReEnable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40469,7 +40517,19 @@ MonoBehaviour:
   m_CharacterLimit: 1
   m_OnSubmit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleReEnable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDidEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -40477,8 +40537,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1763352512}
-        m_TargetAssemblyTypeName: puzzleInteraction, Assembly-CSharp
-        m_MethodName: ChangeToUpperCase
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleReEnable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -56349,13 +56409,37 @@ MonoBehaviour:
   m_CharacterLimit: 1
   m_OnSubmit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleReEnable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDidEndEdit:
     m_PersistentCalls:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleReEnable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -56416,7 +56500,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: AccessibleSelectPasswordInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -56454,19 +56550,7 @@ MonoBehaviour:
   m_IsInitialized: 1
   m_CallbackOnHighlight:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1763352512}
-        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
-        m_MethodName: AccessibleSelectPasswordInput
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &2018454396
 GameObject:
@@ -62439,7 +62523,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148627998206}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
   m_Name: 
@@ -62501,7 +62585,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147945131064}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
   m_Name: 

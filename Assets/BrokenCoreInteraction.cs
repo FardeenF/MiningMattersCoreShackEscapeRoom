@@ -238,8 +238,16 @@ public class BrokenCoreInteraction : MonoBehaviour
     {
 
         UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
+        UAP_AccessibilityManager.EnableAccessibility(false);
         
         //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().text = Input.anyKey.ToString();
+    }
+
+    public void AccessibleReEnable()
+    {
+        if (gs.GetScreenReader() == true)
+            UAP_AccessibilityManager.EnableAccessibility(true);
+
     }
 
 
