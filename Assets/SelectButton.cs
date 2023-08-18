@@ -15,7 +15,7 @@ public class SelectButton : MonoBehaviour
         buttonSelected = this.gameObject;
     }
 
-    public void LateUpdate()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

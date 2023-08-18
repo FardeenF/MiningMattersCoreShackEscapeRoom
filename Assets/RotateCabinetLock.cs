@@ -76,11 +76,48 @@ public class RotateCabinetLock : MonoBehaviour
         
     }
 
+    public void ReadAccessibilityMessage(string text)
+    {
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().name = text;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = text;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+    }
+
+    public void ReadAccessibilityMessage()
+    {
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().SelectItem(true);
+    }
+
     public void AccessibleRotateCabinetLock(GameObject spinner)
     {
         Quaternion initialRot = spinner.transform.localRotation;
         spinner.transform.Rotate(new Vector3(0, 0, 72), Space.Self);
         
+    }
+
+    public string LifeformLockNumber(int lockNumber)
+    {
+        if(lockNumber == 1)
+        {
+            return "Dinosaur";
+        }
+        else if(lockNumber == 2)
+        {
+            return "Insect";
+        }
+        else if (lockNumber == 3)
+        {
+            return "Coral";
+        }
+        else if (lockNumber == 4)
+        {
+            return "Trilobite";
+        }
+        else
+        {
+            return "Fish";
+        }
     }
 
     public void AccessibleTrackNumbers(int lockNumber)
@@ -91,6 +128,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number1 > 5)
                 number1 = 1;
             soundManager.PlayLockSpinSound();
+            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number1));
         }
         else if (lockNumber == 2)
         {
@@ -98,6 +136,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number2 > 5)
                 number2 = 1;
             soundManager.PlayLockSpinSound();
+            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number2));
         }
         else if (lockNumber == 3)
         {
@@ -105,6 +144,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number3 > 5)
                 number3 = 1;
             soundManager.PlayLockSpinSound();
+            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number3));
         }
         else if (lockNumber == 4)
         {
@@ -112,6 +152,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number4 > 5)
                 number4 = 1;
             soundManager.PlayLockSpinSound();
+            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number4));
         }
         else if (lockNumber == 5)
         {
@@ -119,6 +160,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number5 > 5)
                 number5 = 1;
             soundManager.PlayLockSpinSound();
+            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number5));
         }
 
     }

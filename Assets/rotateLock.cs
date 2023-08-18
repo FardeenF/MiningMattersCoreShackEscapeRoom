@@ -55,6 +55,19 @@ public class rotateLock : MonoBehaviour
 
     }
 
+    public void ReadAccessibilityMessage(string text)
+    {
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().name = text;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = text;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+    }
+
+    public void ReadAccessibilityMessage()
+    {
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().SelectItem(true);
+    }
+
     public void AccessbileRotateLock(GameObject number)
     {
         Quaternion initialRot = number.transform.localRotation;
@@ -73,6 +86,7 @@ public class rotateLock : MonoBehaviour
                 number1 = 0;
             }
             //locknum = number1;
+            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number1.ToString());
         }
         else if (locknum == 2)
         {
@@ -82,6 +96,7 @@ public class rotateLock : MonoBehaviour
                 number2 = 0;
             }
             //locknum = number2;
+            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number2.ToString());
         }
         else if (locknum == 3)
         {
@@ -91,6 +106,7 @@ public class rotateLock : MonoBehaviour
                 number3 = 0;
             }
             //locknum = number3;
+            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number3.ToString());
         }
         else if (locknum == 4)
         {
@@ -100,6 +116,7 @@ public class rotateLock : MonoBehaviour
                 number4 = 0;
             }
             //locknum = number4;
+            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number4.ToString());
         }
         else if (locknum == 5)
         {
@@ -109,6 +126,7 @@ public class rotateLock : MonoBehaviour
                 number5 = 0;
             }
             //locknum = number5;
+            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number5.ToString());
         }
         else if (locknum == 6)
         {
@@ -118,6 +136,7 @@ public class rotateLock : MonoBehaviour
                 number6 = 0;
             }
             //locknum = number6;
+            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number6.ToString());
         }
 
         Debug.Log(number1.ToString() + number2.ToString() + number3.ToString() + number4.ToString() + number5.ToString() + number6.ToString());

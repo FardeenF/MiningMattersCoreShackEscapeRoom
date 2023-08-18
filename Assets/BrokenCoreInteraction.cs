@@ -46,6 +46,7 @@ public class BrokenCoreInteraction : MonoBehaviour
 
     private bool puzzleSolved = false;
 
+    private GameObject currentHighlightedObject;
 
 
     private void Awake()
@@ -233,20 +234,53 @@ public class BrokenCoreInteraction : MonoBehaviour
         }
     }
 
+    public void GetButtonObjectComputer(AccessibleButton_3D button)
+    {
+        gs.SetHighlightedObject(button);
+        gs.SetTopText("You have entered a letter.");
+    }
+
+    public void ReadAccessibilityMessage(string text)
+    {
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().name = text;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = text;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+    }
+
+    public void ReadAccessibilityMessage()
+    {
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().SelectItem(true);
+    }
+
 
     public void AccessibleSelectPasswordInput()
     {
-
+        //currentHighlightedObject = UAP_AccessibilityManager.GetCurrentFocusObject();
         UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
         UAP_AccessibilityManager.EnableAccessibility(false);
         
         //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().text = Input.anyKey.ToString();
     }
 
-    public void AccessibleReEnable()
+    public void AccessibleReEnable(string num)
     {
         if (gs.GetScreenReader() == true)
             UAP_AccessibilityManager.EnableAccessibility(true);
+
+
+        ReadAccessibilityMessage("Password Letter " + num + " Equals " + gs.GetHighlightedObject().GetComponent<InputField>().text);
+        ReadAccessibilityMessage();
+
+    }
+
+    public void ReadLetter(string letterNum)
+    {
+        if (this.gameObject.GetComponent<InputField>().text == "M")
+        {
+            ReadAccessibilityMessage("Password Letter " + letterNum + " Equals " + this.gameObject.GetComponent<InputField>().text);
+            ReadAccessibilityMessage();
+        }
 
     }
 

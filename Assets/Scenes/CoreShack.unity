@@ -10796,6 +10796,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -10814,7 +10826,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Spinner5
+  m_Text: Spinner 5 Equals Dinosaur
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -13020,7 +13032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cd14eb5c28226234a9f496ce779b06f8, type: 3}
       propertyPath: m_Name
-      value: JarOfSediment_Textured
+      value: Jar of Sediment
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cd14eb5c28226234a9f496ce779b06f8, type: 3}
       propertyPath: m_TagString
@@ -17464,13 +17476,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleReEnable
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3
           m_BoolArgument: 0
         m_CallState: 2
   m_OnDidEndEdit:
@@ -17482,13 +17494,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleReEnable
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3
           m_BoolArgument: 0
         m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -17552,6 +17564,18 @@ MonoBehaviour:
   m_OnInteractionStart:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: GetButtonObjectComputer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 600136640}
+          m_ObjectArgumentAssemblyTypeName: AccessibleButton_3D, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleSelectPasswordInput
@@ -21920,6 +21944,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -21938,7 +21974,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Spinner3
+  m_Text: Spinner 3 Equals Dinosaur
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -23109,6 +23145,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -23127,7 +23175,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Spinner1
+  m_Text: Spinner 1 Equals Dinosaur
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -24461,6 +24509,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 852760890}
+        m_TargetAssemblyTypeName: rotateLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -24479,7 +24539,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Music Lock Number 1
+  m_Text: 'Spinner: 1 Equals: 0'
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -24862,7 +24922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a31a8df052e7fef469e8e6cb228f81bd, type: 3}
       propertyPath: m_Name
-      value: SieveShaker_Textured
+      value: Sieve Shaker
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a31a8df052e7fef469e8e6cb228f81bd, type: 3}
       propertyPath: m_IsActive
@@ -24947,6 +25007,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -24965,7 +25037,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Spinner2
+  m_Text: Spinner 2 Equals Dinosaur
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -30146,6 +30218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 852760890}
+        m_TargetAssemblyTypeName: rotateLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -30164,7 +30248,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Music Lock Number 6
+  m_Text: 'Spinner: 6 Equals: 0'
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -31603,13 +31687,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleReEnable
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 4
           m_BoolArgument: 0
         m_CallState: 2
   m_OnDidEndEdit:
@@ -31621,13 +31705,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleReEnable
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 4
           m_BoolArgument: 0
         m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -31691,6 +31775,18 @@ MonoBehaviour:
   m_OnInteractionStart:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: GetButtonObjectComputer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1098823875}
+          m_ObjectArgumentAssemblyTypeName: AccessibleButton_3D, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleSelectPasswordInput
@@ -33359,6 +33455,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 852760890}
+        m_TargetAssemblyTypeName: rotateLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -33377,7 +33485,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Music Lock Number 2
+  m_Text: 'Spinner: 2 Equals: 0'
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -35294,6 +35402,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 808282965}
+        m_TargetAssemblyTypeName: RotateCabinetLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -35312,7 +35432,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Spinner4
+  m_Text: Spinner 4 Equals Dinosaur
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -36330,7 +36450,21 @@ MonoBehaviour:
   m_IsInitialized: 1
   m_CallbackOnHighlight:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 'Geologic Time Scale Depicting the following Dominant
+            Lifeforms From Youngest to Oldest: Dinosaurs, Insects, Fish, Corals,
+            and Trilobites'
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1268124271
 GameObject:
@@ -40727,13 +40861,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleReEnable
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
   m_OnDidEndEdit:
@@ -40745,13 +40879,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleReEnable
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -40815,6 +40949,18 @@ MonoBehaviour:
   m_OnInteractionStart:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: GetButtonObjectComputer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1449433926}
+          m_ObjectArgumentAssemblyTypeName: AccessibleButton_3D, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleSelectPasswordInput
@@ -42683,7 +42829,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Bottom
+  m_Text: Producing Mines Information Poster
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -42702,7 +42848,20 @@ MonoBehaviour:
   m_IsInitialized: 1
   m_CallbackOnHighlight:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 'Image Depicting Mine Locations from Diamond to Gold:
+            North, North, North, East, East'
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1526932017
 GameObject:
@@ -47789,6 +47948,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 852760890}
+        m_TargetAssemblyTypeName: rotateLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -47807,7 +47978,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Music Lock Number 3
+  m_Text: 'Spinner: 3 Equals: 0'
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -48950,6 +49121,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 852760890}
+        m_TargetAssemblyTypeName: rotateLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -48968,7 +49151,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Music Lock Number 5
+  m_Text: 'Spinner: 5 Equals: 0'
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -54247,6 +54430,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 852760890}
+        m_TargetAssemblyTypeName: rotateLock, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -54265,7 +54460,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Music Lock Number 4
+  m_Text: 'Spinner: 4 Equals: 0'
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -56685,13 +56880,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleReEnable
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
   m_OnDidEndEdit:
@@ -56703,13 +56898,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleReEnable
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -56773,6 +56968,18 @@ MonoBehaviour:
   m_OnInteractionStart:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1763352512}
+        m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
+        m_MethodName: GetButtonObjectComputer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2018127497}
+          m_ObjectArgumentAssemblyTypeName: AccessibleButton_3D, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1763352512}
         m_TargetAssemblyTypeName: BrokenCoreInteraction, Assembly-CSharp
         m_MethodName: AccessibleSelectPasswordInput
@@ -57719,7 +57926,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Top
+  m_Text: Mineral Legend Information Poster
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -57738,7 +57945,20 @@ MonoBehaviour:
   m_IsInitialized: 1
   m_CallbackOnHighlight:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ReadAccessibilityMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 'Mineral Legend Depicting the Following Order: Yellow
+            Sandstone, Orange Limestone, Blue Siltstone, and Red Basalt'
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &2046113483
 GameObject:

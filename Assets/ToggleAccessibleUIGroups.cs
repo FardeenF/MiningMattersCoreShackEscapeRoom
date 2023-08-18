@@ -102,6 +102,16 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         }
     }
 
+
+    public void ReadAccessibilityMessage(string text)
+    {
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().name = text;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = text;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+    }
+
+
     public void GetButtonObject(Button button)
     {
         selectedButton = button;
