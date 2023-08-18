@@ -72,52 +72,52 @@ public class rotateLock : MonoBehaviour
             {
                 number1 = 0;
             }
-            locknum = number1;
+            //locknum = number1;
         }
         else if (locknum == 2)
         {
             number2++;
-            if (number1 > 7)
+            if (number2 > 7)
             {
-                number1 = 0;
+                number2 = 0;
             }
-            locknum = number2;
+            //locknum = number2;
         }
         else if (locknum == 3)
         {
             number3++;
-            if (number1 > 7)
+            if (number3 > 7)
             {
-                number1 = 0;
+                number3 = 0;
             }
-            locknum = number3;
+            //locknum = number3;
         }
         else if (locknum == 4)
         {
             number4++;
-            if (number1 > 7)
+            if (number4 > 7)
             {
-                number1 = 0;
+                number4 = 0;
             }
-            locknum = number4;
+            //locknum = number4;
         }
         else if (locknum == 5)
         {
             number5++;
-            if (number1 > 7)
+            if (number5 > 7)
             {
-                number1 = 0;
+                number5 = 0;
             }
-            locknum = number5;
+            //locknum = number5;
         }
         else if (locknum == 6)
         {
             number6++;
-            if (number1 > 7)
+            if (number6 > 7)
             {
-                number1 = 0;
+                number6 = 0;
             }
-            locknum = number6;
+            //locknum = number6;
         }
 
         Debug.Log(number1.ToString() + number2.ToString() + number3.ToString() + number4.ToString() + number5.ToString() + number6.ToString());

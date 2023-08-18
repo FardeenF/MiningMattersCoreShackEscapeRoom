@@ -56,7 +56,7 @@ public class CollectItem : MonoBehaviour
                 Inventory[i].sprite = itemImage;
                 Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 TopText.text = ("You have collected the spray bottle");
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
                 Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sprayer";
                 Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
@@ -181,6 +181,50 @@ public class CollectItem : MonoBehaviour
         }
     }
 
+    public void AccessibleCollectWetCore()
+    {
+        gs.SetHighlightedObject(this.gameObject.GetComponent<AccessibleButton_3D>());
+        Debug.Log(gs.GetHighlightedObject().GetComponent<Renderer>().material.name);
+        if (gs.GetHighlightedObject().GetComponent<Renderer>().material.name == ("Sprayed (Instance)") ||
+            gs.GetHighlightedObject().GetComponent<Renderer>().material.name == ("Sprayed 1 (Instance)") ||
+            gs.GetHighlightedObject().GetComponent<Renderer>().material.name == ("Sprayed 2 (Instance)") ||
+            gs.GetHighlightedObject().GetComponent<Renderer>().material.name == ("Sprayed 3 (Instance)"))
+        {
+            if (gs.GetHighlightedObject().name == "CorePieceToInspect1")
+                gs.SetSelectedCore2(1);
+            else if (gs.GetHighlightedObject().name == "CorePieceToInspect2")
+                gs.SetSelectedCore2(2);
+            else if (gs.GetHighlightedObject().name == "CorePieceToInspect3")
+                gs.SetSelectedCore2(3);
+            else if (gs.GetHighlightedObject().name == "CorePieceToInspect4")
+                gs.SetSelectedCore2(4);
+
+
+            for (int i = 0; i <= Inventory.Length; i++)
+            {
+                if (Inventory[i].sprite == null && gs.GetIsHoldingWetCore() == false)
+                {
+                    gs.SetIsHoldingWetCore(true);
+                    Inventory[i].sprite = itemImage;
+                    Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                    TopText.text = (Message);
+                    this.gameObject.SetActive(false);
+                    TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                    Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Wet Core Piece";
+                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
+                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Wet Core Piece";
+                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Wet Core Piece";
+                    break;
+                }
+            }
+        }
+        else
+        {
+            TopText.text = ("These cores are too dry. It is hard to tell if its gold or not");
+            TopText.GetComponent<UAP_BaseElement>().SelectItem();
+        }
+    }
+
     public void ShootRaycast()
     {
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
@@ -231,7 +275,8 @@ public class CollectItem : MonoBehaviour
                         Inventory[i].sprite = itemImage;
                         Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                         TopText.text = (Message);
-                        Destroy(this.gameObject);
+                        this.gameObject.SetActive(false);
+                        Debug.Log("Spray Bottle Deactivated in Hierarchy");
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sprayer";
                         Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;

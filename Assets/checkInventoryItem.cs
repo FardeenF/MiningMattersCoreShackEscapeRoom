@@ -32,6 +32,10 @@ public class checkInventoryItem : MonoBehaviour
 
     //CorePieces2 Variables
     public GameObject[] core2_pieces;
+    public Material wetCoreMat0;
+    public Material wetCoreMat1;
+    public Material wetCoreMat2;
+    public Material wetCoreMat3;
 
     public CinemachineVirtualCamera VC_brokenCoreTable;
 
@@ -154,6 +158,27 @@ public class checkInventoryItem : MonoBehaviour
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                     soundManager.PlayWaterSprayerSound();
                     Debug.Log("PullOutSprayBottle");
+
+                    if (gs.GetScreenReader() == true)
+                    {
+                        // Wet the cores
+                        activeSprayBottle.GetComponentInChildren<ParticleSystem>().Play();
+                        for (int i = 0; i < core2_pieces.Length; i++)
+                        {
+                            if (i == 0)
+                                core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat0;
+                            else if (i == 1)
+                                core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat1;
+                            else if (i == 2)
+                                core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat2;
+                            else if (i == 3)
+                                core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat3;
+
+
+                        }
+                        Debug.Log("Wetting Cores");
+                    }
+                    
                 }
                 else
                 {
@@ -566,7 +591,7 @@ public class checkInventoryItem : MonoBehaviour
     }
 
 
-    
+   
 
     private void Update()
     {
@@ -702,6 +727,7 @@ public class checkInventoryItem : MonoBehaviour
         {
             activeSprayBottle.GetComponentInChildren<ParticleSystem>().Stop();
         }
+        
 
 
         //Check if holding saw blade and click broken one

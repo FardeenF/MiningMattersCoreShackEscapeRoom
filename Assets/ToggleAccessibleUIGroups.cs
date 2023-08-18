@@ -47,39 +47,53 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
+                if (BrokenCoreTableSubButtons[i] == null)
+                    i++;
                 BrokenCoreTableSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
 
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
+                if (ButtonTableSubButtons[i] == null)
+                    i++;
                 ButtonTableSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
 
             for (int i = 0; i < SedimentTableSubButtons.Length; i++)
             {
+                if (SedimentTableSubButtons[i] == null)
+                    i++;
                 SedimentTableSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
 
             for (int i = 0; i < CabinetSubButtons.Length; i++)
             {
+                if (CabinetSubButtons[i] == null)
+                    i++;
                 CabinetSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
             for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
             {
+                if (InsideTopCabinetSubButtons[i] == null)
+                    i++;
                 InsideTopCabinetSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
             for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
             {
+                if (InsideBottomCabinetSubButtons[i] == null)
+                    i++;
                 InsideBottomCabinetSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
             for (int i = 0; i < ComputerDeskSubButtons.Length; i++)
             {
+                if (ComputerDeskSubButtons[i] == null)
+                    i++;
                 ComputerDeskSubButtons[i].enabled = false;
                 SubItemsEnabled = false;
             }
@@ -213,29 +227,41 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
+                if (BrokenCoreTableSubButtons[i] == null)
+                    i++;
                 BrokenCoreTableSubButtons[i].enabled = true;
                 SubItemsEnabled = true;
             }
             // Set others to false
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
+                if (ButtonTableSubButtons[i] == null)
+                    i++;
                 ButtonTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < SedimentTableSubButtons.Length; i++)
             {
+                if (SedimentTableSubButtons[i] == null)
+                    i++;
                 SedimentTableSubButtons[i].enabled = false;
             }
             for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
             {
+                if (InsideTopCabinetSubButtons[i] == null)
+                    i++;
                 InsideTopCabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
             {
+                if (InsideBottomCabinetSubButtons[i] == null)
+                    i++;
                 InsideBottomCabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < ComputerDeskSubButtons.Length; i++)
             {
+                if (ComputerDeskSubButtons[i] == null)
+                    i++;
                 ComputerDeskSubButtons[i].enabled = false;
             }
             //
@@ -246,34 +272,48 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
+                if (ButtonTableSubButtons[i] == null)
+                    i++;
                 ButtonTableSubButtons[i].enabled = true;
                 SubItemsEnabled = true;
             }
             // Set others to false
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
+                if (BrokenCoreTableSubButtons[i] == null)
+                    i++;
                 BrokenCoreTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < SedimentTableSubButtons.Length; i++)
             {
+                if (SedimentTableSubButtons[i] == null)
+                    i++;
                 SedimentTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < CabinetSubButtons.Length; i++)
             {
+                if (CabinetSubButtons[i] == null)
+                    i++;
                 CabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
             {
+                if (InsideTopCabinetSubButtons[i] == null)
+                    i++;
                 InsideTopCabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
             {
+                if (InsideBottomCabinetSubButtons[i] == null)
+                    i++;
                 InsideBottomCabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < ComputerDeskSubButtons.Length; i++)
             {
+                if (ComputerDeskSubButtons[i] == null)
+                    i++;
                 ComputerDeskSubButtons[i].enabled = false;
             }
             //
@@ -283,6 +323,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < SedimentTableSubButtons.Length; i++)
             {
+                if (SedimentTableSubButtons[i] == null)
+                    i++;
                 if (SedimentTableSubButtons[i].gameObject.name == "Safety Goggles_Textured")
                 {
                     SedimentTableSubButtons[i].enabled = false;
@@ -296,28 +338,40 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             // Set others to false
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
+                if (BrokenCoreTableSubButtons[i] == null)
+                    i++;
                 BrokenCoreTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
+                if (ButtonTableSubButtons[i] == null)
+                    i++;
                 ButtonTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < CabinetSubButtons.Length; i++)
             {
+                if (CabinetSubButtons[i] == null)
+                    i++;
                 CabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
             {
+                if (InsideTopCabinetSubButtons[i] == null)
+                    i++;
                 InsideTopCabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
             {
+                if (InsideBottomCabinetSubButtons[i] == null)
+                    i++;
                 InsideBottomCabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < ComputerDeskSubButtons.Length; i++)
             {
+                if (ComputerDeskSubButtons[i] == null)
+                    i++;
                 ComputerDeskSubButtons[i].enabled = false;
             }
             //
@@ -328,6 +382,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < CabinetSubButtons.Length; i++)
             {
+                if (CabinetSubButtons[i] == null)
+                    i++;
                 if (CabinetSubButtons[i] != null)
                 {
                     CabinetSubButtons[i].enabled = true;
@@ -338,8 +394,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             //Setting inside top of cabinet sub items to true
             if (gs.GetJigSawDone() == true)
             {
+
                 for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
                 {
+                    if (InsideTopCabinetSubButtons[i] == null)
+                        i++;
                     InsideTopCabinetSubButtons[i].enabled = true;
                 }
             }
@@ -348,6 +407,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
                 {
+                    if (InsideBottomCabinetSubButtons[i] == null)
+                        i++;
                     InsideBottomCabinetSubButtons[i].enabled = true;
                 }
             }
@@ -355,20 +416,28 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             // Set others to false
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
+                if (BrokenCoreTableSubButtons[i] == null)
+                    i++;
                 BrokenCoreTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
+                if (ButtonTableSubButtons[i] == null)
+                    i++;
                 ButtonTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < SedimentTableSubButtons.Length; i++)
             {
+                if (SedimentTableSubButtons[i] == null)
+                    i++;
                 SedimentTableSubButtons[i].enabled = false;
             }
             for (int i = 0; i < ComputerDeskSubButtons.Length; i++)
             {
+                if (ComputerDeskSubButtons[i] == null)
+                    i++;
                 ComputerDeskSubButtons[i].enabled = false;
             }
             //
@@ -379,34 +448,48 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < ComputerDeskSubButtons.Length; i++)
             {
+                if (ComputerDeskSubButtons[i] == null)
+                    i++;
                 ComputerDeskSubButtons[i].enabled = true;
                 SubItemsEnabled = true;
             }
             // Set others to false
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
+                if (BrokenCoreTableSubButtons[i] == null)
+                    i++;
                 BrokenCoreTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < SedimentTableSubButtons.Length; i++)
             {
+                if (SedimentTableSubButtons[i] == null)
+                    i++;
                 SedimentTableSubButtons[i].enabled = false;
             }
 
             for (int i = 0; i < CabinetSubButtons.Length; i++)
             {
+                if (CabinetSubButtons[i] == null)
+                    i++;
                 CabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < InsideTopCabinetSubButtons.Length; i++)
             {
+                if (InsideTopCabinetSubButtons[i] == null)
+                    i++;
                 InsideTopCabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < InsideBottomCabinetSubButtons.Length; i++)
             {
+                if (InsideBottomCabinetSubButtons[i] == null)
+                    i++;
                 InsideBottomCabinetSubButtons[i].enabled = false;
             }
             for (int i = 0; i < ButtonTableSubButtons.Length; i++)
             {
+                if (ButtonTableSubButtons[i] == null)
+                    i++;
                 ButtonTableSubButtons[i].enabled = false;
             }
             //
