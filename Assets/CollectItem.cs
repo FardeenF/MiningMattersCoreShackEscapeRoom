@@ -101,7 +101,7 @@ public class CollectItem : MonoBehaviour
                 Inventory[i].sprite = itemImage;
                 Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 TopText.text = (Message);
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
                 Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieve";
                 Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
@@ -124,7 +124,7 @@ public class CollectItem : MonoBehaviour
                 Inventory[i].sprite = itemImage;
                 Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 TopText.text = (Message);
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
                 Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Dust Mask";
                 Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
@@ -147,7 +147,7 @@ public class CollectItem : MonoBehaviour
                 Inventory[i].sprite = itemImage;
                 Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 TopText.text = (Message);
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
                 Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "PPE Boots";
                 Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;

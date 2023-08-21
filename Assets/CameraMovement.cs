@@ -34,7 +34,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
         }
         
     }

@@ -32,12 +32,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] ComputerDeskSubButtons;
 
     public GameObject[] MainRoom1Locations;
-    public AccessibleButton_3D MainCoreTable;
-    public AccessibleButton_3D MainSoundTable;
-    public AccessibleButton_3D MainSedimentTable;
-    public AccessibleButton_3D MainComputerDesk;
-    public AccessibleButton_3D MainCabinet;
-    public AccessibleButton_3D PPEBoots;
+
 
     private bool SubItemsEnabled = false;
 

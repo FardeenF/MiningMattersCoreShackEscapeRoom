@@ -8021,12 +8021,6 @@ MonoBehaviour:
   - {fileID: 41728747}
   - {fileID: 919132148627998206}
   - {fileID: 919132147945131064}
-  MainCoreTable: {fileID: 0}
-  MainSoundTable: {fileID: 0}
-  MainSedimentTable: {fileID: 0}
-  MainComputerDesk: {fileID: 0}
-  MainCabinet: {fileID: 0}
-  PPEBoots: {fileID: 0}
 --- !u!1001 &276132411
 PrefabInstance:
   m_ObjectHideFlags: 0
