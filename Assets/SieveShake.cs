@@ -21,7 +21,8 @@ public class SieveShake : MonoBehaviour
     public GameObject[] OriginalBeakerLocations;
     public GameObject[] NewBeakerLocations;
     
-    private string[] isSpotFilledBack = {"Beaker (1)", "Beaker (3)", "Beaker", "Beaker (2)"};
+    //private string[] isSpotFilledBack = {"Beaker (1)", "Beaker (3)", "Beaker", "Beaker (2)"};
+    private string[] isSpotFilledBack = { "Sand Beaker", "Mud/Clay Beaker", "Gravel Beaker", "Silt Beaker" };
     private string[] isSpotFilledFront = { "Empty", "Empty", "Empty", "Empty" };
 
     public GameObject SedimentDesk;
@@ -35,6 +36,8 @@ public class SieveShake : MonoBehaviour
     public GameObject beaker2;
     public GameObject beaker3;
     public GameObject beaker4;
+
+    private string beakerLocation;
 
     public void Update()
     {
@@ -61,7 +64,8 @@ public class SieveShake : MonoBehaviour
                 DrawerOpened = true;
 
                 AccessibleSafetyGlassesButton.enabled = true;
-                gs.SetTopText("The drawer has triggered to open!");
+                UAP_AccessibilityManager.StopSpeaking();
+                gs.SetTopText("The drawer has opened to reveal safety glassses to collect!");
                 gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
             }
         }
@@ -309,6 +313,8 @@ public class SieveShake : MonoBehaviour
 
             //Sediment to Jar Logic Here
             doneShaking = true;
+            gs.SetTopText("The sediments have been filtered into different beakers.");
+            gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
             StartCoroutine(moveSediment());
         }
     }
@@ -327,9 +333,9 @@ public class SieveShake : MonoBehaviour
     public void GetButtonObject(AccessibleButton_3D button)
     {
         gs.SetHighlightedObject(button);
-        gs.SetTopText("You have moved " + button.gameObject.name);
-        gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
-
+        //gs.SetTopText("You have moved " + button.gameObject.name + " to position " + beakerLocation);
+        //gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
+        //Debug.Log( + ". You have moved " + button.gameObject.name + " to position " + beakerLocation);
     }
 
 
@@ -346,6 +352,9 @@ public class SieveShake : MonoBehaviour
                     gs.GetHighlightedObject().transform.position = NewBeakerLocations[i].transform.position;
                     gs.GetHighlightedObject().transform.gameObject.tag = ("BeakerMoved");
                     isSpotFilledFront[i] = gs.GetHighlightedObject().transform.gameObject.name;
+                    gs.SetTopText("You have moved " + gs.GetHighlightedObject().gameObject.name + " to position " + (i + 1).ToString() + " of the puzzle order.");
+                    gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
+                    //beakerLocation = i.ToString() + " of the puzzle order.";
                     break;
                 }
 
@@ -375,7 +384,9 @@ public class SieveShake : MonoBehaviour
                     gs.GetHighlightedObject().transform.position = OriginalBeakerLocations[i].transform.position;
                     gs.GetHighlightedObject().transform.gameObject.tag = ("Beaker");
                     isSpotFilledBack[i] = gs.GetHighlightedObject().transform.gameObject.name;
-
+                    gs.SetTopText("You have moved " + gs.GetHighlightedObject().gameObject.name + " to position " + (i + 1).ToString() + " of the original order.");
+                    gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
+                    //beakerLocation = i.ToString() + " of the original order.";
                     break;
 
                 }

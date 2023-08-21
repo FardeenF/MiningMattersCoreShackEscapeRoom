@@ -21,6 +21,7 @@ public class rotateLock : MonoBehaviour
     public SoundManager soundManager;
 
     public GameObject Sprayer;
+    public AccessibleButton_3D[] Spinners;
 
     // Start is called before the first frame update
     void Start()
@@ -46,9 +47,15 @@ public class rotateLock : MonoBehaviour
         {
             Debug.Log("Password Correct");
             Lock.gameObject.GetComponent<Animation>().Play(animation: "Unlock");
-            topText.text = "You have unlocked the sprayer. Click on it to add it to your inventory";
+            topText.text = "You have unlocked the sprayer. Select it to add it to your inventory";
+            topText.GetComponent<UAP_BaseElement>().SelectItem();
             gs.SetIsSprayerUnlocked(true);
             soundManager.PlayUnlockSound();
+
+            for(int i = 0; i<Spinners.Length; i++)
+            {
+                Spinners[i].enabled = false;
+            }
 
         }
 
@@ -86,7 +93,7 @@ public class rotateLock : MonoBehaviour
                 number1 = 0;
             }
             //locknum = number1;
-            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number1.ToString());
+            ReadAccessibilityMessage(number1.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
         }
         else if (locknum == 2)
         {
@@ -96,7 +103,7 @@ public class rotateLock : MonoBehaviour
                 number2 = 0;
             }
             //locknum = number2;
-            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number2.ToString());
+            ReadAccessibilityMessage(number2.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
         }
         else if (locknum == 3)
         {
@@ -106,7 +113,7 @@ public class rotateLock : MonoBehaviour
                 number3 = 0;
             }
             //locknum = number3;
-            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number3.ToString());
+            ReadAccessibilityMessage(number3.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
         }
         else if (locknum == 4)
         {
@@ -116,7 +123,7 @@ public class rotateLock : MonoBehaviour
                 number4 = 0;
             }
             //locknum = number4;
-            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number4.ToString());
+            ReadAccessibilityMessage(number4.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
         }
         else if (locknum == 5)
         {
@@ -126,7 +133,7 @@ public class rotateLock : MonoBehaviour
                 number5 = 0;
             }
             //locknum = number5;
-            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number5.ToString());
+            ReadAccessibilityMessage(number5.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
         }
         else if (locknum == 6)
         {
@@ -136,7 +143,7 @@ public class rotateLock : MonoBehaviour
                 number6 = 0;
             }
             //locknum = number6;
-            ReadAccessibilityMessage("Spinner: " + locknum.ToString() + " Equals: " + number6.ToString());
+            ReadAccessibilityMessage(number6.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
         }
 
         Debug.Log(number1.ToString() + number2.ToString() + number3.ToString() + number4.ToString() + number5.ToString() + number6.ToString());

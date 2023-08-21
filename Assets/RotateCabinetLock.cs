@@ -128,7 +128,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number1 > 5)
                 number1 = 1;
             soundManager.PlayLockSpinSound();
-            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number1));
+            ReadAccessibilityMessage(LifeformLockNumber(number1) + " on Spinner " + lockNumber.ToString() + " Species Lock");
         }
         else if (lockNumber == 2)
         {
@@ -136,7 +136,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number2 > 5)
                 number2 = 1;
             soundManager.PlayLockSpinSound();
-            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number2));
+            ReadAccessibilityMessage(LifeformLockNumber(number2) + " on Spinner " + lockNumber.ToString() + " Species Lock");
         }
         else if (lockNumber == 3)
         {
@@ -144,7 +144,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number3 > 5)
                 number3 = 1;
             soundManager.PlayLockSpinSound();
-            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number3));
+            ReadAccessibilityMessage(LifeformLockNumber(number3) + " on Spinner " + lockNumber.ToString() + " Species Lock");
         }
         else if (lockNumber == 4)
         {
@@ -152,7 +152,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number4 > 5)
                 number4 = 1;
             soundManager.PlayLockSpinSound();
-            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number4));
+            ReadAccessibilityMessage(LifeformLockNumber(number4) + " on Spinner " + lockNumber.ToString() + " Species Lock");
         }
         else if (lockNumber == 5)
         {
@@ -160,7 +160,7 @@ public class RotateCabinetLock : MonoBehaviour
             if (number5 > 5)
                 number5 = 1;
             soundManager.PlayLockSpinSound();
-            ReadAccessibilityMessage("Spinner: " + lockNumber.ToString() + " Equals: " + LifeformLockNumber(number5));
+            ReadAccessibilityMessage(LifeformLockNumber(number5) + " on Spinner " + lockNumber.ToString() + " Species Lock");
         }
 
     }

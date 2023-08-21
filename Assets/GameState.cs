@@ -70,6 +70,8 @@ public class GameState : MonoBehaviour
 
     private bool hasFoundSodaLiteRock = false;
 
+    private bool areCoresWet = false;
+
     private AccessibleButton_3D highlightedObject;
 
     public TextMeshProUGUI topText;
@@ -506,7 +508,14 @@ public class GameState : MonoBehaviour
         currentCam = text;
     }
 
-    
+    public bool GetAreCoresWet()
+    {
+        return areCoresWet;
+    }
+    public void SetAreCoresWet(bool cores)
+    {
+        areCoresWet = cores;
+    }
 
 }
 

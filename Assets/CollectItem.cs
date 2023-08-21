@@ -199,6 +199,7 @@ public class CollectItem : MonoBehaviour
             else if (gs.GetHighlightedObject().name == "CorePieceToInspect4")
                 gs.SetSelectedCore2(4);
 
+            
 
             for (int i = 0; i <= Inventory.Length; i++)
             {
@@ -214,6 +215,7 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Wet Core Piece";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Wet Core Piece";
+                    gs.SetAreCoresWet(true);
                     break;
                 }
             }

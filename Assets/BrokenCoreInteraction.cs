@@ -46,7 +46,7 @@ public class BrokenCoreInteraction : MonoBehaviour
 
     private bool puzzleSolved = false;
 
-    private GameObject currentHighlightedObject;
+    public AccessibleButton_3D sodaliteMessage;
 
 
     private void Awake()
@@ -86,6 +86,8 @@ public class BrokenCoreInteraction : MonoBehaviour
                 for (int i = 0; i < brokenCores.Length; i++)
                 {
                     brokenCores[i].GetComponent<Renderer>().material = solvedMaterials[i];
+                    gs.SetTopText("The Cores have revealed a password as followed: M, I, N, E");
+                    gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
                 }
                 puzzleSolved = true;
                 soundManager.PlaySuccessSound();
@@ -176,8 +178,8 @@ public class BrokenCoreInteraction : MonoBehaviour
     public void GetButtonObject(AccessibleButton_3D button)
     {
         gs.SetHighlightedObject(button);
-        gs.SetTopText("You have moved the " + button.gameObject.name);
-        gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
+        //gs.SetTopText("You have moved the " + button.gameObject.name);
+        //gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
 
     }
 
@@ -193,6 +195,8 @@ public class BrokenCoreInteraction : MonoBehaviour
                     gs.GetHighlightedObject().transform.position = CorePieceLocations[i].transform.position;
                     gs.GetHighlightedObject().transform.gameObject.tag = "BrokenCoreOnTable";
                     CurrentTableLocations[i] = gs.GetHighlightedObject().transform.gameObject.name;
+                    gs.SetTopText("You have moved " + gs.GetHighlightedObject().gameObject.name + " to position " + (i + 1).ToString() + " of the puzzle order.");
+                    gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
                     Debug.Log("ACTIVATED!");
                     break;
                 }
@@ -218,6 +222,8 @@ public class BrokenCoreInteraction : MonoBehaviour
                     gs.GetHighlightedObject().transform.position = OriginalCorePieceLocations[i].transform.position;
                     gs.GetHighlightedObject().transform.gameObject.tag = "BrokenCore";
                     CurrentGroundLocations[i] = gs.GetHighlightedObject().transform.gameObject.name;
+                    gs.SetTopText("You have moved " + gs.GetHighlightedObject().gameObject.name + " to position " + (i + 1).ToString() + " of the original order.");
+                    gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
                     break;
                 }
             }
@@ -269,7 +275,8 @@ public class BrokenCoreInteraction : MonoBehaviour
             UAP_AccessibilityManager.EnableAccessibility(true);
 
 
-        ReadAccessibilityMessage("Password Letter " + num + " Equals " + gs.GetHighlightedObject().GetComponent<InputField>().text);
+        //ReadAccessibilityMessage("Password Letter " + num + " Equals " + gs.GetHighlightedObject().GetComponent<InputField>().text);
+        ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text + " is entered in Password Letter" + num);
         ReadAccessibilityMessage();
 
     }
@@ -278,7 +285,8 @@ public class BrokenCoreInteraction : MonoBehaviour
     {
         if (this.gameObject.GetComponent<InputField>().text == "M")
         {
-            ReadAccessibilityMessage("Password Letter " + letterNum + " Equals " + this.gameObject.GetComponent<InputField>().text);
+            //ReadAccessibilityMessage("Password Letter " + letterNum + " Equals " + this.gameObject.GetComponent<InputField>().text);
+            ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text + " is entered in Password Letter" + letterNum);
             ReadAccessibilityMessage();
         }
 
@@ -310,6 +318,9 @@ public class BrokenCoreInteraction : MonoBehaviour
                 gs.SetRoom1PasswordPuzzle(true);
 
                 soundManager.PlaySuccessSound();
+
+                sodaliteMessage.enabled = true;
+                sodaliteMessage.SelectItem();
             }
             else
             {

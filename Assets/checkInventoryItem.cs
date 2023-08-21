@@ -128,9 +128,16 @@ public class checkInventoryItem : MonoBehaviour
                     isHandLensActive = true;
 
                     holdingSomething = true;
-                    topText.text = ("Can be used to get a closer look at items");
-                    
-                    topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    if (!gs.GetAreCoresWet())
+                    {
+                        topText.text = ("Can be used to get a closer look at items");
+                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    }
+                    else
+                    {
+                        if (gs.GetScreenReader())
+                            AccessibleHandLensIdentify();
+                    }
                 }
 
 
@@ -176,6 +183,7 @@ public class checkInventoryItem : MonoBehaviour
 
 
                         }
+                        gs.SetAreCoresWet(true);
                         Debug.Log("Wetting Cores");
                     }
                     
@@ -602,6 +610,7 @@ public class checkInventoryItem : MonoBehaviour
         }
 
 
+        
 
         ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 1.0f);
         ItemFollowCam(isSprayBottleActive, activeSprayBottle, 100, true, 2.0f);
@@ -1010,6 +1019,17 @@ public class checkInventoryItem : MonoBehaviour
         
 
 
+    }
+
+
+
+    public void AccessibleHandLensIdentify()
+    {
+        if(gs.GetCurrentCam() == "Room1_BrokenCoreShackTable" && isHandLensActive && gs.GetAreCoresWet())
+        {
+            gs.SetTopText("The fourth core looks to be promising...");
+            gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
+        }
     }
 
 }

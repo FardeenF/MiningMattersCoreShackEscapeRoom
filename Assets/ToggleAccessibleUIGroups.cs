@@ -419,7 +419,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         }
 
         //Puzzle Cabinet
-        else if (gs.GetCurrentCam() == "Room1_Cabinet")
+        else if (gs.GetCurrentCam() == "Room1_Cabinet" || gs.GetCurrentCam() == "Room1_CabinetLock")
         {
             for (int i = 0; i < CabinetSubButtons.Length; i++)
             {
@@ -476,15 +476,25 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             //
         }
 
-        //Sound Table
+        //Computer Desk
         else if (gs.GetCurrentCam() == "Room1_Computer")
         {
             for (int i = 0; i < ComputerDeskSubButtons.Length; i++)
             {
-                if (ComputerDeskSubButtons[i] != null)
+                if (ComputerDeskSubButtons[i] != null && !gs.GetRoom1PasswordPuzzle())
                 {
                     ComputerDeskSubButtons[i].enabled = true;
                     
+                }
+
+                if(ComputerDeskSubButtons[i].name == "EmailRead")
+                {
+                    ComputerDeskSubButtons[i].enabled = false;
+                }
+
+                if(ComputerDeskSubButtons[i].name == "EmailRead" && gs.GetRoom1PasswordPuzzle())
+                {
+                    ComputerDeskSubButtons[i].enabled = true;
                 }
                 SubItemsEnabled = true;
             }
