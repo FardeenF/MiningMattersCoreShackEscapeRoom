@@ -118,6 +118,34 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
             }
         }
+        else if(gs.GetCurrentCam() == "Room2_Main")
+        {
+            for (int i = 0; i < MainRoom1Locations.Length; i++)
+            {
+                if(MainRoom1Locations[i].name == "Door (1)")
+                {
+                    MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
+                }
+                else
+                {
+                    MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
+                }
+            }
+        }
+        else if (gs.GetCurrentCam() == "Room2_Main")
+        {
+            for (int i = 0; i < MainRoom1Locations.Length; i++)
+            {
+                if (MainRoom1Locations[i].name == "Door 2")
+                {
+                    MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
+                }
+                else
+                {
+                    MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
+                }
+            }
+        }
         else
         {
             for (int i = 0; i < MainRoom1Locations.Length; i++)
