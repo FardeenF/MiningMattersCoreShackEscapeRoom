@@ -31,6 +31,14 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] InsideBottomCabinetSubButtons;
     public AccessibleButton_3D[] ComputerDeskSubButtons;
 
+    public GameObject[] MainRoom1Locations;
+    public AccessibleButton_3D MainCoreTable;
+    public AccessibleButton_3D MainSoundTable;
+    public AccessibleButton_3D MainSedimentTable;
+    public AccessibleButton_3D MainComputerDesk;
+    public AccessibleButton_3D MainCabinet;
+    public AccessibleButton_3D PPEBoots;
+
     private bool SubItemsEnabled = false;
 
     public void Update()
@@ -99,6 +107,23 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             }
 
             SubItemsEnabled = false;
+        }
+
+
+        //Disabling the other main location buttons
+        if(gs.GetCurrentCam() == "Room1_Main")
+        {
+            for(int i = 0; i < MainRoom1Locations.Length; i++)
+            {
+                MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < MainRoom1Locations.Length; i++)
+            {
+                MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
         }
     }
 
