@@ -13,7 +13,28 @@ public class InteractObject : MonoBehaviour
     public TextMeshProUGUI topText;
     public SoundManager soundManager;
 
+    public void AccessibleWaterHoseInteraction()
+    {
+        if (UAP_AccessibilityManager.GetCurrentFocusObject().tag == "WaterHoseSwitch")
+        {
+            if (isOn == false)
+            {
+                this.gameObject.GetComponent<Animation>().Play(animation: "Toggle");
+                topText.text = "Water for Saw has been turned on!";
+                isOn = true;
+                gs.SetIsWaterOn(true);
+                soundManager.PlaySwitchSound();
+            }
+            else if (isOn == true)
+            {
+                this.gameObject.GetComponent<Animation>().Play(animation: "ToggleBack");
+                topText.text = "Water for Saw has been turned back off!";
+                isOn = false;
+                gs.SetIsWaterOn(false);
+            }
 
+        }
+    }
 
     // Update is called once per frame
     void Update()

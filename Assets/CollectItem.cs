@@ -831,7 +831,8 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
-                    Destroy(this.gameObject);
+                    //Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieve";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
@@ -856,7 +857,8 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
-                    Destroy(this.gameObject);
+                    //Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Safety Glasses";
                     Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
@@ -872,13 +874,16 @@ public class CollectItem : MonoBehaviour
         {
             if (gs.GetHasDustMask() == true && gs.GetHasSafetyGlasses() == true && gs.GetPPEState() == true)
             {
-                TopText.text = "You have the neccessary items to enter this room.";
+                gs.SetHighlightedObject(UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>());
+                Debug.Log("Highlighted: " + gs.GetHighlightedObject().name);
+                TopText.text = "You have the necessary items to enter this room.";
                 gs.GetHighlightedObject().transform.gameObject.GetComponent<Animation>()["Cube|Open"].time = 0.3f;
                 gs.GetHighlightedObject().transform.gameObject.GetComponent<Animation>()["Cube|Open"].speed = 0.3f;
                 gs.GetHighlightedObject().transform.gameObject.GetComponent<Animation>().Play();
                 gs.GetHighlightedObject().transform.gameObject.GetComponent<AudioSource>().Play();
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
                 gs.SetCurrentRoom(2);
+                gs.SetCurrentCam("Room2_Main");
                 Debug.Log("Current Room: " + gs.GetCurrentRoom());
             }
             else
@@ -894,6 +899,7 @@ public class CollectItem : MonoBehaviour
             TopText.text = ("Heading back to room 1");
             TopText.GetComponent<UAP_BaseElement>().SelectItem();
             gs.SetCurrentRoom(1);
+            gs.SetCurrentCam("Room2_Main");
             Debug.Log("Current Room: " + gs.GetCurrentRoom());
 
         }
@@ -911,7 +917,8 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
-                    Destroy(this.gameObject);
+                    //Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Box of Puzzle Pieces";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
@@ -936,7 +943,8 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
-                    Destroy(this.gameObject);
+                    //Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "Dust Mask";
                     Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
@@ -961,7 +969,8 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
-                    Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
+                    //Destroy(this.gameObject);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Saw Blade";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
@@ -1088,7 +1097,8 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
-                    Destroy(this.gameObject);
+                    //Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Magnet Pen";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;

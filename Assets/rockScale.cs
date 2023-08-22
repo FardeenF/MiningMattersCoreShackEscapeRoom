@@ -24,6 +24,79 @@ public class rockScale : MonoBehaviour
     public SoundManager soundManager;
 
 
+
+
+    public void AccessibleRockMover()
+    {
+        //Check if you collect the PPE Boots
+        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "Sedimentary")
+        {
+            if (placedRock == false)
+            {
+                UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = rockLocation.transform.position;
+
+                Igneous.transform.position = emptyIgneous.transform.position;
+                Metamorphic.transform.position = emptyMetamorphic.transform.position;
+
+                weight.text = "3g";
+                placedRock = true;
+
+                soundManager.PlayAltPickupSound();
+            }
+            else if (placedRock == true && UAP_AccessibilityManager.GetCurrentFocusObject().transform.position == rockLocation.transform.position)
+            {
+                UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = emptySedimentary.transform.position;
+                weight.text = "0g";
+                placedRock = false;
+            }
+        }
+
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "Metamorphic")
+        {
+            if (placedRock == false)
+            {
+                UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = rockLocation.transform.position;
+
+                Igneous.transform.position = emptyIgneous.transform.position;
+                Sedimentary.transform.position = emptySedimentary.transform.position;
+
+                weight.text = "4g";
+                placedRock = true;
+
+                soundManager.PlayAltPickupSound();
+            }
+            else if (placedRock == true && UAP_AccessibilityManager.GetCurrentFocusObject().transform.position == rockLocation.transform.position)
+            {
+                UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = emptyMetamorphic.transform.position;
+                weight.text = "0g";
+                placedRock = false;
+            }
+        }
+
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "Igneous")
+        {
+            if (placedRock == false)
+            {
+                UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = rockLocation.transform.position;
+
+                Sedimentary.transform.position = emptySedimentary.transform.position;
+                Metamorphic.transform.position = emptyMetamorphic.transform.position;
+
+                weight.text = "6g";
+                placedRock = true;
+
+                soundManager.PlayAltPickupSound();
+            }
+            else if (placedRock == true && UAP_AccessibilityManager.GetCurrentFocusObject().transform.position == rockLocation.transform.position)
+            {
+                UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = emptyIgneous.transform.position;
+                weight.text = "0g";
+                placedRock = false;
+            }
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {

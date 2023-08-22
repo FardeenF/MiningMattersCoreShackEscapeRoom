@@ -10,7 +10,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleUIGroupRoot controlsMenu;
     public AccessibleUIGroupRoot GameUI;
     public AccessibleUIGroupRoot Room1;
-    
+    public AccessibleUIGroupRoot Room2;
+
 
     public TextMeshProUGUI TopText;
 
@@ -22,7 +23,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     public CinemachineVirtualCamera[] cameras;
 
-
+    //Room 1
     public AccessibleButton_3D[] BrokenCoreTableSubButtons;
     public AccessibleButton_3D[] ButtonTableSubButtons;
     public AccessibleButton_3D[] SedimentTableSubButtons;
@@ -31,10 +32,69 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] InsideBottomCabinetSubButtons;
     public AccessibleButton_3D[] ComputerDeskSubButtons;
 
+    //Room 2
+    public AccessibleButton_3D[] WaterShutOffSubButtons;
+    public AccessibleButton_3D[] RockScaleSubButtons;
+    public AccessibleButton_3D[] FilingCabinetSubButtons;
+    public AccessibleButton_3D[] InsideFilingCabinetSubButtons;
+    public AccessibleButton_3D[] DiamondSawSubButtons;
+
+
     public GameObject[] MainRoom1Locations;
+    public GameObject[] MainRoom2Locations;
 
 
     private bool SubItemsEnabled = false;
+
+    public void MoveToOtherRoom(CinemachineVirtualCamera VC)
+    {
+        if (gs.GetCurrentRoom() == 1)
+        {
+            VC = cameras[0];
+            Room2.enabled = false;
+            Room1.enabled = true;
+        }
+        else if (gs.GetCurrentRoom() == 2)
+        {
+            VC = cameras[11];
+            Room2.enabled = true;
+            Room1.enabled = false;
+        }
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameras[i].Priority = 0;
+        }
+        VC.Priority = 1;
+    }
+
+    public void ChangeGroupsRoom1and2()
+    {
+        if (gs.GetCurrentRoom() == 1)
+        {
+            for (int i = 0; i < MainRoom1Locations.Length; i++)
+            {
+                MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
+                
+            }
+            for (int i = 0; i < MainRoom2Locations.Length; i++)
+            {
+                MainRoom2Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+        }
+        else if (gs.GetCurrentRoom() == 2)
+        {
+            for (int i = 0; i < MainRoom1Locations.Length; i++)
+            {
+                MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
+
+            }
+            for (int i = 0; i < MainRoom2Locations.Length; i++)
+            {
+                MainRoom2Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
+            }
+        }
+        
+    }
 
     public void Update()
     {
@@ -44,6 +104,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         if (cameras[0].Priority == 1)
         {
             gs.SetCurrentCam("Room1_Main");
+        }
+
+        else if (cameras[11].Priority == 1)
+        {
+            gs.SetCurrentCam("Room2_Main");
         }
 
         if (gs.GetCurrentCam() == "Room1_Main" && SubItemsEnabled == true) // Toggle off all of the subitems
@@ -103,10 +168,47 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
             SubItemsEnabled = false;
         }
+        //Room 2 disable sub buttons
+        if (gs.GetCurrentCam() == "Room2_Main" && SubItemsEnabled == true)
+        {
+            for (int i = 0; i < WaterShutOffSubButtons.Length; i++)
+            {
+                if (WaterShutOffSubButtons[i] != null)
+                    WaterShutOffSubButtons[i].enabled = false;
+
+                SubItemsEnabled = false;
+            }
+
+            for (int i = 0; i < RockScaleSubButtons.Length; i++)
+            {
+                if (RockScaleSubButtons[i] != null)
+                    RockScaleSubButtons[i].enabled = false;
+
+                SubItemsEnabled = false;
+            }
+
+            for (int i = 0; i < FilingCabinetSubButtons.Length; i++)
+            {
+                if (FilingCabinetSubButtons[i] != null)
+                    FilingCabinetSubButtons[i].enabled = false;
+
+                SubItemsEnabled = false;
+            }
+
+            for (int i = 0; i < InsideFilingCabinetSubButtons.Length; i++)
+            {
+                if (InsideFilingCabinetSubButtons[i] != null)
+                    InsideFilingCabinetSubButtons[i].enabled = false;
+
+                SubItemsEnabled = false;
+            }
+
+            SubItemsEnabled = false;
+        }
 
 
-        //Disabling the other main location buttons
-        if(gs.GetCurrentCam() == "Room1_Main")
+            //Disabling the other main location buttons
+        if (gs.GetCurrentCam() == "Room1_Main")
         {
             for(int i = 0; i < MainRoom1Locations.Length; i++)
             {
@@ -532,6 +634,106 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                     ButtonTableSubButtons[i].enabled = false;
             }
             //
+        }
+
+        //Watch Switch
+        if (gs.GetCurrentCam() == "Room2_WaterSwitch")
+        {
+            for (int i = 0; i < WaterShutOffSubButtons.Length; i++)
+            {
+                if (WaterShutOffSubButtons[i] != null)
+                    WaterShutOffSubButtons[i].enabled = true;
+
+                SubItemsEnabled = true;
+            }
+            // Set others to false
+            for (int i = 0; i < RockScaleSubButtons.Length; i++)
+            {
+                if (RockScaleSubButtons[i] != null)
+                    RockScaleSubButtons[i].enabled = false;
+            }
+            for (int i = 0; i < FilingCabinetSubButtons.Length; i++)
+            {
+                if (FilingCabinetSubButtons[i] != null)
+                    FilingCabinetSubButtons[i].enabled = false;
+            }
+            for (int i = 0; i < InsideFilingCabinetSubButtons.Length; i++)
+            {
+                if (InsideFilingCabinetSubButtons[i] != null)
+                    InsideFilingCabinetSubButtons[i].enabled = false;
+            }
+            //
+
+        }
+        // Rock Scale
+        if (gs.GetCurrentCam() == "Room2_RockSampleDesk")
+        {
+            for (int i = 0; i < RockScaleSubButtons.Length; i++)
+            {
+                if (RockScaleSubButtons[i] != null)
+                    RockScaleSubButtons[i].enabled = true;
+
+                SubItemsEnabled = true;
+            }
+            // Set others to false
+            for (int i = 0; i < WaterShutOffSubButtons.Length; i++)
+            {
+                if (WaterShutOffSubButtons[i] != null)
+                    WaterShutOffSubButtons[i].enabled = false;
+            }
+            for (int i = 0; i < FilingCabinetSubButtons.Length; i++)
+            {
+                if (FilingCabinetSubButtons[i] != null)
+                    FilingCabinetSubButtons[i].enabled = false;
+            }
+            for (int i = 0; i < InsideFilingCabinetSubButtons.Length; i++)
+            {
+                if (InsideFilingCabinetSubButtons[i] != null)
+                    InsideFilingCabinetSubButtons[i].enabled = false;
+            }
+            //
+
+        }
+        // Filing Cabinet
+        if (gs.GetCurrentCam() == "Room2_FilingCabinet" || gs.GetCurrentCam() == "Room2_FilingCabinetLock")
+        {
+            for (int i = 0; i < FilingCabinetSubButtons.Length; i++)
+            {
+                if (FilingCabinetSubButtons[i] != null)
+                    FilingCabinetSubButtons[i].enabled = true;
+
+                SubItemsEnabled = true;
+            }
+
+            //Setting inside cabinet sub items to true
+            if (gs.GetHasUnlockedFilingCabinetLock() == true)
+            {
+                Debug.Log("FilingCabinetUnlocked");
+                for (int i = 0; i < InsideFilingCabinetSubButtons.Length; i++)
+                {
+                    if (InsideFilingCabinetSubButtons[i] != null)
+                    {
+                        InsideFilingCabinetSubButtons[i].enabled = true;
+                        
+                    }
+                        
+                }
+            }
+
+            // Set others to false
+            for (int i = 0; i < WaterShutOffSubButtons.Length; i++)
+            {
+                if (WaterShutOffSubButtons[i] != null)
+                    WaterShutOffSubButtons[i].enabled = false;
+            }
+            for (int i = 0; i < RockScaleSubButtons.Length; i++)
+            {
+                if (RockScaleSubButtons[i] != null)
+                    RockScaleSubButtons[i].enabled = false;
+            }
+
+            //
+
         }
     }
 

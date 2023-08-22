@@ -29,6 +29,8 @@ public class rotateFilingCabinetLock : MonoBehaviour
 
     public SoundManager soundManager;
 
+    public ToggleAccessibleUIGroups toggleGroups;
+
     // Update is called once per frame
     void Update()
     {
@@ -63,11 +65,60 @@ public class rotateFilingCabinetLock : MonoBehaviour
 
                 //Destroy(Lock);
                 Debug.Log("CabinetUnLocked");
-
+                toggleGroups.Enable3DButtons();
             }
         }
 
     }
+
+    public void ReadAccessibilityMessage(string text)
+    {
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().name = text;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
+        //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = text;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+    }
+
+    public void AccessibleSpinFilingCabinetLock()
+    {
+        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "FC_Number1")
+        {
+            Quaternion initialRot = UAP_AccessibilityManager.GetCurrentFocusObject().transform.localRotation;
+            UAP_AccessibilityManager.GetCurrentFocusObject().transform.Rotate(new Vector3(0, 0, 40), Space.Self);
+            number1++;
+            if (number1 > 9)
+                number1 = 1;
+            soundManager.PlayLockSpinSound();
+            ReadAccessibilityMessage(number1.ToString() + " is on Spinner 1. Rock Sample Lock");
+            //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().name = number1.ToString() + " is on Spinner 1. Rock Sample Lock";
+
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "FC_Number2")
+        {
+            Quaternion initialRot = UAP_AccessibilityManager.GetCurrentFocusObject().transform.localRotation;
+            UAP_AccessibilityManager.GetCurrentFocusObject().transform.Rotate(new Vector3(0, 0, 40), Space.Self);
+            number2++;
+            if (number2 > 9)
+                number2 = 1;
+            soundManager.PlayLockSpinSound();
+            ReadAccessibilityMessage(number2.ToString() + " is on Spinner 2. Rock Sample Lock");
+            //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().name = number1.ToString() + " is on Spinner 2. Rock Sample Lock";
+
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "FC_Number3")
+        {
+            Quaternion initialRot = UAP_AccessibilityManager.GetCurrentFocusObject().transform.localRotation;
+            //UAP_AccessibilityManager.GetCurrentFocusObject().transform.Rotate(new Vector3(0, 0, 40), Space.Self);
+            number3++;
+            if (number3 > 9)
+                number3 = 1;
+            soundManager.PlayLockSpinSound();
+            ReadAccessibilityMessage(number3.ToString() + " is on Spinner 3. Rock Sample Lock");
+            //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().name = number1.ToString() + " is on Spinner 3. Rock Sample Lock";
+
+        }
+    }
+
 
 
     public void ShootRaycast()

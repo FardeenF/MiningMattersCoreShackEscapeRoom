@@ -8024,6 +8024,7 @@ MonoBehaviour:
   controlsMenu: {fileID: 1429185063}
   GameUI: {fileID: 744024436}
   Room1: {fileID: 1233085944}
+  Room2: {fileID: 1526932019}
   TopText: {fileID: 445432509}
   AllRoots: []
   testObject: {fileID: 1519202667}
@@ -8108,6 +8109,20 @@ MonoBehaviour:
   - {fileID: 1098823875}
   - {fileID: 851686252}
   - {fileID: 101439591}
+  WaterShutOffSubButtons:
+  - {fileID: 508952646}
+  RockScaleSubButtons:
+  - {fileID: 7765115203592054972}
+  - {fileID: 8755967258849314293}
+  - {fileID: 9008660020253413797}
+  FilingCabinetSubButtons:
+  - {fileID: 852373746}
+  - {fileID: 1064244202}
+  - {fileID: 877868388}
+  InsideFilingCabinetSubButtons:
+  - {fileID: 1561044127}
+  DiamondSawSubButtons:
+  - {fileID: 2110106948}
   MainRoom1Locations:
   - {fileID: 1670956385}
   - {fileID: 1519202667}
@@ -8117,6 +8132,11 @@ MonoBehaviour:
   - {fileID: 41728747}
   - {fileID: 919132148627998206}
   - {fileID: 919132147945131064}
+  MainRoom2Locations:
+  - {fileID: 1134957730}
+  - {fileID: 634950214}
+  - {fileID: 2135949811}
+  - {fileID: 9093871238953394068}
 --- !u!1001 &276132411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10445,7 +10465,7 @@ MonoBehaviour:
   mainCam: {fileID: 1736072091}
   Inventory: []
   itemImage: {fileID: 0}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 968142283}
 --- !u!65 &361282295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15642,6 +15662,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0028786585, y: 0.0062300544, z: 0.0012079204}
   m_Center: {x: 0.00013229132, y: 0.0020468836, z: 0.0004879378}
+--- !u!114 &508952646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508952636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1134957732}
+        m_TargetAssemblyTypeName: InteractObject, Assembly-CSharp
+        m_MethodName: AccessibleWaterHoseInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Water Switch
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &517386127
 GameObject:
   m_ObjectHideFlags: 0
@@ -18446,6 +18532,109 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.016048, y: 1.425308, z: 3.1958473}
   m_Center: {x: -0.016062975, y: 0.8607787, z: -0.49888688}
+--- !u!114 &634950218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634950214}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: AccessibleSelectLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 795246379}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ReadLabelOnMove
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Rock Sample Desk
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: SetCam
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Room2_RockSampleDesk
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: Enable3DButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Rock Sample Desk
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &636695155
 GameObject:
   m_ObjectHideFlags: 0
@@ -24575,6 +24764,7 @@ MonoBehaviour:
   FilingCabinet_VC: {fileID: 1239112367}
   FilingCabinetLock_VC: {fileID: 1592303129}
   soundManager: {fileID: 968142283}
+  toggleGroups: {fileID: 275968312}
 --- !u!65 &852373742
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24588,6 +24778,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0024718235, y: 0.0025091292, z: 0.0012556935}
   m_Center: {x: 0.000037946502, y: 0.00000041315977, z: 0.000029183013}
+--- !u!114 &852373746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852373737}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 852373739}
+        m_TargetAssemblyTypeName: rotateFilingCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleSpinFilingCabinetLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Spinner 1
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &852760888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 317079601145054333, guid: 3240767459bad524d99e0c4050deb419, type: 3}
@@ -25459,6 +25715,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0024718235, y: 0.0025091292, z: 0.0012556934}
   m_Center: {x: 0.000037946505, y: 0.00000045786152, z: 0.00000004470011}
+--- !u!114 &877868388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877868380}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 852373739}
+        m_TargetAssemblyTypeName: rotateFilingCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleSpinFilingCabinetLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Spinner 3
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &881423421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5148817236446094103, guid: ec54bd8620c57a84c81768daabd692be, type: 3}
@@ -30823,6 +31145,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0024718235, y: 0.0025091292, z: 0.0012556935}
   m_Center: {x: 0.000037946505, y: 0.00000041315892, z: 0.000014598679}
+--- !u!114 &1064244202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064244194}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 852373739}
+        m_TargetAssemblyTypeName: rotateFilingCabinetLock, Assembly-CSharp
+        m_MethodName: AccessibleSpinFilingCabinetLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Spinner 2
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1001 &1074201074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32672,6 +33060,109 @@ MonoBehaviour:
   ClickableCursor: {fileID: 2800000, guid: 4702099b23bfa2e438fb109d927bfe3b, type: 3}
   GrabCursor: {fileID: 2800000, guid: 22de63b8d93a6aa4ba694ccb7b43a78f, type: 3}
   gs: {fileID: 1815343585}
+--- !u!114 &1134957736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134957730}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: AccessibleSelectLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1091526092}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ReadLabelOnMove
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Water Shut off Valve
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: SetCam
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Room2_WaterSwitch
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: Enable3DButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Water Shut off Valve
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1001 &1137637679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43014,6 +43505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1526932018}
+  - component: {fileID: 1526932019}
   m_Layer: 0
   m_Name: Room2
   m_TagString: Untagged
@@ -43048,6 +43540,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1526932019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526932017}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PopUp: 0
+  m_AllowExternalJoining: 0
+  m_AutoRead: 0
+  m_Priority: 0
+  m_ContainerName: 
+  m_IsLocalizationKey: 0
+  m_2DNavigation: 0
+  m_ConstrainToContainerUp: 0
+  m_ConstrainToContainerDown: 0
+  m_ConstrainToContainerLeft: 0
+  m_ConstrainToContainerRight: 0
+  m_AllowTouchExplore: 1
+  m_DoubleCheckUIElementsPositions: 1
 --- !u!1001 &1534319935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43819,6 +44336,88 @@ Transform:
   m_Father: {fileID: 502321067}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1561044121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7087963766590048794, guid: 9ed9b46a3648fb048ad1be9f41dfe05b, type: 3}
+  m_PrefabInstance: {fileID: 7087963764686905640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1561044123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2389589513584426098, guid: 9ed9b46a3648fb048ad1be9f41dfe05b, type: 3}
+  m_PrefabInstance: {fileID: 7087963764686905640}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561044121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812b40b04e7de394eafb9ecfd849c2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1561044127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561044121}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1561044123}
+        m_TargetAssemblyTypeName: CollectItem, Assembly-CSharp
+        m_MethodName: AccessibleCollectItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: NewSawBlade
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: New Saw Blade
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1563636797
 GameObject:
   m_ObjectHideFlags: 0
@@ -59551,6 +60150,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.013434298, y: 0.012695302, z: 0.0012006123}
   m_Center: {x: 0.0005426327, y: -0.0008068253, z: 0.00020650227}
+--- !u!114 &2110106948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110106946}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Broken Saw Blade needs to be replaced with a new one
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!4 &2111953806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bdb6edcd97cdf88458995e383ec3be1d, type: 3}
@@ -60661,6 +61314,109 @@ MonoBehaviour:
   ClickableCursor: {fileID: 2800000, guid: 4702099b23bfa2e438fb109d927bfe3b, type: 3}
   GrabCursor: {fileID: 2800000, guid: 22de63b8d93a6aa4ba694ccb7b43a78f, type: 3}
   gs: {fileID: 1815343585}
+--- !u!114 &2135949815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135949811}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: AccessibleSelectLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1239112367}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ReadLabelOnMove
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Filing Cabinet Something could be inside
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: SetCam
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Room2_FilingCabinet
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: Enable3DButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Filing Cabinet
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &2138287497
 GameObject:
   m_ObjectHideFlags: 0
@@ -62534,6 +63290,7 @@ GameObject:
   - component: {fileID: 2474257316821948857}
   - component: {fileID: 2310314147952557971}
   - component: {fileID: 2310314147952557970}
+  - component: {fileID: 9008660020253413797}
   m_Layer: 0
   m_Name: Sedimentary
   m_TagString: Untagged
@@ -62896,6 +63653,7 @@ GameObject:
   - component: {fileID: 4574283310214782053}
   - component: {fileID: 3176457413750488678}
   - component: {fileID: 3176457413750488677}
+  - component: {fileID: 8755967258849314293}
   m_Layer: 0
   m_Name: Metamorphic
   m_TagString: Untagged
@@ -63122,7 +63880,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 361282291}
+        m_TargetAssemblyTypeName: CollectItem, Assembly-CSharp
+        m_MethodName: AccessibleCollectItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Door1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: MoveToOtherRoom
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 738483202}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ChangeGroupsRoom1and2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -64857,6 +65652,7 @@ GameObject:
   - component: {fileID: 7765115203592054971}
   - component: {fileID: 6867737896390331410}
   - component: {fileID: 6867737896390331409}
+  - component: {fileID: 7765115203592054972}
   m_Layer: 0
   m_Name: Igneous
   m_TagString: Untagged
@@ -65806,6 +66602,72 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7765115203592054972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867737896390331408}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919132149057034972}
+        m_TargetAssemblyTypeName: rockScale, Assembly-CSharp
+        m_MethodName: AccessibleRockMover
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Igneous
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!23 &7783642029137230705
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66724,6 +67586,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3176457413750488676}
   m_Mesh: {fileID: 4493585093827132993, guid: 80eb0491e99e156489e1e4cf7a44f5fd, type: 3}
+--- !u!114 &8755967258849314293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176457413750488676}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919132149057034972}
+        m_TargetAssemblyTypeName: rockScale, Assembly-CSharp
+        m_MethodName: AccessibleRockMover
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Metamorphic
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!33 &8777296174765677068
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -66790,6 +67718,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2310314147952557969}
   m_Mesh: {fileID: -1550514412580984892, guid: 80eb0491e99e156489e1e4cf7a44f5fd, type: 3}
+--- !u!114 &9008660020253413797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310314147952557969}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919132149057034972}
+        m_TargetAssemblyTypeName: rockScale, Assembly-CSharp
+        m_MethodName: AccessibleRockMover
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Sedimentary
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!23 &9033734014941743484
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66853,6 +67847,7 @@ GameObject:
   - component: {fileID: 9093871238953394069}
   - component: {fileID: 9093871238953394071}
   - component: {fileID: 9093871238953394072}
+  - component: {fileID: 9093871238953394073}
   m_Layer: 0
   m_Name: DiamondSaw_Textured
   m_TagString: DiamondSaw
@@ -66922,6 +67917,109 @@ MonoBehaviour:
   - {fileID: 1556668793}
   - {fileID: 326446055}
   - {fileID: 474882718}
+--- !u!114 &9093871238953394073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093871238953394068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: AccessibleSelectLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1349337448}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ReadLabelOnMove
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Core Saw Selected
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: SetCam
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Room2_DiamondSaw
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: Enable3DButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Saw to cut cores for inspection
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &9104742204371296285
 GameObject:
   m_ObjectHideFlags: 0

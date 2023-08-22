@@ -105,7 +105,13 @@ public class checkInventoryItem : MonoBehaviour
     public SelectButton sb;
 
     public CabinetPuzzlePlacement cabinetPuzzleScript;
-    
+
+
+    public void ReadAccessibilityMessage(string text)
+    {
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+    }
+
 
     public void OnInventoryClick()
     {
@@ -383,25 +389,46 @@ public class checkInventoryItem : MonoBehaviour
 
             else if (buttonPressed.GetComponent<Image>().sprite.name.ToString() == "SawBlade")
             {
-                if (isSawBladeActive == false && holdingSomething == false)
+                if (gs.GetScreenReader() == false)
                 {
-                    gs.SetIsHoldingSawBlade(true);
-                    activeSawBlade = Instantiate(SawBlade, Input.mousePosition, Quaternion.identity);
-                    isSawBladeActive = true;
-                    holdingSomething = true;
-                    topText.text = ("Fix the Diamond Cutter");
-                    topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    if (isSawBladeActive == false && holdingSomething == false)
+                    {
+                        gs.SetIsHoldingSawBlade(true);
+                        activeSawBlade = Instantiate(SawBlade, Input.mousePosition, Quaternion.identity);
+                        isSawBladeActive = true;
+                        holdingSomething = true;
+                        topText.text = ("Fix the Diamond Cutter");
+                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    }
+                    else
+                    {
+                        PutAwayButton();
+                        gs.SetIsHoldingSawBlade(false);
+                        Destroy(activeSawBlade.gameObject);
+                        isSawBladeActive = false;
+                        holdingSomething = false;
+                        topText.text = ("Saw Blade back in inventory");
+                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    }
                 }
                 else
                 {
-                    PutAwayButton();
-                    gs.SetIsHoldingSawBlade(false);
-                    Destroy(activeSawBlade.gameObject);
-                    isSawBladeActive = false;
-                    holdingSomething = false;
-                    topText.text = ("Saw Blade back in inventory");
-                    topText.GetComponent<UAP_BaseElement>().SelectItem();
+                    if (gs.GetCurrentCam() == "Room2_DiamondSaw")
+                    {
+                        BrokenSawBlade.SetActive(false);
+                        NewSawBlade.SetActive(true);
+                        gs.SetisSawBladeFixed(true);
+                        gs.SetIsHoldingSawBlade(false);
+                        gs.SetHasSawBlade(false);
+                        //Destroy(activeSawBlade);
+                        //activeSawBlade.SetActive(false);
+                        topText.text = "The Blade has been fixed!";
+                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                        //ReadAccessibilityMessage("The blade has been fixed!");
+                    }
+                    
                 }
+                
             }
 
             else if (buttonPressed.GetComponent<Image>().sprite.name.ToString() == "InspectCoreCut")
@@ -754,7 +781,8 @@ public class checkInventoryItem : MonoBehaviour
                     gs.SetisSawBladeFixed(true);
                     gs.SetIsHoldingSawBlade(false);
                     gs.SetHasSawBlade(false);
-                    Destroy(activeSawBlade);
+                    //Destroy(activeSawBlade);
+                    activeSawBlade.SetActive(false);
                     topText.text = "The Blade has been fixed!";
                 }
             }
