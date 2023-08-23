@@ -882,9 +882,19 @@ public class CollectItem : MonoBehaviour
                 gs.GetHighlightedObject().transform.gameObject.GetComponent<Animation>().Play();
                 gs.GetHighlightedObject().transform.gameObject.GetComponent<AudioSource>().Play();
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
-                gs.SetCurrentRoom(2);
-                gs.SetCurrentCam("Room2_Main");
-                Debug.Log("Current Room: " + gs.GetCurrentRoom());
+                if (gs.GetCurrentRoom() == 1)
+                {
+                    gs.SetCurrentRoom(2);
+                    gs.SetCurrentCam("Room2_Main");
+                    Debug.Log("Current Room: " + gs.GetCurrentRoom());
+                }
+                else if (gs.GetCurrentRoom() == 2)
+                {
+                    gs.SetCurrentRoom(1);
+                    gs.SetCurrentCam("Room1_Main");
+                    Debug.Log("Current Room: " + gs.GetCurrentRoom());
+                }
+
             }
             else
             {
@@ -899,7 +909,7 @@ public class CollectItem : MonoBehaviour
             TopText.text = ("Heading back to room 1");
             TopText.GetComponent<UAP_BaseElement>().SelectItem();
             gs.SetCurrentRoom(1);
-            gs.SetCurrentCam("Room2_Main");
+            gs.SetCurrentCam("Room1_Main");
             Debug.Log("Current Room: " + gs.GetCurrentRoom());
 
         }

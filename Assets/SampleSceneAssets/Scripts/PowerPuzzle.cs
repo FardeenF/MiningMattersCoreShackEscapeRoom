@@ -157,6 +157,201 @@ public class PowerPuzzle : MonoBehaviour
     }
     
 
+    public void AccessibleSelectPower()
+    {
+        //Can only interact with puzzle if user is on the right camera looking at the circuit
+        if (PowerCordVC.Priority > 0)
+        {
+            if (changeNow == 0)
+            {
+                if (goodCount == 0)
+                {
+                    //Check if you clicked on a wire
+                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                    {
+                        pos1 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        posList.Add(pos1);
+                        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
+                        {
+                            h1Active = true;
+                            h1.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2")
+                        {
+                            h4Active = true;
+                            h4.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3")
+                        {
+                            h2Active = true;
+                            h2.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                        {
+                            h3Active = true;
+                            h3.gameObject.SetActive(true);
+                        }
+                        goodCount++;
+                    }
+                }
+                else
+                {
+                    //Check if you clicked on a wire
+                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                    {
+                        pos2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        posList.Add(pos2);
+
+                        //points.Add(hit.transform);
+
+                        //line.SetUpLine(points);
+                        line.positionCount = 2;
+                        line.SetPosition(0, pos1);
+                        line.SetPosition(1, pos2);
+
+                        h1.gameObject.SetActive(false);
+                        h2.gameObject.SetActive(false);
+                        h3.gameObject.SetActive(false);
+                        h4.gameObject.SetActive(false);
+
+                        h1Active = false;
+                        h2Active = false;
+                        h3Active = false;
+                        h4Active = false;
+
+                        goodCount = 0;
+                        changeNow = 1;
+                    }
+                }
+            }
+            else if (changeNow == 1)
+            {
+                if (goodCount == 0)
+                {
+                    //Check if you clicked on a wire
+                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                    {
+                        pos1 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        posList.Add(pos1);
+
+                        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
+                        {
+                            h1Active = true;
+                            h1.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2")
+                        {
+                            h4Active = true;
+                            h4.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3")
+                        {
+                            h2Active = true;
+                            h2.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                        {
+                            h3Active = true;
+                            h3.gameObject.SetActive(true);
+                        }
+
+                        goodCount++;
+                    }
+                }
+                else
+                {
+                    //Check if you clicked on a wire
+                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                    {
+                        pos2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        posList.Add(pos2);
+
+                        line2.positionCount = 2;
+                        line2.SetPosition(0, pos1);
+                        line2.SetPosition(1, pos2);
+
+                        h1.gameObject.SetActive(false);
+                        h2.gameObject.SetActive(false);
+                        h3.gameObject.SetActive(false);
+                        h4.gameObject.SetActive(false);
+
+                        h1Active = false;
+                        h2Active = false;
+                        h3Active = false;
+                        h4Active = false;
+
+                        goodCount = 0;
+                        changeNow = 2;
+                    }
+                }
+            }
+            else if (changeNow == 2)
+            {
+                if (goodCount == 0)
+                {
+                    //Check if you clicked on a wire
+                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                    {
+                        pos1 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        posList.Add(pos1);
+
+                        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
+                        {
+                            h1Active = true;
+                            h1.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2")
+                        {
+                            h4Active = true;
+                            h4.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3")
+                        {
+                            h2Active = true;
+                            h2.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                        {
+                            h3Active = true;
+                            h3.gameObject.SetActive(true);
+                        }
+
+                        goodCount++;
+                    }
+                }
+                else
+                {
+                    //Check if you clicked on a wire
+                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                    {
+                        pos2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        posList.Add(pos2);
+
+                        line3.positionCount = 2;
+                        line3.SetPosition(0, pos1);
+                        line3.SetPosition(1, pos2);
+                        Debug.Log("There");
+
+                        h1.gameObject.SetActive(false);
+                        h2.gameObject.SetActive(false);
+                        h3.gameObject.SetActive(false);
+                        h4.gameObject.SetActive(false);
+
+                        h1Active = false;
+                        h2Active = false;
+                        h3Active = false;
+                        h4Active = false;
+
+                        StartCoroutine(checkSolution());
+
+                        goodCount = 0;
+                        changeNow = 0;
+                    }
+                }
+            }
+        }
+    }
+
 
     public void ShootRaycast()
     {
