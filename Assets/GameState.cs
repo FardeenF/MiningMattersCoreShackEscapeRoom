@@ -72,6 +72,8 @@ public class GameState : MonoBehaviour
 
     private bool areCoresWet = false;
 
+    private bool corePasswordSolved = false;
+
     private AccessibleButton_3D highlightedObject;
 
     public TextMeshProUGUI topText;
@@ -515,6 +517,15 @@ public class GameState : MonoBehaviour
     public void SetAreCoresWet(bool cores)
     {
         areCoresWet = cores;
+    }
+
+    public bool GetCorePasswordSolved()
+    {
+        return corePasswordSolved;
+    }
+    public void SetCorePasswordSolved(bool solved)
+    {
+        corePasswordSolved = solved;
     }
 
 }

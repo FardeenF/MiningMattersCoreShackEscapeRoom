@@ -256,7 +256,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         }
 
 
-            //Disabling the other main location buttons
+        //Disabling the other main location buttons
         if (gs.GetCurrentCam() == "Room1_Main")
         {
             for(int i = 0; i < MainRoom1Locations.Length; i++)
@@ -266,6 +266,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         }
         else if(gs.GetCurrentCam() == "Room2_Main")
         {
+            for(int i = 0; i < MainRoom2Locations.Length; i++)
+            {
+                MainRoom2Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
+            }
+
             for (int i = 0; i < MainRoom1Locations.Length; i++)
             {
                 if(MainRoom1Locations[i].name == "Door (1)")
@@ -278,25 +283,17 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 }
             }
         }
-        else if (gs.GetCurrentCam() == "Room2_Main")
-        {
-            for (int i = 0; i < MainRoom1Locations.Length; i++)
-            {
-                if (MainRoom1Locations[i].name == "Door 2")
-                {
-                    MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
-                }
-                else
-                {
-                    MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
-                }
-            }
-        }
         else
         {
+            //Disable Main Room 1
             for (int i = 0; i < MainRoom1Locations.Length; i++)
             {
                 MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            //Disable Main Room 2
+            for (int i = 0; i < MainRoom2Locations.Length; i++)
+            {
+                MainRoom2Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
         }
     }
@@ -437,7 +434,30 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             {
                 if (BrokenCoreTableSubButtons[i] != null)
+                {
                     BrokenCoreTableSubButtons[i].enabled = true;
+                }
+                
+
+                if ((BrokenCoreTableSubButtons[i].name == "Orange Core Piece" ||
+                    BrokenCoreTableSubButtons[i].name == "Red Core Piece" ||
+                    BrokenCoreTableSubButtons[i].name == "Yellow Core Piece" ||
+                    BrokenCoreTableSubButtons[i].name == "Blue Core Piece") &&
+                    gs.GetCorePasswordSolved())
+                {
+                    Debug.Log(BrokenCoreTableSubButtons[i].name);
+                    BrokenCoreTableSubButtons[i].enabled = false;
+                }
+
+                if (BrokenCoreTableSubButtons[i].name == "Password Message")
+                {
+                    BrokenCoreTableSubButtons[i].enabled = false;
+                }
+
+                if (BrokenCoreTableSubButtons[i].name == "Password Message" && gs.GetCorePasswordSolved())
+                {
+                    BrokenCoreTableSubButtons[i].enabled = true;
+                }
 
                 SubItemsEnabled = true;
             }
@@ -635,7 +655,6 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 if (ComputerDeskSubButtons[i] != null && !gs.GetRoom1PasswordPuzzle())
                 {
                     ComputerDeskSubButtons[i].enabled = true;
-                    
                 }
 
                 if(ComputerDeskSubButtons[i].name == "EmailRead")

@@ -46,8 +46,9 @@ public class BrokenCoreInteraction : MonoBehaviour
 
     private bool puzzleSolved = false;
 
+    public AccessibleButton_3D corePiecePasswordMessage;
     public AccessibleButton_3D sodaliteMessage;
-
+    public ToggleAccessibleUIGroups toggle;
 
     private void Awake()
     {
@@ -86,9 +87,15 @@ public class BrokenCoreInteraction : MonoBehaviour
                 for (int i = 0; i < brokenCores.Length; i++)
                 {
                     brokenCores[i].GetComponent<Renderer>().material = solvedMaterials[i];
-                    gs.SetTopText("The Cores have revealed a password as followed: M, I, N, E");
-                    gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
                 }
+                gs.SetCorePasswordSolved(true);
+                toggle.Enable3DButtons();
+
+                gs.SetTopText("The Cores have revealed a password as followed: M, I, N, E");
+                gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem(true);
+
+                corePiecePasswordMessage.enabled = true;
+
                 puzzleSolved = true;
                 soundManager.PlaySuccessSound();
             }
