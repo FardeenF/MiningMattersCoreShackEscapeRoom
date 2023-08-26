@@ -106,6 +106,8 @@ public class checkInventoryItem : MonoBehaviour
 
     public CabinetPuzzlePlacement cabinetPuzzleScript;
 
+    public ToggleAccessibleUIGroups toggle;
+
 
     public void ReadAccessibilityMessage(string text)
     {
@@ -164,12 +166,12 @@ public class checkInventoryItem : MonoBehaviour
             {
                 if (isSprayBottleActive == false && holdingSomething == false)
                 {
+                    soundManager.PlayWaterSprayerSound();
                     activeSprayBottle = Instantiate(SprayBottle, Input.mousePosition, Quaternion.identity);
                     isSprayBottleActive = true;
                     holdingSomething = true;
-                    topText.text = ("Click to Spray Water");
-                    topText.GetComponent<UAP_BaseElement>().SelectItem();
-                    soundManager.PlayWaterSprayerSound();
+                    topText.text = ("Use a Hand Lens to Spot Differences.");
+                    topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     Debug.Log("PullOutSprayBottle");
 
                     if (gs.GetScreenReader() == true)
@@ -179,13 +181,25 @@ public class checkInventoryItem : MonoBehaviour
                         for (int i = 0; i < core2_pieces.Length; i++)
                         {
                             if (i == 0)
+                            {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat0;
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 1 To be Inspected with a Hand Lens.";
+                            }
                             else if (i == 1)
+                            {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat1;
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 2 To be Inspected with a Hand Lens.";
+                            }
                             else if (i == 2)
+                            {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat2;
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 3 To be Inspected with a Hand Lens.";
+                            }
                             else if (i == 3)
+                            {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat3;
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 4 To be Inspected with a Hand Lens.";
+                            }
 
 
                         }
@@ -311,6 +325,9 @@ public class checkInventoryItem : MonoBehaviour
                                 SawCoreUncut4.SetActive(false);
                             }
 
+                            topText.text = "The core has been cut. Select it to collect the cut core.";
+                            topText.GetComponent<AccessibleLabel>().SelectItem(true);
+
                             
                            
                             Debug.Log("Selected Core Reset to 0");
@@ -397,8 +414,8 @@ public class checkInventoryItem : MonoBehaviour
                         activeSawBlade = Instantiate(SawBlade, Input.mousePosition, Quaternion.identity);
                         isSawBladeActive = true;
                         holdingSomething = true;
-                        topText.text = ("Fix the Diamond Cutter");
-                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                        topText.text = ("Fix the Saw Machine.");
+                        topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     }
                     else
                     {
@@ -408,7 +425,7 @@ public class checkInventoryItem : MonoBehaviour
                         isSawBladeActive = false;
                         holdingSomething = false;
                         topText.text = ("Saw Blade back in inventory");
-                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                        topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     }
                 }
                 else
@@ -423,7 +440,7 @@ public class checkInventoryItem : MonoBehaviour
                         //Destroy(activeSawBlade);
                         //activeSawBlade.SetActive(false);
                         topText.text = "The Blade has been fixed!";
-                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                        topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                         //ReadAccessibilityMessage("The blade has been fixed!");
                     }
                     
@@ -441,6 +458,7 @@ public class checkInventoryItem : MonoBehaviour
                     gs.SetholdingCutCore(false);
                     StartCoroutine(RecieveCoreResults());
                     holdingSomething = false;
+                    //Panda
                 }
                 else if(VC_StorageRack.Priority == 1)
                 {
@@ -451,7 +469,7 @@ public class checkInventoryItem : MonoBehaviour
                         isCorePieceActive = true;
                         holdingSomething = true;
                         topText.text = ("Where should I store this core?");
-                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                        topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     }
                     else
                     {
@@ -461,12 +479,13 @@ public class checkInventoryItem : MonoBehaviour
                         isCorePieceActive = false;
                         holdingSomething = false;
                         topText.text = ("Core Piece back in inventory");
-                        topText.GetComponent<UAP_BaseElement>().SelectItem();
+                        topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     }
                 }
                 else
                 {
                     topText.text = "Be careful with this, it needs to be sent off and examined for gold.";
+                    topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                 }
             }
 
@@ -1007,27 +1026,40 @@ public class checkInventoryItem : MonoBehaviour
         CoreInResultsBox.SetActive(false);
         CoreInSendBox.SetActive(true);
         topText.text = "Core Analysis Sending!";
+        topText.GetComponent<AccessibleLabel>().SelectItem(true);
         yield return new WaitForSeconds(2);
         topText.text = "Core Analysis Recieved!";
+        topText.GetComponent<AccessibleLabel>().SelectItem(true);
         CoreInSendBox.SetActive(false);
         CoreInResultsBox.SetActive(true);
+
+        gs.SetAnalyzedCore(true);
+        toggle.Enable3DButtons();
 
         CoreResults.SetActive(true);
         if (gs.GetSelectedCore2() == 1)
         {
             CoreResults.GetComponent<MeshRenderer>().material = WrongResult1;
+            CoreResults.GetComponent<AccessibleButton_3D>().m_Text = "The core analyzed does not contain gold. Send a different core for analysis.";
+            CoreResults.GetComponent<AccessibleButton_3D>().SelectItem(true);
         }
         else if (gs.GetSelectedCore2() == 2)
         {
             CoreResults.GetComponent<MeshRenderer>().material = WrongResult2;
+            CoreResults.GetComponent<AccessibleButton_3D>().m_Text = "The core analyzed does not contain gold. Send a different core for analysis.";
+            CoreResults.GetComponent<AccessibleButton_3D>().SelectItem(true);
         }
         else if (gs.GetSelectedCore2() == 3)
         {
             CoreResults.GetComponent<MeshRenderer>().material = WrongResult3;
+            CoreResults.GetComponent<AccessibleButton_3D>().m_Text = "The core analyzed does not contain gold. Send a different core for analysis.";
+            CoreResults.GetComponent<AccessibleButton_3D>().SelectItem(true);
         }
         else if (gs.GetSelectedCore2() == 4)
         {
             CoreResults.GetComponent<MeshRenderer>().material = CorrectResult;
+            CoreResults.GetComponent<AccessibleButton_3D>().m_Text = "The core analyzed contains gold. Move on to the third room to store it.";
+            CoreResults.GetComponent<AccessibleButton_3D>().SelectItem(true);
         }
 
 
@@ -1056,7 +1088,7 @@ public class checkInventoryItem : MonoBehaviour
         if(gs.GetCurrentCam() == "Room1_BrokenCoreShackTable" && isHandLensActive && gs.GetAreCoresWet())
         {
             gs.SetTopText("The fourth core looks to be promising...");
-            gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem();
+            gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem(true);
         }
     }
 

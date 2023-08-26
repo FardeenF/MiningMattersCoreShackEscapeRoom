@@ -4952,6 +4952,7 @@ MonoBehaviour:
   line2: {fileID: 1287617364}
   line3: {fileID: 1252523860}
   mainCam: {fileID: 1736072091}
+  toptext: {fileID: 445432509}
   PowerCordVC: {fileID: 233023200}
   p1: {fileID: 8513859188589843306}
   p2: {fileID: 6512510687291382655}
@@ -4965,6 +4966,7 @@ MonoBehaviour:
   source: {fileID: 519147045}
   wrong: {fileID: 8300000, guid: 6287989d436c3964fa82e140b57a2f30, type: 3}
   correct: {fileID: 8300000, guid: 6ac607a9daa81484b899f2a849a1f9bf, type: 3}
+  toggle: {fileID: 275968312}
 --- !u!1 &171648869
 GameObject:
   m_ObjectHideFlags: 0
@@ -7337,7 +7339,7 @@ MonoBehaviour:
   m_PopUp: 0
   m_AllowExternalJoining: 0
   m_AutoRead: 0
-  m_Priority: 0
+  m_Priority: 2
   m_ContainerName: 
   m_IsLocalizationKey: 0
   m_2DNavigation: 0
@@ -8130,8 +8132,7 @@ MonoBehaviour:
   - {fileID: 8946660040585341117}
   - {fileID: 8777296174765677069}
   BoxDeskSubButtons:
-  - {fileID: 458659833}
-  - {fileID: 1621999093}
+  - {fileID: 2131567535}
   MainRoom1Locations:
   - {fileID: 1670956385}
   - {fileID: 1519202667}
@@ -9575,6 +9576,7 @@ MonoBehaviour:
   cinemachineBrain: {fileID: 0}
   sb: {fileID: 1754180974}
   cabinetPuzzleScript: {fileID: 134413253}
+  toggle: {fileID: 275968312}
 --- !u!114 &339473232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10046,7 +10048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopText: {fileID: 445432509}
   gs: {fileID: 1815343585}
-  Message: You have collected a cut core. It is ready to be send and examined for
+  Message: You have collected a cut core. It is ready to be sent and examined for
     gold.
   mainCam: {fileID: 1736072091}
   Inventory:
@@ -10133,7 +10135,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Resulting Cut Core from Analysis
+  m_Text: Resulting Cut Core from Analysis. Select to collect core.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -13951,65 +13953,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3364ef111eb302f4f816be2cd8c682db, type: 3}
---- !u!1 &458659830 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dd43dff9cf6a6ee4ab671200eaedce7c, type: 3}
-  m_PrefabInstance: {fileID: 182965150}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &458659833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458659830}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OnInteractionStart:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnInteractionEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnInteractionAbort:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ForceStartHere: 0
-  m_ManualPositionOrder: -1
-  m_ManualPositionParent: {fileID: 0}
-  m_UseTargetForOutline: 0
-  m_PositionOrder: 0
-  m_SecondaryOrder: 0
-  m_Pos: {x: 0, y: 0}
-  m_TextAsAudio: {fileID: 0}
-  m_Prefix: 
-  m_PrefixIsLocalizationKey: 0
-  m_PrefixIsPostFix: 0
-  m_FilterText: 1
-  m_Text: 'Send Core Box: Place a cut core here to send it for analysis'
-  m_NameLabel: {fileID: 0}
-  m_AdditionalNameLabels: []
-  m_TestList: []
-  m_IsLocalizationKey: 0
-  m_TryToReadLabel: 0
-  m_ReferenceElement: {fileID: 0}
-  m_AllowVoiceOver: 1
-  m_ReadType: 1
-  m_WasJustAdded: 1
-  m_Type: 1
-  m_CustomHint: 0
-  m_HintAsAudio: {fileID: 0}
-  m_Hint: 
-  m_HintIsLocalizationKey: 0
-  m_IsInsideScrollView: 0
-  m_IsInitialized: 1
-  m_CallbackOnHighlight:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &461729648
 GameObject:
   m_ObjectHideFlags: 0
@@ -15941,7 +15884,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Water Switch
+  m_Text: Water Switch. Select to turn the switch..
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -24996,6 +24939,7 @@ MonoBehaviour:
   Lock: {fileID: 855102398}
   toptext: {fileID: 445432509}
   Cabinet: {fileID: 2135949811}
+  NewSaw: {fileID: 1561044121}
   FilingCabinet_VC: {fileID: 1239112367}
   FilingCabinetLock_VC: {fileID: 1592303129}
   soundManager: {fileID: 968142283}
@@ -25058,7 +25002,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Spinner 1
+  m_Text: 1 is on Spinner 1. Rock Sample Lock
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -25995,7 +25939,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Spinner 3
+  m_Text: 1 is on Spinner 3. Rock Sample Lock
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -26814,7 +26758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopText: {fileID: 445432509}
   gs: {fileID: 1815343585}
-  Message: You have collected a cut core. It is ready to be send and examined for
+  Message: You have collected a cut core. It is ready to be sent and examined for
     gold.
   mainCam: {fileID: 1736072091}
   Inventory:
@@ -31425,7 +31369,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Spinner 2
+  m_Text: 1 is on Spinner 2. Rock Sample Lock
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -33265,6 +33209,7 @@ MonoBehaviour:
   gs: {fileID: 1815343585}
   topText: {fileID: 445432509}
   soundManager: {fileID: 968142283}
+  toggle: {fileID: 275968312}
 --- !u!65 &1134957733
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34703,7 +34648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopText: {fileID: 445432509}
   gs: {fileID: 1815343585}
-  Message: You have collected a cut core. It is ready to be send and examined for
+  Message: You have collected a cut core. It is ready to be sent and examined for
     gold.
   mainCam: {fileID: 1736072091}
   Inventory:
@@ -34841,18 +34786,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1183508054}
         m_TargetAssemblyTypeName: CollectItem, Assembly-CSharp
-        m_MethodName: GetButtonObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1183508057}
-          m_ObjectArgumentAssemblyTypeName: AccessibleButton_3D, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1183508054}
-        m_TargetAssemblyTypeName: CollectItem, Assembly-CSharp
         m_MethodName: AccessibleCollectItem
         m_Mode: 5
         m_Arguments:
@@ -34881,7 +34814,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Cut Core Piece from saw
+  m_Text: Cut Core Piece from saw. Select to collect the cut core.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -36480,7 +36413,7 @@ MonoBehaviour:
   m_PopUp: 0
   m_AllowExternalJoining: 0
   m_AutoRead: 0
-  m_Priority: 1
+  m_Priority: 4
   m_ContainerName: Room 1
   m_IsLocalizationKey: 0
   m_2DNavigation: 0
@@ -42449,7 +42382,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Desk to mail cut core
+  m_Text: Desk to mail cut core for identification.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -43963,7 +43896,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526932017}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
   m_Name: 
@@ -43971,7 +43904,7 @@ MonoBehaviour:
   m_PopUp: 0
   m_AllowExternalJoining: 0
   m_AutoRead: 0
-  m_Priority: 0
+  m_Priority: 3
   m_ContainerName: 
   m_IsLocalizationKey: 0
   m_2DNavigation: 0
@@ -44813,7 +44746,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: New Saw Blade
+  m_Text: New Saw Unlocked to Pickup.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -46823,66 +46756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1621999090 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dd43dff9cf6a6ee4ab671200eaedce7c, type: 3}
-  m_PrefabInstance: {fileID: 1361424948}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1621999093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621999090}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OnInteractionStart:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnInteractionEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnInteractionAbort:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ForceStartHere: 0
-  m_ManualPositionOrder: -1
-  m_ManualPositionParent: {fileID: 0}
-  m_UseTargetForOutline: 0
-  m_PositionOrder: 0
-  m_SecondaryOrder: 0
-  m_Pos: {x: 0, y: 0}
-  m_TextAsAudio: {fileID: 0}
-  m_Prefix: 
-  m_PrefixIsLocalizationKey: 0
-  m_PrefixIsPostFix: 0
-  m_FilterText: 1
-  m_Text: 'Receive Core Results Box: You will recieve your analysis shortly after
-    sending a cut core.'
-  m_NameLabel: {fileID: 0}
-  m_AdditionalNameLabels: []
-  m_TestList: []
-  m_IsLocalizationKey: 0
-  m_TryToReadLabel: 0
-  m_ReferenceElement: {fileID: 0}
-  m_AllowVoiceOver: 1
-  m_ReadType: 1
-  m_WasJustAdded: 1
-  m_Type: 1
-  m_CustomHint: 0
-  m_HintAsAudio: {fileID: 0}
-  m_Hint: 
-  m_HintIsLocalizationKey: 0
-  m_IsInsideScrollView: 0
-  m_IsInitialized: 1
-  m_CallbackOnHighlight:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1624483988
 GameObject:
   m_ObjectHideFlags: 3
@@ -50864,6 +50737,7 @@ MonoBehaviour:
   gs: {fileID: 1815343585}
   topText: {fileID: 445432509}
   BackButton: {fileID: 1479874136}
+  toggle: {fileID: 275968312}
 --- !u!114 &1736072095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61185,6 +61059,7 @@ MonoBehaviour:
   gs: {fileID: 1815343585}
   topText: {fileID: 445432509}
   soundManager: {fileID: 968142283}
+  toggle: {fileID: 0}
 --- !u!65 &2124822126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61443,6 +61318,7 @@ GameObject:
   - component: {fileID: 2131567533}
   - component: {fileID: 2131567532}
   - component: {fileID: 2131567531}
+  - component: {fileID: 2131567535}
   m_Layer: 0
   m_Name: ResultsPage
   m_TagString: Untagged
@@ -61529,6 +61405,60 @@ Transform:
   m_Father: {fileID: 1526932018}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 52.309, y: 0, z: 0}
+--- !u!114 &2131567535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131567530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Results of the analyzed core.
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &2131666151
 GameObject:
   m_ObjectHideFlags: 0
@@ -61829,7 +61759,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Filing Cabinet Something could be inside
+          m_StringArgument: Filing Cabinet. Something could be inside.
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 275968312}
@@ -67231,7 +67161,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Igneous
+  m_Text: Igneous Rock Sample to be Weighed
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -67960,7 +67890,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Exploration
+  m_Text: Exploration Power Switch
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -68136,7 +68066,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Operation
+  m_Text: Operation Power Switch
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -68349,7 +68279,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Metamorphic
+  m_Text: Metamorphic Rock Sample to be Weighed
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -68423,7 +68353,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Development
+  m_Text: Development Power Switch
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -68539,7 +68469,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Reclamation
+  m_Text: Reclamation Power Switch
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -68613,7 +68543,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Sedimentary
+  m_Text: Sedimentary Rock Sample to be Weighed
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -68774,7 +68704,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9093871238953394068}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
   m_Name: 

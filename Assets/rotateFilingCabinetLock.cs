@@ -23,6 +23,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
     public TextMeshProUGUI toptext;
 
     public GameObject Cabinet;
+    public GameObject NewSaw;
 
     public CinemachineVirtualCamera FilingCabinet_VC;
     public CinemachineVirtualCamera FilingCabinetLock_VC;
@@ -59,6 +60,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
                 toptext.text = ("You unlocked the bottom drawers!");
                 Cabinet.GetComponent<Animation>().Play(animation: "BottomDrawer");
                 soundManager.PlaySuccessSound();
+                
 
                 FilingCabinet_VC.Priority = 1;
                 FilingCabinetLock_VC.Priority = 0;
@@ -66,6 +68,8 @@ public class rotateFilingCabinetLock : MonoBehaviour
                 //Destroy(Lock);
                 Debug.Log("CabinetUnLocked");
                 toggleGroups.Enable3DButtons();
+
+                NewSaw.GetComponent<AccessibleButton_3D>().SelectItem(true);
             }
         }
 
@@ -77,6 +81,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
         //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
         //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = text;
         UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().SelectItem(true);
     }
 
     public void AccessibleSpinFilingCabinetLock()
@@ -89,8 +94,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
             if (number1 > 9)
                 number1 = 1;
             soundManager.PlayLockSpinSound();
-            ReadAccessibilityMessage(number1.ToString() + " is on Spinner 1. Rock Sample Lock");
-            //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().name = number1.ToString() + " is on Spinner 1. Rock Sample Lock";
+            ReadAccessibilityMessage(number1.ToString() + " is on Igneous Spinner. Rock Sample Lock");
 
         }
         else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "FC_Number2")
@@ -101,20 +105,18 @@ public class rotateFilingCabinetLock : MonoBehaviour
             if (number2 > 9)
                 number2 = 1;
             soundManager.PlayLockSpinSound();
-            ReadAccessibilityMessage(number2.ToString() + " is on Spinner 2. Rock Sample Lock");
-            //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().name = number1.ToString() + " is on Spinner 2. Rock Sample Lock";
+            ReadAccessibilityMessage(number2.ToString() + " is on Sedimentary Spinner. Rock Sample Lock");
 
         }
         else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "FC_Number3")
         {
             Quaternion initialRot = UAP_AccessibilityManager.GetCurrentFocusObject().transform.localRotation;
-            //UAP_AccessibilityManager.GetCurrentFocusObject().transform.Rotate(new Vector3(0, 0, 40), Space.Self);
+            UAP_AccessibilityManager.GetCurrentFocusObject().transform.Rotate(new Vector3(0, 0, 40), Space.Self);
             number3++;
             if (number3 > 9)
                 number3 = 1;
             soundManager.PlayLockSpinSound();
-            ReadAccessibilityMessage(number3.ToString() + " is on Spinner 3. Rock Sample Lock");
-            //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().name = number1.ToString() + " is on Spinner 3. Rock Sample Lock";
+            ReadAccessibilityMessage(number3.ToString() + " is on Metamorphic Spinner. Rock Sample Lock");
 
         }
     }

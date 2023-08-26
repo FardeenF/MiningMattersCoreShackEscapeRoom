@@ -24,7 +24,11 @@ public class rockScale : MonoBehaviour
     public SoundManager soundManager;
 
 
-
+    public void ReadAccessibilityMessage(string text)
+    {
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().SelectItem(true);
+    }
 
     public void AccessibleRockMover()
     {
@@ -42,12 +46,15 @@ public class rockScale : MonoBehaviour
                 placedRock = true;
 
                 soundManager.PlayAltPickupSound();
+
+                ReadAccessibilityMessage("Sedimentary Rock Sample Weighs 3 grams. Select to return Rock back to table.");
             }
             else if (placedRock == true && UAP_AccessibilityManager.GetCurrentFocusObject().transform.position == rockLocation.transform.position)
             {
                 UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = emptySedimentary.transform.position;
                 weight.text = "0g";
                 placedRock = false;
+                ReadAccessibilityMessage("Sedimentary Rock Sample Weighs 3 grams.");
             }
         }
 
@@ -64,12 +71,14 @@ public class rockScale : MonoBehaviour
                 placedRock = true;
 
                 soundManager.PlayAltPickupSound();
+                ReadAccessibilityMessage("Metamorphic Rock Sample Weighs 4 grams. Select to return Rock back to table.");
             }
             else if (placedRock == true && UAP_AccessibilityManager.GetCurrentFocusObject().transform.position == rockLocation.transform.position)
             {
                 UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = emptyMetamorphic.transform.position;
                 weight.text = "0g";
                 placedRock = false;
+                ReadAccessibilityMessage("Metamorphic Rock Sample Weighs 4 grams.");
             }
         }
 
@@ -86,12 +95,14 @@ public class rockScale : MonoBehaviour
                 placedRock = true;
 
                 soundManager.PlayAltPickupSound();
+                ReadAccessibilityMessage("Igneous Rock Sample Weighs 6 grams. Select to return Rock back to table.");
             }
             else if (placedRock == true && UAP_AccessibilityManager.GetCurrentFocusObject().transform.position == rockLocation.transform.position)
             {
                 UAP_AccessibilityManager.GetCurrentFocusObject().transform.position = emptyIgneous.transform.position;
                 weight.text = "0g";
                 placedRock = false;
+                ReadAccessibilityMessage("Igneous Rock Sample Weighs 6 grams.");
             }
         }
     }

@@ -53,14 +53,14 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         if (gs.GetCurrentRoom() == 1)
         {
             VC = cameras[0];
-            Room2.enabled = false;
-            Room1.enabled = true;
+            //Room2.enabled = false;
+            //Room1.enabled = true;
         }
         else if (gs.GetCurrentRoom() == 2)
         {
             VC = cameras[11];
-            Room2.enabled = true;
-            Room1.enabled = false;
+            //Room2.enabled = true;
+            //Room1.enabled = false;
         }
         for (int i = 0; i < cameras.Length; i++)
         {
@@ -704,13 +704,16 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             //
         }
 
-        //Watch Switch
+        //Water Switch
         if (gs.GetCurrentCam() == "Room2_WaterSwitch")
         {
             for (int i = 0; i < WaterShutOffSubButtons.Length; i++)
             {
                 if (WaterShutOffSubButtons[i] != null)
                     WaterShutOffSubButtons[i].enabled = true;
+
+                if(gs.GetIsWaterOn())
+                    WaterShutOffSubButtons[i].enabled = false;
 
                 SubItemsEnabled = true;
             }
@@ -816,6 +819,12 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                     }
                         
                 }
+
+                for (int i = 0; i < FilingCabinetSubButtons.Length; i++)
+                {
+                    if (FilingCabinetSubButtons[i] != null)
+                        FilingCabinetSubButtons[i].enabled = false;
+                }
             }
 
             // Set others to false
@@ -856,6 +865,9 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 if (PowerCircuitSubButtons[i] != null)
                     PowerCircuitSubButtons[i].enabled = true;
 
+                if(gs.GetSawPower())
+                    PowerCircuitSubButtons[i].enabled = false;
+
                 SubItemsEnabled = true;
             }
             // Set others to false
@@ -893,11 +905,15 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
         }
 
+        //Send/Receive Core Table
         if (gs.GetCurrentCam() == "Room2_BoxTable")
         {
             for (int i = 0; i < BoxDeskSubButtons.Length; i++)
             {
                 if (BoxDeskSubButtons[i] != null)
+                    BoxDeskSubButtons[i].enabled = false;
+
+                if(gs.GetAnalyzedCore())
                     BoxDeskSubButtons[i].enabled = true;
 
                 SubItemsEnabled = true;

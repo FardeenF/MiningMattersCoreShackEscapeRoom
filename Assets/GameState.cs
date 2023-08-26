@@ -74,13 +74,14 @@ public class GameState : MonoBehaviour
 
     private bool corePasswordSolved = false;
 
+    private bool analyzedCore = false;
+
     private AccessibleButton_3D highlightedObject;
 
     public TextMeshProUGUI topText;
 
     private string currentCam = "Room1_Main";
 
-    
 
     //Check Mouse Over State
     public bool GetMouseOver()
@@ -526,6 +527,15 @@ public class GameState : MonoBehaviour
     public void SetCorePasswordSolved(bool solved)
     {
         corePasswordSolved = solved;
+    }
+
+    public bool GetAnalyzedCore()
+    {
+        return analyzedCore;
+    }
+    public void SetAnalyzedCore(bool checkpoint)
+    {
+        analyzedCore = checkpoint;
     }
 
 }

@@ -433,7 +433,7 @@ public class CollectItem : MonoBehaviour
             {
                 if (gs.GetHasDustMask() == true && gs.GetHasSafetyGlasses() == true && gs.GetPPEState() == true)
                 {
-                    TopText.text = "You have the neccessary items to enter this room.";
+                    TopText.text = "You have the necessary items to enter this room.";
                     hit.transform.gameObject.GetComponent<Animation>()["Cube|Open"].time = 0.3f;
                     hit.transform.gameObject.GetComponent<Animation>()["Cube|Open"].speed = 0.3f;
                     hit.transform.gameObject.GetComponent<Animation>().Play();
@@ -453,7 +453,7 @@ public class CollectItem : MonoBehaviour
             else if (hit.transform.gameObject.tag == "Door1" && gs.GetCurrentRoom() == 2)
             {
                 TopText.text = ("Heading back to room 1");
-                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
                 gs.SetCurrentRoom(1);
                 Debug.Log("Current Room: " + gs.GetCurrentRoom());
 
@@ -570,7 +570,7 @@ public class CollectItem : MonoBehaviour
                     {
                         Inventory[i].sprite = itemImage;
                         Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-                        TopText.text = "This core contains gold! This is the correct core!";
+                        TopText.text = "Core has been collected.";
                         this.gameObject.SetActive(false);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Cut Core Piece";
@@ -602,7 +602,7 @@ public class CollectItem : MonoBehaviour
             {
                 if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == false)
                 {
-                    TopText.text = "You have the neccessary items to enter this room.";
+                    TopText.text = "You have the necessary items to enter this room.";
                     
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
 
@@ -630,7 +630,7 @@ public class CollectItem : MonoBehaviour
             else if (hit.transform.gameObject.tag == "Door2" && gs.GetCurrentRoom() == 3)
             {
                 TopText.text = ("Heading back to room 1");
-                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
                 gs.SetCurrentRoom(1);
                 Debug.Log("Current Room: " + gs.GetCurrentRoom());
 
@@ -870,7 +870,7 @@ public class CollectItem : MonoBehaviour
             }
         }
         //Switch to room 1 from room 2
-        if (item == "Door1" && gs.GetCurrentRoom() == 1)
+        if (item == "Door1" && gs.GetCurrentCam() == "Room1_Main")
         {
             if (gs.GetHasDustMask() == true && gs.GetHasSafetyGlasses() == true && gs.GetPPEState() == true)
             {
@@ -904,10 +904,10 @@ public class CollectItem : MonoBehaviour
 
         }
         //Switch from room 2 to room 1
-        else if (item == "Door1" && gs.GetCurrentRoom() == 2)
+        else if (item == "Door1" && gs.GetCurrentCam() == "Room2_Main")
         {
             TopText.text = ("Heading back to room 1");
-            TopText.GetComponent<UAP_BaseElement>().SelectItem();
+            TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
             gs.SetCurrentRoom(1);
             gs.SetCurrentCam("Room1_Main");
             Debug.Log("Current Room: " + gs.GetCurrentRoom());
@@ -928,7 +928,7 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
                     //Destroy(this.gameObject);
-                    this.gameObject.SetActive(false);
+                    this.gameObject.SetActive(false); 
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Box of Puzzle Pieces";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
@@ -1028,9 +1028,9 @@ public class CollectItem : MonoBehaviour
                 {
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-                    TopText.text = "This core contains gold! This is the correct core!";
+                    TopText.text = "Core has been collected.";
                     this.gameObject.SetActive(false);
-                    TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                    TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Cut Core Piece";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Cut Core Piece";
@@ -1060,7 +1060,7 @@ public class CollectItem : MonoBehaviour
         {
             if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == false)
             {
-                TopText.text = "You have the neccessary items to enter this room.";
+                TopText.text = "You have the necessary items to enter this room.";
 
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
 
@@ -1088,7 +1088,7 @@ public class CollectItem : MonoBehaviour
         else if (item == "Door2" && gs.GetCurrentRoom() == 3)
         {
             TopText.text = ("Heading back to room 1");
-            TopText.GetComponent<UAP_BaseElement>().SelectItem();
+            TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
             gs.SetCurrentRoom(1);
             Debug.Log("Current Room: " + gs.GetCurrentRoom());
 

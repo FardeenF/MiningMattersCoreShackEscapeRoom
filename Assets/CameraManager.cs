@@ -43,6 +43,8 @@ public class CameraManager : MonoBehaviour
     public Button BackButton;
     private bool buttonclicked = false;
 
+    public ToggleAccessibleUIGroups toggle;
+
     // Update is called once per frame
     void Update()
     {
@@ -71,63 +73,63 @@ public class CameraManager : MonoBehaviour
             {
                 Room1_Main.Priority = 1;
                 Room1_Computer.Priority = 0;
-                gs.SetCurrentCam("Room1_Computer");
+                gs.SetCurrentCam("Room1_Main");
             }
 
             else if(Room1_Geo_Poster.Priority == 1)
             {
                 Room1_Geo_Poster.Priority = 0;
                 Room1_BrokenCoreShackTable.Priority = 1;
-                gs.SetCurrentCam("Room1_Geo_Poster");
+                gs.SetCurrentCam("Room1_BrokenCoreShackTable");
             }
 
             else if (Room1_CrossSectionPoster.Priority == 1)
             {
                 Room1_CrossSectionPoster.Priority = 0;
                 Room1_BrokenCoreShackTable.Priority = 1;
-                gs.SetCurrentCam("Room1_CrossSectionPoster");
+                gs.SetCurrentCam("Room1_BrokenCoreShackTable");
             }
 
             else if (Room1_BrokenCoreShackTable.Priority == 1)
             {
                 Room1_BrokenCoreShackTable.Priority = 0;
                 Room1_Main.Priority = 1;
-                gs.SetCurrentCam("Room1_BrokenCoreShackTable");
+                gs.SetCurrentCam("Room1_Main");
             }
 
             else if (Room1_ButtonTable.Priority == 1)
             {
                 Room1_ButtonTable.Priority = 0;
                 Room1_Main.Priority = 1;
-                gs.SetCurrentCam("Room1_ButtonTable");
+                gs.SetCurrentCam("Room1_Main");
             }
 
             else if (Room1_SedimentDesk.Priority == 1)
             {
                 Room1_SedimentDesk.Priority = 0;
                 Room1_Main.Priority = 1;
-                gs.SetCurrentCam("Room1_SedimentDesk");
+                gs.SetCurrentCam("Room1_Main");
             }
 
             else if (Room1_Cabinet.Priority == 1)
             {
                 Room1_Cabinet.Priority = 0;
                 Room1_Main.Priority = 1;
-                gs.SetCurrentCam("Room1_Cabinet");
+                gs.SetCurrentCam("Room1_Main");
             }
 
             else if (Room1_CabinetLock.Priority == 1)
             {
                 Room1_CabinetLock.Priority = 0;
                 Room1_Cabinet.Priority = 1;
-                gs.SetCurrentCam("Room1_CabinetLock");
+                gs.SetCurrentCam("Room1_Cabinet");
             }
 
             else if (Room1_MiningCycle.Priority == 1)
             {
                 Room1_MiningCycle.Priority = 0;
                 Room1_Cabinet.Priority = 1;
-                gs.SetCurrentCam("Room1_MiningCycle");
+                gs.SetCurrentCam("Room1_Cabinet");
             }
 
             else if (Room2_Main.Priority == 1)
@@ -135,7 +137,7 @@ public class CameraManager : MonoBehaviour
                 Room2_Main.Priority = 0;
                 Room1_Main.Priority = 1;
                 topText.text = ("Heading back to room 1");
-                gs.SetCurrentCam("Room2_Main");
+                gs.SetCurrentCam("Room1_Main");
                 gs.SetCurrentRoom(1);
             }
 
@@ -143,56 +145,56 @@ public class CameraManager : MonoBehaviour
             {
                 Room2_DiamondSaw.Priority = 0;
                 Room2_Main.Priority = 1;
-                gs.SetCurrentCam("Room2_DiamondSaw");
+                gs.SetCurrentCam("Room2_Main");
             }
 
             else if (Room2_FilingCabinet.Priority == 1)
             {
                 Room2_FilingCabinet.Priority = 0;
                 Room2_Main.Priority = 1;
-                gs.SetCurrentCam("Room2_FilingCabinet");
+                gs.SetCurrentCam("Room2_Main");
             }
 
             else if (Room2_FilingCabinetLock.Priority == 1)
             {
                 Room2_FilingCabinetLock.Priority = 0;
                 Room2_FilingCabinet.Priority = 1;
-                gs.SetCurrentCam("Room2_FilingCabinetLock");
+                gs.SetCurrentCam("Room2_FilingCabinet");
             }
 
             else if (Room2_RockSampleDesk.Priority == 1)
             {
                 Room2_Main.Priority = 1;
                 Room2_RockSampleDesk.Priority = 0;
-                gs.SetCurrentCam("Room2_RockSampleDesk");
+                gs.SetCurrentCam("Room2_Main");
             }
 
             else if (Room2_WaterSwitch.Priority == 1)
             {
                 Room2_Main.Priority = 1;
                 Room2_WaterSwitch.Priority = 0;
-                gs.SetCurrentCam("Room2_WaterSwitch");
+                gs.SetCurrentCam("Room2_Main");
             }
 
             else if (Room2_BoxTable.Priority == 1)
             {
                 Room2_Main.Priority = 1;
                 Room2_BoxTable.Priority = 0;
-                gs.SetCurrentCam("Room2_BoxTable");
+                gs.SetCurrentCam("Room2_Main");
             }
 
             else if(Room2_PowerCord.Priority == 1)
             {
                 Room2_Main.Priority = 1;
                 Room2_PowerCord.Priority = 0;
-                gs.SetCurrentCam("Room2_PowerCord");
+                gs.SetCurrentCam("Room2_Main");
             }
 
             else if (Room1_DoorToRoom3.Priority == 1)
             {
                 Room1_Main.Priority = 1;
                 Room1_DoorToRoom3.Priority = 0;
-                gs.SetCurrentCam("Room1_DoorToRoom3");
+                gs.SetCurrentCam("Room1_Main");
             }
 
             else if (Room3_Main.Priority == 1)
@@ -200,21 +202,21 @@ public class CameraManager : MonoBehaviour
                 Room1_Main.Priority = 1;
                 Room3_Main.Priority = 0;
                 gs.SetCurrentRoom(1);
-                gs.SetCurrentCam("Room3_Main");
+                gs.SetCurrentCam("Room1_Main");
             }
 
             else if (Room3_Computer.Priority == 1)
             {
                 Room3_Main.Priority = 1;
                 Room3_Computer.Priority = 0;
-                gs.SetCurrentCam("Room3_Computer");
+                gs.SetCurrentCam("Room3_Main");
             }
 
             else if (Room3_MineralIdentification.Priority == 1)
             {
                 Room3_Main.Priority = 1;
                 Room3_MineralIdentification.Priority = 0;
-                gs.SetCurrentCam("Room3_MineralIdentification");
+                gs.SetCurrentCam("Room3_Main");
             }
 
             else if (Room3_Cabinet.Priority == 1)
@@ -222,14 +224,14 @@ public class CameraManager : MonoBehaviour
                 Room3_Main.Priority = 1;
                 Room3_Cabinet.Priority = 0;
                 CabinetCollider.enabled = true;
-                gs.SetCurrentCam("Room3_Cabinet");
+                gs.SetCurrentCam("Room3_Main");
             }
 
             else if (Room3_Volcano.Priority == 1)
             {
                 Room3_Main.Priority = 1;
                 Room3_Volcano.Priority = 0;
-                gs.SetCurrentCam("Room3_Volcano");
+                gs.SetCurrentCam("Room3_Main");
 
             }
 
@@ -237,7 +239,7 @@ public class CameraManager : MonoBehaviour
             {
                 Room3_Main.Priority = 1;
                 Room3_GateCode.Priority = 0;
-                gs.SetCurrentCam("Room3_GateCode");
+                gs.SetCurrentCam("Room3_Main");
 
             }
 
@@ -245,11 +247,14 @@ public class CameraManager : MonoBehaviour
             {
                 Room3_Main.Priority = 1;
                 Room3_Bonus.Priority = 0;
-                gs.SetCurrentCam("Room3_Bonus");
+                gs.SetCurrentCam("Room3_Main");
 
             }
 
             buttonclicked = false;
+
+            toggle.ChangeGroupsRoom1and2();
+            toggle.Enable3DButtons();
         }
 
         //Gets reference to gameObject that is clicken on
@@ -269,63 +274,63 @@ public class CameraManager : MonoBehaviour
         {
             Room1_Main.Priority = 1;
             Room1_Computer.Priority = 0;
-            gs.SetCurrentCam("Room1_Computer");
+            gs.SetCurrentCam("Room1_Main");
         }
 
         else if (Room1_Geo_Poster.Priority == 1)
         {
             Room1_Geo_Poster.Priority = 0;
             Room1_BrokenCoreShackTable.Priority = 1;
-            gs.SetCurrentCam("Room1_Geo_Poster");
+            gs.SetCurrentCam("Room1_BrokenCoreShackTable");
         }
 
         else if (Room1_CrossSectionPoster.Priority == 1)
         {
             Room1_CrossSectionPoster.Priority = 0;
             Room1_BrokenCoreShackTable.Priority = 1;
-            gs.SetCurrentCam("Room1_CrossSectionPoster");
+            gs.SetCurrentCam("Room1_BrokenCoreShackTable");
         }
 
         else if (Room1_BrokenCoreShackTable.Priority == 1)
         {
             Room1_BrokenCoreShackTable.Priority = 0;
             Room1_Main.Priority = 1;
-            gs.SetCurrentCam("Room1_BrokenCoreShackTable");
+            gs.SetCurrentCam("Room1_Main");
         }
 
         else if (Room1_ButtonTable.Priority == 1)
         {
             Room1_ButtonTable.Priority = 0;
             Room1_Main.Priority = 1;
-            gs.SetCurrentCam("Room1_ButtonTable");
+            gs.SetCurrentCam("Room1_Main");
         }
 
         else if (Room1_SedimentDesk.Priority == 1)
         {
             Room1_SedimentDesk.Priority = 0;
             Room1_Main.Priority = 1;
-            gs.SetCurrentCam("Room1_SedimentDesk");
+            gs.SetCurrentCam("Room1_Main");
         }
 
         else if (Room1_Cabinet.Priority == 1)
         {
             Room1_Cabinet.Priority = 0;
             Room1_Main.Priority = 1;
-            gs.SetCurrentCam("Room1_Cabinet");
+            gs.SetCurrentCam("Room1_Main");
         }
 
         else if (Room1_CabinetLock.Priority == 1)
         {
             Room1_CabinetLock.Priority = 0;
             Room1_Cabinet.Priority = 1;
-            gs.SetCurrentCam("Room1_CabinetLock");
+            gs.SetCurrentCam("Room1_Cabinet");
         }
 
         else if (Room1_MiningCycle.Priority == 1)
         {
             Room1_MiningCycle.Priority = 0;
             Room1_Cabinet.Priority = 1;
-            gs.SetCurrentCam("Room1_MiningCycle");
+            gs.SetCurrentCam("Room1_Cabinet");
         }
 
         else if (Room2_Main.Priority == 1)
@@ -333,7 +338,7 @@ public class CameraManager : MonoBehaviour
             Room2_Main.Priority = 0;
             Room1_Main.Priority = 1;
             topText.text = ("Heading back to room 1");
-            gs.SetCurrentCam("Room2_Main");
+            gs.SetCurrentCam("Room1_Main");
             gs.SetCurrentRoom(1);
         }
 
@@ -341,56 +346,56 @@ public class CameraManager : MonoBehaviour
         {
             Room2_DiamondSaw.Priority = 0;
             Room2_Main.Priority = 1;
-            gs.SetCurrentCam("Room2_DiamondSaw");
+            gs.SetCurrentCam("Room2_Main");
         }
 
         else if (Room2_FilingCabinet.Priority == 1)
         {
             Room2_FilingCabinet.Priority = 0;
             Room2_Main.Priority = 1;
-            gs.SetCurrentCam("Room2_FilingCabinet");
+            gs.SetCurrentCam("Room2_Main");
         }
 
         else if (Room2_FilingCabinetLock.Priority == 1)
         {
             Room2_FilingCabinetLock.Priority = 0;
             Room2_FilingCabinet.Priority = 1;
-            gs.SetCurrentCam("Room2_FilingCabinetLock");
+            gs.SetCurrentCam("Room2_FilingCabinet");
         }
 
         else if (Room2_RockSampleDesk.Priority == 1)
         {
             Room2_Main.Priority = 1;
             Room2_RockSampleDesk.Priority = 0;
-            gs.SetCurrentCam("Room2_RockSampleDesk");
+            gs.SetCurrentCam("Room2_Main");
         }
 
         else if (Room2_WaterSwitch.Priority == 1)
         {
             Room2_Main.Priority = 1;
             Room2_WaterSwitch.Priority = 0;
-            gs.SetCurrentCam("Room2_WaterSwitch");
+            gs.SetCurrentCam("Room2_Main");
         }
 
         else if (Room2_BoxTable.Priority == 1)
         {
             Room2_Main.Priority = 1;
             Room2_BoxTable.Priority = 0;
-            gs.SetCurrentCam("Room2_BoxTable");
+            gs.SetCurrentCam("Room2_Main");
         }
 
         else if (Room2_PowerCord.Priority == 1)
         {
             Room2_Main.Priority = 1;
             Room2_PowerCord.Priority = 0;
-            gs.SetCurrentCam("Room2_PowerCord");
+            gs.SetCurrentCam("Room2_Main");
         }
 
         else if (Room1_DoorToRoom3.Priority == 1)
         {
             Room1_Main.Priority = 1;
             Room1_DoorToRoom3.Priority = 0;
-            gs.SetCurrentCam("Room1_DoorToRoom3");
+            gs.SetCurrentCam("Room1_Main");
         }
 
         else if (Room3_Main.Priority == 1)
@@ -398,21 +403,21 @@ public class CameraManager : MonoBehaviour
             Room1_Main.Priority = 1;
             Room3_Main.Priority = 0;
             gs.SetCurrentRoom(1);
-            gs.SetCurrentCam("Room3_Main");
+            gs.SetCurrentCam("Room1_Main");
         }
 
         else if (Room3_Computer.Priority == 1)
         {
             Room3_Main.Priority = 1;
             Room3_Computer.Priority = 0;
-            gs.SetCurrentCam("Room3_Computer");
+            gs.SetCurrentCam("Room3_Main");
         }
 
         else if (Room3_MineralIdentification.Priority == 1)
         {
             Room3_Main.Priority = 1;
             Room3_MineralIdentification.Priority = 0;
-            gs.SetCurrentCam("Room3_MineralIdentification");
+            gs.SetCurrentCam("Room3_Main");
         }
 
         else if (Room3_Cabinet.Priority == 1)
@@ -420,14 +425,14 @@ public class CameraManager : MonoBehaviour
             Room3_Main.Priority = 1;
             Room3_Cabinet.Priority = 0;
             CabinetCollider.enabled = true;
-            gs.SetCurrentCam("Room3_Cabinet");
+            gs.SetCurrentCam("Room3_Main");
         }
 
         else if (Room3_Volcano.Priority == 1)
         {
             Room3_Main.Priority = 1;
             Room3_Volcano.Priority = 0;
-            gs.SetCurrentCam("Room3_Volcano");
+            gs.SetCurrentCam("Room3_Main");
 
         }
 
@@ -435,7 +440,7 @@ public class CameraManager : MonoBehaviour
         {
             Room3_Main.Priority = 1;
             Room3_GateCode.Priority = 0;
-            gs.SetCurrentCam("Room3_GateCode");
+            gs.SetCurrentCam("Room3_Main");
 
         }
 
@@ -443,11 +448,14 @@ public class CameraManager : MonoBehaviour
         {
             Room3_Main.Priority = 1;
             Room3_Bonus.Priority = 0;
-            gs.SetCurrentCam("Room3_Bonus");
+            gs.SetCurrentCam("Room3_Main");
 
         }
 
         buttonclicked = false;
+
+        toggle.ChangeGroupsRoom1and2();
+        toggle.Enable3DButtons();
     }
 
 

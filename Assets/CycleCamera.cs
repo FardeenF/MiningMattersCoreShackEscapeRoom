@@ -32,12 +32,9 @@ public class CycleCamera : MonoBehaviour
     public void switchCamera()
     {
         Debug.Log(selectedCam);
+        //Room 1
         if (gs.GetCurrentRoom() == 1)
         {
-           
-
-            
-
             if (selectedCam >= 10)
             {
 
@@ -54,6 +51,27 @@ public class CycleCamera : MonoBehaviour
             }
 
             
+
+            Debug.Log(selectedCam);
+        }
+        //Room 2
+        else if (gs.GetCurrentRoom() == 2)
+        {
+            if (selectedCam >= 7)
+            {
+
+                Room2_Cameras[7].Priority = 0;
+                Room2_Cameras[0].Priority = 1;
+                selectedCam = 0;
+            }
+            else
+            {
+                Room2_Cameras[selectedCam].Priority = 0;
+                Room2_Cameras[selectedCam + 1].Priority = 1;
+                selectedCam++;
+            }
+
+
 
             Debug.Log(selectedCam);
         }

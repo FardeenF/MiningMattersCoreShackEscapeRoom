@@ -12,6 +12,7 @@ public class InteractObject : MonoBehaviour
     public GameState gs;
     public TextMeshProUGUI topText;
     public SoundManager soundManager;
+    public ToggleAccessibleUIGroups toggle;
 
     public void AccessibleWaterHoseInteraction()
     {
@@ -20,10 +21,12 @@ public class InteractObject : MonoBehaviour
             if (isOn == false)
             {
                 this.gameObject.GetComponent<Animation>().Play(animation: "Toggle");
-                topText.text = "Water for Saw has been turned on!";
+                topText.text = "The Water for the Saw Machine has been turned on!";
+                topText.GetComponent<AccessibleLabel>().SelectItem(true);
                 isOn = true;
                 gs.SetIsWaterOn(true);
                 soundManager.PlaySwitchSound();
+                toggle.Enable3DButtons();
             }
             else if (isOn == true)
             {
@@ -56,6 +59,7 @@ public class InteractObject : MonoBehaviour
                         isOn = true;
                         gs.SetIsWaterOn(true);
                         soundManager.PlaySwitchSound();
+                        toggle.Enable3DButtons();
                     }
                     else if (isOn == true)
                     {

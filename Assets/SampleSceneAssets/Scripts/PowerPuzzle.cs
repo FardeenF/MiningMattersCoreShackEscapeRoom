@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using TMPro;
 
 public class PowerPuzzle : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PowerPuzzle : MonoBehaviour
     public LineRenderer line2;
     public LineRenderer line3;
     public Camera mainCam;
+    public TextMeshProUGUI toptext;
     public CinemachineVirtualCamera PowerCordVC;
     private Vector3 pos1;
     private Vector3 pos2;
@@ -39,6 +41,11 @@ public class PowerPuzzle : MonoBehaviour
     private bool h2Active = false;
     private bool h3Active = false;
     private bool h4Active = false;
+
+    private string firstSwitch;
+    private string secondSwitch;
+
+    public ToggleAccessibleUIGroups toggle;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +81,13 @@ public class PowerPuzzle : MonoBehaviour
 
     IEnumerator checkSolution()
     {
+        if (UAP_AccessibilityManager.IsActive())
+        {
+            toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 3 of 3 has been connected.";
+            toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+            yield return new WaitForSeconds(5);
+        }
+
         for (int i = 0; i < posList.Count; i++)
         {
             if (posList[i] != solutionList[i])
@@ -89,6 +103,9 @@ public class PowerPuzzle : MonoBehaviour
                 goodCount = 0;
                 changeNow = 0;
 
+                toptext.text = "The Power Lines were connected in the wrong order. Try again.";
+                toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+
                 break;
             }
 
@@ -98,7 +115,11 @@ public class PowerPuzzle : MonoBehaviour
                 Debug.Log("YOU WIN!!!");
                 source.PlayOneShot(correct, 1.0f);
                 gs.SetSawPower(true);
-                gs.SetSawPower(true);
+
+                toptext.text = "The power to the saw machine has been fixed!";
+                toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+
+                toggle.Enable3DButtons();
             }
         }
     }
@@ -155,7 +176,48 @@ public class PowerPuzzle : MonoBehaviour
             }
         }
     }
-    
+
+
+    public void FirstSwitchCheck()
+    {
+        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
+        {
+            firstSwitch = "Exploration Switch";
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2")
+        {
+            firstSwitch = "Development Switch";
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3")
+        {
+            firstSwitch = "Operation Switch";
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+        {
+            firstSwitch = "Reclamation Switch";
+        }
+    }
+
+    public void SecondSwitchCheck()
+    {
+        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
+        {
+            secondSwitch = "Exploration Switch";
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2")
+        {
+            secondSwitch = "Development Switch";
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3")
+        {
+            secondSwitch = "Operation Switch";
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+        {
+            secondSwitch = "Reclamation Switch";
+        }
+    }
+
 
     public void AccessibleSelectPower()
     {
@@ -171,6 +233,7 @@ public class PowerPuzzle : MonoBehaviour
                     {
                         pos1 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
                         posList.Add(pos1);
+
                         if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
                         {
                             h1Active = true;
@@ -191,6 +254,12 @@ public class PowerPuzzle : MonoBehaviour
                             h3Active = true;
                             h3.gameObject.SetActive(true);
                         }
+
+                        FirstSwitchCheck();
+
+                        toptext.text = firstSwitch + " has been selected. Select another power switch to connect the two.";
+                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+
                         goodCount++;
                     }
                 }
@@ -221,6 +290,11 @@ public class PowerPuzzle : MonoBehaviour
 
                         goodCount = 0;
                         changeNow = 1;
+
+                        SecondSwitchCheck();
+
+                        toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 1 of 3 has been connected.";
+                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
                     }
                 }
             }
@@ -255,6 +329,11 @@ public class PowerPuzzle : MonoBehaviour
                             h3.gameObject.SetActive(true);
                         }
 
+                        FirstSwitchCheck();
+
+                        toptext.text = firstSwitch + " has been selected. Select another power switch to connect the two.";
+                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+
                         goodCount++;
                     }
                 }
@@ -282,6 +361,11 @@ public class PowerPuzzle : MonoBehaviour
 
                         goodCount = 0;
                         changeNow = 2;
+
+                        SecondSwitchCheck();
+
+                        toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 2 of 3 has been connected.";
+                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
                     }
                 }
             }
@@ -316,6 +400,11 @@ public class PowerPuzzle : MonoBehaviour
                             h3.gameObject.SetActive(true);
                         }
 
+                        FirstSwitchCheck();
+
+                        toptext.text = firstSwitch + " has been selected. Select another power switch to connect the two.";
+                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+
                         goodCount++;
                     }
                 }
@@ -341,6 +430,11 @@ public class PowerPuzzle : MonoBehaviour
                         h2Active = false;
                         h3Active = false;
                         h4Active = false;
+
+                        SecondSwitchCheck();
+
+                        toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 3 of 3 has been connected.";
+                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
 
                         StartCoroutine(checkSolution());
 
