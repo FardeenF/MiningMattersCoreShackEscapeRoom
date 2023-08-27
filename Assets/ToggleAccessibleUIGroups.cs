@@ -44,6 +44,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     //Room 3
     public AccessibleButton_3D[] MineralIdentificationSubButtons;
+    public AccessibleButton_3D[] Room3ComputerSubButtons;
 
     //Main Locations
     public GameObject[] MainRoom1Locations;
@@ -370,7 +371,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
 
             //Disabling the other main location buttons
-            if (gs.GetCurrentCam() == "Room1_Main")
+        if (gs.GetCurrentCam() == "Room1_Main")
         {
             for(int i = 0; i < MainRoom1Locations.Length; i++)
             {
@@ -396,6 +397,15 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 }
             }
         }
+        else if (gs.GetCurrentCam() == "Room3_Main")
+        {
+            for (int i = 0; i < MainRoom3Locations.Length; i++)
+            {
+                MainRoom3Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
+            }
+
+        }
+
         else
         {
             //Disable Main Room 1
@@ -407,6 +417,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < MainRoom2Locations.Length; i++)
             {
                 MainRoom2Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            //Disable Main Room 3
+            for (int i = 0; i < MainRoom3Locations.Length; i++)
+            {
+                MainRoom3Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
         }
     }
@@ -1153,16 +1168,34 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             for (int i = 0; i < MineralIdentificationSubButtons.Length; i++)
             {
                 if (MineralIdentificationSubButtons[i] != null)
-                    MineralIdentificationSubButtons[i].enabled = false;
+                    MineralIdentificationSubButtons[i].enabled = true;
 
                 SubItemsEnabled = true;
             }
             // Set others to false
-            //for (int i = 0; i < MainRoom2Locations.Length; i++)
-            //{
-            //    if (MainRoom2Locations[i] != null)
-            //        MainRoom2Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
-            //}
+            for (int i = 0; i < Room3ComputerSubButtons.Length; i++)
+            {
+                if (Room3ComputerSubButtons[i] != null)
+                    Room3ComputerSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            //
+
+        }
+        if (gs.GetCurrentCam() == "Room3_Computer")
+        {
+            for (int i = 0; i < Room3ComputerSubButtons.Length; i++)
+            {
+                if (Room3ComputerSubButtons[i] != null)
+                    Room3ComputerSubButtons[i].enabled = true;
+
+                SubItemsEnabled = true;
+            }
+            // Set others to false
+            for (int i = 0; i < MineralIdentificationSubButtons.Length; i++)
+            {
+                if (MineralIdentificationSubButtons[i] != null)
+                    MineralIdentificationSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
             //
 
         }

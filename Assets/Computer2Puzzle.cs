@@ -36,7 +36,7 @@ public class Computer2Puzzle : MonoBehaviour
 
     private bool puzzleSolved = false;
 
-
+    //34 78 12 45
 
     private void Awake()
     {
@@ -99,4 +99,52 @@ public class Computer2Puzzle : MonoBehaviour
             }
         }
     }
+
+    public void GetButtonObjectComputer(AccessibleButton_3D button)
+    {
+        gs.SetHighlightedObject(button);
+        gs.SetTopText("You have entered a number.");
+    }
+
+    public void AccessibleSelectPasswordInput()
+    {
+        //currentHighlightedObject = UAP_AccessibilityManager.GetCurrentFocusObject();
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
+        UAP_AccessibilityManager.EnableAccessibility(false);
+
+        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().text = Input.anyKey.ToString();
+    }
+
+    public void ReadAccessibilityMessage(string text)
+    {
+
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text.ToString();
+
+    }
+
+    public void ReadAccessibilityMessage()
+    {
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().SelectItem(true);
+    }
+
+    public void AccessibleReEnable(string num)
+    {
+        if (gs.GetScreenReader() == true)
+        {
+            UAP_AccessibilityManager.EnableAccessibility(true);
+            ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text.ToString() + " is entered in Password Letter" + num);
+            ReadAccessibilityMessage();
+        }
+            
+
+
+        //ReadAccessibilityMessage("Password Letter " + num + " Equals " + gs.GetHighlightedObject().GetComponent<InputField>().text);
+        
+
+    }
+
+    
+
+
+    
 }

@@ -12,6 +12,16 @@ public class MineralIdentification : MonoBehaviour
 
     private bool hasMoved = false;
 
+    public void AccessibleMoveRocksForStreaks()
+    {
+        if (hasMoved == false)
+        {
+            this.gameObject.transform.position = StreakPlate1.transform.position + new Vector3(0, 0.1f, 0);
+            StartCoroutine(Streak());
+        }
+    }
+
+
     public void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0) && hasMoved == false)
