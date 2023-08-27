@@ -18,6 +18,56 @@ public class DirectionalLock : MonoBehaviour
     public AudioSource click;
 
 
+    public void AccessibleDirectionLock()
+    {
+        //Check if you collect the PPE Boots
+        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "North")
+        {
+            anim.Play(animation: "North");
+            code += " North";
+            click.Play();
+        }
+
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "South")
+        {
+
+            anim.Play(animation: "South");
+            code += " South";
+            click.Play();
+        }
+
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "East")
+        {
+            anim.Play(animation: "East");
+            code += " East";
+            click.Play();
+        }
+
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "West")
+        {
+            anim.Play(animation: "West");
+            code += " West";
+            click.Play();
+        }
+
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "Check")
+        {
+            anim.Play(animation: "Check");
+            click.Play();
+            if (code == " North North North East East")
+            {
+                topText.text = "The code is correct! Room 3 is now unlocked!";
+                gs.SetIsRoom3Unlocked(true);
+            }
+            else
+            {
+                code = "";
+                topText.text = "Wrong Code Try Again. Navigate to the other mines using the core analysis results";
+            }
+
+        }
+    }
+
 
     // Update is called once per frame
     void Update()

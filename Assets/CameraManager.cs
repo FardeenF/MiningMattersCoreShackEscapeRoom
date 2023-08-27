@@ -50,7 +50,7 @@ public class CameraManager : MonoBehaviour
     {
         SwitchCameraPriority();
 
-        BackButton.onClick.AddListener(ButtonClick);
+        //BackButton.onClick.AddListener(ButtonClick);
             
     }
 

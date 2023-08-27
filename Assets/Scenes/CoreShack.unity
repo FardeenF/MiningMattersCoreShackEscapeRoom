@@ -2455,6 +2455,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 23bcf6d822d1a3e498e22bdb081bea8d, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!114 &95382586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7414,6 +7415,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 4e53674b627c879499045705f83dcf36, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &257626287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8112,6 +8114,12 @@ MonoBehaviour:
   - {fileID: 1098823875}
   - {fileID: 851686252}
   - {fileID: 101439591}
+  DirectionalLockSubButtons:
+  - {fileID: 1763068802}
+  - {fileID: 1011701761}
+  - {fileID: 1359756831}
+  - {fileID: 430109510}
+  - {fileID: 934891838}
   WaterShutOffSubButtons:
   - {fileID: 508952646}
   RockScaleSubButtons:
@@ -8133,6 +8141,11 @@ MonoBehaviour:
   - {fileID: 8777296174765677069}
   BoxDeskSubButtons:
   - {fileID: 2131567535}
+  MineralIdentificationSubButtons:
+  - {fileID: 5477975691036919503}
+  - {fileID: 6147664039628912892}
+  - {fileID: 7262476470870487467}
+  - {fileID: 8703448626321918103}
   MainRoom1Locations:
   - {fileID: 1670956385}
   - {fileID: 1519202667}
@@ -8149,6 +8162,8 @@ MonoBehaviour:
   - {fileID: 9093871238953394068}
   - {fileID: 919132147834851080}
   - {fileID: 1454242498}
+  MainRoom3Locations:
+  - {fileID: 713289519}
 --- !u!1001 &276132411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9820,6 +9835,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 23bcf6d822d1a3e498e22bdb081bea8d, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!114 &344070938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10060,6 +10076,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 242df3ce89f5c3b4a9452d66c6f28005, type: 3}
   soundManager: {fileID: 0}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &351522171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10365,6 +10382,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 23bcf6d822d1a3e498e22bdb081bea8d, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!114 &357271593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10557,6 +10575,7 @@ MonoBehaviour:
   Inventory: []
   itemImage: {fileID: 0}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &361282295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10778,6 +10797,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 7525a061487f43c4aa0cc08060577986, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &366836680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11512,6 +11532,7 @@ MonoBehaviour:
   - {fileID: 594484579}
   itemImage: {fileID: 21300000, guid: 7a29db02e1c63f5469e2f12fabffe4d5, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &377111156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12009,6 +12030,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 697f671aae0d87d4e9a0a5758beb8706, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &389538995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13162,6 +13184,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.002326701, y: 0.00081764226, z: 0.002417744}
   m_Center: {x: -0.000010045577, y: -0.00027301363, z: -0.000024632776}
+--- !u!114 &430109510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430109504}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 397813752}
+        m_TargetAssemblyTypeName: DirectionalLock, Assembly-CSharp
+        m_MethodName: AccessibleDirectionLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: West
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &432524028
 GameObject:
   m_ObjectHideFlags: 0
@@ -21034,6 +21122,114 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.033996023, y: 0.020136941, z: 0.0012632028}
   m_Center: {x: 0.000049295428, y: -0.010450916, z: -0.0041884147}
+--- !u!1 &713289519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+  m_PrefabInstance: {fileID: 1268725893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &713289522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713289519}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: AccessibleSelectLocation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 545527408}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ReadLabelOnMove
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Mineral Identification Table Selected
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: SetCam
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Room3_MineralIdentification
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: Enable3DButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Rock Identification Table
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1001 &715504585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22375,6 +22571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 783850544}
+  - component: {fileID: 783850545}
   m_Layer: 0
   m_Name: Room3
   m_TagString: Untagged
@@ -22415,6 +22612,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &783850545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783850543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PopUp: 0
+  m_AllowExternalJoining: 0
+  m_AutoRead: 0
+  m_Priority: 0
+  m_ContainerName: 
+  m_IsLocalizationKey: 0
+  m_2DNavigation: 0
+  m_ConstrainToContainerUp: 0
+  m_ConstrainToContainerDown: 0
+  m_ConstrainToContainerLeft: 0
+  m_ConstrainToContainerRight: 0
+  m_AllowTouchExplore: 1
+  m_DoubleCheckUIElementsPositions: 1
 --- !u!1 &786889100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8128966816285555263, guid: 08c9f089f41581943930133207d62802, type: 3}
@@ -23525,6 +23747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1736072091}
   soundManager: {fileID: 968142283}
+  handlens: {fileID: 1449193738}
   number1: 1
   number2: 1
   number3: 1
@@ -26770,6 +26993,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 242df3ce89f5c3b4a9452d66c6f28005, type: 3}
   soundManager: {fileID: 0}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &910468907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27880,6 +28104,96 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0025909832, y: 0.0006338205, z: 0.0025909827}
   m_Center: {x: -0.000000007450581, y: 0.00009121562, z: 0}
+--- !u!114 &934891838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934891832}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 397813752}
+        m_TargetAssemblyTypeName: DirectionalLock, Assembly-CSharp
+        m_MethodName: AccessibleDirectionLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1731180064}
+        m_TargetAssemblyTypeName: CollectItem, Assembly-CSharp
+        m_MethodName: AccessibleCollectItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Door2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: MoveToRoom3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Check
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &939074606
 GameObject:
   m_ObjectHideFlags: 0
@@ -29776,6 +30090,7 @@ MonoBehaviour:
   - {fileID: 594484579}
   itemImage: {fileID: 21300000, guid: 6d752974cf4766b48b72fe4e687fc7ac, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!82 &1002991528
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29890,6 +30205,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0024177444, y: 0.0009562253, z: 0.0022743212}
   m_Center: {x: -0.000000007533365, y: -0.0003423055, z: -0.0000017270346}
+--- !u!114 &1011701761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011701755}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 397813752}
+        m_TargetAssemblyTypeName: DirectionalLock, Assembly-CSharp
+        m_MethodName: AccessibleDirectionLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: South
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1001 &1021515865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34614,6 +34995,7 @@ MonoBehaviour:
   Inventory: []
   itemImage: {fileID: 0}
   soundManager: {fileID: 0}
+  DoorToRoom3: {fileID: 0}
 --- !u!1 &1183320957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 798cc6df69aa85246959fef9c209df64, type: 3}
@@ -34660,6 +35042,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 242df3ce89f5c3b4a9452d66c6f28005, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &1183508055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35001,6 +35384,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 1e53d4e5f1ed4f742a58aaaf4df579e1, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!114 &1184022162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37703,6 +38087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Computer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1502877291743220047, guid: 9ebbc255ad04a5c41888c7224460201d, type: 3}
+      propertyPath: m_Name
+      value: Monitor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ebbc255ad04a5c41888c7224460201d, type: 3}
 --- !u!4 &1271064073 stripped
@@ -39298,6 +39686,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0025691434, y: 0.00068223267, z: 0.002417744}
   m_Center: {x: -0.00015561462, y: -0.0002053685, z: 0.00006329957}
+--- !u!114 &1359756831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359756825}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 397813752}
+        m_TargetAssemblyTypeName: DirectionalLock, Assembly-CSharp
+        m_MethodName: AccessibleDirectionLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: East
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1001 &1361424948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41574,6 +42028,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: f132367c974143a41b2762159f2b6f27, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &1449193741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42964,7 +43419,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1736072094}
         m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCameraPriority
+        m_MethodName: AccessibleCameraBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43026,19 +43481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1736072094}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: AccessibleCameraBack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -50412,6 +50855,7 @@ MonoBehaviour:
   Inventory: []
   itemImage: {fileID: 0}
   soundManager: {fileID: 0}
+  DoorToRoom3: {fileID: 919132147945131064}
 --- !u!114 &1731180065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51247,6 +51691,72 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0024177444, y: 0.0009383308, z: 0.0022580323}
   m_Center: {x: -0.000000007533365, y: -0.00033335772, z: -0.000059729773}
+--- !u!114 &1763068802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763068796}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 397813752}
+        m_TargetAssemblyTypeName: DirectionalLock, Assembly-CSharp
+        m_MethodName: AccessibleDirectionLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: North
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1763352511
 GameObject:
   m_ObjectHideFlags: 0
@@ -56122,6 +56632,7 @@ MonoBehaviour:
   - {fileID: 1222683201}
   itemImage: {fileID: 21300000, guid: 23bcf6d822d1a3e498e22bdb081bea8d, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!114 &1944750886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57565,6 +58076,7 @@ MonoBehaviour:
   - {fileID: 594484579}
   itemImage: {fileID: 21300000, guid: 19bd88740702837429a8af0572950278, type: 3}
   soundManager: {fileID: 968142283}
+  DoorToRoom3: {fileID: 0}
 --- !u!65 &2006454726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62648,6 +63160,7 @@ GameObject:
   - component: {fileID: 5477975691036919500}
   - component: {fileID: 5477975691036919501}
   - component: {fileID: 5477975691036919502}
+  - component: {fileID: 5477975691036919503}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Untagged
@@ -64492,7 +65005,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnInteractionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1731180064}
+        m_TargetAssemblyTypeName: CollectItem, Assembly-CSharp
+        m_MethodName: AccessibleCollectItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Door2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: MoveToRoom3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: Enable3DButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275968312}
+        m_TargetAssemblyTypeName: ToggleAccessibleUIGroups, Assembly-CSharp
+        m_MethodName: ChangeGroupsRoom1and2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -64851,6 +65412,7 @@ GameObject:
   - component: {fileID: 3853756774571543877}
   - component: {fileID: 7262476470870487465}
   - component: {fileID: 7262476470870487466}
+  - component: {fileID: 7262476470870487467}
   m_Layer: 0
   m_Name: Magnemite
   m_TagString: Untagged
@@ -65005,6 +65567,7 @@ GameObject:
   - component: {fileID: 2127181296494695199}
   - component: {fileID: 6147664039628912890}
   - component: {fileID: 6147664039628912891}
+  - component: {fileID: 6147664039628912892}
   m_Layer: 0
   m_Name: Pyrite
   m_TagString: Untagged
@@ -65455,6 +66018,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02599512, y: 0.026879337, z: 0.018119173}
   m_Center: {x: 0.0024445427, y: 0.00466362, z: 0.0020077259}
+--- !u!114 &5477975691036919503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870947607601979670}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Gold 34
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!23 &5509209122040903897
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65909,6 +66526,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.023280513, y: 0.020736355, z: 0.02409272}
   m_Center: {x: -0.008455893, y: -0.0026540803, z: 0.005930868}
+--- !u!114 &6147664039628912892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391593518173891348}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Pyrite 45
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &6341650360399725349
 GameObject:
   m_ObjectHideFlags: 0
@@ -66782,6 +67453,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.013969279, y: 0.022338858, z: 0.020275507}
   m_Center: {x: -0.007961482, y: 0.0015531147, z: 0.0041506863}
+--- !u!114 &7262476470870487467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113965670386840293}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Magnemite 12
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!33 &7302307438324344876
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -68118,6 +68843,7 @@ GameObject:
   - component: {fileID: 4831931777369637474}
   - component: {fileID: 8703448626321918101}
   - component: {fileID: 8703448626321918102}
+  - component: {fileID: 8703448626321918103}
   m_Layer: 0
   m_Name: Hematite
   m_TagString: Untagged
@@ -68154,6 +68880,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01058234, y: 0.028374422, z: 0.01955617}
   m_Center: {x: -0.0026739603, y: -0.00016802129, z: 0.002396199}
+--- !u!114 &8703448626321918103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8703448626321918100}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Hematite 78
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &8707273951191822921
 GameObject:
   m_ObjectHideFlags: 0

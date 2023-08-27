@@ -19,6 +19,8 @@ public class CollectItem : MonoBehaviour
 
     public SoundManager soundManager;
 
+    public GameObject DoorToRoom3;
+
     //Adding the audio source and a toggle to avoid playback
     //AudioSource audioSource;
     //private bool checkSoundToggle = true;
@@ -1060,21 +1062,21 @@ public class CollectItem : MonoBehaviour
         {
             if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == false)
             {
-                TopText.text = "You have the necessary items to enter this room.";
+                TopText.text = "You have the necessary items this room but first it must be unlocked.";
 
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
 
             }
             else if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == true)
             {
-                TopText.text = "You Can Now Enter This Room!";
-                gs.GetHighlightedObject().transform.gameObject.GetComponent<Animation>()["Cube|Open"].time = 0.3f;
-                gs.GetHighlightedObject().transform.gameObject.GetComponent<Animation>()["Cube|Open"].speed = 0.3f;
-                gs.GetHighlightedObject().transform.gameObject.GetComponent<Animation>().Play();
-                gs.GetHighlightedObject().transform.gameObject.GetComponent<AudioSource>().Play();
+                TopText.text = "You Can Now Enter This Room! Room 3";
+                DoorToRoom3.GetComponent<Animation>()["Cube|Open"].time = 0.3f;
+                DoorToRoom3.transform.gameObject.GetComponent<Animation>()["Cube|Open"].speed = 0.3f;
+                DoorToRoom3.transform.gameObject.GetComponent<Animation>().Play();
+                DoorToRoom3.transform.gameObject.GetComponent<AudioSource>().Play();
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
 
-                gs.SetCurrentRoom(3);
+                
                 Debug.Log("Current Room: " + gs.GetCurrentRoom());
             }
             else

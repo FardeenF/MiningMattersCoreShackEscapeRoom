@@ -9,6 +9,8 @@ public class RotateCabinetLock : MonoBehaviour
     public Camera mainCam;
     public SoundManager soundManager;
 
+    public GameObject handlens;
+
     public int number1 = 1;
     public int number2 = 1;
     public int number3 = 1;
@@ -70,7 +72,7 @@ public class RotateCabinetLock : MonoBehaviour
                 Debug.Log("CabinetUnLocked");
 
                 ToggleUIGroups.Enable3DButtons();
-                
+                handlens.GetComponent<AccessibleButton_3D>().SelectItem(true);
             }
         }
         

@@ -53,7 +53,7 @@ public class GameState : MonoBehaviour
 
     private bool foundGoldCore = true; //set back to false
 
-    private bool isRoom3Unlocked = true; //set back to false
+    private bool isRoom3Unlocked = false; //set back to false
 
     private bool hasMagnetPen = false;
     private bool holdingMagnetPen = false;
