@@ -462,25 +462,46 @@ public class checkInventoryItem : MonoBehaviour
                 }
                 else if(VC_StorageRack.Priority == 1)
                 {
-                    if (isCorePieceActive == false && holdingSomething == false)
+                    //If screen reader is enabled place core in correct storage slot and win screen enables
+                    if (gs.GetScreenReader() == true)
                     {
-                        gs.SetIsHoldingCorePiece(true);
-                        activeCorePiece = Instantiate(CutCorePiece, Input.mousePosition, Quaternion.identity);
-                        isCorePieceActive = true;
-                        holdingSomething = true;
-                        topText.text = ("Where should I store this core?");
-                        topText.GetComponent<UAP_BaseElement>().SelectItem(true);
+                        corePieceSpace1.SetActive(true);
+                        gs.SetIsHoldingCorePiece(false);
+                        if (activeCorePiece != null)
+                            activeCorePiece.SetActive(false);
+
+                        isCorePieceActive = false;
+                        holdingSomething = false;
+                        setCorePieceDown = true;
+                        Debug.Log("Storage 2 Activate.");
+
+                        topText.text = "You've stored the core correctly! YOU WIN!!!";
+                        gs.SetEndGame(true);
+                        endingScreen.gameObject.SetActive(true);
                     }
                     else
                     {
-                        PutAwayButton();
-                        gs.SetIsHoldingCorePiece(false);
-                        Destroy(activeCorePiece.gameObject);
-                        isCorePieceActive = false;
-                        holdingSomething = false;
-                        topText.text = ("Core Piece back in inventory");
-                        topText.GetComponent<UAP_BaseElement>().SelectItem(true);
+                        if (isCorePieceActive == false && holdingSomething == false)
+                        {
+                            gs.SetIsHoldingCorePiece(true);
+                            activeCorePiece = Instantiate(CutCorePiece, Input.mousePosition, Quaternion.identity);
+                            isCorePieceActive = true;
+                            holdingSomething = true;
+                            topText.text = ("Where should I store this core?");
+                            topText.GetComponent<UAP_BaseElement>().SelectItem(true);
+                        }
+                        else
+                        {
+                            PutAwayButton();
+                            gs.SetIsHoldingCorePiece(false);
+                            Destroy(activeCorePiece.gameObject);
+                            isCorePieceActive = false;
+                            holdingSomething = false;
+                            topText.text = ("Core Piece back in inventory");
+                            topText.GetComponent<UAP_BaseElement>().SelectItem(true);
+                        }
                     }
+                    
                 }
                 else
                 {
@@ -739,6 +760,7 @@ public class checkInventoryItem : MonoBehaviour
                 //UV Light Toggled
                 if (isUVLight == false)
                 {
+                    
                     activeHandLens.gameObject.GetComponentInChildren<Light>().enabled = true;
                     activeHandLens.gameObject.GetComponentInChildren<BoxCollider>().enabled = true;
                     isUVLight = true;
@@ -750,8 +772,15 @@ public class checkInventoryItem : MonoBehaviour
                     activeHandLens.gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
                     isUVLight = false;
                 }
-                    
+
+                if (gs.GetScreenReader() == true && gs.GetCurrentCam() == "Room3_Bonus")
+                {
+                    gs.SetHasFoundSodaLite(true);
+                }
+
             }
+
+            
 
 
             

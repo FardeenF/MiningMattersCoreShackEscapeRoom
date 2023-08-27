@@ -1045,13 +1045,13 @@ public class CollectItem : MonoBehaviour
         }
 
 
-        if (item == "sodaLiteRock_textured" && gs.GetHasFoundSodaLite() == false)
+        if (item == "sodaLiteRock_textured" && gs.GetHasFoundSodaLite() == true)
         {
 
             Debug.Log("Display Dragon Code of Ethics now");
-            TopText.text = ("You Have Found the Code of Ethics Easter egg!");
+            TopText.text = ("You Have Found the Code of Ethics Easter egg! You can now review the code of ethics after beating the game");
             TopText.GetComponent<UAP_BaseElement>().SelectItem();
-            gs.SetHasFoundSodaLite(true);
+            //gs.SetHasFoundSodaLite(true);
 
 
         }

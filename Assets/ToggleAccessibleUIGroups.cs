@@ -45,6 +45,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     //Room 3
     public AccessibleButton_3D[] MineralIdentificationSubButtons;
     public AccessibleButton_3D[] Room3ComputerSubButtons;
+    public AccessibleButton_3D[] VolcanoSubButtons;
+    public AccessibleButton_3D[] IndustrialCabinetSubButtons;
+    public AccessibleButton_3D[] MagnetPenSubButtons;
+    public AccessibleButton_3D[] CoreGateSubButtons;
+    public AccessibleButton_3D[] BonusSubButtons;
 
     //Main Locations
     public GameObject[] MainRoom1Locations;
@@ -261,7 +266,41 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
                 SubItemsEnabled = false;
             }
+            for (int i = 0; i < VolcanoSubButtons.Length; i++)
+            {
+                if (VolcanoSubButtons[i] != null)
+                    VolcanoSubButtons[i].enabled = false;
 
+                SubItemsEnabled = false;
+            }
+            for (int i = 0; i < IndustrialCabinetSubButtons.Length; i++)
+            {
+                if (IndustrialCabinetSubButtons[i] != null)
+                    IndustrialCabinetSubButtons[i].enabled = false;
+
+                SubItemsEnabled = false;
+            }
+            for (int i = 0; i < MagnetPenSubButtons.Length; i++)
+            {
+                if (MagnetPenSubButtons[i] != null)
+                    MagnetPenSubButtons[i].enabled = false;
+
+                SubItemsEnabled = false;
+            }
+            for (int i = 0; i < CoreGateSubButtons.Length; i++)
+            {
+                if (CoreGateSubButtons[i] != null)
+                    CoreGateSubButtons[i].enabled = false;
+
+                SubItemsEnabled = false;
+            }
+            for (int i = 0; i < BonusSubButtons.Length; i++)
+            {
+                if (BonusSubButtons[i] != null)
+                    BonusSubButtons[i].enabled = false;
+
+                SubItemsEnabled = false;
+            }
 
             SubItemsEnabled = false;
         }
@@ -1162,7 +1201,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         }
 
 
-        //Send/Receive Core Table
+        //MineralIdentification room3
         if (gs.GetCurrentCam() == "Room3_MineralIdentification")
         {
             for (int i = 0; i < MineralIdentificationSubButtons.Length; i++)
@@ -1177,6 +1216,31 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 if (Room3ComputerSubButtons[i] != null)
                     Room3ComputerSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < VolcanoSubButtons.Length; i++)
+            {
+                if (VolcanoSubButtons[i] != null)
+                    VolcanoSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < IndustrialCabinetSubButtons.Length; i++)
+            {
+                if (IndustrialCabinetSubButtons[i] != null)
+                    IndustrialCabinetSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < MagnetPenSubButtons.Length; i++)
+            {
+                if (MagnetPenSubButtons[i] != null)
+                    MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < CoreGateSubButtons.Length; i++)
+            {
+                if (CoreGateSubButtons[i] != null)
+                    CoreGateSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < BonusSubButtons.Length; i++)
+            {
+                if (BonusSubButtons[i] != null)
+                    BonusSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
             //
 
@@ -1195,6 +1259,215 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 if (MineralIdentificationSubButtons[i] != null)
                     MineralIdentificationSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < VolcanoSubButtons.Length; i++)
+            {
+                if (VolcanoSubButtons[i] != null)
+                    VolcanoSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < IndustrialCabinetSubButtons.Length; i++)
+            {
+                if (IndustrialCabinetSubButtons[i] != null)
+                    IndustrialCabinetSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < MagnetPenSubButtons.Length; i++)
+            {
+                if (MagnetPenSubButtons[i] != null)
+                    MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < CoreGateSubButtons.Length; i++)
+            {
+                if (CoreGateSubButtons[i] != null)
+                    CoreGateSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < BonusSubButtons.Length; i++)
+            {
+                if (BonusSubButtons[i] != null)
+                    BonusSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            //
+
+        }
+        if (gs.GetCurrentCam() == "Room3_Volcano")
+        {
+            for (int i = 0; i < VolcanoSubButtons.Length; i++)
+            {
+                if (VolcanoSubButtons[i] != null)
+                    VolcanoSubButtons[i].enabled = true;
+
+                SubItemsEnabled = true;
+            }
+            // Set others to false
+            for (int i = 0; i < MineralIdentificationSubButtons.Length; i++)
+            {
+                if (MineralIdentificationSubButtons[i] != null)
+                    MineralIdentificationSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < Room3ComputerSubButtons.Length; i++)
+            {
+                if (Room3ComputerSubButtons[i] != null)
+                    Room3ComputerSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < IndustrialCabinetSubButtons.Length; i++)
+            {
+                if (IndustrialCabinetSubButtons[i] != null)
+                    IndustrialCabinetSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < MagnetPenSubButtons.Length; i++)
+            {
+                if (MagnetPenSubButtons[i] != null)
+                    MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < CoreGateSubButtons.Length; i++)
+            {
+                if (CoreGateSubButtons[i] != null)
+                    CoreGateSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < BonusSubButtons.Length; i++)
+            {
+                if (BonusSubButtons[i] != null)
+                    BonusSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            //
+
+        }
+
+        if (gs.GetCurrentCam() == "Room3_Cabinet")
+        {
+            for (int i = 0; i < IndustrialCabinetSubButtons.Length; i++)
+            {
+                if (IndustrialCabinetSubButtons[i] != null)
+                    IndustrialCabinetSubButtons[i].enabled = true;
+
+                SubItemsEnabled = true;
+
+                if (IndustrialCabinetSubButtons[0].GetComponent<Room3Cabinet>().isOpen)
+                {
+                    if (MagnetPenSubButtons[0] != null)
+                    {
+                        MagnetPenSubButtons[0].GetComponent<AccessibleButton_3D>().enabled = true;
+                        if (MagnetPenSubButtons[0].gameObject.activeInHierarchy)
+                            MagnetPenSubButtons[0].GetComponent<AccessibleButton_3D>().SelectItem(true);
+                    }
+                        
+                }
+                else if (IndustrialCabinetSubButtons[0].GetComponent<Room3Cabinet>().isOpen == false)
+                {
+                    if (MagnetPenSubButtons[0] != null)
+                        MagnetPenSubButtons[0].GetComponent<AccessibleButton_3D>().enabled = false;
+                }
+            }
+            // Set others to false
+            for (int i = 0; i < MineralIdentificationSubButtons.Length; i++)
+            {
+                if (MineralIdentificationSubButtons[i] != null)
+                    MineralIdentificationSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < Room3ComputerSubButtons.Length; i++)
+            {
+                if (Room3ComputerSubButtons[i] != null)
+                    Room3ComputerSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < VolcanoSubButtons.Length; i++)
+            {
+                if (VolcanoSubButtons[i] != null)
+                    VolcanoSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < CoreGateSubButtons.Length; i++)
+            {
+                if (CoreGateSubButtons[i] != null)
+                    CoreGateSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < BonusSubButtons.Length; i++)
+            {
+                if (BonusSubButtons[i] != null)
+                    BonusSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            //
+
+        }
+        if (gs.GetCurrentCam() == "Room3_GateCode")
+        {
+            for (int i = 0; i < CoreGateSubButtons.Length; i++)
+            {
+                if (CoreGateSubButtons[i] != null)
+                    CoreGateSubButtons[i].enabled = true;
+
+                SubItemsEnabled = true;
+            }
+            // Set others to false
+            for (int i = 0; i < MineralIdentificationSubButtons.Length; i++)
+            {
+                if (MineralIdentificationSubButtons[i] != null)
+                    MineralIdentificationSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < Room3ComputerSubButtons.Length; i++)
+            {
+                if (Room3ComputerSubButtons[i] != null)
+                    Room3ComputerSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < IndustrialCabinetSubButtons.Length; i++)
+            {
+                if (IndustrialCabinetSubButtons[i] != null)
+                    IndustrialCabinetSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < MagnetPenSubButtons.Length; i++)
+            {
+                if (MagnetPenSubButtons[i] != null)
+                    MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < VolcanoSubButtons.Length; i++)
+            {
+                if (VolcanoSubButtons[i] != null)
+                    VolcanoSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < BonusSubButtons.Length; i++)
+            {
+                if (BonusSubButtons[i] != null)
+                    BonusSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            //
+
+        }
+        if (gs.GetCurrentCam() == "Room3_Bonus")
+        {
+            for (int i = 0; i < BonusSubButtons.Length; i++)
+            {
+                if (BonusSubButtons[i] != null)
+                    BonusSubButtons[i].enabled = true;
+
+                SubItemsEnabled = true;
+            }
+            // Set others to false
+            for (int i = 0; i < MineralIdentificationSubButtons.Length; i++)
+            {
+                if (MineralIdentificationSubButtons[i] != null)
+                    MineralIdentificationSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < Room3ComputerSubButtons.Length; i++)
+            {
+                if (Room3ComputerSubButtons[i] != null)
+                    Room3ComputerSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < IndustrialCabinetSubButtons.Length; i++)
+            {
+                if (IndustrialCabinetSubButtons[i] != null)
+                    IndustrialCabinetSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < MagnetPenSubButtons.Length; i++)
+            {
+                if (MagnetPenSubButtons[i] != null)
+                    MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < VolcanoSubButtons.Length; i++)
+            {
+                if (VolcanoSubButtons[i] != null)
+                    VolcanoSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < CoreGateSubButtons.Length; i++)
+            {
+                if (CoreGateSubButtons[i] != null)
+                    CoreGateSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
             //
 

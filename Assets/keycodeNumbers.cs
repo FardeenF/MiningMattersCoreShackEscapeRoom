@@ -14,6 +14,39 @@ public class keycodeNumbers : MonoBehaviour
     public AudioSource wrong;
     
 
+    public void AccessibleKeyPad()
+    {
+        if (UAP_AccessibilityManager.GetCurrentFocusObject().name == "ENTER")
+        {
+
+            if (passwordText.text == "0923010021")
+            {
+                Debug.Log("That is correct! You May Enter");
+                gatedoor.GetComponent<Animation>().Play();
+                gs.SetHasUnlockedStorageRoom(true);
+                unlocked.Play();
+            }
+            else
+            {
+                Debug.Log("Wrong Code, Try Again.");
+                wrong.Play();
+                passwordText.text = "";
+            }
+        }
+        else if (UAP_AccessibilityManager.GetCurrentFocusObject().name == "CLEAR")
+        {
+            wrong.Play();
+            passwordText.text = "";
+        }
+        else
+        {
+
+            passwordText.text += number;
+        }
+        this.gameObject.GetComponent<Animation>().Play();
+        button.Play();
+    }
+
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
