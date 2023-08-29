@@ -21,6 +21,10 @@ public class CollectItem : MonoBehaviour
 
     public GameObject DoorToRoom3;
 
+    public GameObject Dragon;
+    public ParticleSystem dragoncrashps;
+    public AudioSource bricksFalling;
+
     //Adding the audio source and a toggle to avoid playback
     //AudioSource audioSource;
     //private bool checkSoundToggle = true;
@@ -593,6 +597,9 @@ public class CollectItem : MonoBehaviour
                 Debug.Log("Display Dragon Code of Ethics now");
                 TopText.text = ("You Have Found the Code of Ethics Easter egg!");
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                Dragon.gameObject.SetActive(true);
+                dragoncrashps.Play();
+                bricksFalling.Play();
                 gs.SetHasFoundSodaLite(true);
                 
 
@@ -1051,6 +1058,9 @@ public class CollectItem : MonoBehaviour
             Debug.Log("Display Dragon Code of Ethics now");
             TopText.text = ("You Have Found the Code of Ethics Easter egg! You can now review the code of ethics after beating the game");
             TopText.GetComponent<UAP_BaseElement>().SelectItem();
+            Dragon.gameObject.SetActive(true);
+            dragoncrashps.Play();
+            bricksFalling.Play();
             //gs.SetHasFoundSodaLite(true);
 
 
@@ -1081,7 +1091,7 @@ public class CollectItem : MonoBehaviour
             }
             else
             {
-                TopText.text = (Message);
+                TopText.text = ("You need to find a core that contains gold and unlock the door to get to room 3");
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
             }
 

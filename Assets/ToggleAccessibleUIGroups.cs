@@ -76,14 +76,20 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             }
             else if (gs.GetIsRoom3Unlocked() == true)
             {
-
-                for (int i = 0; i < cameras.Length; i++)
+                if (gs.GetfoundGoldCore() == true)
                 {
-                    cameras[i].Priority = 0;
+                    for (int i = 0; i < cameras.Length; i++)
+                    {
+                        cameras[i].Priority = 0;
+                    }
+                    cameras[19].Priority = 1;
+                    gs.SetCurrentCam("Room3_Main");
+                    gs.SetCurrentRoom(3);
                 }
-                cameras[19].Priority = 1;
-                gs.SetCurrentCam("Room3_Main");
-                gs.SetCurrentRoom(3);
+                else
+                {
+                    TopText.text = ("You do not have a core containing gold");
+                }
 
 
             }
@@ -720,7 +726,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 if (SedimentTableSubButtons[i] == null)
                     i++;
-                if (SedimentTableSubButtons[i].gameObject.name == "Safety Goggles_Textured")
+                if (SedimentTableSubButtons[i].gameObject.name == "Safety Goggles")
                 {
                     SedimentTableSubButtons[i].enabled = false;
                 }

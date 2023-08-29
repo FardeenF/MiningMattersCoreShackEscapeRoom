@@ -54,7 +54,7 @@ public class DirectionalLock : MonoBehaviour
         {
             anim.Play(animation: "Check");
             click.Play();
-            if (code == " North North North East East")
+            if (code == " North North North East East" )
             {
                 topText.text = "The code is correct! Room 3 is now unlocked!";
                 gs.SetIsRoom3Unlocked(true);
