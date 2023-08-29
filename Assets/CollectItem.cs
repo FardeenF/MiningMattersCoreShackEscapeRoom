@@ -555,9 +555,6 @@ public class CollectItem : MonoBehaviour
                         TopText.text = (Message);
                         this.gameObject.SetActive(false);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Cut Core Piece";
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Cut Core Piece";
                         Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Cut Core Piece";
                         break;
                     }
@@ -579,15 +576,17 @@ public class CollectItem : MonoBehaviour
                         TopText.text = "Core has been collected.";
                         this.gameObject.SetActive(false);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Cut Core Piece";
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Cut Core Piece";
                         Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Cut Core Piece";
                         break;
                     }
                 }
 
 
+            }
+            else if(hit.transform.gameObject.name == "ResultsCutCore" && gs.GetfoundGoldCore() == false)
+            {
+                hit.transform.gameObject.SetActive(false);
+                gs.SetholdingCutCore(false);
             }
 
 
@@ -1016,9 +1015,6 @@ public class CollectItem : MonoBehaviour
                     TopText.text = (Message);
                     this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Cut Core Piece";
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Cut Core Piece";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Cut Core Piece";
                     break;
                 }
@@ -1040,9 +1036,6 @@ public class CollectItem : MonoBehaviour
                     TopText.text = "Core has been collected.";
                     this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Cut Core Piece";
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Cut Core Piece";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Cut Core Piece";
                     break;
                 }

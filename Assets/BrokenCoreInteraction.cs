@@ -269,23 +269,19 @@ public class BrokenCoreInteraction : MonoBehaviour
 
     public void AccessibleSelectPasswordInput()
     {
-        //currentHighlightedObject = UAP_AccessibilityManager.GetCurrentFocusObject();
         UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
         UAP_AccessibilityManager.EnableAccessibility(false);
-        
-        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().text = Input.anyKey.ToString();
     }
 
     public void AccessibleReEnable(string num)
     {
-        if (gs.GetScreenReader() == true)
+        if (gs.GetIsAccessibleMain())
+        {
+            Debug.Log("TRUE!!!");
             UAP_AccessibilityManager.EnableAccessibility(true);
-
-
-        //ReadAccessibilityMessage("Password Letter " + num + " Equals " + gs.GetHighlightedObject().GetComponent<InputField>().text);
-        ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text + " is entered in Password Letter" + num);
-        ReadAccessibilityMessage();
-
+            ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text + " is entered in Password Letter" + num);
+            ReadAccessibilityMessage();
+        }
     }
 
     public void ReadLetter(string letterNum)

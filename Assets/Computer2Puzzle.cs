@@ -129,7 +129,7 @@ public class Computer2Puzzle : MonoBehaviour
 
     public void AccessibleReEnable(string num)
     {
-        if (gs.GetScreenReader() == true)
+        if (gs.GetIsAccessibleMain())
         {
             UAP_AccessibilityManager.EnableAccessibility(true);
             ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text.ToString() + " is entered in Password Letter" + num);

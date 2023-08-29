@@ -465,7 +465,7 @@ public class CameraManager : MonoBehaviour
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (gs.GetStartGame())
+        if (gs.GetStartGame() && !UAP_AccessibilityManager.IsEnabled())
         {
             if (Physics.Raycast(ray, out hit, 1000f))
             {

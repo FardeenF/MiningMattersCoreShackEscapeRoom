@@ -59,6 +59,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     private bool SubItemsEnabled = false;
 
+    public TextMeshProUGUI screenreader;
 
     public void MoveToRoom3()
     {
@@ -186,6 +187,24 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     {
         ToggleUIGroup();
         //CurrentCam(gs.GetCurrentCam());
+
+        if(UAP_AccessibilityManager.IsEnabled())
+        {
+            gs.SetScreenReader(true);
+        }
+        else
+        {
+            gs.SetScreenReader(false);
+        }
+
+        if (gs.GetScreenReader())
+        {
+            screenreader.text = "on";
+        }
+        else
+        {
+            screenreader.text = "off";
+        }
 
         if (cameras[0].Priority == 1)
         {

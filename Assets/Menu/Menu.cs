@@ -13,7 +13,10 @@ public class Menu : MonoBehaviour
     public GameState state;
     public GameObject UI;
 
-
+    private void Awake()
+    {
+        UAP_AccessibilityManager.EnableAccessibility(false);
+    }
     void Start()
     {
         UI.gameObject.SetActive(false);
@@ -27,8 +30,9 @@ public class Menu : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            state.SetScreenReader(!state.GetScreenReader());
+            //state.SetScreenReader(!state.GetScreenReader());
             ScreenReader.SetActive(!ScreenReader.activeInHierarchy);
+            state.SetIsAccessibleMain(!state.GetIsAccessibleMain());
             UAP_AccessibilityManager.EnableAccessibility(!UAP_AccessibilityManager.IsEnabled());
         }
 

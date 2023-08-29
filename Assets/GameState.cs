@@ -63,7 +63,7 @@ public class GameState : MonoBehaviour
     private bool hasUnlockedStorageRoom = false;
 
     private bool isHighContrastMode = false;
-    private bool isScreenReader = true; // set back to false
+    private bool isScreenReader = false; // set back to false
 
     private bool startGame = false;
     private bool endGame = false;
@@ -81,6 +81,8 @@ public class GameState : MonoBehaviour
     public TextMeshProUGUI topText;
 
     private string currentCam = "Room1_Main";
+
+    private bool IsAccessibleMain = false;
 
 
     //Check Mouse Over State
@@ -536,6 +538,15 @@ public class GameState : MonoBehaviour
     public void SetAnalyzedCore(bool checkpoint)
     {
         analyzedCore = checkpoint;
+    }
+
+    public bool GetIsAccessibleMain()
+    {
+        return IsAccessibleMain;
+    }
+    public void SetIsAccessibleMain(bool accessible)
+    {
+        IsAccessibleMain = accessible;
     }
 
 }

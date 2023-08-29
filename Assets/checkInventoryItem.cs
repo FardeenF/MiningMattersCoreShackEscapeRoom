@@ -193,12 +193,12 @@ public class checkInventoryItem : MonoBehaviour
                             else if (i == 2)
                             {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat2;
-                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 3 To be Inspected with a Hand Lens.";
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 4 To be Inspected with a Hand Lens.";
                             }
                             else if (i == 3)
                             {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat3;
-                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 4 To be Inspected with a Hand Lens.";
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 3 To be Inspected with a Hand Lens.";
                             }
 
 
@@ -458,7 +458,6 @@ public class checkInventoryItem : MonoBehaviour
                     gs.SetholdingCutCore(false);
                     StartCoroutine(RecieveCoreResults());
                     holdingSomething = false;
-                    //Panda
                 }
                 else if(VC_StorageRack.Priority == 1)
                 {
@@ -673,7 +672,7 @@ public class checkInventoryItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3)
             || Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Alpha6))
         {
-            OnInventoryClick();
+            //OnInventoryClick();
         }
 
 
