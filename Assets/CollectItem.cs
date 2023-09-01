@@ -1049,8 +1049,8 @@ public class CollectItem : MonoBehaviour
         {
 
             Debug.Log("Display Dragon Code of Ethics now");
-            TopText.text = ("You Have Found the Code of Ethics Easter egg! You can now review the code of ethics after beating the game");
-            TopText.GetComponent<UAP_BaseElement>().SelectItem();
+            TopText.text = ("A dragon has appeared revealing the Code of Ethics Easter egg! You can now review the code of ethics after beating the game.");
+            TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
             Dragon.gameObject.SetActive(true);
             dragoncrashps.Play();
             bricksFalling.Play();
@@ -1067,7 +1067,7 @@ public class CollectItem : MonoBehaviour
             {
                 TopText.text = "You have the necessary items this room but first it must be unlocked.";
 
-                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
 
             }
             else if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == true)
@@ -1085,7 +1085,7 @@ public class CollectItem : MonoBehaviour
             else
             {
                 TopText.text = ("You need to find a core that contains gold and unlock the door to get to room 3");
-                TopText.GetComponent<UAP_BaseElement>().SelectItem();
+                TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
             }
 
         }
@@ -1094,7 +1094,7 @@ public class CollectItem : MonoBehaviour
         {
             TopText.text = ("Heading back to room 1");
             TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
-            gs.SetCurrentRoom(1);
+            //gs.SetCurrentRoom(1);
             Debug.Log("Current Room: " + gs.GetCurrentRoom());
 
         }

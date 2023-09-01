@@ -11,12 +11,15 @@ public class MineralIdentification : MonoBehaviour
     public Material SPMat;
 
     private bool hasMoved = false;
+    
 
-    public void AccessibleMoveRocksForStreaks()
+    public void AccessibleMoveRocksForStreaks(string mineral)
     {
         if (hasMoved == false)
         {
             this.gameObject.transform.position = StreakPlate1.transform.position + new Vector3(0, 0.1f, 0);
+            this.gameObject.GetComponent<AccessibleButton_3D>().m_Text = mineral;
+            this.gameObject.GetComponent<AccessibleButton_3D>().SelectItem(true);
             StartCoroutine(Streak());
         }
     }
@@ -44,9 +47,5 @@ public class MineralIdentification : MonoBehaviour
         this.gameObject.transform.position = originalLoc.transform.position;
         hasMoved = false;
         StopCoroutine(Streak());
-
-
-
-
     }
 }

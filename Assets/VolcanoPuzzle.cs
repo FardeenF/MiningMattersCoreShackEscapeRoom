@@ -20,6 +20,7 @@ public class VolcanoPuzzle : MonoBehaviour
     public AudioSource ButtonSound;
     public GameObject Diamond;
 
+    public ToggleAccessibleUIGroups toggle;
 
     public void AccessibleVolcanoPuzzle()
     {
@@ -29,6 +30,7 @@ public class VolcanoPuzzle : MonoBehaviour
             thickorthin = "Thick";
             ButtonSound.Play();
             UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<Animation>().Play();
+
         }
         if (UAP_AccessibilityManager.GetCurrentFocusObject().name == "ThinLavaButton")
         {
@@ -60,7 +62,9 @@ public class VolcanoPuzzle : MonoBehaviour
                 //Shield Volcano
                 Debug.Log(thickorthin + lowhighgas);
 
-                topText.text = "This results a Shield Volcano";
+                topText.text = "Thin Lava + Low Gas has resulted in a Shield Volcano. Nothing seems to have occured. Try a different combination.";
+                topText.gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
+
                 Volcano.GetComponent<Animation>()["Volcano|Cinder-Shield"].time = 0.03f;
                 Volcano.GetComponent<Animation>()["Volcano|Cinder-Shield"].speed = 1;
                 Volcano.GetComponent<Animation>().Play(animation: "Volcano|Cinder-Shield");
@@ -71,30 +75,39 @@ public class VolcanoPuzzle : MonoBehaviour
             {
                 //Cinder Volcano
                 Debug.Log(thickorthin + lowhighgas);
-                topText.text = "This results a Cinder Volcano";
+                topText.text = "Thin Lava + High Gas has resulted in a Cinder Volcano. Nothing seems to have occured. Try a different combination.";
+                topText.gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
 
             }
             else if (thickorthin + lowhighgas == "ThickLow")
             {
                 //Cone Volcano
                 Debug.Log(thickorthin + lowhighgas);
-                topText.text = "This results a Cinder Volcano";
+                topText.text = "Thick Lava + Low Gas has resulted in a Cone Volcano. Nothing seems to have occured. Try a different combination.";
+                topText.gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
             }
             else if (thickorthin + lowhighgas == "ThickHigh")
             {
                 //Composite Volcano
                 Debug.Log(thickorthin + lowhighgas);
                 Diamond.SetActive(true);
-                topText.text = "This results a Composite Volcano Which Can Bring Up Diamonds from the Mantel!";
+                topText.text = "Thick Lava + High Gas has resulted in a Composite Volcano. A diamond with a code has appeared!.";
+                topText.gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
                 Volcano.GetComponent<Animation>()["Volcano|Cinder-Composite"].time = 0.03f;
                 Volcano.GetComponent<Animation>()["Volcano|Cinder-Composite"].speed = 1;
                 Volcano.GetComponent<Animation>().Play(animation: "Volcano|Cinder-Composite");
+
+                gs.SetVolcanoPuzzleSolved(true);
+
+                toggle.Enable3DButtons();
                 StartCoroutine(MoveBack());
+               
             }
             else
             {
                 //None of the above selected
-                topText.text = "Pick Thick or Thin & High or Low";
+                topText.text = "The combination is incomplete. Select both a lava and gas type to start a simulation.";
+                topText.gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
                 Debug.Log("Pick Thick or Thin & High or Low");
             }
         }

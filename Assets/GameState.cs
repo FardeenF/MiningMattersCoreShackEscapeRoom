@@ -84,6 +84,9 @@ public class GameState : MonoBehaviour
 
     private bool IsAccessibleMain = false;
 
+    private bool Room3PasswordPuzzle = false;
+
+    private bool CompleteVolcanoPuzzle = false;
 
     //Check Mouse Over State
     public bool GetMouseOver()
@@ -547,6 +550,24 @@ public class GameState : MonoBehaviour
     public void SetIsAccessibleMain(bool accessible)
     {
         IsAccessibleMain = accessible;
+    }
+
+    public bool GetRoom3PasswordPuzzle()
+    {
+        return Room3PasswordPuzzle;
+    }
+    public void SetRoom3PasswordPuzzle(bool solved)
+    {
+        Room3PasswordPuzzle = solved;
+    }
+
+    public bool GetVolcanoPuzzleSolved()
+    {
+        return CompleteVolcanoPuzzle;
+    }
+    public void SetVolcanoPuzzleSolved(bool solved)
+    {
+        CompleteVolcanoPuzzle = solved;
     }
 
 }

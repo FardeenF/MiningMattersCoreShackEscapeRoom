@@ -3168,7 +3168,7 @@ RectTransform:
   m_Children:
   - {fileID: 554170952}
   m_Father: {fileID: 1167846956}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38947624, y: 0.1764346}
   m_AnchorMax: {x: 0.38947624, y: 0.1764346}
@@ -5417,7 +5417,7 @@ Transform:
   - {fileID: 392249107}
   - {fileID: 906340684}
   m_Father: {fileID: 783850544}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!82 &192270755
 AudioSource:
@@ -5536,6 +5536,7 @@ MonoBehaviour:
   Volcano: {fileID: 1183320957}
   ButtonSound: {fileID: 192270755}
   Diamond: {fileID: 1650027889}
+  toggle: {fileID: 275968312}
 --- !u!1001 &192487445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6548,13 +6549,13 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215674918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 147564627}
   m_Father: {fileID: 1167846956}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14446732, y: 0.17043929}
   m_AnchorMax: {x: 0.14446732, y: 0.17043929}
@@ -7489,7 +7490,7 @@ MonoBehaviour:
   m_PopUp: 0
   m_AllowExternalJoining: 0
   m_AutoRead: 0
-  m_Priority: 2
+  m_Priority: 1
   m_ContainerName: 
   m_IsLocalizationKey: 0
   m_2DNavigation: 0
@@ -8100,7 +8101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11475380, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_CyclicMenus
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11475380, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_EditorOverride
@@ -8109,6 +8110,10 @@ PrefabInstance:
     - target: {fileID: 11475380, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_EditorEnabledState
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475380, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_WindowsUseMouseSwipes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22474968, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8158,6 +8163,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114044125000442214, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223225506198854252, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1736072091}
+    - target: {fileID: 223225506198854252, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223225506198854252, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224510104821068024, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
 --- !u!1 &275968311 stripped
@@ -8181,6 +8258,8 @@ MonoBehaviour:
   GameUI: {fileID: 744024436}
   Room1: {fileID: 1233085944}
   Room2: {fileID: 1526932019}
+  Room3: {fileID: 783850545}
+  Doors: {fileID: 252999103}
   TopText: {fileID: 445432509}
   AllRoots: []
   testObject: {fileID: 1519202667}
@@ -8304,12 +8383,16 @@ MonoBehaviour:
   - {fileID: 500579045}
   - {fileID: 373767123}
   - {fileID: 1576702713}
+  - {fileID: 1059445807}
+  - {fileID: 1293331900}
   VolcanoSubButtons:
   - {fileID: 631734240}
   - {fileID: 1459942433}
   - {fileID: 1549332890}
   - {fileID: 2115857750}
   - {fileID: 392249111}
+  - {fileID: 1547507965}
+  - {fileID: 1650027894}
   IndustrialCabinetSubButtons:
   - {fileID: 839318495}
   - {fileID: 437299090}
@@ -11063,7 +11146,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Magnet Pen
+  m_Text: Magnet Pen. Select to collect and check minerals for magnetism.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -13718,7 +13801,7 @@ RectTransform:
   m_Children:
   - {fileID: 500579041}
   m_Father: {fileID: 1167846956}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6231109, y: 0.1764346}
   m_AnchorMax: {x: 0.6231109, y: 0.1764346}
@@ -13939,6 +14022,7 @@ MonoBehaviour:
   anim: {fileID: 2128157248}
   animName: Cube.036|LeftRightDoor
   OpenClose: {fileID: 437299086}
+  topText: {fileID: 445432509}
 --- !u!65 &437299085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14066,6 +14150,18 @@ MonoBehaviour:
       - m_Target: {fileID: 437299084}
         m_TargetAssemblyTypeName: Room3Cabinet, Assembly-CSharp
         m_MethodName: AccessibleOpenCabinet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 437299084}
+        m_TargetAssemblyTypeName: Room3Cabinet, Assembly-CSharp
+        m_MethodName: EmptyCabinetMessage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14245,7 +14341,7 @@ MonoBehaviour:
   m_text: Core Shack Room 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14269,12 +14365,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 38
   m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 38
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -14305,7 +14401,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -17.811096, y: -16.289673, z: -12.847595, w: -16.745728}
+  m_margin: {x: 15.362793, y: -0.3422737, z: 3.6793213, w: -0.3820611}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15280,6 +15376,7 @@ MonoBehaviour:
   anim: {fileID: 2128157248}
   animName: Cube.038|MiddleDrawer
   OpenClose: {fileID: 479207820}
+  topText: {fileID: 445432509}
 --- !u!65 &479207819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16866,7 +16963,7 @@ RectTransform:
   m_Children:
   - {fileID: 373767119}
   m_Father: {fileID: 1167846956}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.86851555, y: 0.1764346}
   m_AnchorMax: {x: 0.86851555, y: 0.1764346}
@@ -18345,7 +18442,7 @@ Canvas:
   m_GameObject: {fileID: 580508997}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1736072091}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
@@ -21896,6 +21993,7 @@ MonoBehaviour:
   anim: {fileID: 2128157248}
   animName: Cube.039|BottomDrawer
   OpenClose: {fileID: 707710482}
+  topText: {fileID: 445432509}
 --- !u!82 &707710482
 AudioSource:
   m_ObjectHideFlags: 0
@@ -23484,9 +23582,9 @@ Transform:
   - {fileID: 2128157247}
   - {fileID: 366836678}
   - {fileID: 245900651}
+  - {fileID: 1650027890}
   - {fileID: 192270754}
   - {fileID: 1183320959}
-  - {fileID: 1650027890}
   - {fileID: 358469264}
   - {fileID: 1390017136}
   - {fileID: 706995309}
@@ -23494,6 +23592,7 @@ Transform:
   - {fileID: 751201700}
   - {fileID: 903312274}
   - {fileID: 1526243640}
+  - {fileID: 1547507963}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23512,7 +23611,7 @@ MonoBehaviour:
   m_PopUp: 0
   m_AllowExternalJoining: 0
   m_AutoRead: 0
-  m_Priority: 0
+  m_Priority: 2
   m_ContainerName: 
   m_IsLocalizationKey: 0
   m_2DNavigation: 0
@@ -24301,7 +24400,7 @@ MonoBehaviour:
   m_text: Put Away
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -25290,6 +25389,7 @@ MonoBehaviour:
   anim: {fileID: 2128157248}
   animName: Cube.037|LeftLeftDoor
   OpenClose: {fileID: 839318491}
+  topText: {fileID: 445432509}
 --- !u!82 &839318491
 AudioSource:
   m_ObjectHideFlags: 0
@@ -30593,7 +30693,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 798cc6df69aa85246959fef9c209df64, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 798cc6df69aa85246959fef9c209df64, type: 3}
       propertyPath: m_LocalScale.x
@@ -32629,6 +32729,96 @@ Transform:
   m_Father: {fileID: 689222754}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1059445805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059445806}
+  - component: {fileID: 1059445807}
+  m_Layer: 0
+  m_Name: EmailRead2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1059445806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059445805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.083, y: 2.791, z: 0.482}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1271064073}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1059445807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059445805}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: "Message From Sodalite the Dragon.\nHello! \nOnce you have found the core
+    it needs to be archived properly. The core is borehole 6, found 25 kilometers
+    west of the current gold deposit and was at a depth of 549 meters.\nCore boxes
+    are labeled with the initials of the surface rock type and age, the borehole
+    number, and the depth.\nGood luck."
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1 &1061792674 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a31a8df052e7fef469e8e6cb228f81bd, type: 3}
@@ -34367,6 +34557,7 @@ MonoBehaviour:
   anim: {fileID: 2128157248}
   animName: Cube.032|TopDrawer
   OpenClose: {fileID: 1107132805}
+  topText: {fileID: 445432509}
 --- !u!82 &1107132805
 AudioSource:
   m_ObjectHideFlags: 0
@@ -35812,12 +36003,12 @@ RectTransform:
   m_LocalScale: {x: 0.0012, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1293331897}
   - {fileID: 215674919}
   - {fileID: 103830706}
   - {fileID: 432524029}
   - {fileID: 530802369}
   - {fileID: 1576702709}
-  - {fileID: 1293331897}
   m_Father: {fileID: 783850544}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -35853,6 +36044,7 @@ MonoBehaviour:
   Guessedpassword: 
   brokenCores: []
   solvedMaterials: []
+  sodaliteSecondMessage: {fileID: 1059445807}
 --- !u!114 &1167846958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36394,7 +36586,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: 'minerals: Shine UV light to reveal a secret. Use hand lens and press the
+  m_Text: 'Minerals: Shine UV light to reveal a secret. Use hand lens and press the
     U key.'
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
@@ -36874,6 +37066,7 @@ MonoBehaviour:
   anim: {fileID: 2128157248}
   animName: Cube.035|RightLeftDoor
   OpenClose: {fileID: 1183994990}
+  topText: {fileID: 445432509}
 --- !u!82 &1183994990
 AudioSource:
   m_ObjectHideFlags: 0
@@ -36988,6 +37181,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1183994989}
         m_TargetAssemblyTypeName: Room3Cabinet, Assembly-CSharp
         m_MethodName: AccessibleOpenCabinet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1183994989}
+        m_TargetAssemblyTypeName: Room3Cabinet, Assembly-CSharp
+        m_MethodName: EmptyCabinetMessage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39529,7 +39734,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 97001b08fe5b38c45ac8f703458b9a7f, type: 2}
+      objectReference: {fileID: 2100000, guid: 05e6ab0a9e79b5b4c857bab84d92d653, type: 2}
     - target: {fileID: 919132149155446097, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
       propertyPath: m_Name
       value: RockIdentification (1)
@@ -40157,8 +40362,9 @@ GameObject:
   - component: {fileID: 1293331897}
   - component: {fileID: 1293331899}
   - component: {fileID: 1293331898}
+  - component: {fileID: 1293331900}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Password Hint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40177,7 +40383,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1167846956}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -40281,6 +40487,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293331896}
   m_CullTransparentMesh: 1
+--- !u!114 &1293331900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293331896}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: 'Hint: Gold, Hematite, Magnemite, Pyrite'
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1001 &1299066572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41250,6 +41510,7 @@ MonoBehaviour:
   anim: {fileID: 2128157248}
   animName: Cube.025|RightRightDoor
   OpenClose: {fileID: 1355259153}
+  topText: {fileID: 445432509}
 --- !u!65 &1355259152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41377,6 +41638,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1355259151}
         m_TargetAssemblyTypeName: Room3Cabinet, Assembly-CSharp
         m_MethodName: AccessibleOpenCabinet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1355259151}
+        m_TargetAssemblyTypeName: Room3Cabinet, Assembly-CSharp
+        m_MethodName: EmptyCabinetMessage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51379,7 +51652,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Bonus Box of minerals table selected
+          m_StringArgument: Bonus Box of minerals table selected. Use the UV light
+            on your Hand Lens with the U key to reveal secrets...
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 275968312}
@@ -51424,7 +51698,145 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: 'Bonus Puzzle: Box of minerals'
+  m_Text: 'Bonus Puzzle: Box of Minerals.'
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
+--- !u!1001 &1547507962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 783850544}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 39.3168
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 39.3168
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 39.3168
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.945
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.834
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.2127
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49999976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.49999985
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97001b08fe5b38c45ac8f703458b9a7f, type: 2}
+    - target: {fileID: 919132149155446097, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+      propertyPath: m_Name
+      value: VolcanoIdentification
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+--- !u!4 &1547507963 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+  m_PrefabInstance: {fileID: 1547507962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1547507964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ecdbc187215513468cb2f9d08a12cd7, type: 3}
+  m_PrefabInstance: {fileID: 1547507962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1547507965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547507964}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: "Volcano Simulation Chart Depicting the following combination: \nThick
+    Lava + High Gas = Composite Volcano + Diamond"
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -52536,7 +52948,7 @@ RectTransform:
   m_Children:
   - {fileID: 602533335}
   m_Father: {fileID: 1167846956}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.7207635}
   m_AnchorMax: {x: 0.5, y: 0.7207635}
@@ -54458,7 +54870,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cf72a6674bbd9fb478040c17a196beeb, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf72a6674bbd9fb478040c17a196beeb, type: 3}
       propertyPath: m_LocalScale.x
@@ -55372,6 +55784,60 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1650027894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650027889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba4cd2baa3ecc449c3ea6b9937f1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: 0923010021 is printed on the diamond as a password  code.
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraRenderingThisObject: {fileID: 0}
 --- !u!1001 &1651519388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61478,7 +61944,7 @@ MonoBehaviour:
   m_text: 0m:0s
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -65518,7 +65984,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: 'Computer Desk in room 3. Hint: Gold, Hematite, Magnemite, Pyrite'
+  m_Text: Computer Desk in room 3.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -73906,13 +74372,14 @@ MonoBehaviour:
       - m_Target: {fileID: 5477975691036919501}
         m_TargetAssemblyTypeName: MineralIdentification, Assembly-CSharp
         m_MethodName: AccessibleMoveRocksForStreaks
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3 has been revealed on the gold on top of the streak
+            plate.
           m_BoolArgument: 0
         m_CallState: 2
   m_OnInteractionEnd:
@@ -73933,7 +74400,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Gold 3
+  m_Text: Gold Mineral. Select to move onto streak plate.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -74426,13 +74893,14 @@ MonoBehaviour:
       - m_Target: {fileID: 6147664039628912890}
         m_TargetAssemblyTypeName: MineralIdentification, Assembly-CSharp
         m_MethodName: AccessibleMoveRocksForStreaks
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 4 has been revealed on the pyrite on top of the streak
+            plate.
           m_BoolArgument: 0
         m_CallState: 2
   m_OnInteractionEnd:
@@ -74453,7 +74921,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Pyrite 4
+  m_Text: Pyrite Mineral. Select to move onto streak plate.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -75365,13 +75833,14 @@ MonoBehaviour:
       - m_Target: {fileID: 7262476470870487465}
         m_TargetAssemblyTypeName: MineralIdentification, Assembly-CSharp
         m_MethodName: AccessibleMoveRocksForStreaks
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1 has been revealed on the magnemite on top of the streak
+            plate.
           m_BoolArgument: 0
         m_CallState: 2
   m_OnInteractionEnd:
@@ -75392,7 +75861,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Magnemite 1
+  m_Text: Magnemite Mineral. Select to move onto streak plate.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -76805,13 +77274,14 @@ MonoBehaviour:
       - m_Target: {fileID: 8703448626321918101}
         m_TargetAssemblyTypeName: MineralIdentification, Assembly-CSharp
         m_MethodName: AccessibleMoveRocksForStreaks
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 7 has been revealed on the hematite on top of the streak
+            plate.
           m_BoolArgument: 0
         m_CallState: 2
   m_OnInteractionEnd:
@@ -76832,7 +77302,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Hematite 7
+  m_Text: Hematite Mineral. Select to move onto streak plate.
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []

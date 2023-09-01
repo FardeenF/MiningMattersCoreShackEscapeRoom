@@ -74,6 +74,7 @@ public class checkInventoryItem : MonoBehaviour
     public bool isMagnetPenActive = false;
     private GameObject activeMagnetPen;
 
+
     //Core Piece Placement (Room 3)
     public bool isCorePieceActive = false;
     private GameObject activeCorePiece;
@@ -510,7 +511,7 @@ public class checkInventoryItem : MonoBehaviour
             }
 
 
-            else if (buttonPressed.GetComponent<Image>().sprite.name.ToString() == "MagnetPen")
+            else if (buttonPressed.GetComponent<Image>().sprite.name.ToString() == "MagnetPen" && !gs.GetIsAccessibleMain())
             {
                 if (isMagnetPenActive == false && holdingSomething == false)
                 {
@@ -530,6 +531,20 @@ public class checkInventoryItem : MonoBehaviour
                     holdingSomething = false;
                     topText.text = ("Magnet Pen is Back in Inventory");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
+                }
+            }
+
+            else if (buttonPressed.GetComponent<Image>().sprite.name.ToString() == "MagnetPen" && gs.GetIsAccessibleMain())
+            {
+                if (gs.GetCurrentCam() == "Room3_MineralIdentification")
+                {
+                    topText.text = ("Magnetite is very magnetic, Pyrite and Hematite seem to be slightly magnetic, while Gold has no magnetism.");
+                    topText.GetComponent<UAP_BaseElement>().SelectItem(true);
+                }
+                else
+                {
+                    topText.text = ("Doesn't seem to be useful right now.");
+                    topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                 }
             }
 

@@ -25,9 +25,15 @@ public class keycodeNumbers : MonoBehaviour
                 gatedoor.GetComponent<Animation>().Play();
                 gs.SetHasUnlockedStorageRoom(true);
                 unlocked.Play();
+
+                gs.GetTopText().text = "You have entered the correct passcode! The storage rack is now available. Place the gold core to store it.";
+                gs.GetTopText().gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
             }
             else
             {
+                gs.GetTopText().text = passwordText.text + " was the incorrect passcode. Please enter a different passcode.";
+                gs.GetTopText().gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
+
                 Debug.Log("Wrong Code, Try Again.");
                 wrong.Play();
                 passwordText.text = "";
@@ -35,12 +41,14 @@ public class keycodeNumbers : MonoBehaviour
         }
         else if (UAP_AccessibilityManager.GetCurrentFocusObject().name == "CLEAR")
         {
+            gs.GetTopText().text = "Current entered numbers have been cleared.";
+            gs.GetTopText().gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
+
             wrong.Play();
             passwordText.text = "";
         }
         else
         {
-
             passwordText.text += number;
         }
         this.gameObject.GetComponent<Animation>().Play();

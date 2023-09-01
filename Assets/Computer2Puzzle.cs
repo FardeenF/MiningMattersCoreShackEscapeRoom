@@ -36,6 +36,8 @@ public class Computer2Puzzle : MonoBehaviour
 
     private bool puzzleSolved = false;
 
+    public AccessibleButton_3D sodaliteSecondMessage;
+
     //34 78 12 45
 
     private void Awake()
@@ -90,7 +92,10 @@ public class Computer2Puzzle : MonoBehaviour
                 computerMats[2] = room1SolvedBackground;
                 room1Computer.GetComponent<Renderer>().sharedMaterials = computerMats;
 
-                gs.SetRoom1PasswordPuzzle(true);
+                gs.SetRoom3PasswordPuzzle(true);
+
+                sodaliteSecondMessage.enabled = true;
+                sodaliteSecondMessage.SelectItem();
             }
             else
             {

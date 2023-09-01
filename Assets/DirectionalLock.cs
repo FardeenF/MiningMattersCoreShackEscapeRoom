@@ -54,15 +54,23 @@ public class DirectionalLock : MonoBehaviour
         {
             anim.Play(animation: "Check");
             click.Play();
+
             if (code == " North North North East East" )
             {
-                topText.text = "The code is correct! Room 3 is now unlocked!";
+                topText.text = code + " has been the entered code. The code is correct! Room 3 is now unlocked!";
+                topText.GetComponent<AccessibleLabel>().SelectItem(true);
                 gs.SetIsRoom3Unlocked(true);
+            }
+            else if(code == "")
+            {
+                topText.text = "No directions have been added to the passcode. Please enter directions before checking the code.";
+                topText.GetComponent<AccessibleLabel>().SelectItem(true);
             }
             else
             {
                 code = "";
-                topText.text = "Wrong Code Try Again. Navigate to the other mines using the core analysis results";
+                topText.text = code + " has been the entered code. Wrong Code Try Again. Navigate from the diamond mine to the gold mine using the mine location chart.";
+                topText.GetComponent<AccessibleLabel>().SelectItem(true);
             }
 
         }
@@ -121,7 +129,7 @@ public class DirectionalLock : MonoBehaviour
                     else
                     {
                         code = "";
-                        topText.text = "Wrong Code Try Again. Navigate to the other mines using the core analysis results";
+                        topText.text = "Wrong Code Try Again. Navigate from diamond mine to gold mine using the mine location chart.";
                     }
 
                 }

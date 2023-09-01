@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Room3Cabinet : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Room3Cabinet : MonoBehaviour
     public Animation anim;
     public string animName;
     public AudioSource OpenClose;
+
+    public TextMeshProUGUI topText;
     
     public void AccessibleOpenCabinet()
     {
@@ -27,6 +30,12 @@ public class Room3Cabinet : MonoBehaviour
             OpenClose.Play();
             isOpen = false;
         }
+    }
+
+    public void EmptyCabinetMessage()
+    {
+        topText.text = "This drawer is empty.";
+        topText.gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
     }
 
     private void OnMouseOver()
