@@ -8,12 +8,12 @@ public class rotateLock : MonoBehaviour
 {
     public Camera mainCam;
     public bool hasClicked = false;
-    public int number1 = 0;
-    public int number2 = 0;
-    public int number3 = 0;
-    public int number4 = 0;
-    public int number5 = 0;
-    public int number6 = 0;
+    public int number1 = 1;
+    public int number2 = 1;
+    public int number3 = 1;
+    public int number4 = 1;
+    public int number5 = 1;
+    public int number6 = 1;
     public GameState gs;
 
     public GameObject Lock;
@@ -78,7 +78,7 @@ public class rotateLock : MonoBehaviour
     public void AccessbileRotateLock(GameObject number)
     {
         Quaternion initialRot = number.transform.localRotation;
-        number.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+        number.transform.Rotate(new Vector3(0, 90, 0f), Space.Self);
         soundManager.PlayLockSpinSound();
         
     }
@@ -88,9 +88,9 @@ public class rotateLock : MonoBehaviour
         if (locknum == 1)
         {
             number1++;
-            if (number1 > 7)
+            if (number1 > 4)
             {
-                number1 = 0;
+                number1 = 1;
             }
             //locknum = number1;
             ReadAccessibilityMessage(number1.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
@@ -98,9 +98,9 @@ public class rotateLock : MonoBehaviour
         else if (locknum == 2)
         {
             number2++;
-            if (number2 > 7)
+            if (number2 > 4)
             {
-                number2 = 0;
+                number2 = 1;
             }
             //locknum = number2;
             ReadAccessibilityMessage(number2.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
@@ -108,9 +108,9 @@ public class rotateLock : MonoBehaviour
         else if (locknum == 3)
         {
             number3++;
-            if (number3 > 7)
+            if (number3 > 4)
             {
-                number3 = 0;
+                number3 = 1;
             }
             //locknum = number3;
             ReadAccessibilityMessage(number3.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
@@ -118,9 +118,9 @@ public class rotateLock : MonoBehaviour
         else if (locknum == 4)
         {
             number4++;
-            if (number4 > 7)
+            if (number4 > 4)
             {
-                number4 = 0;
+                number4 = 1;
             }
             //locknum = number4;
             ReadAccessibilityMessage(number4.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
@@ -128,9 +128,9 @@ public class rotateLock : MonoBehaviour
         else if (locknum == 5)
         {
             number5++;
-            if (number5 > 7)
+            if (number5 > 4)
             {
-                number5 = 0;
+                number5 = 1;
             }
             //locknum = number5;
             ReadAccessibilityMessage(number5.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
@@ -138,9 +138,9 @@ public class rotateLock : MonoBehaviour
         else if (locknum == 6)
         {
             number6++;
-            if (number6 > 7)
+            if (number6 > 4)
             {
-                number6 = 0;
+                number6 = 1;
             }
             //locknum = number6;
             ReadAccessibilityMessage(number6.ToString() + " on Spinner " + locknum.ToString() + " Music Lock");
@@ -167,84 +167,84 @@ public class rotateLock : MonoBehaviour
             if (hit.transform.gameObject.name == "Number1")
             {
                 Quaternion initialRot = hit.transform.localRotation;
-                hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                hit.transform.Rotate(new Vector3(0, 90, 0f), Space.Self);
                 soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number1++;
-                if (number1 > 7)
+                if (number1 > 4)
                 {
-                    number1 = 0;
+                    number1 = 1;
                 }
             }
 
             else if (hit.transform.gameObject.name == "Number2")
             {
                 Quaternion initialRot = hit.transform.localRotation;
-                hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                hit.transform.Rotate(new Vector3(0, 90, 0f), Space.Self);
                 soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number2++;
-                if (number2 > 7)
+                if (number2 > 4)
                 {
-                    number2 = 0;
+                    number2 = 1;
                 }
             }
 
             else if (hit.transform.gameObject.name == "Number3")
             {
                 Quaternion initialRot = hit.transform.localRotation;
-                hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                hit.transform.Rotate(new Vector3(0, 90, 0f), Space.Self);
                 soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number3++;
-                if (number3 > 7)
+                if (number3 > 4)
                 {
-                    number3 = 0;
+                    number3 = 1;
                 }
             }
 
             else if (hit.transform.gameObject.name == "Number4")
             {
                 Quaternion initialRot = hit.transform.localRotation;
-                hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                hit.transform.Rotate(new Vector3(0, 90, 0f), Space.Self);
                 soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number4++;
-                if (number4 > 7)
+                if (number4 > 4)
                 {
-                    number4 = 0;
+                    number4 = 1;
                 }
             }
 
             else if (hit.transform.gameObject.name == "Number5")
             {
                 Quaternion initialRot = hit.transform.localRotation;
-                hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                hit.transform.Rotate(new Vector3(0, 90, 0f), Space.Self);
                 soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number5++;
-                if (number5 > 7)
+                if (number5 > 4)
                 {
-                    number5 = 0;
+                    number5 = 1;
                 }
             }
 
             else if (hit.transform.gameObject.name == "Number6")
             {
                 Quaternion initialRot = hit.transform.localRotation;
-                hit.transform.Rotate(new Vector3(0, 0, -45f), Space.Self);
+                hit.transform.Rotate(new Vector3(0, 90, 0f), Space.Self);
                 soundManager.PlayLockSpinSound();
                 //hit.transform.localRotation = initialRot * Quaternion.Euler(hit.transform.localRotation.x, hit.transform.localRotation.y, hit.transform.localRotation.z - 45.0f);
                 //Debug.Log(hit.transform.localRotation.z.ToString());
                 number6++;
-                if (number6 > 7)
+                if (number6 > 4)
                 {
-                    number6 = 0;
+                    number6 = 1;
                 }
             }
 

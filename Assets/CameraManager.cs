@@ -67,7 +67,7 @@ public class CameraManager : MonoBehaviour
     //This function controls which camera view is currently active
     public void SwitchCameraPriority()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || buttonclicked == true)
+        if (Input.GetKeyDown(KeyCode.Backspace) || buttonclicked == true)
         {
             if(Room1_Computer.Priority == 1)
             {
@@ -527,7 +527,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Volcano.Priority = 0;
                     Room3_GateCode.Priority = 0;
                     Room3_Bonus.Priority = 0;
-                    gs.SetCurrentCam("Room1_BrokenCoreTable");
+                    gs.SetCurrentCam("Room1_BrokenCoreShackTable");
                 }
 
                 else if (Room1_BrokenCoreShackTable.Priority == 1 && hit.transform.gameObject.tag == "Room1_Geo_Poster")
