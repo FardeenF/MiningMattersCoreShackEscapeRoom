@@ -10,10 +10,33 @@ public class EndingMenu : MonoBehaviour
     public TextMeshProUGUI completionTime;
     public TextMeshProUGUI timerText;
     public GameState gs;
+    public GameObject codeOfEthics;
+
+    public GameObject Crown;
+    public GameObject IncompleteCrown;
+    public GameObject AccessibilityManager;
+
+    public GameObject isGameOverObject;
+
     // Start is called before the first frame update
     void Start()
     {
+        codeOfEthics.SetActive(false);
         endingMenu.gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        if (gs.GetHasFoundSodaLite() == true)
+        {
+            Crown.SetActive(true);
+            IncompleteCrown.SetActive(false);
+        }
+        else
+        {
+            Crown.SetActive(false);
+            IncompleteCrown.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -32,7 +55,9 @@ public class EndingMenu : MonoBehaviour
 
     public void restartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Application.ExternalEval("document.location.reload(true)");
+
+
     }
 
 
@@ -40,5 +65,17 @@ public class EndingMenu : MonoBehaviour
     {
         ScreenCapture.CaptureScreenshot("CoreShackCompletion.png");
     }
-    
+
+    public void GoToCodeOfEthics()
+    {
+        codeOfEthics.SetActive(true);
+        endingMenu.SetActive(false);
+    }
+
+    public void ReturnToEndScreen()
+    {
+        codeOfEthics.SetActive(false);
+        endingMenu.SetActive(true);
+    }
+
 }

@@ -57,6 +57,7 @@ TagManager:
   - Storage4
   - BeakerMoved
   - SodaLiteRock
+  - IsGameReset
   layers:
   - Default
   - TransparentFX

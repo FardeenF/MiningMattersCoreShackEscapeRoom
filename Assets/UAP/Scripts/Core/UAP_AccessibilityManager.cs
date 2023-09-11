@@ -310,6 +310,7 @@ public class UAP_AccessibilityManager : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////
 
+	int counter = 0;
 
 	UAP_AccessibilityManager()
 	{
@@ -342,8 +343,11 @@ public class UAP_AccessibilityManager : MonoBehaviour
 	void Start()
 	{
 		Initialize();
+
 		DontDestroyOnLoad(gameObject);
+
 		SceneManager.sceneLoaded += OnSceneLoaded;
+
 	}
 
 	//////////////////////////////////////////////////////////////////////////

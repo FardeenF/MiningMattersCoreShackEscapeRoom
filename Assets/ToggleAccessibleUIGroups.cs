@@ -13,7 +13,12 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleUIGroupRoot Room2;
     public AccessibleUIGroupRoot Room3;
     public AccessibleUIGroupRoot Doors;
-
+    public GameObject mainMenu;
+    public GameObject UIMenu;
+    public GameObject Room1GO;
+    public GameObject Room2GO;
+    public GameObject Room3GO;
+    public GameObject DoorsGO;
 
     public TextMeshProUGUI TopText;
 
@@ -64,6 +69,9 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     private bool SubItemsEnabled = false;
 
     public TextMeshProUGUI screenreader;
+
+    public GameObject endScreen;
+    public GameObject ethicsScreen;
 
     public void MoveToRoom3()
     {
@@ -205,6 +213,16 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     public void Update()
     {
+        if (gs.GetEndGame() == true)
+        {
+            mainMenu.SetActive(false);
+            UIMenu.SetActive(false);
+            Room1GO.SetActive(false);
+            Room2GO.SetActive(false);
+            Room3GO.SetActive(false);
+            DoorsGO.SetActive(false);
+        }
+
         ToggleUIGroup();
         //CurrentCam(gs.GetCurrentCam());
 
@@ -271,6 +289,9 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             Doors.enabled = false;
         }
+
+        
+
 
         if (gs.GetCurrentCam() == "Room1_Main" && SubItemsEnabled == true) // Toggle off all of the subitems
         {
@@ -397,6 +418,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             //}
 
             SubItemsEnabled = false;
+
+
         }
         //Room 2 disable sub buttons
         if (gs.GetCurrentCam() == "Room2_Main" && SubItemsEnabled == true)
@@ -633,6 +656,22 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 MainRoom3Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
         }
+
+
+        //if (gs.GetEndGame() == true)
+        //{
+        //    foreach (AccessibleButton_3D button in AllButtons)
+        //    {
+        //        if (button != null)
+        //            button.enabled = false;
+        //    }
+        //    Room1.enabled = false;
+        //    Room2.enabled = false;
+        //    Room3.enabled = false;
+        //    Doors.enabled = false;
+        //    GameUI.enabled = false;
+
+        //}
     }
 
 

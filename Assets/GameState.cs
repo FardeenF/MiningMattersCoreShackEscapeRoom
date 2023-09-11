@@ -68,7 +68,7 @@ public class GameState : MonoBehaviour
     private bool startGame = false;
     private bool endGame = false;
 
-    private bool hasFoundSodaLiteRock = false;
+    private bool hasFoundSodaLiteRock = true; //set back to false
 
     private bool areCoresWet = false;
 

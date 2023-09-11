@@ -110,12 +110,14 @@ public class checkInventoryItem : MonoBehaviour
     public ToggleAccessibleUIGroups toggle;
 
 
+    public GameObject menuUI;
+
     public void ReadAccessibilityMessage(string text)
     {
         UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
     }
 
-
+    
     public void OnInventoryClick()
     {
 
@@ -690,7 +692,27 @@ public class checkInventoryItem : MonoBehaviour
             //OnInventoryClick();
         }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
 
+            //If screen reader is enabled place core in correct storage slot and win screen enables
+            if (gs.GetScreenReader() == true)
+            {
+                corePieceSpace1.SetActive(true);
+                gs.SetIsHoldingCorePiece(false);
+                if (activeCorePiece != null)
+                    activeCorePiece.SetActive(false);
+
+                isCorePieceActive = false;
+                holdingSomething = false;
+                setCorePieceDown = true;
+                Debug.Log("Storage 2 Activate.");
+
+                topText.text = "You've stored the core correctly! YOU WIN!!!";
+                gs.SetEndGame(true);
+                endingScreen.gameObject.SetActive(true);
+            }
+        }
         
 
         ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 1.0f);
