@@ -20,6 +20,17 @@ public class Menu : MonoBehaviour
     void Start()
     {
         UI.gameObject.SetActive(false);
+
+        if(UAP_AccessibilityManager.IsEnabled())
+        {
+            ScreenReader.SetActive(true);
+            state.SetIsAccessibleMain(true);
+        }
+        else
+        {
+            ScreenReader.SetActive(false);
+            state.SetIsAccessibleMain(false);
+        }
     }
     void Update()
     {

@@ -6,7 +6,7 @@ using TMPro;
 public class GameState : MonoBehaviour
 {
     private bool mouseOver = false;
-    private bool hasPPEBoots = true; // set back to false
+    private bool hasPPEBoots = false; // set back to false
     private bool completeRoom1PasswordPuzzle = false;
 
     public bool isSprayerUnlocked = false;
@@ -16,7 +16,7 @@ public class GameState : MonoBehaviour
     private bool HoldingWetCore = false;
     public int Core2_Piece_Selected = 0;
 
-    private bool hasSafetyGlasses = true; // set back to false
+    private bool hasSafetyGlasses = false; // set back to false
 
     private bool HasSieve = false;
     private bool isHoldingSieve = false;
@@ -29,7 +29,7 @@ public class GameState : MonoBehaviour
     private bool PlacedAllPieces = false;
     private bool isJigSawDone = false;
 
-    private bool hasDustMask = true; // set back to false
+    private bool hasDustMask = false; // set back to false
 
     private int currentRoom = 1;
 
@@ -51,9 +51,9 @@ public class GameState : MonoBehaviour
 
     private bool holdingCutCore = false; //set back to false
 
-    private bool foundGoldCore = true; //set back to false
+    private bool foundGoldCore = false; //set back to false
 
-    private bool isRoom3Unlocked = true; //set back to false
+    private bool isRoom3Unlocked = false; //set back to false
 
     private bool hasMagnetPen = false;
     private bool holdingMagnetPen = false;
@@ -68,7 +68,7 @@ public class GameState : MonoBehaviour
     private bool startGame = false;
     private bool endGame = false;
 
-    private bool hasFoundSodaLiteRock = true; //set back to false
+    private bool hasFoundSodaLiteRock = false; //set back to false
 
     private bool areCoresWet = false;
 
