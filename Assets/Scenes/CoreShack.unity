@@ -8431,10 +8431,345 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9190345070442543007, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+--- !u!1 &274607399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9190345070442543007, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &274607400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3288684705984522184, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274607399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e93e53b99d3de409a0499969d17b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &274607401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3007492168633956448, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &274607402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3007492167696925841, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &274607403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7019970208208052847, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &274607404 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1596474671502301695, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &274607405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9050139749249457349, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &274607406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7988125831048018203, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &274607407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3204555415136989085, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
+  m_PrefabInstance: {fileID: 274607398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &274607408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274607403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093d8d6245e39e64dbd48d45cc3c40c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 274607400}
+        m_TargetAssemblyTypeName: EndingMenu, Assembly-CSharp
+        m_MethodName: takeScreenshot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 274607404}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Screenshot Button. Select to Take a Screenshot of your win screen.
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &274607409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274607405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093d8d6245e39e64dbd48d45cc3c40c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 274607400}
+        m_TargetAssemblyTypeName: EndingMenu, Assembly-CSharp
+        m_MethodName: restartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 274607404}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Return Button. Select to Return Back to the TItle Screen.
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &274607410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274607406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093d8d6245e39e64dbd48d45cc3c40c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 274607400}
+        m_TargetAssemblyTypeName: EndingMenu, Assembly-CSharp
+        m_MethodName: launchWebsite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 274607404}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Learn More Button. Select to Lauch Mining Matters Website.
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 1
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &274607411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274607407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d52c398d6e508e428bb1c7d8f0083e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Enter your name here...
+  m_NameLabel: {fileID: 274607407}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 1
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 2
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &275306540
 GameObject:
   m_ObjectHideFlags: 0
@@ -20845,6 +21180,31 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CameraRenderingThisObject: {fileID: 0}
+--- !u!114 &647379971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274607399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PopUp: 0
+  m_AllowExternalJoining: 0
+  m_AutoRead: 0
+  m_Priority: 0
+  m_ContainerName: 
+  m_IsLocalizationKey: 0
+  m_2DNavigation: 0
+  m_ConstrainToContainerUp: 0
+  m_ConstrainToContainerDown: 0
+  m_ConstrainToContainerLeft: 0
+  m_ConstrainToContainerRight: 0
+  m_AllowTouchExplore: 1
+  m_DoubleCheckUIElementsPositions: 1
 --- !u!1 &653933976
 GameObject:
   m_ObjectHideFlags: 0
@@ -22098,6 +22458,61 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020379802, y: 0.0005053997, z: 0.038644873}
   m_Center: {x: 0.010110822, y: 0.00020870597, z: 0.0009136637}
+--- !u!114 &702774349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274607402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d52c398d6e508e428bb1c7d8f0083e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: Congratulations! You have successfully logged your core and defeated the
+    Dragon Sodalite! The dragon has flown back into it's den and won't come back
+    to the mine.
+  m_NameLabel: {fileID: 0}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 0
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 2
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &706995308
 GameObject:
   m_ObjectHideFlags: 0
@@ -33954,12 +34369,65 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3007492168633956450, guid: a2f6e2d213fbb5140823c5d0a9ffba3b, type: 3}
   m_PrefabInstance: {fileID: 274607398}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 274607401}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1062093519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274607401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d52c398d6e508e428bb1c7d8f0083e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: 'Completion Time: '
+  m_NameLabel: {fileID: 274607401}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 1
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 2
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1064244194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4361769690849277384, guid: c6953b58e79885b4888c908b16e92b28, type: 3}
@@ -44415,7 +44883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 585237242453315247, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 585237242536540223, guid: 5f39d1eaceaaf6740aea2f4e52f9e3ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -69607,30 +70075,30 @@ MonoBehaviour:
     Paragraph 5: Conflict
     Resolution
 
-    In the event of conflicts arising between dragons, peaceful
-    resolution should be the foremost objective. Engaging in physical confrontations
-    or violence should be a last resort. Diplomacy, negotiation, and arbitration
-    should be pursued whenever possible, with an emphasis on finding equitable solutions
-    that preserve the dignity and interests of all involved dragons.
+    In the event of conflicts arising between dragons, peaceful resolution
+    should be the foremost objective. Engaging in physical confrontations or violence
+    should be a last resort. Diplomacy, negotiation, and arbitration should be pursued
+    whenever possible, with an emphasis on finding equitable solutions that preserve
+    the dignity and interests of all involved dragons.
 
 
-    Paragraph
-    6: Collaboration and Cooperation
+    Paragraph 6: Collaboration
+    and Cooperation
 
-    Dragons have the potential to accomplish
-    great feats when working together. Encouraging collaboration among dragons can
-    lead to mutual benefits and strengthen the bonds within the dragon community.
-    Sharing knowledge, resources, and expertise can foster a collective advancement
-    that benefits all dragons.
+    Dragons have the potential to accomplish great feats when
+    working together. Encouraging collaboration among dragons can lead to mutual
+    benefits and strengthen the bonds within the dragon community. Sharing knowledge,
+    resources, and expertise can foster a collective advancement that benefits all
+    dragons.
 
 
     Paragraph 7: Mentorship and Guidance
 
-    Elder
-    and more experienced dragons are encouraged to guide and mentor younger or less
-    knowledgeable dragons. By sharing wisdom, skills, and life experiences, senior
-    dragons can contribute to the growth and development of their fellow dragons,
-    ensuring the preservation of dragon traditions and values.
+    Elder and more experienced
+    dragons are encouraged to guide and mentor younger or less knowledgeable dragons.
+    By sharing wisdom, skills, and life experiences, senior dragons can contribute
+    to the growth and development of their fellow dragons, ensuring the preservation
+    of dragon traditions and values.
 
 '
   m_isRightToLeft: 0
@@ -79462,6 +79930,7 @@ GameObject:
   - component: {fileID: 7185756662631317506}
   - component: {fileID: 7185756662631317507}
   - component: {fileID: 7185756662631317508}
+  - component: {fileID: 7185756662631317510}
   m_Layer: 5
   m_Name: Code of Ethics
   m_TagString: Untagged
@@ -79469,6 +79938,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &7185756662631317510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185756662631317509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PopUp: 0
+  m_AllowExternalJoining: 0
+  m_AutoRead: 0
+  m_Priority: 0
+  m_ContainerName: 
+  m_IsLocalizationKey: 0
+  m_2DNavigation: 0
+  m_ConstrainToContainerUp: 0
+  m_ConstrainToContainerDown: 0
+  m_ConstrainToContainerLeft: 0
+  m_ConstrainToContainerRight: 0
+  m_AllowTouchExplore: 1
+  m_DoubleCheckUIElementsPositions: 1
 --- !u!4 &7185756662726860508
 Transform:
   m_ObjectHideFlags: 0
