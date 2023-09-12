@@ -692,26 +692,28 @@ public class checkInventoryItem : MonoBehaviour
             //OnInventoryClick();
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
+        // For Testing Win Condition //
 
-            //If screen reader is enabled place core in correct storage slot and win screen enables
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+
+        //    //If screen reader is enabled place core in correct storage slot and win screen enables
             
-            corePieceSpace1.SetActive(true);
-            gs.SetIsHoldingCorePiece(false);
-            if (activeCorePiece != null)
-                activeCorePiece.SetActive(false);
+        //    corePieceSpace1.SetActive(true);
+        //    gs.SetIsHoldingCorePiece(false);
+        //    if (activeCorePiece != null)
+        //        activeCorePiece.SetActive(false);
 
-            isCorePieceActive = false;
-            holdingSomething = false;
-            setCorePieceDown = true;
-            Debug.Log("Storage 2 Activate.");
+        //    isCorePieceActive = false;
+        //    holdingSomething = false;
+        //    setCorePieceDown = true;
+        //    Debug.Log("Storage 2 Activate.");
 
-            topText.text = "You've stored the core correctly! YOU WIN!!!";
-            gs.SetEndGame(true);
-            endingScreen.gameObject.SetActive(true);
+        //    topText.text = "You've stored the core correctly! YOU WIN!!!";
+        //    gs.SetEndGame(true);
+        //    endingScreen.gameObject.SetActive(true);
             
-        }
+        //}
         
 
         ItemFollowCam(isHandLensActive, activeHandLens, 0, true, 1.0f);
