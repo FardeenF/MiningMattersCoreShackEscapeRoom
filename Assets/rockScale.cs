@@ -111,6 +111,7 @@ public class rockScale : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Clicking Rocks
         if (Input.GetMouseButtonDown(0) && VC_RockSampleDesk.Priority == 1)
         {
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);

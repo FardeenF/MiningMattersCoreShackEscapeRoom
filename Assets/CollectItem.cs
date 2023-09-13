@@ -349,9 +349,6 @@ public class CollectItem : MonoBehaviour
                             TopText.text = (Message);
                             this.gameObject.SetActive(false);
                             TopText.GetComponent<UAP_BaseElement>().SelectItem();
-                            Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Wet Core Piece";
-                            Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
-                            Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Wet Core Piece";
                             Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Wet Core Piece";
                             break;
                         }
@@ -587,6 +584,8 @@ public class CollectItem : MonoBehaviour
             {
                 hit.transform.gameObject.SetActive(false);
                 gs.SetholdingCutCore(false);
+                TopText.text = "This core doesn't seem to be promising.";
+                TopText.GetComponent<UAP_BaseElement>().SelectItem();
             }
 
 
@@ -781,7 +780,7 @@ public class CollectItem : MonoBehaviour
         }
 
 
-        //Check if you collect the Hand Lens
+        //Check if you collect wet cores
         else if (item == "InspectCore" && gs.GetIsHoldingWetCore() == false)
         {
             Debug.Log(gs.GetHighlightedObject().transform.gameObject.GetComponent<Renderer>().material.name);

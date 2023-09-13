@@ -457,7 +457,7 @@ public class checkInventoryItem : MonoBehaviour
                 {
                     CoreInSendBox.SetActive(true);
                     buttonPressed.GetComponent<Image>().sprite = null;
-                    buttonPressed.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
+                    buttonPressed.GetComponent<Image>().color = new Color32(255, 255, 255, 116);
                     gs.SetholdingCutCore(false);
                     StartCoroutine(RecieveCoreResults());
                     holdingSomething = false;

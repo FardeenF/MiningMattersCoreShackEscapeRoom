@@ -9157,6 +9157,7 @@ MonoBehaviour:
   - {fileID: 8777296174765677069}
   BoxDeskSubButtons:
   - {fileID: 2131567535}
+  - {fileID: 351522173}
   MineralIdentificationSubButtons:
   - {fileID: 5477975691036919503}
   - {fileID: 6147664039628912892}
@@ -33920,7 +33921,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 247642080}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.0710487
+  m_Size: 0.07104869
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -40264,6 +40265,178 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3dffcd8f0822c44adb362a06452f3a, type: 3}
+--- !u!1 &1218773571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218773572}
+  - component: {fileID: 1218773574}
+  - component: {fileID: 1218773573}
+  m_Layer: 0
+  m_Name: Youngest Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1218773572
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218773571}
+  m_LocalRotation: {x: 0.18301263, y: -0.68301296, z: 0.18301278, w: 0.6830124}
+  m_LocalPosition: {x: 0, y: 0, z: -0.71092033}
+  m_LocalScale: {x: 0.027422419, y: 0.027422419, z: 0.027422419}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1519202668}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 30, y: -90, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.005877018, y: 0.62630117}
+  m_SizeDelta: {x: 24.18272, y: 3.917}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1218773573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218773571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: YOUNGEST
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 388bed60e0e62274499c21319fd5ac76, type: 2}
+  m_sharedMaterial: {fileID: -1591911494465461300, guid: 388bed60e0e62274499c21319fd5ac76, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1218773574}
+  m_maskType: 0
+--- !u!23 &1218773574
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218773571}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1591911494465461300, guid: 388bed60e0e62274499c21319fd5ac76, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1218932981
 GameObject:
   m_ObjectHideFlags: 0
@@ -48012,6 +48185,8 @@ Transform:
   - {fileID: 1267482936}
   - {fileID: 1085100781}
   - {fileID: 1636113735}
+  - {fileID: 1218773572}
+  - {fileID: 1683584126}
   m_Father: {fileID: 1233085943}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56698,8 +56873,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use right mouse button to move camera and look around (Not Needed in Accessible
-    Mode)
+  m_text: Use right mouse button to move camera and look around.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
   m_sharedMaterial: {fileID: 823987434792897530, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
@@ -59624,6 +59798,178 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3364ef111eb302f4f816be2cd8c682db, type: 3}
+--- !u!1 &1683584125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1683584126}
+  - component: {fileID: 1683584128}
+  - component: {fileID: 1683584127}
+  m_Layer: 0
+  m_Name: Oldest Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1683584126
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683584125}
+  m_LocalRotation: {x: 0.18301263, y: -0.68301296, z: 0.18301278, w: 0.6830124}
+  m_LocalPosition: {x: 0, y: 0, z: 0.698}
+  m_LocalScale: {x: 0.027422419, y: 0.027422419, z: 0.027422419}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1519202668}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 30, y: -90, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.006, y: 0.62630117}
+  m_SizeDelta: {x: 24.18272, y: 3.917}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1683584127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683584125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: OLDEST
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 388bed60e0e62274499c21319fd5ac76, type: 2}
+  m_sharedMaterial: {fileID: -1591911494465461300, guid: 388bed60e0e62274499c21319fd5ac76, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1683584128}
+  m_maskType: 0
+--- !u!23 &1683584128
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683584125}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1591911494465461300, guid: 388bed60e0e62274499c21319fd5ac76, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &1684142491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bdb6edcd97cdf88458995e383ec3be1d, type: 3}
@@ -63652,8 +63998,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use left mouse button to interact with objects, inventory items,  and to
-    move to new  locations. (Not Needed in Accessible Mode)
+  m_text: Use left mouse button to interact with objects, inventory items, and to
+    move to new  locations. When using the Hand Lens the left mouse button will zoom
+    in.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
   m_sharedMaterial: {fileID: 823987434792897530, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
@@ -70632,8 +70979,8 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: 'Mineral Legend Depicting the Following Order: Yellow Sandstone, Orange
-    Limestone, Blue Siltstone, and Red Basalt'
+  m_Text: 'Mineral Legend Depicting the Following Order From Youngest to Oldest:
+    Yellow Sandstone, Orange Limestone, Blue Siltstone, and Red Basalt'
   m_NameLabel: {fileID: 0}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -76292,7 +76639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -17}
   m_SizeDelta: {x: 1236.5984, y: 776.3095}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &585237241780136533
@@ -80856,6 +81203,7 @@ GameObject:
   - component: {fileID: 2310314147952557971}
   - component: {fileID: 2310314147952557970}
   - component: {fileID: 9008660020253413797}
+  - component: {fileID: 9008660020253413798}
   m_Layer: 0
   m_Name: Sedimentary
   m_TagString: Untagged
@@ -82836,6 +83184,7 @@ GameObject:
   - component: {fileID: 3176457413750488678}
   - component: {fileID: 3176457413750488677}
   - component: {fileID: 8755967258849314293}
+  - component: {fileID: 8755967258849314294}
   m_Layer: 0
   m_Name: Metamorphic
   m_TagString: Untagged
@@ -84696,7 +85045,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8459410293345218866, guid: 80eb0491e99e156489e1e4cf7a44f5fd, type: 3}
+  - {fileID: 2100000, guid: 6cfc8e43f7c2a514faf4a14adabebea8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86990,6 +87339,7 @@ GameObject:
   - component: {fileID: 6867737896390331410}
   - component: {fileID: 6867737896390331409}
   - component: {fileID: 7765115203592054972}
+  - component: {fileID: 7765115203592054973}
   m_Layer: 0
   m_Name: Igneous
   m_TagString: Untagged
@@ -88635,7 +88985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1661025577273007632, guid: 80eb0491e99e156489e1e4cf7a44f5fd, type: 3}
+  - {fileID: 2100000, guid: af5f7dd9359c7354d9aa42e975fe6f4b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88723,6 +89073,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CameraRenderingThisObject: {fileID: 0}
+--- !u!114 &7765115203592054973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867737896390331408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa07bdfd8d0f524b9bfc0a17376011d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: This rock seems to be a mix of red, white, and black and also seems to
+    be light.
+  topText: {fileID: 445432509}
 --- !u!23 &7783642029137230705
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90503,6 +90868,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CameraRenderingThisObject: {fileID: 0}
+--- !u!114 &8755967258849314294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176457413750488676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa07bdfd8d0f524b9bfc0a17376011d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: This rock seems to have been flattened and seems shiny.
+  topText: {fileID: 445432509}
 --- !u!33 &8777296174765677068
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90775,6 +91154,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CameraRenderingThisObject: {fileID: 0}
+--- !u!114 &9008660020253413798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310314147952557969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa07bdfd8d0f524b9bfc0a17376011d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: This rock seems dull and brittle.
+  topText: {fileID: 445432509}
 --- !u!23 &9033734014941743484
 MeshRenderer:
   m_ObjectHideFlags: 0
