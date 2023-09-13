@@ -20,6 +20,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public GameObject Room3GO;
     public GameObject DoorsGO;
 
+    public GameObject ControlsMenu;
+
     public TextMeshProUGUI TopText;
 
     public GameObject[] AllRoots;
@@ -213,6 +215,29 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ControlsMenu.SetActive(!ControlsMenu.activeInHierarchy);
+
+            if (ControlsMenu.activeInHierarchy == true)
+            {
+
+                GameUI.enabled = false;
+                Room1.enabled = false;
+                Room2.enabled = false;
+                Room3.enabled = false;
+                Doors.enabled = false;
+            }
+            else
+            {
+                GameUI.enabled = true;
+                Room1.enabled = true;
+                Room2.enabled = true;
+                Room3.enabled = true;
+                Doors.enabled = true;
+            }
+        }
+
         if (gs.GetEndGame() == true)
         {
             mainMenu.SetActive(false);
