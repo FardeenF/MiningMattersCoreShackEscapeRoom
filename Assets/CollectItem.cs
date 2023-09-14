@@ -464,7 +464,7 @@ public class CollectItem : MonoBehaviour
 
 
             //Check if you collect the Puzzle Box
-            else if (hit.transform.gameObject.tag == "PuzzleBox" && gs.GetHasPuzzleBox() == false)
+            if (hit.transform.gameObject.tag == "PuzzleBox" && gs.GetHasPuzzleBox() == false)
             {
                 gs.SetHasPuzzleBox(true);
                 soundManager.PlayPickupSound();
@@ -609,7 +609,7 @@ public class CollectItem : MonoBehaviour
             {
                 if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == false)
                 {
-                    TopText.text = "You have the necessary items to enter this room.";
+                    TopText.text = "The room is locked with a directional lock.";
                     
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
 

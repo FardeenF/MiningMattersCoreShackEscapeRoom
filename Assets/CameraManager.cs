@@ -771,6 +771,7 @@ public class CameraManager : MonoBehaviour
                         Room3_GateCode.Priority = 0;
                         Room3_Bonus.Priority = 0;
                         gs.SetCurrentCam("Room2_Main");
+                        gs.SetCurrentRoom(2);
                     }
                     else if (Room2_Main.Priority == 1)
                     {
@@ -800,6 +801,7 @@ public class CameraManager : MonoBehaviour
                         Room3_GateCode.Priority = 0;
                         Room3_Bonus.Priority = 0;
                         gs.SetCurrentCam("Room1_Main");
+                        gs.SetCurrentRoom(1);
                     }
 
                 }
@@ -1030,9 +1032,9 @@ public class CameraManager : MonoBehaviour
 
                 }
 
-                else if (hit.transform.gameObject.tag == "Door2" && (Room1_Main.Priority == 1 || Room1_DoorToRoom3.Priority == 1))
+                else if (hit.transform.gameObject.tag == "Door2" && (Room1_Main.Priority == 1 || Room1_DoorToRoom3.Priority == 1 || Room3_Main.Priority == 1))
                 {
-                    if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == false)
+                    if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == false && Room3_Main.Priority == 0)
                     {
                         Room1_Main.Priority = 0;
                         Room1_BrokenCoreShackTable.Priority = 0;
@@ -1062,7 +1064,7 @@ public class CameraManager : MonoBehaviour
                         gs.SetCurrentCam("Room1_DoorToRoom3");
                         topText.text = ("You Have The Necessary Items to Go to This Door!");
                     }
-                    else if (gs.GetIsRoom3Unlocked() == true && gs.GetfoundGoldCore() == true)
+                    else if (gs.GetIsRoom3Unlocked() == true && gs.GetfoundGoldCore() == true && Room3_Main.Priority == 0)
                     {
                         Room1_Main.Priority = 0;
                         Room1_BrokenCoreShackTable.Priority = 0;
@@ -1090,6 +1092,37 @@ public class CameraManager : MonoBehaviour
                         Room3_GateCode.Priority = 0;
                         Room3_Bonus.Priority = 0;
                         gs.SetCurrentCam("Room3_Main");
+                        gs.SetCurrentRoom(3);
+                    }
+                    else if (Room3_Main.Priority == 1)
+                    {
+                        Room1_Main.Priority = 1;
+                        Room1_BrokenCoreShackTable.Priority = 0;
+                        Room1_Computer.Priority = 0;
+                        Room1_Geo_Poster.Priority = 0;
+                        Room1_CrossSectionPoster.Priority = 0;
+                        Room1_ButtonTable.Priority = 0;
+                        Room1_SedimentDesk.Priority = 0;
+                        Room1_Cabinet.Priority = 0;
+                        Room1_CabinetLock.Priority = 0;
+                        Room1_MiningCycle.Priority = 0;
+                        Room2_Main.Priority = 0;
+                        Room2_DiamondSaw.Priority = 0;
+                        Room2_FilingCabinet.Priority = 0;
+                        Room2_FilingCabinetLock.Priority = 0;
+                        Room2_RockSampleDesk.Priority = 0;
+                        Room2_WaterSwitch.Priority = 0;
+                        Room2_BoxTable.Priority = 0;
+                        Room1_DoorToRoom3.Priority = 0;
+                        Room3_Main.Priority = 0;
+                        Room3_Computer.Priority = 0;
+                        Room3_MineralIdentification.Priority = 0;
+                        Room3_Cabinet.Priority = 0;
+                        Room3_Volcano.Priority = 0;
+                        Room3_GateCode.Priority = 0;
+                        Room3_Bonus.Priority = 0;
+                        gs.SetCurrentCam("Room1_Main");
+                        gs.SetCurrentRoom(1);
                     }
                     else
                     {

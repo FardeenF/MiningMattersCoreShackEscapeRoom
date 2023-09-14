@@ -235,7 +235,7 @@ public class checkInventoryItem : MonoBehaviour
 
                     }
                     buttonPressed.GetComponent<Image>().sprite = null;
-                    buttonPressed.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
+                    buttonPressed.GetComponent<Image>().color = new Color32(255, 255, 255, 116);
                     
                 }
 
@@ -253,7 +253,7 @@ public class checkInventoryItem : MonoBehaviour
                             gs.SetHasPlacedInspectCore(true);
                             gs.SetIsHoldingWetCore(false);
                             buttonPressed.GetComponent<Image>().sprite = null;
-                            buttonPressed.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
+                            buttonPressed.GetComponent<Image>().color = new Color32(255, 255, 255, 116);
                         }
                         else if (gs.GetSelectedCore2() == 2)
                         {
@@ -264,7 +264,7 @@ public class checkInventoryItem : MonoBehaviour
                             gs.SetHasPlacedInspectCore(true);
                             gs.SetIsHoldingWetCore(false);
                             buttonPressed.GetComponent<Image>().sprite = null;
-                            buttonPressed.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
+                            buttonPressed.GetComponent<Image>().color = new Color32(255, 255, 255, 116);
                         }
                         else if (gs.GetSelectedCore2() == 3)
                         {
@@ -275,7 +275,7 @@ public class checkInventoryItem : MonoBehaviour
                             gs.SetHasPlacedInspectCore(true);
                             gs.SetIsHoldingWetCore(false);
                             buttonPressed.GetComponent<Image>().sprite = null;
-                            buttonPressed.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
+                            buttonPressed.GetComponent<Image>().color = new Color32(255, 255, 255, 116);
                         }
                         else if (gs.GetSelectedCore2() == 4)
                         {
@@ -286,7 +286,7 @@ public class checkInventoryItem : MonoBehaviour
                             gs.SetHasPlacedInspectCore(true);
                             gs.SetIsHoldingWetCore(false);
                             buttonPressed.GetComponent<Image>().sprite = null;
-                            buttonPressed.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 116.0f);
+                            buttonPressed.GetComponent<Image>().color = new Color32(255, 255, 255, 116);
                         }
 
                         else
