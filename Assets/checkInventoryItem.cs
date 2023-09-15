@@ -1000,19 +1000,23 @@ public class checkInventoryItem : MonoBehaviour
                 if (hit.transform.gameObject.name == "Magnemite")
                 {
                     
-                    topText.text = "Magnemite is magnetic!";
+                    topText.text = "This mineral is magnetic!";
                 }
                 else if (hit.transform.gameObject.name == "Hematite")
                 {
-                    topText.text = "Hematite is weakly magnetic";
+                    topText.text = "This mineral is weakly magnetic.";
                 }
                 else if (hit.transform.gameObject.name == "Pyrite")
                 {
-                    topText.text = "Pyrite is weakly magnetic";
+                    topText.text = "This mineral is weakly magnetic.";
+                }
+                else if (hit.transform.gameObject.name == "Gold")
+                {
+                    topText.text = "This mineral is not magnetic at all.";
                 }
                 else
                 {
-                    topText.text = "This is not magnetic! Try something else.";
+                    topText.text = "The magnetism of this object can't be measured. Try using the magnetic pen on a mineral.";
                 }
             }
         }

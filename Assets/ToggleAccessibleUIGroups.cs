@@ -215,7 +215,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
         {
             ControlsMenu.SetActive(!ControlsMenu.activeInHierarchy);
 

@@ -69,7 +69,7 @@ public class DirectionalLock : MonoBehaviour
             else
             {
                 code = "";
-                topText.text = code + " has been the entered code. Wrong Code Try Again. Navigate from the diamond mine to the gold mine using the mine location chart.";
+                topText.text = code + " has been the entered code. Wrong Code, Try Again. The lock accepts 5 direction codes. Seems to be a grid based solution...";
                 topText.GetComponent<AccessibleLabel>().SelectItem(true);
             }
 
@@ -129,7 +129,7 @@ public class DirectionalLock : MonoBehaviour
                     else
                     {
                         code = "";
-                        topText.text = "Wrong Code Try Again. Navigate from diamond mine to gold mine using the mine location chart.";
+                        topText.text = "Wrong Code, Try Again. The lock accepts 5 direction codes. Seems to be a grid based solution...";
                     }
 
                 }
