@@ -23,6 +23,14 @@ public class SoundManager : MonoBehaviour
     public AudioClip bootsPPESound;
     public AudioClip waterSprayerSound;
     public AudioClip switchSound;
+
+    public AudioSource BackgroundMusic;
+    private bool IsMuted = false;
+
+    public Sprite unMuted;
+    public Sprite muted;
+    public Button muteButton;
+
     public GameState gs;
 
     public Text PasswordLetter1;
@@ -43,6 +51,10 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            MuteBackground();
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -212,7 +224,23 @@ public class SoundManager : MonoBehaviour
     }
 
 
+    public void MuteBackground()
+    {
+        IsMuted = !IsMuted;
 
+        if (!IsMuted)
+        {
+            BackgroundMusic.volume = 0.066f;
+            muteButton.image.sprite = unMuted;
+        }
+            
+        else
+        {
+            BackgroundMusic.volume = 0.0f;
+            muteButton.image.sprite = muted;
+        }
+            
+    }
 
     IEnumerator WaitForSoundToEnd(float length)
     {
