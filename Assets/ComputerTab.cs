@@ -19,7 +19,7 @@ public class ComputerTab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab) && (gs.GetCurrentCam() == "Room1_Computer" || gs.GetCurrentCam() == "Room3_Computer") && UAP_AccessibilityManager.IsEnabled())
+        if(Input.GetKeyDown(KeyCode.Tab) && (gs.GetCurrentCam() == "Room1_Computer" || gs.GetCurrentCam() == "Room3_Computer") && !UAP_AccessibilityManager.IsEnabled())
         {
             letters[counter].Select();
         }
@@ -27,7 +27,7 @@ public class ComputerTab : MonoBehaviour
 
     public void ChangeLetter()
     {
-        if (UAP_AccessibilityManager.IsEnabled())
+        if (!UAP_AccessibilityManager.IsEnabled())
         {
             counter++;
 
