@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
+
+
 
 public class EndingMenu : MonoBehaviour
 {
@@ -16,7 +19,10 @@ public class EndingMenu : MonoBehaviour
     public GameObject IncompleteCrown;
     public GameObject AccessibilityManager;
 
+
     public GameObject isGameOverObject;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,18 +52,18 @@ public class EndingMenu : MonoBehaviour
         {
             completionTime.text = ("Completion Time: " + timerText.text);
         }
+
     }
 
     public void launchWebsite()
     {
         Application.OpenURL("https://miningmatters.ca/about-us");
+        Debug.Log("ENDING CLICK!");
     }
 
     public void restartGame()
     {
         Application.ExternalEval("document.location.reload(true)");
-
-
     }
 
 

@@ -215,6 +215,12 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            gs.SetEndGame(true);
+            endScreen.gameObject.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
         {
             ControlsMenu.SetActive(!ControlsMenu.activeInHierarchy);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Cinemachine;
+using System;
 
 public class DirectionalLock : MonoBehaviour
 {
@@ -17,6 +18,33 @@ public class DirectionalLock : MonoBehaviour
 
     public AudioSource click;
 
+    public TextMeshPro[] codeDisplay;
+
+    public GameObject[] displayBlocks;
+
+    private int displayCounter;
+
+    private float originalY;
+
+    public float offSetHeight = 0.00f;
+
+    public float floatStrength = 0.10f;
+
+
+    private void Start()
+    {
+        displayCounter = 0;
+        originalY = displayBlocks[0].transform.position.y;
+        offSetHeight = 0.0f;
+        floatStrength = 0.10f;
+
+        for (int i = 0; i < codeDisplay.Length; i++)
+        {
+            codeDisplay[i].text = " ";
+
+            displayBlocks[i].SetActive(false);
+        }
+    }
 
     public void AccessibleDirectionLock()
     {
@@ -80,6 +108,45 @@ public class DirectionalLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Room3Door_VC.Priority == 1)
+        {
+            //Enable Blocks
+            do
+            {
+                for (int i = 0; i < codeDisplay.Length; i++)
+                {
+                    displayBlocks[i].SetActive(true);
+                }
+
+            } while (!displayBlocks[0].activeInHierarchy);
+
+
+            for (int i = 0; i < codeDisplay.Length; i++)
+            {
+                if (i == 0 || i == 2 || i == 4)
+                {
+                    displayBlocks[i].transform.position = new Vector3(displayBlocks[i].transform.position.x,
+                    originalY + offSetHeight + ((float)Math.Sin(Time.time) * floatStrength),
+                    displayBlocks[i].transform.position.z);
+                }
+                else
+                {
+                    displayBlocks[i].transform.position = new Vector3(displayBlocks[i].transform.position.x,
+                    originalY + offSetHeight + ((float)Math.Sin(Time.time) * floatStrength) * -1.0f,
+                    displayBlocks[i].transform.position.z);
+                }
+            }
+
+            
+        }
+        else
+        {
+            for (int i = 0; i < codeDisplay.Length; i++)
+            {
+                displayBlocks[i].SetActive(false);
+            }
+        }
+
         if (Room3Door_VC.Priority == 1 && Input.GetMouseButtonDown(0))
         {
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
@@ -91,30 +158,55 @@ public class DirectionalLock : MonoBehaviour
                 if (hit.transform.gameObject.name == "North")
                 {
                     anim.Play(animation: "North");
-                    code += " North";
                     click.Play();
+
+                    if(displayCounter < 5)
+                    {
+                        code += " North";
+                        codeDisplay[displayCounter].text = "N";
+                        displayCounter++;
+                    }
                 }
 
                 else if (hit.transform.gameObject.name == "South")
                 {
 
                     anim.Play(animation: "South");
-                    code += " South";
                     click.Play();
+
+                    if (displayCounter < 5)
+                    {
+                        code += " South";
+                        codeDisplay[displayCounter].text = "S";
+                        displayCounter++;
+                    }
                 }
 
                 else if (hit.transform.gameObject.name == "East")
                 {
                     anim.Play(animation: "East");
-                    code += " East";
                     click.Play();
+
+                    if (displayCounter < 5)
+                    {
+                        code += " East";
+                        codeDisplay[displayCounter].text = "E";
+                        displayCounter++;
+                    }
+
                 }
 
                 else if (hit.transform.gameObject.name == "West")
                 {
                     anim.Play(animation: "West");
-                    code += " West";
                     click.Play();
+
+                    if (displayCounter < 5)
+                    {
+                        code += " West";
+                        codeDisplay[displayCounter].text = "W";
+                        displayCounter++;
+                    }
                 }
 
                 else if (hit.transform.gameObject.name == "Check")
@@ -130,6 +222,13 @@ public class DirectionalLock : MonoBehaviour
                     {
                         code = "";
                         topText.text = "Wrong Code, Try Again. The lock accepts 5 direction codes. Seems to be a grid based solution...";
+
+                        displayCounter = 0;
+
+                        for (int i = 0; i < codeDisplay.Length; i++)
+                        {
+                            codeDisplay[i].text = " ";
+                        }
                     }
 
                 }
