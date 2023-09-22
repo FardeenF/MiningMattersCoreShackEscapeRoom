@@ -269,8 +269,11 @@ public class BrokenCoreInteraction : MonoBehaviour
 
     public void AccessibleSelectPasswordInput()
     {
-        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
-        UAP_AccessibilityManager.EnableAccessibility(false);
+        if (UAP_AccessibilityManager.IsEnabled())
+        {
+            UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
+            UAP_AccessibilityManager.EnableAccessibility(false);
+        }
     }
 
     public void AccessibleReEnable(string num)

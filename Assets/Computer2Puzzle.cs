@@ -113,11 +113,11 @@ public class Computer2Puzzle : MonoBehaviour
 
     public void AccessibleSelectPasswordInput()
     {
-        //currentHighlightedObject = UAP_AccessibilityManager.GetCurrentFocusObject();
-        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
-        UAP_AccessibilityManager.EnableAccessibility(false);
-
-        //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().text = Input.anyKey.ToString();
+        if (UAP_AccessibilityManager.IsEnabled())
+        {
+            UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<InputField>().ActivateInputField();
+            UAP_AccessibilityManager.EnableAccessibility(false);
+        }
     }
 
     public void ReadAccessibilityMessage(string text)

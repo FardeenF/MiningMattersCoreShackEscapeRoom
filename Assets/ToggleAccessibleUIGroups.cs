@@ -60,6 +60,9 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] CoreGateSubButtons;
     public AccessibleButton_3D[] BonusSubButtons;
 
+    //Doors
+    public AccessibleButton_3D[] doorSubButtons;
+
     //Main Locations
     public GameObject[] MainRoom1Locations;
     public GameObject[] MainRoom2Locations;
@@ -199,8 +202,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     private void Start()
     {
-        ButtonGroups = new List<AccessibleButton_3D[]>() { BrokenCoreTableSubButtons, SedimentTableSubButtons, CabinetSubButtons, InsideTopCabinetSubButtons, InsideBottomCabinetSubButtons, 
-                                                       ComputerDeskSubButtons, DirectionalLockSubButtons, WaterShutOffSubButtons, RockScaleSubButtons, FilingCabinetSubButtons,
+        ButtonGroups = new List<AccessibleButton_3D[]>() { BrokenCoreTableSubButtons, ButtonTableSubButtons, SedimentTableSubButtons, CabinetSubButtons, InsideTopCabinetSubButtons, 
+                                                InsideBottomCabinetSubButtons, ComputerDeskSubButtons, DirectionalLockSubButtons, WaterShutOffSubButtons, RockScaleSubButtons, FilingCabinetSubButtons,
                                                        InsideFilingCabinetSubButtons, DiamondSawSubButtons, PowerCircuitSubButtons, BoxDeskSubButtons, MineralIdentificationSubButtons, 
                                                        Room3ComputerSubButtons, VolcanoSubButtons, IndustrialCabinetSubButtons, MagnetPenSubButtons, CoreGateSubButtons, BonusSubButtons };
 
@@ -215,11 +218,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            gs.SetEndGame(true);
-            endScreen.gameObject.SetActive(true);
-        }
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    gs.SetEndGame(true);
+        //    endScreen.gameObject.SetActive(true);
+        //}
 
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
         {
@@ -312,9 +315,10 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             Room3.enabled = true;
         }
 
-        if(gs.GetCurrentCam() == "Room1_Main" || gs.GetCurrentCam() == "Room2_Main" || gs.GetCurrentCam() == "Room3_Main")
+        if(gs.GetCurrentCam() == "Room1_Main" || gs.GetCurrentCam() == "Room2_Main" || gs.GetCurrentCam() == "Room3_Main" || gs.GetCurrentCam() == "Room1_DoorToRoom3")
         {
             Doors.enabled = true;
+            doorSubButtons[0].enabled = false;
         }
         else
         {
@@ -352,6 +356,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                     MainRoom3Locations[i].GetComponent<AccessibleButton_3D>().enabled = false;
 
                 SubItemsEnabled = false;
+            }
+            for(int i = 0; i< doorSubButtons.Length; i++)
+            {
+                if (MainRoom3Locations[i] != null)
+                    doorSubButtons[i].enabled = true;
             }
             //for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
             //{
@@ -483,7 +492,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 SubItemsEnabled = false;
             }
 
-
+            for (int i = 0; i < doorSubButtons.Length; i++)
+            {
+                if (MainRoom3Locations[i] != null)
+                    doorSubButtons[i].enabled = true;
+            }
 
             //for (int i = 0; i < WaterShutOffSubButtons.Length; i++)
             //{
@@ -575,7 +588,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
 
                 SubItemsEnabled = false;
             }
-
+            for (int i = 0; i < doorSubButtons.Length; i++)
+            {
+                if (MainRoom3Locations[i] != null)
+                    doorSubButtons[i].enabled = true;
+            }
             //for (int i = 0; i < DirectionalLockSubButtons.Length; i++)
             //{
             //    if (DirectionalLockSubButtons[i] != null)
@@ -1142,7 +1159,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < DirectionalLockSubButtons.Length; i++)
             {
-                if (DirectionalLockSubButtons[i] != null && !gs.GetRoom1PasswordPuzzle())
+                if (DirectionalLockSubButtons[i] != null && !gs.GetIsRoom3Unlocked())
                 {
                     DirectionalLockSubButtons[i].enabled = true;
                 }

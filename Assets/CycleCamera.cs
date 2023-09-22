@@ -100,7 +100,6 @@ public class CycleCamera : MonoBehaviour
             Room1_Cameras[0].Priority = 1;
             gs.SetCurrentCam("Room1_Main");
         }
-
         else if (gs.GetCurrentRoom() == 2)
         {
             for (int i = 0; i < Room2_Cameras.Length; i++)
