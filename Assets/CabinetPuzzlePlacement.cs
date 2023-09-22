@@ -71,7 +71,7 @@ public class CabinetPuzzlePlacement : MonoBehaviour
                         }
                     }
                     checkedPieces = true;
-                    Debug.Log("All pieces are in correct spot");
+                    Debug.Log("All pieces are in correct spot, the cabinet is now open");
                     gs.SetJigSawDone(true);
                     puzzleComplete = true;
                     StartCoroutine(WaitTime());
@@ -98,7 +98,7 @@ public class CabinetPuzzlePlacement : MonoBehaviour
             }
         }
         checkedPieces = true;
-        Debug.Log("All pieces are in correct spot");
+        Debug.Log("All pieces are in correct spot, the cabinet is now open");
         gs.SetJigSawDone(true);
         puzzleComplete = true;
         ToggleUIGroups.Enable3DButtons();

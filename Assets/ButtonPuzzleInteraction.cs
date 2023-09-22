@@ -8,6 +8,7 @@ public class ButtonPuzzleInteraction : MonoBehaviour
     public Camera mainCam;
 
     public AudioSource source;
+    public AudioSource SoundSeries;
     public AudioClip beep;
     public AudioClip drill;
     public AudioClip honk;
@@ -45,7 +46,8 @@ public class ButtonPuzzleInteraction : MonoBehaviour
 
     public void AccessibleSequenceButton()
     {
-        StartCoroutine(playAudioSequentially());
+        //StartCoroutine(playAudioSequentially());
+        SoundSeries.Play();
     }
 
     
@@ -66,7 +68,9 @@ public class ButtonPuzzleInteraction : MonoBehaviour
                 topText.text = ("You hear a series of sounds");
                 topText.GetComponent<UAP_BaseElement>().SelectItem();
 
-                StartCoroutine(playAudioSequentially());
+
+                //StartCoroutine(playAudioSequentially());
+                SoundSeries.Play();
             }
             else if(hit.transform.gameObject.tag == "Button1")
             {
@@ -112,25 +116,30 @@ public class ButtonPuzzleInteraction : MonoBehaviour
 
     IEnumerator playAudioSequentially()
     {
+        
         yield return null;
 
+        
+
         //1.Loop through each AudioClip
-        for (int i = 0; i < solution.Count; i++)
-        {
-            //2.Assign current AudioClip to audiosource
-            source.clip = solution[i];
-
-            //3.Play Audio
-            source.Play();
-
-            //4.Wait for it to finish playing
-            while (source.isPlaying)
+            for (int i = 0; i < solution.Count; i++)
             {
-                yield return new WaitForSeconds(1.0f);
-                //yield return null;
-            }
+                //2.Assign current AudioClip to audiosource
+                source.clip = solution[i];
 
-            //5. Go back to #2 and play the next audio in the adClips array
-        }
+                //3.Play Audio
+                source.Play();
+
+                //4.Wait for it to finish playing
+                while (source.isPlaying)
+                {
+                    yield return new WaitForSeconds(1.0f);
+                    //yield return null;
+                }
+
+                //5. Go back to #2 and play the next audio in the adClips array
+            }
+        
+
     }
 }

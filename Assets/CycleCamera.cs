@@ -167,5 +167,26 @@ public class CycleCamera : MonoBehaviour
 
             Debug.Log(selectedCam);
         }
+        //Room 3
+        else if (gs.GetCurrentRoom() == 3)
+        {
+            if (selectedCam >= 6)
+            {
+
+                Room3_Cameras[6].Priority = 0;
+                Room3_Cameras[0].Priority = 1;
+                selectedCam = 0;
+            }
+            else
+            {
+                Room3_Cameras[selectedCam].Priority = 0;
+                Room3_Cameras[selectedCam + 1].Priority = 1;
+                selectedCam++;
+            }
+
+
+
+            Debug.Log(selectedCam);
+        }
     }
 }

@@ -1264,7 +1264,7 @@ public class CameraManager : MonoBehaviour
 
                 }
 
-                else if (hit.transform.gameObject.name == "GateDoor" && Room3_Main.Priority == 1)
+                else if ((hit.transform.gameObject.name == "GateDoor" || hit.transform.gameObject.name == "Fence") && Room3_Main.Priority == 1)
                 {
                     Room1_Main.Priority = 0;
                     Room1_BrokenCoreShackTable.Priority = 0;
