@@ -52,30 +52,53 @@ public class DirectionalLock : MonoBehaviour
         if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "North")
         {
             anim.Play(animation: "North");
-            code += " North";
             click.Play();
+
+            if (displayCounter < 5)
+            {
+                code += " North";
+                codeDisplay[displayCounter].text = "N";
+                displayCounter++;
+            }
         }
 
         else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "South")
         {
-
             anim.Play(animation: "South");
-            code += " South";
             click.Play();
+
+            if (displayCounter < 5)
+            {
+                code += " South";
+                codeDisplay[displayCounter].text = "S";
+                displayCounter++;
+            }
         }
 
         else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "East")
         {
             anim.Play(animation: "East");
-            code += " East";
             click.Play();
+
+            if (displayCounter < 5)
+            {
+                code += " East";
+                codeDisplay[displayCounter].text = "E";
+                displayCounter++;
+            }
         }
 
         else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "West")
         {
             anim.Play(animation: "West");
-            code += " West";
             click.Play();
+
+            if (displayCounter < 5)
+            {
+                code += " West";
+                codeDisplay[displayCounter].text = "W";
+                displayCounter++;
+            }
         }
 
         else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.name == "Check")
@@ -93,12 +116,22 @@ public class DirectionalLock : MonoBehaviour
             {
                 topText.text = "No directions have been added to the passcode. Please enter directions before checking the code.";
                 topText.GetComponent<AccessibleLabel>().SelectItem(true);
+
+                for (int i = 0; i < codeDisplay.Length; i++)
+                {
+                    codeDisplay[i].text = " ";
+                }
             }
             else
             {
                 code = "";
                 topText.text = code + " has been the entered code. Wrong Code, Try Again. The lock accepts 5 direction codes. Seems to be a grid based solution...";
                 topText.GetComponent<AccessibleLabel>().SelectItem(true);
+
+                for (int i = 0; i < codeDisplay.Length; i++)
+                {
+                    codeDisplay[i].text = " ";
+                }
             }
 
         }
