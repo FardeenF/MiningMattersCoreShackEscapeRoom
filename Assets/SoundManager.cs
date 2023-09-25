@@ -53,7 +53,14 @@ public class SoundManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            MuteBackground();
+            if(gs.GetCurrentCam() == "Room1_Computer" || gs.GetCurrentCam() == "Room3_Computer")
+            {
+                Debug.Log("Current Cam:" + gs.GetCurrentCam());
+            }
+            else
+            {
+                MuteBackground();
+            }
         }
 
         if (Input.GetMouseButtonDown(0))

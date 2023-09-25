@@ -5,23 +5,6 @@ using System.Runtime.InteropServices;
 
 public class TakeScreenshot : MonoBehaviour
 {
-    [DllImport("user32.dll")]
-    static extern bool SetCursorPos(int X, int Y);
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            //Vector3 mousePos = Input.mousePosition;
-            //{
-            //    Vector2 pos = Camera.main.WorldToScreenPoint(this.transform.position);
-            //    SetCursorPos((int) pos.x, (int) pos.y);
-            //    Debug.Log("Mouse Position X: " + mousePos.x);
-            //    Debug.Log("Mouse Position Y: " + mousePos.y);
-            //}
-        }
-    }
 
     // Use this for initialization
     public void Screenshot()
