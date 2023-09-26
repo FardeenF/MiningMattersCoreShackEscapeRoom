@@ -37,11 +37,13 @@ public class EndingMenu : MonoBehaviour
         {
             Crown.SetActive(true);
             IncompleteCrown.SetActive(false);
+            GameObject.Find("/Ending Menu/Main/Title/Ending Content").GetComponent<AccessibleLabel>().SelectItem(true);
         }
         else
         {
             Crown.SetActive(false);
             IncompleteCrown.SetActive(true);
+            GameObject.Find("/Ending Menu/Main/Title/Ending Content").GetComponent<AccessibleLabel>().SelectItem(true);
         }
     }
 

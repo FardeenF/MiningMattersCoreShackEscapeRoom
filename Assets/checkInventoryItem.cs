@@ -896,7 +896,6 @@ public class checkInventoryItem : MonoBehaviour
                     topText.text = "You've stored the core correctly! YOU WIN!!!";
                     gs.SetEndGame(true);
                     endingScreen.gameObject.SetActive(true);
-
                 }
                 else if (hit.transform.gameObject.tag == "Storage2" && !setCorePieceDown)
                 {

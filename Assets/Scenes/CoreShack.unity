@@ -9265,18 +9265,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7019970208480546634}
-        m_TargetAssemblyTypeName: TakeScreenshot, Assembly-CSharp
-        m_MethodName: Screenshot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_OnInteractionEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -85702,6 +85690,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7019970208480546634}
+        m_TargetAssemblyTypeName: WebGLScreenshotTool.WebGLScreenshotTool, Assembly-CSharp
+        m_MethodName: TakeScreenshot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2997481661276816313
 GameObject:
   m_ObjectHideFlags: 0
@@ -86017,7 +86017,7 @@ GameObject:
   - component: {fileID: 3007492167423125941}
   - component: {fileID: 702774349}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Ending Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91630,7 +91630,6 @@ GameObject:
   - component: {fileID: 2986354421923951156}
   - component: {fileID: 274607408}
   - component: {fileID: 7019970208480546634}
-  - component: {fileID: 7019970208480546635}
   m_Layer: 5
   m_Name: Screenshot Button
   m_TagString: Untagged
@@ -91647,36 +91646,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7019970208480546633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1e2ca20ce979342bb57283d6bb4b29, type: 3}
+  m_Script: {fileID: 11500000, guid: d3eaf63a8fa284a43976cb6765ed5f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7019970208480546635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019970208480546633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652c6db7d08539c47bf3f57deeadd2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7019970208480546634}
-        m_TargetAssemblyTypeName: TakeScreenshot, Assembly-CSharp
-        m_MethodName: Screenshot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _fileName: WinScreen
+  _withDateInFileName: 1
+  _canvasesToIgnore: []
 --- !u!224 &7050713939604623224
 RectTransform:
   m_ObjectHideFlags: 0
