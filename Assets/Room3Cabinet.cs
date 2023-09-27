@@ -5,7 +5,7 @@ using TMPro;
 
 public class Room3Cabinet : MonoBehaviour
 {
-    public bool isOpen = true;
+    public bool isOpen = false;
     public Animation anim;
     public string animName;
     public AudioSource OpenClose;

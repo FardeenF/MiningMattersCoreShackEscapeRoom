@@ -57,6 +57,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] VolcanoSubButtons;
     public AccessibleButton_3D[] IndustrialCabinetSubButtons;
     public AccessibleButton_3D[] MagnetPenSubButtons;
+    public AccessibleButton_3D[] StickyNoteSubButtons;
     public AccessibleButton_3D[] CoreGateSubButtons;
     public AccessibleButton_3D[] BonusSubButtons;
 
@@ -205,7 +206,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         ButtonGroups = new List<AccessibleButton_3D[]>() { BrokenCoreTableSubButtons, ButtonTableSubButtons, SedimentTableSubButtons, CabinetSubButtons, InsideTopCabinetSubButtons, 
                                                 InsideBottomCabinetSubButtons, ComputerDeskSubButtons, DirectionalLockSubButtons, WaterShutOffSubButtons, RockScaleSubButtons, FilingCabinetSubButtons,
                                                        InsideFilingCabinetSubButtons, DiamondSawSubButtons, PowerCircuitSubButtons, BoxDeskSubButtons, MineralIdentificationSubButtons, 
-                                                       Room3ComputerSubButtons, VolcanoSubButtons, IndustrialCabinetSubButtons, MagnetPenSubButtons, CoreGateSubButtons, BonusSubButtons };
+                                                       Room3ComputerSubButtons, VolcanoSubButtons, IndustrialCabinetSubButtons, MagnetPenSubButtons, StickyNoteSubButtons, CoreGateSubButtons, BonusSubButtons };
 
         foreach (AccessibleButton_3D[] buttons in ButtonGroups)
         {
@@ -1489,6 +1490,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 if (MagnetPenSubButtons[i] != null)
                     MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
+            for (int i = 0; i < StickyNoteSubButtons.Length; i++)
+            {
+                if (StickyNoteSubButtons[i] != null)
+                    StickyNoteSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
             for (int i = 0; i < CoreGateSubButtons.Length; i++)
             {
                 if (CoreGateSubButtons[i] != null)
@@ -1543,6 +1549,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 if (MagnetPenSubButtons[i] != null)
                     MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < StickyNoteSubButtons.Length; i++)
+            {
+                if (StickyNoteSubButtons[i] != null)
+                    StickyNoteSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
             for (int i = 0; i < CoreGateSubButtons.Length; i++)
             {
@@ -1599,6 +1610,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 if (MagnetPenSubButtons[i] != null)
                     MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
+            for (int i = 0; i < StickyNoteSubButtons.Length; i++)
+            {
+                if (StickyNoteSubButtons[i] != null)
+                    StickyNoteSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
             for (int i = 0; i < CoreGateSubButtons.Length; i++)
             {
                 if (CoreGateSubButtons[i] != null)
@@ -1636,6 +1652,27 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 {
                     if (MagnetPenSubButtons[0] != null)
                         MagnetPenSubButtons[0].GetComponent<AccessibleButton_3D>().enabled = false;
+                }
+
+                if (IndustrialCabinetSubButtons[3].GetComponent<Room3Cabinet>().isOpen)
+                {
+                    Debug.Log("Sticky Notes!!!!");
+                    if (StickyNoteSubButtons[0] != null)
+                    {
+                        
+                        StickyNoteSubButtons[0].GetComponent<AccessibleButton_3D>().enabled = true;
+                        StickyNoteSubButtons[1].GetComponent<AccessibleButton_3D>().enabled = true;
+                        if (StickyNoteSubButtons[0].gameObject.activeInHierarchy)
+                            StickyNoteSubButtons[0].GetComponent<AccessibleButton_3D>().SelectItem(true);
+                    }
+                }
+                else if (IndustrialCabinetSubButtons[3].GetComponent<Room3Cabinet>().isOpen == false)
+                {
+                    for (int j = 0; j < StickyNoteSubButtons.Length; j++)
+                    {
+                        if (StickyNoteSubButtons[j] != null)
+                            StickyNoteSubButtons[j].GetComponent<AccessibleButton_3D>().enabled = false;
+                    }
                 }
             }
             // Set others to false
@@ -1697,6 +1734,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 if (MagnetPenSubButtons[i] != null)
                     MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
+            for (int i = 0; i < StickyNoteSubButtons.Length; i++)
+            {
+                if (StickyNoteSubButtons[i] != null)
+                    StickyNoteSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
             for (int i = 0; i < VolcanoSubButtons.Length; i++)
             {
                 if (VolcanoSubButtons[i] != null)
@@ -1739,6 +1781,11 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
             {
                 if (MagnetPenSubButtons[i] != null)
                     MagnetPenSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
+            }
+            for (int i = 0; i < StickyNoteSubButtons.Length; i++)
+            {
+                if (StickyNoteSubButtons[i] != null)
+                    StickyNoteSubButtons[i].GetComponent<AccessibleButton_3D>().enabled = false;
             }
             for (int i = 0; i < VolcanoSubButtons.Length; i++)
             {
