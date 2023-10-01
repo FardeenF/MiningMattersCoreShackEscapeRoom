@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class CameraManager : MonoBehaviour
 {
@@ -257,9 +258,13 @@ public class CameraManager : MonoBehaviour
             toggle.Enable3DButtons();
         }
 
-        //Gets reference to gameObject that is clicken on
+        //Gets reference to gameObject that is clicked on
         if (Input.GetMouseButtonDown(0))
         {
+            //Checks if pointer is over a UI gameobject to ensure no clickthrough
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             ShootRaycast();
         }
 

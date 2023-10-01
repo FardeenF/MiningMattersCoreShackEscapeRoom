@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class ToggleAccessibleUIGroups : MonoBehaviour
 {
@@ -224,6 +225,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         //    gs.SetEndGame(true);
         //    endScreen.gameObject.SetActive(true);
         //}
+
 
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
         {
