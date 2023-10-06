@@ -35,12 +35,12 @@ public class Menu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             state.SetHighContrast(!state.GetHighContrast());
             HighContrast.SetActive(!HighContrast.activeInHierarchy);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha0) && Main.activeInHierarchy)
+        if ((Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0)) && Main.activeInHierarchy)
         {
             //state.SetScreenReader(!state.GetScreenReader());
             ScreenReader.SetActive(!ScreenReader.activeInHierarchy);

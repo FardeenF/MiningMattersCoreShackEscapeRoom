@@ -80403,7 +80403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press 0 to toggle Screen Reader
+  m_text: Press 0 to Toggle Screen Reader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd41fb71422819c4db2579aa93367e0e, type: 2}
   m_sharedMaterial: {fileID: 1849267361612252879, guid: cd41fb71422819c4db2579aa93367e0e, type: 2}
@@ -80614,7 +80614,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press H to toggle High Contrast puzzles
+  m_text: Press J to Toggle High Contrast Mode
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd41fb71422819c4db2579aa93367e0e, type: 2}
   m_sharedMaterial: {fileID: 1849267361612252879, guid: cd41fb71422819c4db2579aa93367e0e, type: 2}
