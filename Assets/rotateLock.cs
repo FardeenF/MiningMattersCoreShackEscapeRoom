@@ -47,7 +47,7 @@ public class rotateLock : MonoBehaviour
         {
             Debug.Log("Password Correct");
             Lock.gameObject.GetComponent<Animation>().Play(animation: "Unlock");
-            topText.text = "You have unlocked the sprayer. Select it to add it to your inventory";
+            topText.text = "You have unlocked the water pump. Select it to add it to your inventory.";
             topText.GetComponent<UAP_BaseElement>().SelectItem();
             gs.SetIsSprayerUnlocked(true);
             soundManager.PlayUnlockSound();

@@ -8924,7 +8924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopText: {fileID: 445432509}
   gs: {fileID: 1815343585}
-  Message: You Have Collected Sieve's to Sift Sediment
+  Message: You have collected a sieve set to sift sediment.
   mainCam: {fileID: 1736072091}
   Inventory:
   - {fileID: 1754180970}
@@ -13849,7 +13849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopText: {fileID: 445432509}
   gs: {fileID: 1815343585}
-  Message: You Have Collected Safety Goggles
+  Message: You have collected the safety glasses
   mainCam: {fileID: 1736072091}
   Inventory:
   - {fileID: 1967115708}
@@ -16254,7 +16254,7 @@ MonoBehaviour:
   m_text: Core Shack Room 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21873,7 +21873,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use the Enter Key to select objects & inventory while in Accessible mode.
+  m_text: Use the Enter Key to select objects & inventory while in Accessibility
+    mode.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
   m_sharedMaterial: {fileID: 823987434792897530, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
@@ -28181,7 +28182,7 @@ MonoBehaviour:
   m_text: Put Away
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28825,7 +28826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the Tab Key to open and close this controls screen while playing.
+  m_text: Press the Ctrl Key to open and close this control screen while playing.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
   m_sharedMaterial: {fileID: 823987434792897530, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
@@ -43099,8 +43100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopText: {fileID: 445432509}
   gs: {fileID: 1815343585}
-  Message: You have collected the spray bottle. You can now get a better look at
-    core pieces!
+  Message: You have collected the water pump. You can now get a better look at core
+    pieces!
   mainCam: {fileID: 1736072091}
   Inventory:
   - {fileID: 1754180970}
@@ -49888,7 +49889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopText: {fileID: 445432509}
   gs: {fileID: 1815343585}
-  Message: Hand Lens collected. You can now examine cores in more detail.
+  Message: Hand lens collected. You can now examine cores in more detail.
   mainCam: {fileID: 1736072091}
   Inventory:
   - {fileID: 1754180970}
@@ -64645,8 +64646,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 338, y: -0.000010014}
-  m_SizeDelta: {x: 545.5203, y: 59.4746}
+  m_AnchoredPosition: {x: 338, y: -7.3210044}
+  m_SizeDelta: {x: 545.5203, y: 74.117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1709181104
 MonoBehaviour:
@@ -64721,8 +64722,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use the Left & Right Arrows to Switch Accessible Groups & use Up & Down
-    Arrows to Cycle the Elements in that group.
+  m_text: Use the Left & Right arrows to switch room locations & use the Up & Down
+    arrows to cycle through items found in that location or in your inventory.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
   m_sharedMaterial: {fileID: 823987434792897530, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
@@ -68260,7 +68261,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Use left mouse button to interact with objects, inventory items, and to
-    move to new  locations. When using the Hand Lens the left mouse button will zoom
+    move to new locations. When using the hand lens the left mouse button will zoom
     in.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
@@ -68890,7 +68891,7 @@ MonoBehaviour:
   m_text: 0m:0s
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -73185,8 +73186,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247642081}
   m_HandleRect: {fileID: 247642080}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.6672774
+  m_Value: 1.0000002
+  m_Size: 0.66727734
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -73614,7 +73615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopText: {fileID: 445432509}
   gs: {fileID: 1815343585}
-  Message: You have collected the Dust Mask!
+  Message: You have collected the dust mask!
   mainCam: {fileID: 1736072091}
   Inventory:
   - {fileID: 1967115708}
@@ -74749,7 +74750,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the U key to toggle the UV light on the hand lens when it is active
+  m_text: Press the U Key to toggle the UV light on the hand lens when it is active
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
   m_sharedMaterial: {fileID: 823987434792897530, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
@@ -80701,7 +80702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -274.05106, y: 93.785995}
+  m_AnchoredPosition: {x: -284.95, y: 93.788}
   m_SizeDelta: {x: 88.7585, y: 88.7585}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &585237241502153359
@@ -83124,10 +83125,10 @@ MonoBehaviour:
     Your third challenge is to unlock the Core Shack
     door by identifying and archiving a specific piece of core. As you know, safety
     comes first (and according to the Dragon Code of Ethics: Section 2, Paragraph
-    5 challengers may not be harmed during a challenge quest). For this challenge
-    you will once again need to find PPE. This is the last of my three challenges,
-    and while you have bested my first two challenges, this challenge will be the
-    most grueling and complex of all.'
+    5, challengers may not be harmed during a challenge quest). For this challenge
+    you will once again need to find Personal Protective Equipment (PPE). This is
+    the last of my three challenges, and while you have bested my first two challenges,
+    this challenge will be the most grueling and complex of all.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
   m_sharedMaterial: {fileID: 823987434792897530, guid: 94bd5591101e954408e71f12e9e23e95, type: 2}
@@ -86475,7 +86476,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: You have successfully logged your core and defeated the Dragon Sodalite!
-    The dragon has flown back into it's den and won't come back to the mine.
+    The dragon has flown back into its den and won't come back to the mine.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd41fb71422819c4db2579aa93367e0e, type: 2}
   m_sharedMaterial: {fileID: 1849267361612252879, guid: cd41fb71422819c4db2579aa93367e0e, type: 2}
@@ -89869,7 +89870,7 @@ MonoBehaviour:
   m_text: Enter your name here...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -91007,7 +91008,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93679,7 +93680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: This rock seems to be a mix of red, white, and black and also seems to
-    be light.
+    be hard.
   topText: {fileID: 445432509}
 --- !u!23 &7783642029137230705
 MeshRenderer:
@@ -95473,7 +95474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa07bdfd8d0f524b9bfc0a17376011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: This rock seems to have been flattened and seems shiny.
+  message: This rock is layered red and black and appears shiny.
   topText: {fileID: 445432509}
 --- !u!33 &8777296174765677068
 MeshFilter:

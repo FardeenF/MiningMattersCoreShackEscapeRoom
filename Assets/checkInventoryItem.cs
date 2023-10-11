@@ -159,7 +159,7 @@ public class checkInventoryItem : MonoBehaviour
                         Destroy(activeHandLens.gameObject);
                     isHandLensActive = false;
                     holdingSomething = false;
-                    topText.text = ("Hand Lens is Back in Inventory");
+                    topText.text = ("Hand lens is back in inventory");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                 }
             }
@@ -173,7 +173,7 @@ public class checkInventoryItem : MonoBehaviour
                     activeSprayBottle = Instantiate(SprayBottle, Input.mousePosition, Quaternion.identity);
                     isSprayBottleActive = true;
                     holdingSomething = true;
-                    topText.text = ("Use a Hand Lens to Spot Differences.");
+                    topText.text = ("A spray bottle can be used to make sediments in rocks stand out.");
                     topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     Debug.Log("PullOutSprayBottle");
 
@@ -186,22 +186,22 @@ public class checkInventoryItem : MonoBehaviour
                             if (i == 0)
                             {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat0;
-                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 1 To be Inspected with a Hand Lens.";
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 1 To be Inspected with a Hand lens.";
                             }
                             else if (i == 1)
                             {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat1;
-                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 2 To be Inspected with a Hand Lens.";
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 2 To be Inspected with a Hand lens.";
                             }
                             else if (i == 2)
                             {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat2;
-                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 4 To be Inspected with a Hand Lens.";
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 4 To be Inspected with a Hand lens.";
                             }
                             else if (i == 3)
                             {
                                 core2_pieces[i].GetComponent<Renderer>().material = wetCoreMat3;
-                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 3 To be Inspected with a Hand Lens.";
+                                core2_pieces[i].GetComponent<AccessibleButton_3D>().m_Text = "Core 3 To be Inspected with a Hand lens.";
                             }
 
 
@@ -217,7 +217,7 @@ public class checkInventoryItem : MonoBehaviour
                     Destroy(activeSprayBottle.gameObject);
                     isSprayBottleActive = false;
                     holdingSomething = false;
-                    topText.text = ("Spray Bottle is Back in Inventory");
+                    topText.text = ("Spray bottle is back in inventory");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                     Debug.Log("PutAwaySprayBottle");
                 }
@@ -361,7 +361,7 @@ public class checkInventoryItem : MonoBehaviour
                     activeSieve = Instantiate(Sieve, Input.mousePosition, Quaternion.identity);
                     isSieveActive = true;
                     holdingSomething = true;
-                    topText.text = ("Sieve can be used to sift and seperate sediment");
+                    topText.text = ("Sieves can be used to sift and seperate sediment");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                 }
                 else
@@ -371,7 +371,7 @@ public class checkInventoryItem : MonoBehaviour
                     Destroy(activeSieve.gameObject);
                     isSieveActive = false;
                     holdingSomething = false;
-                    topText.text = ("Sieve is Back in Inventory");
+                    topText.text = ("Sieves are back in inventory");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                 }
             }
@@ -417,7 +417,7 @@ public class checkInventoryItem : MonoBehaviour
                         activeSawBlade = Instantiate(SawBlade, Input.mousePosition, Quaternion.identity);
                         isSawBladeActive = true;
                         holdingSomething = true;
-                        topText.text = ("Fix the Saw Machine.");
+                        topText.text = ("New diamond saw blade.");
                         topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     }
                     else
@@ -427,7 +427,7 @@ public class checkInventoryItem : MonoBehaviour
                         Destroy(activeSawBlade.gameObject);
                         isSawBladeActive = false;
                         holdingSomething = false;
-                        topText.text = ("Saw Blade back in inventory");
+                        topText.text = ("Saw blade back in inventory");
                         topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     }
                 }
@@ -442,7 +442,7 @@ public class checkInventoryItem : MonoBehaviour
                         gs.SetHasSawBlade(false);
                         //Destroy(activeSawBlade);
                         //activeSawBlade.SetActive(false);
-                        topText.text = "The Blade has been fixed!";
+                        topText.text = "The blade has been replaced!";
                         topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                         //ReadAccessibilityMessage("The blade has been fixed!");
                     }
@@ -499,7 +499,7 @@ public class checkInventoryItem : MonoBehaviour
                             Destroy(activeCorePiece.gameObject);
                             isCorePieceActive = false;
                             holdingSomething = false;
-                            topText.text = ("Core Piece back in inventory");
+                            topText.text = ("Core piece back in inventory");
                             topText.GetComponent<UAP_BaseElement>().SelectItem(true);
                         }
                     }
@@ -531,7 +531,7 @@ public class checkInventoryItem : MonoBehaviour
                     Destroy(activeMagnetPen.gameObject);
                     isMagnetPenActive = false;
                     holdingSomething = false;
-                    topText.text = ("Magnet Pen is Back in Inventory");
+                    topText.text = ("Magnet pen is back in inventory");
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                 }
             }
@@ -599,7 +599,7 @@ public class checkInventoryItem : MonoBehaviour
             Destroy(activeHandLens.gameObject);
             isHandLensActive = false;
             holdingSomething = false;
-            topText.text = ("Hand Lens is Back in Inventory");
+            topText.text = ("Hand lens is back in inventory");
             topText.GetComponent<UAP_BaseElement>().SelectItem();
         }
 
@@ -609,7 +609,7 @@ public class checkInventoryItem : MonoBehaviour
             Destroy(activeSprayBottle.gameObject);
             isSprayBottleActive = false;
             holdingSomething = false;
-            topText.text = ("Spray Bottle is Back in Inventory");
+            topText.text = ("Spray bottle is back in inventory");
             topText.GetComponent<UAP_BaseElement>().SelectItem();
         }
 
@@ -618,7 +618,7 @@ public class checkInventoryItem : MonoBehaviour
             Destroy(activeSieve.gameObject);
             isSieveActive = false;
             holdingSomething = false;
-            topText.text = ("Sieve is Back in Inventory");
+            topText.text = ("Sieves are back in inventory");
             topText.GetComponent<UAP_BaseElement>().SelectItem();
         }
 
@@ -635,7 +635,7 @@ public class checkInventoryItem : MonoBehaviour
             
             holdingSomething = false;
             isHoldingPiece = false;
-            topText.text = ("Puzzle Piece back in box");
+            topText.text = ("Puzzle piece back in box");
             topText.GetComponent<UAP_BaseElement>().SelectItem();
         }
 
@@ -644,7 +644,7 @@ public class checkInventoryItem : MonoBehaviour
             Destroy(activeSawBlade.gameObject);
             isSawBladeActive = false;
             holdingSomething = false;
-            topText.text = ("Saw Blade is Back in Inventory");
+            topText.text = ("Saw blade is back in inventory");
             topText.GetComponent<UAP_BaseElement>().SelectItem();
         }
 
@@ -654,7 +654,7 @@ public class checkInventoryItem : MonoBehaviour
             Destroy(activeMagnetPen.gameObject);
             isMagnetPenActive = false;
             holdingSomething = false;
-            topText.text = ("Magnet is Back in Inventory");
+            topText.text = ("Magnet is back in inventory");
             topText.GetComponent<UAP_BaseElement>().SelectItem();
         }
     }
@@ -832,7 +832,7 @@ public class checkInventoryItem : MonoBehaviour
             {
                 Destroy(activeSieve.gameObject);
                 isSieveActive = false;
-                topText.text = ("Sieve is in place and ready to sift");
+                topText.text = ("Sieves are in place and ready to sift sediment");
                 topText.GetComponent<UAP_BaseElement>().SelectItem();
                 gs.SetHasPlacedSieve(true);
                 holdingSomething = false;
@@ -1094,10 +1094,10 @@ public class checkInventoryItem : MonoBehaviour
     {
         CoreInResultsBox.SetActive(false);
         CoreInSendBox.SetActive(true);
-        topText.text = "Core Analysis Sending!";
+        topText.text = "Core analysis sent!";
         topText.GetComponent<AccessibleLabel>().SelectItem(true);
         yield return new WaitForSeconds(2);
-        topText.text = "Core Analysis Recieved!";
+        topText.text = "Core analysis recieved!";
         topText.GetComponent<AccessibleLabel>().SelectItem(true);
         CoreInSendBox.SetActive(false);
         CoreInResultsBox.SetActive(true);

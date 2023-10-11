@@ -61,7 +61,7 @@ public class RotateCabinetLock : MonoBehaviour
                 gs.SetHasUnlockedCabinetLock(true);
                 
                 isLocked = false;
-                toptext.text = ("You unlocked the bottom drawers!");
+                toptext.text = ("You unlocked the bottom drawer!");
                 Cabinet.GetComponent<Animation>().Play(animation: "Cube.032|BottomDrawerOpen");
                 DrawerOpen.Play();
 

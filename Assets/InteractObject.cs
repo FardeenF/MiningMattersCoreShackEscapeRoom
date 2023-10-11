@@ -55,7 +55,7 @@ public class InteractObject : MonoBehaviour
                     if (isOn == false)
                     {
                         this.gameObject.GetComponent<Animation>().Play(animation: "Toggle");
-                        topText.text = "Water for Saw has been turned on!";
+                        topText.text = "The water for the saw has been turned on!";
                         isOn = true;
                         gs.SetIsWaterOn(true);
                         soundManager.PlaySwitchSound();
@@ -64,7 +64,7 @@ public class InteractObject : MonoBehaviour
                     else if (isOn == true)
                     {
                         this.gameObject.GetComponent<Animation>().Play(animation: "ToggleBack");
-                        topText.text = "Water for Saw has been turned back off!";
+                        topText.text = "The water for the saw has been turned off!";
                         isOn = false;
                         gs.SetIsWaterOn(false);
                     }

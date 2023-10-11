@@ -305,7 +305,7 @@ public class VolcanoPuzzle : MonoBehaviour
                         //Shield Volcano
                         Debug.Log(thickorthin + lowhighgas);
                         
-                        topText.text = "This results in a Shield Volcano";
+                        topText.text = "This results in a shield volcano";
                         Volcano.GetComponent<Animation>()["Volcano|Cinder-Shield"].time = 0.03f;
                         Volcano.GetComponent<Animation>()["Volcano|Cinder-Shield"].speed = 1;
                         Volcano.GetComponent<Animation>().Play(animation: "Volcano|Cinder-Shield");
@@ -323,7 +323,7 @@ public class VolcanoPuzzle : MonoBehaviour
                     {
                         //Cinder Volcano
                         Debug.Log(thickorthin + lowhighgas);
-                        topText.text = "This results in a Cinder Volcano";
+                        topText.text = "This results in a cinder volcano";
 
                         for (int i = 0; i < volcanoDisplay.Length; i++)
                         {
@@ -337,7 +337,7 @@ public class VolcanoPuzzle : MonoBehaviour
                     {
                         //Cone Volcano
                         Debug.Log(thickorthin + lowhighgas);
-                        topText.text = "This results in a Cone Volcano";
+                        topText.text = "This results in a cone volcano";
 
                         for (int i = 0; i < volcanoDisplay.Length; i++)
                         {
@@ -352,7 +352,7 @@ public class VolcanoPuzzle : MonoBehaviour
                         //Composite Volcano
                         Debug.Log(thickorthin + lowhighgas);
                         Diamond.SetActive(true);
-                        topText.text = "This results a Composite Volcano Which Can Bring Up Diamonds from the Mantel!";
+                        topText.text = "This results a composite volcano which can bring up diamonds from the mantel!";
                         Volcano.GetComponent<Animation>()["Volcano|Cinder-Composite"].time = 0.03f;
                         Volcano.GetComponent<Animation>()["Volcano|Cinder-Composite"].speed = 1;
                         Volcano.GetComponent<Animation>().Play(animation: "Volcano|Cinder-Composite");

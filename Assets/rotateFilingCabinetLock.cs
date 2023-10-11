@@ -57,7 +57,7 @@ public class rotateFilingCabinetLock : MonoBehaviour
                 gs.SetHasUnlockedFilingCabinetLock(true);
 
                 isLocked = false;
-                toptext.text = ("You unlocked the bottom drawers!");
+                toptext.text = ("You unlocked the bottom drawer!");
                 Cabinet.GetComponent<Animation>().Play(animation: "BottomDrawer");
                 soundManager.PlaySuccessSound();
                 

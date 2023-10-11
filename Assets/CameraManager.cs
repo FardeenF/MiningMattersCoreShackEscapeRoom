@@ -1067,7 +1067,7 @@ public class CameraManager : MonoBehaviour
                         Room3_GateCode.Priority = 0;
                         Room3_Bonus.Priority = 0;
                         gs.SetCurrentCam("Room1_DoorToRoom3");
-                        topText.text = ("You Have The Necessary Items to Go to This Door!");
+                        topText.text = ("You have the necessary items to enter this room!");
                     }
                     else if (gs.GetIsRoom3Unlocked() == true && gs.GetfoundGoldCore() == true && Room3_Main.Priority == 0)
                     {
@@ -1198,7 +1198,7 @@ public class CameraManager : MonoBehaviour
                     Room3_GateCode.Priority = 0;
                     Room3_Bonus.Priority = 0;
                     gs.SetCurrentCam("Room3_MineralIdentification");
-                    topText.text = "Streak Plate Testing Area";
+                    topText.text = "There appears to be 4 minerals here. I wonder how we may be able to tell them apart.";
 
                 }
 
@@ -1232,7 +1232,7 @@ public class CameraManager : MonoBehaviour
                     Room3_Bonus.Priority = 0;
                     gs.SetCurrentCam("Room3_Cabinet");
                     CabinetCollider.enabled = false;
-                    topText.text = "Supplies Cabinet";
+                    topText.text = "Supplies cabinet";
 
                 }
 
@@ -1298,7 +1298,7 @@ public class CameraManager : MonoBehaviour
                     Room3_GateCode.Priority = 1;
                     Room3_Bonus.Priority = 0;
                     gs.SetCurrentCam("Room3_GateCode");
-                    topText.text = "Storage Racks Gate";
+                    topText.text = "Door to core storage racks";
 
                 }
 
@@ -1332,7 +1332,7 @@ public class CameraManager : MonoBehaviour
                     Room3_GateCode.Priority = 0;
                     Room3_Bonus.Priority = 1;
                     gs.SetCurrentCam("Room3_Bonus");
-                    topText.text = "Bonus Puzzle";
+                    topText.text = "I wonder what this is for?";
 
                 }
 

@@ -109,10 +109,10 @@ public class CollectItem : MonoBehaviour
                 TopText.text = (Message);
                 this.gameObject.SetActive(false);
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
-                Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieve";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieves";
                 Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
-                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Sieve";
-                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Sieve";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Sieves";
+                Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Sieves";
                 break;
             }
 
@@ -397,10 +397,10 @@ public class CollectItem : MonoBehaviour
                         TopText.text = (Message);
                         Destroy(this.gameObject);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieve";
+                        Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieves";
                         Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Sieve";
-                        Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Sieve";
+                        Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Sieves";
+                        Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Sieves";
                         break;
                     }
                     
@@ -570,7 +570,7 @@ public class CollectItem : MonoBehaviour
                     {
                         Inventory[i].sprite = itemImage;
                         Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-                        TopText.text = "Core has been collected.";
+                        TopText.text = "The cut core has been collected";
                         this.gameObject.SetActive(false);
                         TopText.GetComponent<UAP_BaseElement>().SelectItem();
                         Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Cut Core Piece";
@@ -593,7 +593,7 @@ public class CollectItem : MonoBehaviour
             {
 
                 Debug.Log("Display Dragon Code of Ethics now");
-                TopText.text = ("You Have Found the Code of Ethics Easter egg!");
+                TopText.text = ("You have found the Dragon Code of Ethics bonus puzzle!");
                 TopText.GetComponent<UAP_BaseElement>().SelectItem();
                 Dragon.gameObject.SetActive(true);
                 dragoncrashps.Play();
@@ -616,7 +616,7 @@ public class CollectItem : MonoBehaviour
                 }
                 else if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == true)
                 {
-                    TopText.text = "You Can Now Enter This Room!";
+                    TopText.text = "You can now enter this room!";
                     hit.transform.gameObject.GetComponent<Animation>()["Cube|Open"].time = 0.3f;
                     hit.transform.gameObject.GetComponent<Animation>()["Cube|Open"].speed = 0.3f;
                     hit.transform.gameObject.GetComponent<Animation>().Play();
@@ -841,10 +841,10 @@ public class CollectItem : MonoBehaviour
                     //Destroy(this.gameObject);
                     this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieve";
+                    Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sieves";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Sieve";
-                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Sieve";
+                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel.name = "Sieves";
+                    Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Sieves";
                     break;
                 }
 
@@ -1032,7 +1032,7 @@ public class CollectItem : MonoBehaviour
                 {
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-                    TopText.text = "Core has been collected.";
+                    TopText.text = "The cut core has been collected";
                     this.gameObject.SetActive(false);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem(true);
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_Text = "Cut Core Piece";
@@ -1071,7 +1071,7 @@ public class CollectItem : MonoBehaviour
             }
             else if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == true)
             {
-                TopText.text = "You Can Now Enter This Room! Room 3";
+                TopText.text = "you can now enter this room! Room 3";
                 DoorToRoom3.GetComponent<Animation>()["Cube|Open"].time = 0.3f;
                 DoorToRoom3.transform.gameObject.GetComponent<Animation>()["Cube|Open"].speed = 0.3f;
                 DoorToRoom3.transform.gameObject.GetComponent<Animation>().Play();

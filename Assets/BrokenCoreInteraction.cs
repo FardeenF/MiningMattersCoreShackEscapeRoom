@@ -91,7 +91,7 @@ public class BrokenCoreInteraction : MonoBehaviour
                 gs.SetCorePasswordSolved(true);
                 toggle.Enable3DButtons();
 
-                gs.SetTopText("The Cores have revealed a password as followed: M, I, N, E");
+                gs.SetTopText("The cores have revealed a password as followed: M, I, N, E");
                 gs.GetTopText().GetComponent<UAP_BaseElement>().SelectItem(true);
 
                 corePiecePasswordMessage.enabled = true;

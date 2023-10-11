@@ -125,7 +125,7 @@ public class DirectionalLock : MonoBehaviour
             else
             {
                 code = "";
-                topText.text = code + " has been the entered code. Wrong Code, Try Again. The lock accepts 5 direction codes. Seems to be a grid based solution...";
+                topText.text = code + " has been the entered code. Wrong Code, try again. This is a directional lock that has 5 direction codes. This appears to be a grid-based solution...";
                 topText.GetComponent<AccessibleLabel>().SelectItem(true);
 
                 for (int i = 0; i < codeDisplay.Length; i++)
@@ -254,7 +254,7 @@ public class DirectionalLock : MonoBehaviour
                     else
                     {
                         code = "";
-                        topText.text = "Wrong Code, Try Again. The lock accepts 5 direction codes. Seems to be a grid based solution...";
+                        topText.text = "Wrong Code, try again. This is a directional lock that has 5 direction codes. This appears to be a grid-based solution...";
 
                         displayCounter = 0;
 
