@@ -171,7 +171,7 @@ public class SoundManager : MonoBehaviour
 
         if (!isPlaying && soundChecker == true)
         {
-            source.PlayOneShot(pickUpSoundAlt, 0.4f);
+            source.PlayOneShot(pickUpSoundAlt, 0.5f);
             isPlaying = true;
             StartCoroutine(WaitForSoundToEnd(1.0f));
             soundChecker = false;
@@ -197,7 +197,7 @@ public class SoundManager : MonoBehaviour
 
         if (!isPlaying && soundChecker == true)
         {
-            source.PlayOneShot(bootsPPESound, 0.4f);
+            source.PlayOneShot(bootsPPESound, 0.6f);
             isPlaying = true;
             StartCoroutine(WaitForSoundToEnd(1.0f));
             soundChecker = false;

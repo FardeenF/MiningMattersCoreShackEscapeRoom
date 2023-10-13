@@ -20,11 +20,18 @@ public class CycleCamera : MonoBehaviour
     private CinemachineVirtualCamera activeCam;
     private int selectedCam =0;
 
+    public GameObject resultsCoreImage;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
             switchCamera();
+        }
+
+        if (gs.GetCurrentCam() != "Room2_BoxTable")
+        {
+            resultsCoreImage.SetActive(false);
         }
     }
 

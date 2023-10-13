@@ -646,7 +646,8 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for(int i = 0; i < MainRoom1Locations.Length; i++)
             {
-                MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
+                if (UAP_AccessibilityManager.IsEnabled())
+                    MainRoom1Locations[i].GetComponent<AccessibleButton_3D>().enabled = true;
             }
         }
         else if(gs.GetCurrentCam() == "Room2_Main")

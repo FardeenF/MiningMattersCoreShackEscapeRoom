@@ -25,6 +25,9 @@ public class CollectItem : MonoBehaviour
     public ParticleSystem dragoncrashps;
     public AudioSource bricksFalling;
 
+    public GameObject resultsPage;
+    public GameObject mainResults;
+
     //Adding the audio source and a toggle to avoid playback
     //AudioSource audioSource;
     //private bool checkSoundToggle = true;
@@ -604,8 +607,21 @@ public class CollectItem : MonoBehaviour
             }
 
 
+            if (hit.transform.gameObject.name == "ResultsPage")
+            {
+                resultsPage.SetActive(true);
+                resultsPage.GetComponent<Renderer>().material = mainResults.GetComponent<Renderer>().material;
+                Debug.Log("Hit results page");
+            }
+            if (hit.transform.gameObject.name == "CoreResultsImage")
+            {
+                resultsPage.SetActive(false);
+                Debug.Log("Put away results page");
+            }
+
+
             //Switch to room 1 and 3
-            if (hit.transform.gameObject.tag == "Door2" && gs.GetCurrentRoom() == 1)
+                if (hit.transform.gameObject.tag == "Door2" && gs.GetCurrentRoom() == 1)
             {
                 if (gs.GetfoundGoldCore() == true && gs.GetIsRoom3Unlocked() == false)
                 {
@@ -721,7 +737,8 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
-                    Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
+                    //Destroy(this.gameObject);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleLabel>().name = "PPE Boots";
                     Inventory[i].gameObject.GetComponent<AccessibleLabel>().m_NameLabel = this.gameObject;
@@ -744,7 +761,8 @@ public class CollectItem : MonoBehaviour
                     Inventory[i].sprite = itemImage;
                     Inventory[i].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     TopText.text = (Message);
-                    Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
+                    //Destroy(this.gameObject);
                     TopText.GetComponent<UAP_BaseElement>().SelectItem();
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().name = "Sprayer";
                     Inventory[i].gameObject.GetComponent<AccessibleButton>().m_NameLabel = this.gameObject;

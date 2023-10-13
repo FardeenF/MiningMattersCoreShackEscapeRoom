@@ -46,13 +46,30 @@ public class CameraManager : MonoBehaviour
 
     public ToggleAccessibleUIGroups toggle;
 
+    public GameObject greyscale;
+    public GameObject resultsCoreImage;
+
     // Update is called once per frame
     void Update()
     {
         SwitchCameraPriority();
 
         //BackButton.onClick.AddListener(ButtonClick);
-            
+        if (Room1_Cabinet.Priority == 1 || Room1_MiningCycle.Priority == 1)
+        {
+            if (greyscale != null)
+                greyscale.GetComponent<BoxCollider>().enabled = false;
+        }
+        else
+        {
+            if (greyscale != null)
+                greyscale.GetComponent<BoxCollider>().enabled = true;
+        }
+
+        if (Room2_BoxTable.Priority == 0)
+        {
+            resultsCoreImage.SetActive(false);
+        }
     }
 
     void ButtonClick()
@@ -535,7 +552,7 @@ public class CameraManager : MonoBehaviour
                     gs.SetCurrentCam("Room1_BrokenCoreShackTable");
                 }
 
-                else if (Room1_BrokenCoreShackTable.Priority == 1 && hit.transform.gameObject.tag == "Room1_Geo_Poster")
+                else if ((Room1_BrokenCoreShackTable.Priority == 1 || Room1_Main.Priority == 1) && hit.transform.gameObject.tag == "Room1_Geo_Poster")
                 {
                     Room1_Main.Priority = 0;
                     Room1_BrokenCoreShackTable.Priority = 0;
@@ -565,7 +582,7 @@ public class CameraManager : MonoBehaviour
                     gs.SetCurrentCam("Room1_Geo_Poster");
                 }
 
-                else if (Room1_BrokenCoreShackTable.Priority == 1 && hit.transform.gameObject.tag == "Room1_CrossSectionPoster")
+                else if ((Room1_BrokenCoreShackTable.Priority == 1 || Room1_Main.Priority == 1) && hit.transform.gameObject.tag == "Room1_CrossSectionPoster")
                 {
                     Room1_Main.Priority = 0;
                     Room1_BrokenCoreShackTable.Priority = 0;
@@ -683,6 +700,7 @@ public class CameraManager : MonoBehaviour
                     Room3_GateCode.Priority = 0;
                     Room3_Bonus.Priority = 0;
                     gs.SetCurrentCam("Room1_Cabinet");
+
                 }
 
                 else if (hit.transform.gameObject.tag == "CabinetLock" && Room1_Cabinet.Priority == 1)

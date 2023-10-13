@@ -160,7 +160,8 @@ public class VolcanoPuzzle : MonoBehaviour
                 //Composite Volcano
                 Debug.Log(thickorthin + lowhighgas);
                 Diamond.SetActive(true);
-                topText.text = "Thick Lava + High Gas has resulted in a Composite Volcano. A diamond with a code has appeared!.";
+                UAP_AccessibilityManager.SelectElement(Diamond);
+                topText.text = "Thick Lava + High Gas has resulted in a Composite Volcano. A diamond with a code has appeared!. 0923010021";
                 topText.gameObject.GetComponent<AccessibleLabel>().SelectItem(true);
                 Volcano.GetComponent<Animation>()["Volcano|Cinder-Composite"].time = 0.03f;
                 Volcano.GetComponent<Animation>()["Volcano|Cinder-Composite"].speed = 1;
@@ -352,7 +353,9 @@ public class VolcanoPuzzle : MonoBehaviour
                         //Composite Volcano
                         Debug.Log(thickorthin + lowhighgas);
                         Diamond.SetActive(true);
+                        
                         topText.text = "This results a composite volcano which can bring up diamonds from the mantel!";
+                        
                         Volcano.GetComponent<Animation>()["Volcano|Cinder-Composite"].time = 0.03f;
                         Volcano.GetComponent<Animation>()["Volcano|Cinder-Composite"].speed = 1;
                         Volcano.GetComponent<Animation>().Play(animation: "Volcano|Cinder-Composite");

@@ -338,7 +338,7 @@ public class checkInventoryItem : MonoBehaviour
                     }
                     else
                     {
-                        topText.text = ("The water must be on, the saw blade must be fixed, and the power must be turned on.");
+                        topText.text = ("The water must be on, the saw blade must be replaced, and the power must be turned on.");
                     }
                     
                 }
@@ -868,7 +868,7 @@ public class checkInventoryItem : MonoBehaviour
                     gs.SetHasSawBlade(false);
                     //Destroy(activeSawBlade);
                     activeSawBlade.SetActive(false);
-                    topText.text = "The Blade has been fixed!";
+                    topText.text = "The Blade has been replaced!";
                 }
             }
         }
@@ -1127,7 +1127,7 @@ public class checkInventoryItem : MonoBehaviour
         else if (gs.GetSelectedCore2() == 4)
         {
             CoreResults.GetComponent<MeshRenderer>().material = CorrectResult;
-            CoreResults.GetComponent<AccessibleButton_3D>().m_Text = "The core analyzed contains gold. Move on to the third room to store it.";
+            CoreResults.GetComponent<AccessibleButton_3D>().m_Text = "The core analyzed contains gold. Move on to the third room to store it. Note displaying diamond mine to copper mine to gold mine";
             CoreResults.GetComponent<AccessibleButton_3D>().SelectItem(true);
         }
 
