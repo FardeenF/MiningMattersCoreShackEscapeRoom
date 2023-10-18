@@ -99,6 +99,8 @@ public class Computer2Puzzle : MonoBehaviour
             }
             else
             {
+                gs.SetTopText("Incorrect Password. Try again.");
+                gs.GetTopText().GetComponent<AccessibleLabel>().SelectItem();
                 Debug.Log("Incorrect Password");
                 Debug.Log(Guessedpassword);
             }
@@ -134,17 +136,17 @@ public class Computer2Puzzle : MonoBehaviour
 
     public void AccessibleReEnable(string num)
     {
-        if (gs.GetIsAccessibleMain())
-        {
-            UAP_AccessibilityManager.EnableAccessibility(true);
-            ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text.ToString() + " is entered in Password Letter" + num);
-            ReadAccessibilityMessage();
-        }
-            
+        //if (gs.GetIsAccessibleMain())
+        //{
+        //    UAP_AccessibilityManager.EnableAccessibility(true);
+        //    ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text.ToString() + " is entered in Password Letter" + num);
+        //    ReadAccessibilityMessage();
+        //}
 
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().m_Prefix = "is entered in Password Letter" + num;
 
         //ReadAccessibilityMessage("Password Letter " + num + " Equals " + gs.GetHighlightedObject().GetComponent<InputField>().text);
-        
+
 
     }
 

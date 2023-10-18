@@ -258,12 +258,12 @@ public class BrokenCoreInteraction : MonoBehaviour
         //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().name = text;
         //UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_NameLabel = this.gameObject;
         //UAP_AccessibilityManager.GetCurrentFocusObject().gameObject.GetComponent<AccessibleButton_3D>().m_NameLabel.name = text;
-        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().m_Text = text;
     }
 
     public void ReadAccessibilityMessage()
     {
-        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().SelectItem(true);
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().SelectItem(true);
     }
 
 
@@ -278,13 +278,16 @@ public class BrokenCoreInteraction : MonoBehaviour
 
     public void AccessibleReEnable(string num)
     {
-        if (gs.GetIsAccessibleMain())
-        {
-            Debug.Log("TRUE!!!");
-            UAP_AccessibilityManager.EnableAccessibility(true);
-            ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text + " is entered in Password Letter" + num);
-            ReadAccessibilityMessage();
-        }
+        //if (gs.GetIsAccessibleMain())
+        //{
+        //    Debug.Log("TRUE!!!");
+        //    UAP_AccessibilityManager.EnableAccessibility(true);
+        //    ReadAccessibilityMessage(gs.GetHighlightedObject().GetComponent<InputField>().text + " is entered in Password Letter" + num);
+        //    //ReadAccessibilityMessage();
+        //}
+
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().m_Prefix = "is entered in Password Letter" + num;
+        
     }
 
     public void ReadLetter(string letterNum)

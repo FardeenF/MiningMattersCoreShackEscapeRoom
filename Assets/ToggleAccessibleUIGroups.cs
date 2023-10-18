@@ -41,6 +41,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     public AccessibleButton_3D[] InsideTopCabinetSubButtons;
     public AccessibleButton_3D[] InsideBottomCabinetSubButtons;
     public AccessibleButton_3D[] ComputerDeskSubButtons;
+    public AccessibleTextEdit[] ComputerDeskInputSubButtons;
     public AccessibleButton_3D[] DirectionalLockSubButtons;
 
     //Room 2
@@ -55,6 +56,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
     //Room 3
     public AccessibleButton_3D[] MineralIdentificationSubButtons;
     public AccessibleButton_3D[] Room3ComputerSubButtons;
+    public AccessibleTextEdit[] Room3ComputerInputSubButtons;
     public AccessibleButton_3D[] VolcanoSubButtons;
     public AccessibleButton_3D[] IndustrialCabinetSubButtons;
     public AccessibleButton_3D[] MagnetPenSubButtons;
@@ -226,6 +228,24 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         //    endScreen.gameObject.SetActive(true);
         //}
 
+        if(gs.GetCurrentCam() != "Room1_Computer")
+        {
+            for (int i = 0; i < ComputerDeskInputSubButtons.Length; i++)
+            {
+                if (ComputerDeskInputSubButtons[i] != null)
+                    ComputerDeskInputSubButtons[i].enabled = false;
+            }
+        }
+
+
+        if (gs.GetCurrentCam() != "Room3_Computer")
+        {
+            for (int i = 0; i < Room3ComputerInputSubButtons.Length; i++)
+            {
+                if (Room3ComputerInputSubButtons[i] != null)
+                    Room3ComputerInputSubButtons[i].enabled = false;
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
         {
@@ -1100,12 +1120,12 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < ComputerDeskSubButtons.Length; i++)
             {
-                if (ComputerDeskSubButtons[i] != null && !gs.GetRoom1PasswordPuzzle())
+                if (ComputerDeskSubButtons[i] != null && !gs.GetRoom1PasswordPuzzle() && ComputerDeskSubButtons[i].name == "Button")
                 {
                     ComputerDeskSubButtons[i].enabled = true;
                 }
 
-                if(ComputerDeskSubButtons[i].name == "EmailRead")
+                if (ComputerDeskSubButtons[i].name == "EmailRead")
                 {
                     ComputerDeskSubButtons[i].enabled = false;
                 }
@@ -1115,6 +1135,13 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                     ComputerDeskSubButtons[i].enabled = true;
                 }
                 SubItemsEnabled = true;
+            }
+            for (int i = 0; i < ComputerDeskInputSubButtons.Length; i++)
+            {
+                if (ComputerDeskInputSubButtons[i] != null && !gs.GetRoom1PasswordPuzzle())
+                {
+                    ComputerDeskInputSubButtons[i].enabled = true;
+                }
             }
             // Set others to false
             for (int i = 0; i < BrokenCoreTableSubButtons.Length; i++)
@@ -1515,7 +1542,7 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
         {
             for (int i = 0; i < Room3ComputerSubButtons.Length; i++)
             {
-                if (Room3ComputerSubButtons[i] != null && !gs.GetRoom3PasswordPuzzle())
+                if (Room3ComputerSubButtons[i] != null && !gs.GetRoom3PasswordPuzzle() && (Room3ComputerSubButtons[i].name == "Button" || Room3ComputerSubButtons[i].name == "Password Hint"))
                     Room3ComputerSubButtons[i].enabled = true;
 
                 if (Room3ComputerSubButtons[i].name == "EmailRead2")
@@ -1531,6 +1558,13 @@ public class ToggleAccessibleUIGroups : MonoBehaviour
                 SubItemsEnabled = true;
 
                 
+            }
+            for (int i = 0; i < Room3ComputerInputSubButtons.Length; i++)
+            {
+                if (Room3ComputerInputSubButtons[i] != null && !gs.GetRoom3PasswordPuzzle())
+                {
+                    Room3ComputerInputSubButtons[i].enabled = true;
+                }
             }
             // Set others to false
             for (int i = 0; i < MineralIdentificationSubButtons.Length; i++)
