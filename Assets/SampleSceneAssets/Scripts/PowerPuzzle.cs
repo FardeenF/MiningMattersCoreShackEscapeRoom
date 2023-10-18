@@ -15,7 +15,10 @@ public class PowerPuzzle : MonoBehaviour
     public TextMeshProUGUI toptext;
     public CinemachineVirtualCamera PowerCordVC;
     private Vector3 pos1;
+    private GameObject tag1;
     private Vector3 pos2;
+    private GameObject tag2;
+    private GameObject tag3;
     private int goodCount = 0;
     private int changeNow = 0;
     private List<Vector3> posList = new List<Vector3>();
@@ -81,12 +84,12 @@ public class PowerPuzzle : MonoBehaviour
 
     IEnumerator checkSolution()
     {
-        if (UAP_AccessibilityManager.IsActive())
-        {
-            toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 3 of 3 has been connected.";
-            toptext.GetComponent<AccessibleLabel>().SelectItem(true);
-            yield return new WaitForSeconds(5);
-        }
+        //if (UAP_AccessibilityManager.IsActive())
+        //{
+        //    toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 3 of 3 has been connected.";
+        //    toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+        //    yield return new WaitForSeconds(5);
+        //}
 
         for (int i = 0; i < posList.Count; i++)
         {
@@ -116,7 +119,7 @@ public class PowerPuzzle : MonoBehaviour
                 source.PlayOneShot(correct, 1.0f);
                 gs.SetSawPower(true);
 
-                toptext.text = "The power to the saw machine has been fixed!";
+                toptext.text = "The power to the saw machine has been restored!";
                 toptext.GetComponent<AccessibleLabel>().SelectItem(true);
 
                 toggle.Enable3DButtons();
@@ -232,6 +235,7 @@ public class PowerPuzzle : MonoBehaviour
                     if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
                     {
                         pos1 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        tag1 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject;
                         posList.Add(pos1);
 
                         if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
@@ -257,7 +261,7 @@ public class PowerPuzzle : MonoBehaviour
 
                         FirstSwitchCheck();
 
-                        toptext.text = firstSwitch + " has been selected. Select another power switch to connect the two.";
+                        toptext.text = firstSwitch + " has been selected. Select another power switch to connect to.";
                         toptext.GetComponent<AccessibleLabel>().SelectItem(true);
 
                         goodCount++;
@@ -268,86 +272,96 @@ public class PowerPuzzle : MonoBehaviour
                     //Check if you clicked on a wire
                     if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
                     {
-                        pos2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
-                        posList.Add(pos2);
+                        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == tag1.tag)
+                        {
+                            toptext.text = "This power switch has already selected. Select a different power switch to connect to.";
+                            toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+                            return;
+                        }
+                        else
+                        {
+                            pos2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                            tag2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject;
+                            posList.Add(pos2);
 
-                        //points.Add(hit.transform);
+                            //Add continuous line
+                            posList.Add(pos2);
 
-                        //line.SetUpLine(points);
-                        line.positionCount = 2;
-                        line.SetPosition(0, pos1);
-                        line.SetPosition(1, pos2);
+                            //points.Add(hit.transform);
 
-                        h1.gameObject.SetActive(false);
-                        h2.gameObject.SetActive(false);
-                        h3.gameObject.SetActive(false);
-                        h4.gameObject.SetActive(false);
+                            //line.SetUpLine(points);
+                            line.positionCount = 2;
+                            line.SetPosition(0, pos1);
+                            line.SetPosition(1, pos2);
 
-                        h1Active = false;
-                        h2Active = false;
-                        h3Active = false;
-                        h4Active = false;
+                            h1.gameObject.SetActive(false);
+                            h2.gameObject.SetActive(false);
+                            h3.gameObject.SetActive(false);
+                            h4.gameObject.SetActive(false);
 
-                        goodCount = 0;
-                        changeNow = 1;
+                            h1Active = false;
+                            h2Active = false;
+                            h3Active = false;
+                            h4Active = false;
 
-                        SecondSwitchCheck();
 
-                        toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 1 of 3 has been connected.";
-                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+                            if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
+                            {
+                                h1Active = true;
+                                h1.gameObject.SetActive(true);
+                            }
+                            else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2")
+                            {
+                                h4Active = true;
+                                h4.gameObject.SetActive(true);
+                            }
+                            else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3")
+                            {
+                                h2Active = true;
+                                h2.gameObject.SetActive(true);
+                            }
+                            else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                            {
+                                h3Active = true;
+                                h3.gameObject.SetActive(true);
+                            }
+
+                            goodCount = 0;
+                            changeNow = 1;
+
+                            SecondSwitchCheck();
+
+                            toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 1 of 3 has been connected. Select another power switch to connect from " + secondSwitch;
+                            toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+
+                            FirstSwitchCheck();
+                        }
                     }
                 }
             }
             else if (changeNow == 1)
             {
-                if (goodCount == 0)
+                //Check if you clicked on a wire
+                if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
                 {
-                    //Check if you clicked on a wire
-                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == tag1.tag || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == tag2.tag)
+                    {
+                        toptext.text = "This power switch has already selected. Select a different power switch to connect to.";
+                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+                        return;
+                    }
+                    else
                     {
                         pos1 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        tag3 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject;
                         posList.Add(pos1);
 
-                        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
-                        {
-                            h1Active = true;
-                            h1.gameObject.SetActive(true);
-                        }
-                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2")
-                        {
-                            h4Active = true;
-                            h4.gameObject.SetActive(true);
-                        }
-                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3")
-                        {
-                            h2Active = true;
-                            h2.gameObject.SetActive(true);
-                        }
-                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
-                        {
-                            h3Active = true;
-                            h3.gameObject.SetActive(true);
-                        }
-
-                        FirstSwitchCheck();
-
-                        toptext.text = firstSwitch + " has been selected. Select another power switch to connect the two.";
-                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
-
-                        goodCount++;
-                    }
-                }
-                else
-                {
-                    //Check if you clicked on a wire
-                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
-                    {
-                        pos2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
-                        posList.Add(pos2);
+                        //Add continuous line
+                        posList.Add(pos1);
 
                         line2.positionCount = 2;
-                        line2.SetPosition(0, pos1);
-                        line2.SetPosition(1, pos2);
+                        line2.SetPosition(0, pos2);
+                        line2.SetPosition(1, pos1);
 
                         h1.gameObject.SetActive(false);
                         h2.gameObject.SetActive(false);
@@ -362,22 +376,52 @@ public class PowerPuzzle : MonoBehaviour
                         goodCount = 0;
                         changeNow = 2;
 
+                        if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
+                        {
+                            h1Active = true;
+                            h1.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2")
+                        {
+                            h4Active = true;
+                            h4.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3")
+                        {
+                            h2Active = true;
+                            h2.gameObject.SetActive(true);
+                        }
+                        else if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                        {
+                            h3Active = true;
+                            h3.gameObject.SetActive(true);
+                        }
+
                         SecondSwitchCheck();
 
-                        toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 2 of 3 has been connected.";
+                        toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 2 of 3 has been connected. Select another power switch to connect from " + secondSwitch;
                         toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+
+                        FirstSwitchCheck();
                     }
                 }
+                
             }
             else if (changeNow == 2)
             {
-                if (goodCount == 0)
+                //Check if you clicked on a wire
+                if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
                 {
-                    //Check if you clicked on a wire
-                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
+                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == tag1.tag || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == tag2.tag || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == tag3.tag)
                     {
-                        pos1 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
-                        posList.Add(pos1);
+                        toptext.text = "This power switch has already selected. Select a different power switch to connect to.";
+                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
+                        return;
+                    }
+                    else
+                    {
+                        pos2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
+                        posList.Add(pos2);
 
                         if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1")
                         {
@@ -400,21 +444,7 @@ public class PowerPuzzle : MonoBehaviour
                             h3.gameObject.SetActive(true);
                         }
 
-                        FirstSwitchCheck();
-
-                        toptext.text = firstSwitch + " has been selected. Select another power switch to connect the two.";
-                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
-
-                        goodCount++;
-                    }
-                }
-                else
-                {
-                    //Check if you clicked on a wire
-                    if (UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P1" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P2" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P3" || UAP_AccessibilityManager.GetCurrentFocusObject().transform.gameObject.tag == "P4")
-                    {
-                        pos2 = UAP_AccessibilityManager.GetCurrentFocusObject().transform.position;
-                        posList.Add(pos2);
+                        SecondSwitchCheck();
 
                         line3.positionCount = 2;
                         line3.SetPosition(0, pos1);
@@ -431,15 +461,13 @@ public class PowerPuzzle : MonoBehaviour
                         h3Active = false;
                         h4Active = false;
 
-                        SecondSwitchCheck();
-
-                        toptext.text = firstSwitch + " has been connected to " + secondSwitch + ". Power Line 3 of 3 has been connected.";
-                        toptext.GetComponent<AccessibleLabel>().SelectItem(true);
-
                         StartCoroutine(checkSolution());
 
                         goodCount = 0;
                         changeNow = 0;
+                        tag1 = null;
+                        tag2 = null;
+                        tag3 = null;
                     }
                 }
             }
@@ -468,6 +496,7 @@ public class PowerPuzzle : MonoBehaviour
                         if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                         {
                             pos1 = hit.transform.position;
+                            tag1 = hit.transform.gameObject;
                             posList.Add(pos1);
                             if(hit.transform.gameObject.tag == "P1")
                             {
@@ -497,15 +526,86 @@ public class PowerPuzzle : MonoBehaviour
                         //Check if you clicked on a wire
                         if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                         {
-                            pos2 = hit.transform.position;
-                            posList.Add(pos2);
+                            if (hit.transform.gameObject.tag == tag1.tag)
+                            {
+                                toptext.text = "Select a different power switch to connect to.";
+                                return;
+                            }
+                            else
+                            {
+                                pos2 = hit.transform.position;
+                                tag2 = hit.transform.gameObject;
+                                posList.Add(pos2);
 
-                            //points.Add(hit.transform);
+                                //Add continuous wire
+                                posList.Add(pos2);
 
-                            //line.SetUpLine(points);
-                            line.positionCount = 2;
-                            line.SetPosition(0, pos1);
-                            line.SetPosition(1, pos2);
+                                //points.Add(hit.transform);
+
+                                //line.SetUpLine(points);
+                                line.positionCount = 2;
+                                line.SetPosition(0, pos1);
+                                line.SetPosition(1, pos2);
+
+                                h1.gameObject.SetActive(false);
+                                h2.gameObject.SetActive(false);
+                                h3.gameObject.SetActive(false);
+                                h4.gameObject.SetActive(false);
+
+                                h1Active = false;
+                                h2Active = false;
+                                h3Active = false;
+                                h4Active = false;
+
+                                if (hit.transform.gameObject.tag == "P1")
+                                {
+                                    h1Active = true;
+                                    h1.gameObject.SetActive(true);
+                                }
+                                else if (hit.transform.gameObject.tag == "P2")
+                                {
+                                    h4Active = true;
+                                    h4.gameObject.SetActive(true);
+                                }
+                                else if (hit.transform.gameObject.tag == "P3")
+                                {
+                                    h2Active = true;
+                                    h2.gameObject.SetActive(true);
+                                }
+                                else if (hit.transform.gameObject.tag == "P4")
+                                {
+                                    h3Active = true;
+                                    h3.gameObject.SetActive(true);
+                                }
+
+                                goodCount = 0;
+                                changeNow = 1;
+                            }
+                        }
+                    }
+                }
+                else if(changeNow == 1)
+                {
+                    //Check if you clicked on a wire
+                    if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
+                    {
+                        if (hit.transform.gameObject.tag == tag1.tag || hit.transform.gameObject.tag == tag2.tag)
+                        {
+                            toptext.text = "Select a different power switch to connect to.";
+                            return;
+                        }
+                        else
+                        {
+                            pos1 = hit.transform.position;
+                            tag3 = hit.transform.gameObject;
+                            posList.Add(pos1);
+
+                            //Add continuous line
+                            posList.Add(pos1);
+
+                            line2.positionCount = 2;
+                            line2.SetPosition(0, pos2);
+                            line2.SetPosition(1, pos1);
 
                             h1.gameObject.SetActive(false);
                             h2.gameObject.SetActive(false);
@@ -516,21 +616,6 @@ public class PowerPuzzle : MonoBehaviour
                             h2Active = false;
                             h3Active = false;
                             h4Active = false;
-
-                            goodCount = 0;
-                            changeNow = 1;
-                        }
-                    }
-                }
-                else if(changeNow == 1)
-                {
-                    if (goodCount == 0)
-                    {
-                        //Check if you clicked on a wire
-                        if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
-                        {
-                            pos1 = hit.transform.position;
-                            posList.Add(pos1);
 
                             if (hit.transform.gameObject.tag == "P1")
                             {
@@ -552,31 +637,6 @@ public class PowerPuzzle : MonoBehaviour
                                 h3Active = true;
                                 h3.gameObject.SetActive(true);
                             }
-
-                            goodCount++;
-                        }
-                    }
-                    else
-                    {
-                        //Check if you clicked on a wire
-                        if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
-                        {
-                            pos2 = hit.transform.position;
-                            posList.Add(pos2);
-
-                            line2.positionCount = 2;
-                            line2.SetPosition(0, pos1);
-                            line2.SetPosition(1, pos2);
-
-                            h1.gameObject.SetActive(false);
-                            h2.gameObject.SetActive(false);
-                            h3.gameObject.SetActive(false);
-                            h4.gameObject.SetActive(false);
-
-                            h1Active = false;
-                            h2Active = false;
-                            h3Active = false;
-                            h4Active = false;
 
                             goodCount = 0;
                             changeNow = 2;
@@ -585,13 +645,18 @@ public class PowerPuzzle : MonoBehaviour
                 }
                 else if (changeNow == 2)
                 {
-                    if (goodCount == 0)
+                    //Check if you clicked on a wire
+                    if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
                     {
-                        //Check if you clicked on a wire
-                        if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
+                        if (hit.transform.gameObject.tag == tag1.tag || hit.transform.gameObject.tag == tag2.tag || hit.transform.gameObject.tag == tag3.tag)
                         {
-                            pos1 = hit.transform.position;
-                            posList.Add(pos1);
+                            toptext.text = "Select a different power switch to connect to.";
+                            return;
+                        }
+                        else
+                        {
+                            pos2 = hit.transform.position;
+                            posList.Add(pos2);
 
                             if (hit.transform.gameObject.tag == "P1")
                             {
@@ -613,17 +678,6 @@ public class PowerPuzzle : MonoBehaviour
                                 h3Active = true;
                                 h3.gameObject.SetActive(true);
                             }
-
-                            goodCount++;
-                        }
-                    }
-                    else
-                    {
-                        //Check if you clicked on a wire
-                        if (hit.transform.gameObject.tag == "P1" || hit.transform.gameObject.tag == "P2" || hit.transform.gameObject.tag == "P3" || hit.transform.gameObject.tag == "P4")
-                        {
-                            pos2 = hit.transform.position;
-                            posList.Add(pos2);
 
                             line3.positionCount = 2;
                             line3.SetPosition(0, pos1);
@@ -644,6 +698,9 @@ public class PowerPuzzle : MonoBehaviour
 
                             goodCount = 0;
                             changeNow = 0;
+                            tag1 = null;
+                            tag2 = null;
+                            tag3 = null;
                         }
                     }
                 }
