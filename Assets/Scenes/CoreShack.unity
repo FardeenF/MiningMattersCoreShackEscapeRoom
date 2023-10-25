@@ -11524,6 +11524,7 @@ MonoBehaviour:
   cabinetPuzzleScript: {fileID: 134413253}
   toggle: {fileID: 275968312}
   menuUI: {fileID: 744024435}
+  isHandLensZoomed: 0
 --- !u!114 &339473232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16366,7 +16367,7 @@ MonoBehaviour:
   m_text: Core Shack Room 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16719,7 +16720,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.35388
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -19859,7 +19860,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 48.96
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -28554,7 +28555,7 @@ MonoBehaviour:
   m_text: Put Away
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -31481,7 +31482,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.35358
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -34208,7 +34209,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 47.52375
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -39542,7 +39543,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 47.37579
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -45744,7 +45745,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 52.32911
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -52448,7 +52449,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 44.82143
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -63098,7 +63099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00975
+      value: -0.0105
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65957,7 +65958,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 47.37579
+  field of view: 52.47
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -69379,7 +69380,7 @@ MonoBehaviour:
   m_text: 0m:0s
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -78555,7 +78556,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 42.72428
+    FieldOfView: 52.47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000

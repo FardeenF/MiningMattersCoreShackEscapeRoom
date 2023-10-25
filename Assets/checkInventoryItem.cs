@@ -112,6 +112,8 @@ public class checkInventoryItem : MonoBehaviour
 
     public GameObject menuUI;
 
+    public bool isHandLensZoomed = false;
+
     public void ReadAccessibilityMessage(string text)
     {
         UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().m_Text = text;
@@ -160,6 +162,7 @@ public class checkInventoryItem : MonoBehaviour
                     isHandLensActive = false;
                     holdingSomething = false;
                     topText.text = ("Hand lens is back in inventory");
+                    isHandLensZoomed = false;
                     topText.GetComponent<UAP_BaseElement>().SelectItem();
                 }
             }
@@ -600,6 +603,7 @@ public class checkInventoryItem : MonoBehaviour
             isHandLensActive = false;
             holdingSomething = false;
             topText.text = ("Hand lens is back in inventory");
+            isHandLensZoomed = false;
             topText.GetComponent<UAP_BaseElement>().SelectItem();
         }
 
@@ -730,64 +734,80 @@ public class checkInventoryItem : MonoBehaviour
         ItemFollowCam(isCorePieceActive, activeCorePiece, 0, true, 0.5f);
 
 
+
+
+
+        if (isHandLensZoomed == true)
+        {
+            cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+
+            // Get the highest priority virtual camera
+            CinemachineVirtualCamera highestPriorityCamera = GetHighestPriorityCamera();
+
+
+            // Get the mouse position in screen coordinates
+            Vector3 mousePosition = Input.mousePosition;
+
+            // Convert the mouse position to a ray in world space
+            Ray ray = mainCam.ScreenPointToRay(mousePosition);
+
+            // Declare a variable to store information about the raycast hit
+            RaycastHit hit;
+
+            // Perform the raycast and check if it hit any objects
+            if (Physics.Raycast(ray, out hit))
+            {
+                // Calculate the distance from the camera to the hit point
+                float distance = Vector3.Distance(highestPriorityCamera.transform.position, hit.point);
+
+                // Calculate the new field of view based on the distance
+                float targetFOV = Mathf.Clamp(57 - distance * 20, 20, 52);
+                highestPriorityCamera.m_Lens.FieldOfView = Mathf.Lerp(highestPriorityCamera.m_Lens.FieldOfView, targetFOV, Time.deltaTime * 5);
+
+                // Calculate the new position based on the distance
+                if (isZoomed == false)
+                {
+                    targetPosition = highestPriorityCamera.transform.position + ray.direction * 5;
+                }
+
+                //highestPriorityCamera.transform.position = Vector3.Lerp(highestPriorityCamera.transform.position, targetPosition, Time.deltaTime * 5);
+            }
+            else
+            {
+                // Reset the camera's field of view and position to its default values
+                highestPriorityCamera.m_Lens.FieldOfView = Mathf.Lerp(highestPriorityCamera.m_Lens.FieldOfView, 52, Time.deltaTime * 5);
+                //highestPriorityCamera.transform.position = Vector3.Lerp(highestPriorityCamera.transform.position, Vector3.zero, Time.deltaTime * 5);
+            }
+        }
+
+        if (isHandLensZoomed == false)
+        {
+            cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+
+            // Get the highest priority virtual camera
+            CinemachineVirtualCamera highestPriorityCamera = GetHighestPriorityCamera();
+
+            highestPriorityCamera.m_Lens.FieldOfView = 52.47f;
+        }
+
+
+
         if (isHandLensActive)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0) && isHandLensZoomed == false)
             {
-                cinemachineBrain = FindObjectOfType<CinemachineBrain>();
-
-                // Get the highest priority virtual camera
-                CinemachineVirtualCamera highestPriorityCamera = GetHighestPriorityCamera();
-
-
-                // Get the mouse position in screen coordinates
-                Vector3 mousePosition = Input.mousePosition;
-
-                // Convert the mouse position to a ray in world space
-                Ray ray = mainCam.ScreenPointToRay(mousePosition);
-
-                // Declare a variable to store information about the raycast hit
-                RaycastHit hit;
-
-                // Perform the raycast and check if it hit any objects
-                if (Physics.Raycast(ray, out hit))
-                {
-                    // Calculate the distance from the camera to the hit point
-                    float distance = Vector3.Distance(highestPriorityCamera.transform.position, hit.point);
-
-                    // Calculate the new field of view based on the distance
-                    float targetFOV = Mathf.Clamp(57 - distance * 20, 20, 52);
-                    highestPriorityCamera.m_Lens.FieldOfView = Mathf.Lerp(highestPriorityCamera.m_Lens.FieldOfView, targetFOV, Time.deltaTime * 5);
-
-                    // Calculate the new position based on the distance
-                    if (isZoomed == false)
-                    {
-                        targetPosition = highestPriorityCamera.transform.position + ray.direction * 5;
-                    }
-
-                    //highestPriorityCamera.transform.position = Vector3.Lerp(highestPriorityCamera.transform.position, targetPosition, Time.deltaTime * 5);
-                }
-                else
-                {
-                    // Reset the camera's field of view and position to its default values
-                    highestPriorityCamera.m_Lens.FieldOfView = Mathf.Lerp(highestPriorityCamera.m_Lens.FieldOfView, 52, Time.deltaTime * 5);
-                    //highestPriorityCamera.transform.position = Vector3.Lerp(highestPriorityCamera.transform.position, Vector3.zero, Time.deltaTime * 5);
-                }
+                
 
                 isZoomed = true;
+                isHandLensZoomed = true;
 
             }
-            if (Input.GetMouseButtonUp(0))
+            else if (Input.GetMouseButtonDown(0) && isHandLensZoomed == true)
             {
-                cinemachineBrain = FindObjectOfType<CinemachineBrain>();
-
-                // Get the highest priority virtual camera
-                CinemachineVirtualCamera highestPriorityCamera = GetHighestPriorityCamera();
-
-                highestPriorityCamera.m_Lens.FieldOfView = 52.47f;
+                
 
                 isZoomed = false;
-
+                isHandLensZoomed = false;
 
 
             }
