@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BrokenCoreInteraction : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class BrokenCoreInteraction : MonoBehaviour
     public Canvas room1ComputerScreen;
 
     public GameObject room1Computer;
+    public InputField inputField1;
     public Material room1SolvedBackground;
 
     public Material[] computerMats;
@@ -264,6 +266,15 @@ public class BrokenCoreInteraction : MonoBehaviour
     public void ReadAccessibilityMessage()
     {
         UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().SelectItem(true);
+    }
+
+    public void DeselectInputField()
+    {
+        if(UAP_AccessibilityManager.IsEnabled())
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().SelectItem(true);
+        }
     }
 
 

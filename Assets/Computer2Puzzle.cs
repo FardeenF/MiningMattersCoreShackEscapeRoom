@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Computer2Puzzle : MonoBehaviour
 {
@@ -134,6 +135,16 @@ public class Computer2Puzzle : MonoBehaviour
         UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleButton_3D>().SelectItem(true);
     }
 
+    public void DeselectInputField()
+    {
+        if (UAP_AccessibilityManager.IsEnabled())
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().SelectItem(true);
+        }
+    }
+
+
     public void AccessibleReEnable(string num)
     {
         //if (gs.GetIsAccessibleMain())
@@ -143,7 +154,7 @@ public class Computer2Puzzle : MonoBehaviour
         //    ReadAccessibilityMessage();
         //}
 
-        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().m_Prefix = "is entered in Password Letter" + num;
+        UAP_AccessibilityManager.GetCurrentFocusObject().GetComponent<AccessibleTextEdit>().m_Prefix = "is entered in Password Input" + num;
 
         //ReadAccessibilityMessage("Password Letter " + num + " Equals " + gs.GetHighlightedObject().GetComponent<InputField>().text);
 
