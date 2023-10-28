@@ -8964,7 +8964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257626284}
   m_LocalRotation: {x: -0.00000004214677, y: -0, z: 7.996093e-11, w: 1}
-  m_LocalPosition: {x: 12.417, y: 0.0354, z: -11.29}
+  m_LocalPosition: {x: 13.682, y: 0.0354, z: -11.29}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16415,7 +16415,7 @@ MonoBehaviour:
   m_text: Core Shack Room 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28675,7 +28675,7 @@ MonoBehaviour:
   m_text: Put Away
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -63263,15 +63263,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0043
+      value: 0.000353
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02429
+      value: -0.011399
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0014
+      value: -0.000403
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83f1e62aecc85dc4589fa970686b6403, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68642,6 +68642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1815343586}
   - component: {fileID: 1815343585}
+  - component: {fileID: 1815343587}
   m_Layer: 0
   m_Name: GameStates
   m_TagString: Untagged
@@ -68679,6 +68680,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1815343587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815343584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e25b027a4904141823568fd33a32e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 275968312}
 --- !u!114 &1815458506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69549,7 +69563,7 @@ MonoBehaviour:
   m_text: 0m:0s
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -74208,7 +74222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3cea77413f6bb94aaa83c2cd96373aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.679
+      value: 7.9213
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3cea77413f6bb94aaa83c2cd96373aa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -74216,7 +74230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3cea77413f6bb94aaa83c2cd96373aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -29.573391
+      value: -29.5889
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3cea77413f6bb94aaa83c2cd96373aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -90615,7 +90629,7 @@ MonoBehaviour:
   m_text: Enter your name here...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -91753,7 +91767,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 6d82cb5b755b69945978aa6040774bf1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
